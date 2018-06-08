@@ -27,8 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                           options: .new, context: nil)
         
         // Listen to Brightness Changes
-        dlopen("/System/Library/PrivateFrameworks/CoreDuelContext.framework/CoreDuelContext", RTLD_NOW)
-        dlopen("/System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness", RTLD_NOW)
+        loadPrivateFramework(named: "CoreDuelContext")
+        loadPrivateFramework(named: "CoreBrightness")
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,

@@ -6,4 +6,6 @@
 //  Copyright © 2018 Apollonian. All rights reserved.
 //
 
-import Foundation
+func loadPrivateFramework(named name: String) {
+    dlopen("/System/Library/PrivateFrameworks/\(name).framework/\(name)", RTLD_NOW)
+}
