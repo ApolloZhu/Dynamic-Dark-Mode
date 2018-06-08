@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)getOnlineDisplaysList:(unsigned int *)arg1 withMaxDisplays:(unsigned int)arg2 andNumberOfDisplays:(unsigned int *)arg3;
 - (id)copyOnlineDisplayAliases;
 - (id)copyOnlineDisplays;
-- (id)autorelease;
-- (oneway void)release;
-- (unsigned long long)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
-- (id)init;
+//- (id)autorelease;
+//- (oneway void)release;
+//- (unsigned long long)retainCount;
+//- (id)retain;
+//- (id)copyWithZone:(struct _NSZone *)arg1;
+//- (void)dealloc;
+//- (id)init;
 
 @end
 

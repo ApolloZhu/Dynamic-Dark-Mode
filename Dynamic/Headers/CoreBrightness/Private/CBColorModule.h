@@ -11,8 +11,6 @@
 #import "CBStatusInfoProtocol-Protocol.h"
 #import "NightShiftSupportProtocol-Protocol.h"
 
-// //  NSMutableArray, NSMutableDictionary, OS_dispatch_source, NSString;
-
 __attribute__((visibility("hidden")))
 @interface CBColorModule : CBContainer <CBContainerProtocol, CBHIDServiceProtocol, NightShiftSupportProtocol, CBStatusInfoProtocol>
 {

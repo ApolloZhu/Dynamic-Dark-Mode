@@ -5,13 +5,10 @@
 //
 
 #import "CBModule.h"
-
 #import "CBContainerModuleProtocol-Protocol.h"
 #import "CBStatusInfoProtocol-Protocol.h"
 
-// //  NSMutableDictionary, OS_dispatch_source, NSString;
-
-//__attribute__((visibility("hidden")))
+__attribute__((visibility("hidden")))
 @interface CBDisplayModuleMacOS : CBModule <CBContainerModuleProtocol, CBStatusInfoProtocol>
 {
     _Bool _running;

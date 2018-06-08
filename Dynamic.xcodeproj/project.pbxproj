@@ -12,9 +12,10 @@
 		52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */; };
 		52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD020C99CB100869A9C /* AppleScriptHelper.swift */; };
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
-		52168FD920C9B0DD00869A9C /* ScreenBrightnessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* ScreenBrightnessHelper.swift */; };
+		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
 		52168FDC20C9F87900869A9C /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52168FDB20C9F87800869A9C /* CoreBrightness.framework */; };
 		5216920620CAFCB400869A9C /* CoreDuetContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5216905520CADE5C00869A9C /* CoreDuetContext.framework */; };
+		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,7 @@
 		52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSwitcher.swift; sourceTree = "<group>"; };
 		52168FD020C99CB100869A9C /* AppleScriptHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptHelper.swift; sourceTree = "<group>"; };
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52168FD820C9B0DD00869A9C /* ScreenBrightnessHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessHelper.swift; sourceTree = "<group>"; };
+		52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen + Brightness.swift"; sourceTree = "<group>"; };
 		52168FDB20C9F87800869A9C /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
 		52168FDF20C9FAE700869A9C /* CBContainerProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBContainerProtocol-Protocol.h"; sourceTree = "<group>"; };
 		52168FE020C9FAE700869A9C /* CBAdaptationClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAdaptationClient.h; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		5216920320CAFB9100869A9C /* _CDContextualChangeRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualChangeRegistration.h; sourceTree = "<group>"; };
 		5216920420CAFBC900869A9C /* _CDContextualPredicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualPredicate.h; sourceTree = "<group>"; };
 		5216920520CAFBDB00869A9C /* _CDContextualKeyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualKeyPath.h; sourceTree = "<group>"; };
+		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,8 @@
 			children = (
 				52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */,
 				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
-				52168FD820C9B0DD00869A9C /* ScreenBrightnessHelper.swift */,
+				52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */,
+				5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -174,42 +177,19 @@
 		52168FDE20C9FAE700869A9C /* CoreBrightness */ = {
 			isa = PBXGroup;
 			children = (
+				5262878620CB2FDA009BA4EF /* Private */,
+				5262878720CB3200009BA4EF /* Protocols */,
 				5216905420CAD6C400869A9C /* CoreBrightness.h */,
-				52168FDF20C9FAE700869A9C /* CBContainerProtocol-Protocol.h */,
-				52168FE020C9FAE700869A9C /* CBAdaptationClient.h */,
-				52168FE120C9FAE700869A9C /* BacklightdExportedObj.h */,
-				52168FE220C9FAE700869A9C /* BacklightdXPCProtocol-Protocol.h */,
-				52168FE320C9FAE700869A9C /* BacklightSystemDelegateXpcProtocol-Protocol.h */,
-				52168FE420C9FAE700869A9C /* CBPreferencesHandler.h */,
-				52168FE520C9FAE700869A9C /* DisplayALSManager.h */,
-				52168FE620C9FAE700869A9C /* BrightnessSystemClient.h */,
-				52168FE720C9FAE700869A9C /* NightShiftSupportProtocol-Protocol.h */,
-				52168FE820C9FAE700869A9C /* CBBlueLightClient.h */,
-				52168FE920C9FAE700869A9C /* CBContainer.h */,
-				52168FEA20C9FAE700869A9C /* BrightnessSystemClientInternal.h */,
-				52168FEB20C9FAE700869A9C /* CBABModuleMacBuiltIn.h */,
-				52168FEC20C9FAE700869A9C /* CBModule.h */,
-				52168FED20C9FAE700869A9C /* CBDisplayContainerMacOS.h */,
-				52168FEE20C9FAE700869A9C /* CBDisplayUpdateHandler.h */,
-				52168FEF20C9FAE700869A9C /* CBDisplayContainerDFR.h */,
-				52168FF020C9FAE700869A9C /* CBStatusInfoProtocol-Protocol.h */,
-				52168FF120C9FAE700869A9C /* CBHIDServiceProtocol-Protocol.h */,
-				52168FF220C9FAE700869A9C /* BrightnessSystem.h */,
-				52168FF320C9FAE700869A9C /* SunriseSunsetProvider.h */,
 				52168FF420C9FAE700869A9C /* CDStructures.h */,
-				52168FF520C9FAE700869A9C /* CBClient.h */,
-				52168FF620C9FAE700869A9C /* CBColorModule.h */,
-				52168FF720C9FAE700869A9C /* DisplayServicesClient.h */,
-				52168FF820C9FAE700869A9C /* CBContainerModuleProtocol-Protocol.h */,
-				52168FF920C9FAE700869A9C /* BrightnessSystemInternal.h */,
 				52168FFA20C9FAE700869A9C /* NSDictionary-CBPropertyKeyExtension.h */,
-				52168FFC20C9FAE700869A9C /* BLControl.h */,
-				52168FFD20C9FAE700869A9C /* CBDisplayModuleMacOS.h */,
-				52168FFF20C9FAE700869A9C /* AmbientLightSensorStats.h */,
-				5216900020C9FAE700869A9C /* BrightnessSystemClientExportedObj.h */,
-				5216900120C9FAE700869A9C /* AmbientDisplayALSManager.h */,
-				5216900220C9FAE700869A9C /* NightModeControl.h */,
-				5216900320C9FAE700869A9C /* CBStatusInfoHelper.h */,
+				52168FEC20C9FAE700869A9C /* CBModule.h */,
+				52168FF520C9FAE700869A9C /* CBClient.h */,
+				52168FF220C9FAE700869A9C /* BrightnessSystem.h */,
+				52168FF720C9FAE700869A9C /* DisplayServicesClient.h */,
+				52168FE620C9FAE700869A9C /* BrightnessSystemClient.h */,
+				52168FEA20C9FAE700869A9C /* BrightnessSystemClientInternal.h */,
+				52168FE020C9FAE700869A9C /* CBAdaptationClient.h */,
+				52168FE820C9FAE700869A9C /* CBBlueLightClient.h */,
 			);
 			path = CoreBrightness;
 			sourceTree = "<group>";
@@ -227,6 +207,45 @@
 				5216920020CAFB5600869A9C /* _CDUserContextServerMonitoring-Protocol.h */,
 			);
 			path = CoreDuetContext;
+			sourceTree = "<group>";
+		};
+		5262878620CB2FDA009BA4EF /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				5216900120C9FAE700869A9C /* AmbientDisplayALSManager.h */,
+				52168FEE20C9FAE700869A9C /* CBDisplayUpdateHandler.h */,
+				5216900320C9FAE700869A9C /* CBStatusInfoHelper.h */,
+				52168FE420C9FAE700869A9C /* CBPreferencesHandler.h */,
+				52168FE920C9FAE700869A9C /* CBContainer.h */,
+				52168FEF20C9FAE700869A9C /* CBDisplayContainerDFR.h */,
+				52168FED20C9FAE700869A9C /* CBDisplayContainerMacOS.h */,
+				52168FFD20C9FAE700869A9C /* CBDisplayModuleMacOS.h */,
+				52168FE320C9FAE700869A9C /* BacklightSystemDelegateXpcProtocol-Protocol.h */,
+				52168FF920C9FAE700869A9C /* BrightnessSystemInternal.h */,
+				52168FE120C9FAE700869A9C /* BacklightdExportedObj.h */,
+				52168FFF20C9FAE700869A9C /* AmbientLightSensorStats.h */,
+				52168FE520C9FAE700869A9C /* DisplayALSManager.h */,
+				52168FF320C9FAE700869A9C /* SunriseSunsetProvider.h */,
+				5216900220C9FAE700869A9C /* NightModeControl.h */,
+				52168FF620C9FAE700869A9C /* CBColorModule.h */,
+				52168FFC20C9FAE700869A9C /* BLControl.h */,
+				5216900020C9FAE700869A9C /* BrightnessSystemClientExportedObj.h */,
+				52168FEB20C9FAE700869A9C /* CBABModuleMacBuiltIn.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		5262878720CB3200009BA4EF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				52168FF020C9FAE700869A9C /* CBStatusInfoProtocol-Protocol.h */,
+				52168FF820C9FAE700869A9C /* CBContainerModuleProtocol-Protocol.h */,
+				52168FDF20C9FAE700869A9C /* CBContainerProtocol-Protocol.h */,
+				52168FF120C9FAE700869A9C /* CBHIDServiceProtocol-Protocol.h */,
+				52168FE220C9FAE700869A9C /* BacklightdXPCProtocol-Protocol.h */,
+				52168FE720C9FAE700869A9C /* NightShiftSupportProtocol-Protocol.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52168FD920C9B0DD00869A9C /* ScreenBrightnessHelper.swift in Sources */,
+				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
+				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
 				52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */,
 				52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */,
 				52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */,
@@ -440,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "Headers/**";
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "Headers/**";
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

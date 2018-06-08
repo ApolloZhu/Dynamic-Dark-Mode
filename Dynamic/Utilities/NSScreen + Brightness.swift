@@ -1,5 +1,5 @@
 //
-//  ScreenBrightnessHelper.swift
+//  NSScreen + Brightness.swift
 //  Dynamic
 //
 //  Created by Apollo Zhu on 6/7/18.

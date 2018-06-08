@@ -9,15 +9,14 @@
 import Cocoa
 
 let darkModeKey = "AppleInterfaceStyle"
+let kDisplayServicesBrightness = "DisplayServicesBrightness"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Setup
     private lazy var statusBarItem = NSStatusBar.system
         .statusItem(withLength: NSStatusItem.squareLength)
-    
-    private var monitor: Any?
-    
+ 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.target = NSAppearance.self
@@ -32,16 +31,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dlopen("/System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness", RTLD_NOW)
     }
     
-    @objc func hi() {
-        dump(NSScreen.brightness)
-    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?,
                                context: UnsafeMutableRawPointer?) {
         let preferred = UserDefaults.standard.string(forKey: darkModeKey)
         let styleName: NSAppearance.Name = preferred == nil ? .aqua : .darkAqua
-        dump(NSScreen.brightness)
         // Update only if needed
         let newAppearance = NSAppearance(named: styleName)
         if newAppearance?.isDarkSystemAppearance != NSAppearance.isDarkModeOn {

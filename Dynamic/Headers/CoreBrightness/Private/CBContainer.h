@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _notificationBlock;
 }
 
-- (void)dealloc;
+//- (void)dealloc;
 - (void)unregisterNotificationBlock;
 - (void)registerNotificationBlock:(CDUnknownBlockType)arg1;
 - (void)unscheduleWithDispatchQueue:(id)arg1;

@@ -6,7 +6,6 @@
 
 #import "SunriseSunsetProvider.h"
 #import "NightShiftSupportProtocol-Protocol.h"
-// //  NSDictionary, NSMutableDictionary, OS_dispatch_queue, OS_dispatch_source, NSString, SunriseSunsetProvider;
 
 __attribute__((visibility("hidden")))
 @interface NightModeControl : NSObject
