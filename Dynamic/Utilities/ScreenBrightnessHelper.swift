@@ -10,7 +10,16 @@ import Cocoa
 import os.log
 
 extension NSScreen {
-    // https://stackoverflow.com/questions/3239749/programmatically-change-mac-display-brightness
+    /**
+     Reads and returns the brightness of the "main" display.
+     
+     - Todo:
+     Haven't figured out how to identify main display through IOKit yet,
+     but Core Graphics can get serial and vendor number through CGDisplay.
+     
+     - Note:
+     https://stackoverflow.com/questions/3239749/programmatically-change-mac-display-brightness
+     */
     static var brightness: Float {
         var iterator: io_iterator_t = 0
         let gotService = IOServiceGetMatchingServices(
@@ -20,22 +29,17 @@ extension NSScreen {
         )
         guard gotService == kIOReturnSuccess else {
             // os_log("Connection Failed", log: .default, type: .error)
-            // return []
             fatalError("Connection Failed")
         }
-        // var brightnesses = [Float]()
-        var display: io_object_t = 0
-        var brightness: Float = 0
         while true {
-            display = IOIteratorNext(iterator)
+            let display: io_object_t = IOIteratorNext(iterator)
             guard display != 0 else {
-                fatalError("No Display")
-                // return brightnesses
+                fatalError("No Display") // Or end of all displays
             }
+            var brightness: Float = 0
             IODisplayGetFloatParameter(
                 display, 0, kIODisplayBrightnessKey as CFString, &brightness
             )
-            // brightnesses.append(brightness)
             IOObjectRelease(display)
             return brightness
         }

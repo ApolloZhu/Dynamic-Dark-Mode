@@ -23,12 +23,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.target = NSAppearance.self
         statusBarItem.button?.action = #selector(NSAppearance.toggle)
         
-        // MARK: - Listen To Appearance Changes
+        // Listen to Appearance Changes
         UserDefaults.standard.addObserver(self, forKeyPath: darkModeKey,
                                           options: .new, context: nil)
-        monitor = NSEvent.addGlobalMonitorForEvents(matching: [.keyUp, .keyDown]) { event in
-            dump(NSScreen.brightness)
-        }
+        
+        // Listen to Brightness Changes
+        dlopen("/System/Library/PrivateFrameworks/CoreDuelContext.framework/CoreDuelContext", RTLD_NOW)
+        dlopen("/System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness", RTLD_NOW)
+    }
+    
+    @objc func hi() {
+        dump(NSScreen.brightness)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,

@@ -13,6 +13,8 @@
 		52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD020C99CB100869A9C /* AppleScriptHelper.swift */; };
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
 		52168FD920C9B0DD00869A9C /* ScreenBrightnessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* ScreenBrightnessHelper.swift */; };
+		52168FDC20C9F87900869A9C /* CoreBrightness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52168FDB20C9F87800869A9C /* CoreBrightness.framework */; };
+		5216920620CAFCB400869A9C /* CoreDuetContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5216905520CADE5C00869A9C /* CoreDuetContext.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,56 @@
 		52168FD020C99CB100869A9C /* AppleScriptHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptHelper.swift; sourceTree = "<group>"; };
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52168FD820C9B0DD00869A9C /* ScreenBrightnessHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessHelper.swift; sourceTree = "<group>"; };
+		52168FDB20C9F87800869A9C /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
+		52168FDF20C9FAE700869A9C /* CBContainerProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBContainerProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FE020C9FAE700869A9C /* CBAdaptationClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAdaptationClient.h; sourceTree = "<group>"; };
+		52168FE120C9FAE700869A9C /* BacklightdExportedObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BacklightdExportedObj.h; sourceTree = "<group>"; };
+		52168FE220C9FAE700869A9C /* BacklightdXPCProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BacklightdXPCProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FE320C9FAE700869A9C /* BacklightSystemDelegateXpcProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BacklightSystemDelegateXpcProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FE420C9FAE700869A9C /* CBPreferencesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPreferencesHandler.h; sourceTree = "<group>"; };
+		52168FE520C9FAE700869A9C /* DisplayALSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayALSManager.h; sourceTree = "<group>"; };
+		52168FE620C9FAE700869A9C /* BrightnessSystemClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSystemClient.h; sourceTree = "<group>"; };
+		52168FE720C9FAE700869A9C /* NightShiftSupportProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NightShiftSupportProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FE820C9FAE700869A9C /* CBBlueLightClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
+		52168FE920C9FAE700869A9C /* CBContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContainer.h; sourceTree = "<group>"; };
+		52168FEA20C9FAE700869A9C /* BrightnessSystemClientInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSystemClientInternal.h; sourceTree = "<group>"; };
+		52168FEB20C9FAE700869A9C /* CBABModuleMacBuiltIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBABModuleMacBuiltIn.h; sourceTree = "<group>"; };
+		52168FEC20C9FAE700869A9C /* CBModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBModule.h; sourceTree = "<group>"; };
+		52168FED20C9FAE700869A9C /* CBDisplayContainerMacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDisplayContainerMacOS.h; sourceTree = "<group>"; };
+		52168FEE20C9FAE700869A9C /* CBDisplayUpdateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDisplayUpdateHandler.h; sourceTree = "<group>"; };
+		52168FEF20C9FAE700869A9C /* CBDisplayContainerDFR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDisplayContainerDFR.h; sourceTree = "<group>"; };
+		52168FF020C9FAE700869A9C /* CBStatusInfoProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBStatusInfoProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FF120C9FAE700869A9C /* CBHIDServiceProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBHIDServiceProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FF220C9FAE700869A9C /* BrightnessSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSystem.h; sourceTree = "<group>"; };
+		52168FF320C9FAE700869A9C /* SunriseSunsetProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseSunsetProvider.h; sourceTree = "<group>"; };
+		52168FF420C9FAE700869A9C /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
+		52168FF520C9FAE700869A9C /* CBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBClient.h; sourceTree = "<group>"; };
+		52168FF620C9FAE700869A9C /* CBColorModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBColorModule.h; sourceTree = "<group>"; };
+		52168FF720C9FAE700869A9C /* DisplayServicesClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayServicesClient.h; sourceTree = "<group>"; };
+		52168FF820C9FAE700869A9C /* CBContainerModuleProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBContainerModuleProtocol-Protocol.h"; sourceTree = "<group>"; };
+		52168FF920C9FAE700869A9C /* BrightnessSystemInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSystemInternal.h; sourceTree = "<group>"; };
+		52168FFA20C9FAE700869A9C /* NSDictionary-CBPropertyKeyExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-CBPropertyKeyExtension.h"; sourceTree = "<group>"; };
+		52168FFC20C9FAE700869A9C /* BLControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLControl.h; sourceTree = "<group>"; };
+		52168FFD20C9FAE700869A9C /* CBDisplayModuleMacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDisplayModuleMacOS.h; sourceTree = "<group>"; };
+		52168FFF20C9FAE700869A9C /* AmbientLightSensorStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbientLightSensorStats.h; sourceTree = "<group>"; };
+		5216900020C9FAE700869A9C /* BrightnessSystemClientExportedObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSystemClientExportedObj.h; sourceTree = "<group>"; };
+		5216900120C9FAE700869A9C /* AmbientDisplayALSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbientDisplayALSManager.h; sourceTree = "<group>"; };
+		5216900220C9FAE700869A9C /* NightModeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightModeControl.h; sourceTree = "<group>"; };
+		5216900320C9FAE700869A9C /* CBStatusInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStatusInfoHelper.h; sourceTree = "<group>"; };
+		5216900420C9FC2C00869A9C /* Dynamic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamic-Bridging-Header.h"; sourceTree = "<group>"; };
+		5216900720CA002400869A9C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5216905220CAD25600869A9C /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		5216905420CAD6C400869A9C /* CoreBrightness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreBrightness.h; sourceTree = "<group>"; };
+		5216905520CADE5C00869A9C /* CoreDuetContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDuetContext.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreDuetContext.framework; sourceTree = "<group>"; };
+		521691FB20CAF9FD00869A9C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		521691FE20CAFB3100869A9C /* _CDClientContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDClientContext.h; sourceTree = "<group>"; };
+		521691FF20CAFB4800869A9C /* _CDUserContext-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "_CDUserContext-Protocol.h"; sourceTree = "<group>"; };
+		5216920020CAFB5600869A9C /* _CDUserContextServerMonitoring-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "_CDUserContextServerMonitoring-Protocol.h"; sourceTree = "<group>"; };
+		5216920120CAFB6800869A9C /* _CDLocalContext-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "_CDLocalContext-Protocol.h"; sourceTree = "<group>"; };
+		5216920220CAFB7800869A9C /* _CDContext-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "_CDContext-Protocol.h"; sourceTree = "<group>"; };
+		5216920320CAFB9100869A9C /* _CDContextualChangeRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualChangeRegistration.h; sourceTree = "<group>"; };
+		5216920420CAFBC900869A9C /* _CDContextualPredicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualPredicate.h; sourceTree = "<group>"; };
+		5216920520CAFBDB00869A9C /* _CDContextualKeyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _CDContextualKeyPath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5216920620CAFCB400869A9C /* CoreDuetContext.framework in Frameworks */,
+				52168FDC20C9F87900869A9C /* CoreBrightness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +97,7 @@
 			children = (
 				52168FBA20C8B47100869A9C /* Dynamic */,
 				52168FB920C8B47100869A9C /* Products */,
+				52168FDA20C9F87000869A9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +114,7 @@
 			children = (
 				52168FD220C9A5D700869A9C /* View Controller */,
 				52168FCD20C8B57200869A9C /* Utilities */,
+				52168FDD20C9FACD00869A9C /* Headers */,
 				52168FCB20C8B51A00869A9C /* Supporting Files */,
 			);
 			path = Dynamic;
@@ -67,7 +123,7 @@
 		52168FCB20C8B51A00869A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
+				5216900420C9FC2C00869A9C /* Dynamic-Bridging-Header.h */,
 				52168FBF20C8B47200869A9C /* Assets.xcassets */,
 				52168FC420C8B47200869A9C /* Info.plist */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
@@ -88,9 +144,89 @@
 		52168FD220C9A5D700869A9C /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		52168FDA20C9F87000869A9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				521691FB20CAF9FD00869A9C /* IOKit.framework */,
+				5216905520CADE5C00869A9C /* CoreDuetContext.framework */,
+				5216905220CAD25600869A9C /* Kernel.framework */,
+				5216900720CA002400869A9C /* Foundation.framework */,
+				52168FDB20C9F87800869A9C /* CoreBrightness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52168FDD20C9FACD00869A9C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				521691FD20CAFB1C00869A9C /* CoreDuetContext */,
+				52168FDE20C9FAE700869A9C /* CoreBrightness */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		52168FDE20C9FAE700869A9C /* CoreBrightness */ = {
+			isa = PBXGroup;
+			children = (
+				5216905420CAD6C400869A9C /* CoreBrightness.h */,
+				52168FDF20C9FAE700869A9C /* CBContainerProtocol-Protocol.h */,
+				52168FE020C9FAE700869A9C /* CBAdaptationClient.h */,
+				52168FE120C9FAE700869A9C /* BacklightdExportedObj.h */,
+				52168FE220C9FAE700869A9C /* BacklightdXPCProtocol-Protocol.h */,
+				52168FE320C9FAE700869A9C /* BacklightSystemDelegateXpcProtocol-Protocol.h */,
+				52168FE420C9FAE700869A9C /* CBPreferencesHandler.h */,
+				52168FE520C9FAE700869A9C /* DisplayALSManager.h */,
+				52168FE620C9FAE700869A9C /* BrightnessSystemClient.h */,
+				52168FE720C9FAE700869A9C /* NightShiftSupportProtocol-Protocol.h */,
+				52168FE820C9FAE700869A9C /* CBBlueLightClient.h */,
+				52168FE920C9FAE700869A9C /* CBContainer.h */,
+				52168FEA20C9FAE700869A9C /* BrightnessSystemClientInternal.h */,
+				52168FEB20C9FAE700869A9C /* CBABModuleMacBuiltIn.h */,
+				52168FEC20C9FAE700869A9C /* CBModule.h */,
+				52168FED20C9FAE700869A9C /* CBDisplayContainerMacOS.h */,
+				52168FEE20C9FAE700869A9C /* CBDisplayUpdateHandler.h */,
+				52168FEF20C9FAE700869A9C /* CBDisplayContainerDFR.h */,
+				52168FF020C9FAE700869A9C /* CBStatusInfoProtocol-Protocol.h */,
+				52168FF120C9FAE700869A9C /* CBHIDServiceProtocol-Protocol.h */,
+				52168FF220C9FAE700869A9C /* BrightnessSystem.h */,
+				52168FF320C9FAE700869A9C /* SunriseSunsetProvider.h */,
+				52168FF420C9FAE700869A9C /* CDStructures.h */,
+				52168FF520C9FAE700869A9C /* CBClient.h */,
+				52168FF620C9FAE700869A9C /* CBColorModule.h */,
+				52168FF720C9FAE700869A9C /* DisplayServicesClient.h */,
+				52168FF820C9FAE700869A9C /* CBContainerModuleProtocol-Protocol.h */,
+				52168FF920C9FAE700869A9C /* BrightnessSystemInternal.h */,
+				52168FFA20C9FAE700869A9C /* NSDictionary-CBPropertyKeyExtension.h */,
+				52168FFC20C9FAE700869A9C /* BLControl.h */,
+				52168FFD20C9FAE700869A9C /* CBDisplayModuleMacOS.h */,
+				52168FFF20C9FAE700869A9C /* AmbientLightSensorStats.h */,
+				5216900020C9FAE700869A9C /* BrightnessSystemClientExportedObj.h */,
+				5216900120C9FAE700869A9C /* AmbientDisplayALSManager.h */,
+				5216900220C9FAE700869A9C /* NightModeControl.h */,
+				5216900320C9FAE700869A9C /* CBStatusInfoHelper.h */,
+			);
+			path = CoreBrightness;
+			sourceTree = "<group>";
+		};
+		521691FD20CAFB1C00869A9C /* CoreDuetContext */ = {
+			isa = PBXGroup;
+			children = (
+				521691FE20CAFB3100869A9C /* _CDClientContext.h */,
+				5216920220CAFB7800869A9C /* _CDContext-Protocol.h */,
+				5216920320CAFB9100869A9C /* _CDContextualChangeRegistration.h */,
+				5216920520CAFBDB00869A9C /* _CDContextualKeyPath.h */,
+				5216920420CAFBC900869A9C /* _CDContextualPredicate.h */,
+				5216920120CAFB6800869A9C /* _CDLocalContext-Protocol.h */,
+				521691FF20CAFB4800869A9C /* _CDUserContext-Protocol.h */,
+				5216920020CAFB5600869A9C /* _CDUserContextServerMonitoring-Protocol.h */,
+			);
+			path = CoreDuetContext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +261,7 @@
 				TargetAttributes = {
 					52168FB720C8B47100869A9C = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -301,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,7 +447,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -317,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +470,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
