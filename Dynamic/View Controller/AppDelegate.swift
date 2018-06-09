@@ -26,12 +26,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                           options: .new, context: nil)
         
         // Listen to Brightness Changes
-        ScreenBrightnessObserver.shared.observe {
-            if $0 > 0.5 {
-                NSAppearance(named: .aqua)?.enable()
-            } else {
-                NSAppearance(named: .darkAqua)?.enable()
-            }
+        ScreenBrightnessObserver.shared.observe(using: update(forBrightness:))
+        update(forBrightness: NSScreen.brightness)
+    }
+    
+    private func update(forBrightness brightness: Float) {
+        if brightness > 0.5 {
+            NSAppearance(named: .aqua)?.enable()
+        } else {
+            NSAppearance(named: .darkAqua)?.enable()
         }
     }
     
