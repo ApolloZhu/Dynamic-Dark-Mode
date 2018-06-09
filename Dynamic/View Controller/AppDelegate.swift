@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import LetsMove
 
 let darkModeKey = "AppleInterfaceStyle"
 
@@ -17,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         .statusItem(withLength: NSStatusItem.squareLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        PFMoveToApplicationsFolderIfNecessary()
+        
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.target = NSAppearance.self
         statusBarItem.button?.action = #selector(NSAppearance.toggle)

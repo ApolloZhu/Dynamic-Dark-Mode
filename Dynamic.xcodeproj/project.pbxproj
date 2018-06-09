@@ -14,7 +14,7 @@
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
 		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
-		9A78A2EAFC9690176A8098F8 /* libPods-Dynamic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C5C9622B3B024AB263078D /* libPods-Dynamic.a */; };
+		9B44A95CC6C713559602D98D /* Pods_Dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
 		627A62DB2E1E94E4FF3C45F5 /* Pods-Dynamic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.release.xcconfig"; sourceTree = "<group>"; };
 		62BD7F0836219EDF65D2F1A8 /* Pods-Dynamic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.debug.xcconfig"; sourceTree = "<group>"; };
-		E3C5C9622B3B024AB263078D /* libPods-Dynamic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dynamic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A78A2EAFC9690176A8098F8 /* libPods-Dynamic.a in Frameworks */,
+				9B44A95CC6C713559602D98D /* Pods_Dynamic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 		52168FDA20C9F87000869A9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E3C5C9622B3B024AB263078D /* libPods-Dynamic.a */,
+				735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,7 +132,6 @@
 				52168FB520C8B47100869A9C /* Frameworks */,
 				52168FB620C8B47100869A9C /* Resources */,
 				59F57A4FB01864538A975FEE /* [CP] Embed Pods Frameworks */,
-				4ECD77633507559F2F122657 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,70 +189,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4ECD77633507559F2F122657 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-resources.sh",
-				"${PODS_ROOT}/LetsMove/ca.lproj",
-				"${PODS_ROOT}/LetsMove/cs.lproj",
-				"${PODS_ROOT}/LetsMove/da.lproj",
-				"${PODS_ROOT}/LetsMove/de.lproj",
-				"${PODS_ROOT}/LetsMove/en.lproj",
-				"${PODS_ROOT}/LetsMove/es.lproj",
-				"${PODS_ROOT}/LetsMove/fr.lproj",
-				"${PODS_ROOT}/LetsMove/hu.lproj",
-				"${PODS_ROOT}/LetsMove/it.lproj",
-				"${PODS_ROOT}/LetsMove/ja.lproj",
-				"${PODS_ROOT}/LetsMove/ko.lproj",
-				"${PODS_ROOT}/LetsMove/mk.lproj",
-				"${PODS_ROOT}/LetsMove/nb.lproj",
-				"${PODS_ROOT}/LetsMove/nl.lproj",
-				"${PODS_ROOT}/LetsMove/pl.lproj",
-				"${PODS_ROOT}/LetsMove/pt.lproj",
-				"${PODS_ROOT}/LetsMove/pt_BR.lproj",
-				"${PODS_ROOT}/LetsMove/ru.lproj",
-				"${PODS_ROOT}/LetsMove/sk.lproj",
-				"${PODS_ROOT}/LetsMove/sr.lproj",
-				"${PODS_ROOT}/LetsMove/sv.lproj",
-				"${PODS_ROOT}/LetsMove/tr.lproj",
-				"${PODS_ROOT}/LetsMove/zh_CN.lproj",
-				"${PODS_ROOT}/LetsMove/zh_TW.lproj",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ca.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cs.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/hu.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/it.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ja.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ko.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mk.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nb.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt_BR.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sk.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sv.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_CN.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_TW.lproj",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		59F57A4FB01864538A975FEE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,11 +196,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LetsMove/LetsMove.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetsMove.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
