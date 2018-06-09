@@ -10,10 +10,58 @@ import Foundation
 import os.log
 import AppKit
 
-// MARK: - Toggle Dark Mode
+// MARK: - Detect Dark Mode
+
+let darkModeUserDefaultsKey = "AppleInterfaceStyle"
+
+enum AppleInterfaceStyle: String {
+    case aqua
+    case darkAqua
+}
 
 extension NSAppearance {
-    @discardableResult @objc
+    @available(OSX 10.14, *)
+    var isDark: Bool! {
+        switch name {
+        case .aqua, .accessibilityHighContrastAqua:
+            return false
+        case .darkAqua, .accessibilityHighContrastDarkAqua:
+            return true
+        default:
+            #if DEBUG
+            fatalError("\(name) Is Not System Appearance")
+            #else
+            os_log("Dynamic - Checking Non-System Appearance", type: .error)
+            return nil
+            #endif
+        }
+    }
+}
+
+extension AppleInterfaceStyle {
+    static var current: AppleInterfaceStyle {
+        get {
+            return UserDefaults.standard.string(forKey: darkModeUserDefaultsKey)
+                == nil ? .aqua : .darkAqua
+        }
+        set {
+            UserDefaults.standard.set(
+                newValue == .aqua ? nil : "Dark",
+                forKey: darkModeUserDefaultsKey
+            )
+        }
+    }
+    
+    static var isDark: Bool {
+        if #available(OSX 10.14, *), NSAppearance.current.isDark == true {
+            return true
+        }
+        return AppleInterfaceStyle.current == .darkAqua
+    }
+    
+    // MARK: - Toggle Dark Mode
+    
+    @discardableResult
     static func toggle() -> Bool {
         return NSAppleScript.run("""
             tell application "System Events"
@@ -21,38 +69,13 @@ extension NSAppearance {
             end tell
             """)
     }
-}
-
-// MARK: Detect Dark Mode
-
-extension NSAppearance {
-    static var isDarkModeOn: Bool {
-        return current.isDarkSystemAppearance == true
-    }
     
-    var isDarkSystemAppearance: Bool? {
-        switch self.name {
-        case .aqua, .accessibilityHighContrastAqua:
-            return false
-        case .darkAqua, .accessibilityHighContrastDarkAqua:
-            return true
-        default:
-            os_log("Not system appearance", log: .default, type: .error)
-            return nil
-        }
-    }
-}
-
-// MARK: Enable Apperance
-
-extension NSAppearance {
     @discardableResult
     func enable() -> Bool {
-        guard self != NSAppearance.current else { return true }
-        guard let isDarkMode = isDarkSystemAppearance else { return false }
+        let switchToDarkMode = self == .darkAqua
         return NSAppleScript.run("""
             tell application "System Events"
-            tell appearance preferences to set dark mode to \(isDarkMode)
+            tell appearance preferences to set dark mode to \(switchToDarkMode)
             end tell
             """)
     }

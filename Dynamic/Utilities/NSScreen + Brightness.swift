@@ -28,13 +28,23 @@ extension NSScreen {
             &iterator
         )
         guard gotService == kIOReturnSuccess else {
-            // os_log("Connection Failed", log: .default, type: .error)
-            fatalError("Connection Failed")
+            #if DEBUG
+            fatalError("Failed to Connection Failed")
+            #else
+            os_log("Dynamic - Display Connection Failed", type: .error)
+            return -1
+            #endif
+
         }
         while true {
             let display: io_object_t = IOIteratorNext(iterator)
             guard display != 0 else {
-                fatalError("No Display") // Or end of all displays
+                #if DEBUG
+                fatalError("No Display Has Brightness")
+                #else
+                os_log("Dynamic - Display Not Found", type: .error)
+                return -1
+                #endif
             }
             var brightness: Float = 0
             IODisplayGetFloatParameter(

@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import os.log
 
 extension Notification.Name {
     static let brightnessDidChange = Notification.Name(
@@ -31,7 +32,13 @@ final class ScreenBrightnessObserver {
     }
     
     @objc private func updateForBrightnessChange() {
-        updateHandler?(NSScreen.brightness)
+        let brightness = NSScreen.brightness
+        #if DEBUG
+        print("Brightness Changed to \(brightness)")
+        #else
+        os_log("Brightness Changed")
+        #endif
+        updateHandler?(brightness)
     }
     
     public func stop() {
