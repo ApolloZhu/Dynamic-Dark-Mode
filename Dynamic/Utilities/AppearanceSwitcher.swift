@@ -52,7 +52,7 @@ extension NSAppearance {
         guard let isDarkMode = isDarkSystemAppearance else { return false }
         return NSAppleScript.run("""
             tell application "System Events"
-                tell appearance preferences to set dark mode to \(isDarkMode)
+            tell appearance preferences to set dark mode to \(isDarkMode)
             end tell
             """)
     }

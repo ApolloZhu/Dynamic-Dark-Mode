@@ -9,14 +9,13 @@
 import Cocoa
 
 let darkModeKey = "AppleInterfaceStyle"
-let kDisplayServicesBrightness = "DisplayServicesBrightness"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Setup
     private lazy var statusBarItem = NSStatusBar.system
         .statusItem(withLength: NSStatusItem.squareLength)
- 
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.target = NSAppearance.self
@@ -27,8 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                           options: .new, context: nil)
         
         // Listen to Brightness Changes
-        loadPrivateFramework(named: "CoreDuelContext")
-        loadPrivateFramework(named: "CoreBrightness")
+        ScreenBrightnessObserver.shared.observe {
+            if $0 > 0.5 {
+                NSAppearance(named: .aqua)?.enable()
+            } else {
+                NSAppearance(named: .darkAqua)?.enable()
+            }
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
