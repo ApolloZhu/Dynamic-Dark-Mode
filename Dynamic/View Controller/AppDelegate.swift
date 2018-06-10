@@ -8,6 +8,7 @@
 
 import AppKit
 import os.log
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,6 +19,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.action = #selector(toggleAppearance)
+
+        // Setup
+        if Preferences.hasLaunchedBefore {
+            NSApplication.shared.windows.last?.close()
+        } else {
+            AppleScript.setupOnce()
+            Preferences.opensAtLogin = true
+            Preferences.hasLaunchedBefore = true
+        }
         
         // Listen to Appearance Changes
         UserDefaults.standard.addObserver(

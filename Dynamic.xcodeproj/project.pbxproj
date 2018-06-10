@@ -13,8 +13,30 @@
 		52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD020C99CB100869A9C /* AppleScriptHelper.swift */; };
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
 		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
+		5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237AE5020CCC051009CF037 /* SettingsViewController.swift */; };
+		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
+		52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511220CC53CC0073F0CA /* Preferences.swift */; };
+		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
+		52C3511D20CC57C80073F0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3511C20CC57C80073F0CA /* Assets.xcassets */; };
+		52C3512020CC57C80073F0CA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C3511E20CC57C80073F0CA /* MainMenu.xib */; };
+		52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512620CC5CAE0073F0CA /* toggle.scpt */; };
+		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
+		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5237AE5220CCC084009CF037 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				5237AE5320CCC09F009CF037 /* DynamicLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52168FB820C8B47100869A9C /* Dynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,12 +48,30 @@
 		52168FD020C99CB100869A9C /* AppleScriptHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptHelper.swift; sourceTree = "<group>"; };
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen + Brightness.swift"; sourceTree = "<group>"; };
+		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
+		52C3511220CC53CC0073F0CA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		52C3511820CC57B60073F0CA /* DynamicLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C3511A20CC57B60073F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52C3511C20CC57C80073F0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52C3511F20CC57C80073F0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		52C3512120CC57C80073F0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C3512220CC57C80073F0CA /* DynamicLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DynamicLauncher.entitlements; sourceTree = "<group>"; };
+		52C3512620CC5CAE0073F0CA /* toggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = toggle.scpt; sourceTree = "<group>"; };
+		52C3512820CC5CD10073F0CA /* on.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = on.scpt; sourceTree = "<group>"; };
+		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
 		735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dynamic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		52168FB520C8B47100869A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C3511520CC57B60073F0CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				52168FBA20C8B47100869A9C /* Dynamic */,
+				52C3511920CC57B60073F0CA /* DynamicLauncher */,
 				52168FB920C8B47100869A9C /* Products */,
 				52168FDA20C9F87000869A9C /* Frameworks */,
 			);
@@ -54,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				52168FB820C8B47100869A9C /* Dynamic.app */,
+				52C3511820CC57B60073F0CA /* DynamicLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +125,12 @@
 			children = (
 				52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */,
 				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
+				52C3512620CC5CAE0073F0CA /* toggle.scpt */,
+				52C3512820CC5CD10073F0CA /* on.scpt */,
+				52C3512A20CC5D010073F0CA /* off.scpt */,
 				52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */,
 				5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */,
+				52C3511220CC53CC0073F0CA /* Preferences.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -94,6 +140,7 @@
 			children = (
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
+				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -106,6 +153,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		52C3511920CC57B60073F0CA /* DynamicLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				52C3511A20CC57B60073F0CA /* AppDelegate.swift */,
+				52C3511C20CC57C80073F0CA /* Assets.xcassets */,
+				52C3511E20CC57C80073F0CA /* MainMenu.xib */,
+				52C3512120CC57C80073F0CA /* Info.plist */,
+				52C3512220CC57C80073F0CA /* DynamicLauncher.entitlements */,
+			);
+			path = DynamicLauncher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +175,7 @@
 				52168FB420C8B47100869A9C /* Sources */,
 				52168FB520C8B47100869A9C /* Frameworks */,
 				52168FB620C8B47100869A9C /* Resources */,
+				5237AE5220CCC084009CF037 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -124,6 +184,23 @@
 			name = Dynamic;
 			productName = Dynamic;
 			productReference = 52168FB820C8B47100869A9C /* Dynamic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52C3511720CC57B60073F0CA /* DynamicLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C3512320CC57C80073F0CA /* Build configuration list for PBXNativeTarget "DynamicLauncher" */;
+			buildPhases = (
+				52C3511420CC57B60073F0CA /* Sources */,
+				52C3511520CC57B60073F0CA /* Frameworks */,
+				52C3511620CC57B60073F0CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicLauncher;
+			productName = DynamicLauncher;
+			productReference = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -139,6 +216,14 @@
 					52168FB720C8B47100869A9C = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					52C3511720CC57B60073F0CA = {
+						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
@@ -156,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				52168FB720C8B47100869A9C /* Dynamic */,
+				52C3511720CC57B60073F0CA /* DynamicLauncher */,
 			);
 		};
 /* End PBXProject section */
@@ -165,8 +251,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C3512B20CC5D010073F0CA /* off.scpt in Resources */,
+				52C3512920CC5CD10073F0CA /* on.scpt in Resources */,
 				52168FC020C8B47200869A9C /* Assets.xcassets in Resources */,
 				52168FD520C9A63B00869A9C /* Main.storyboard in Resources */,
+				52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C3511620CC57B60073F0CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C3511D20CC57C80073F0CA /* Assets.xcassets in Resources */,
+				52C3512020CC57C80073F0CA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,9 +277,19 @@
 			files = (
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
+				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
+				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
 				52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */,
 				52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */,
 				52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C3511420CC57B60073F0CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +302,14 @@
 				52168FD620C9A63B00869A9C /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52C3511E20CC57C80073F0CA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52C3511F20CC57C80073F0CA /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -316,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -337,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -351,6 +469,48 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		52C3512420CC57C80073F0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = DynamicLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		52C3512520CC57C80073F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = DynamicLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -371,6 +531,15 @@
 			buildConfigurations = (
 				52168FC920C8B47200869A9C /* Debug */,
 				52168FCA20C8B47200869A9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C3512320CC57C80073F0CA /* Build configuration list for PBXNativeTarget "DynamicLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C3512420CC57C80073F0CA /* Debug */,
+				52C3512520CC57C80073F0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

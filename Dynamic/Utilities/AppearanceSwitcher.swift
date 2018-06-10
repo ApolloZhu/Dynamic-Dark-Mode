@@ -60,23 +60,15 @@ extension AppleInterfaceStyle {
     }
     
     // MARK: - Toggle Dark Mode
-    
-    @discardableResult
-    static func toggle() -> Bool {
-        return NSAppleScript.run("""
-            tell application "System Events"
-                tell appearance preferences to set dark mode to not dark mode
-            end tell
-            """)
+    static func toggle() {
+        AppleScript.toggleDarkMode.execute()
     }
     
-    @discardableResult
-    func enable() -> Bool {
-        let switchToDarkMode = self == .darkAqua
-        return NSAppleScript.run("""
-            tell application "System Events"
-            tell appearance preferences to set dark mode to \(switchToDarkMode)
-            end tell
-            """)
+    func enable() {
+        if self == .darkAqua {
+            AppleScript.enableDarkMode.execute()
+        } else {
+            AppleScript.disableDarkMode.execute()
+        }
     }
 }
