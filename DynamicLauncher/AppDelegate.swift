@@ -10,18 +10,22 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     @IBOutlet weak var window: NSWindow!
-
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        let id = "io.github.apollozhu.Dynamic"
+        defer { NSApp.terminate(nil) }
+        let apps = NSRunningApplication
+            .runningApplications(withBundleIdentifier: id)
+            .filter { $0.isActive }
+        if apps.count == 0 {
+            NSWorkspace.shared.launchApplication(
+                withBundleIdentifier: id,
+                options: .default,
+                additionalEventParamDescriptor: nil,
+                launchIdentifier: nil
+            )
+        }
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-
 }
-

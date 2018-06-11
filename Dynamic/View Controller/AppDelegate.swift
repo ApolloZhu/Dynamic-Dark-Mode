@@ -17,14 +17,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         .statusItem(withLength: NSStatusItem.squareLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        guard AppleScript.isExecutable else {
+            NSWorkspace.shared.launchApplication(
+                withBundleIdentifier: "io.github.apollozhu.Dynamic.Launcher",
+                options: .default,
+                additionalEventParamDescriptor: nil,
+                launchIdentifier: nil
+            )
+            return NSApp.terminate(nil)
+        }
+        
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.action = #selector(toggleAppearance)
-
+        
         // Setup
         if Preferences.hasLaunchedBefore {
-            NSApplication.shared.windows.last?.close()
         } else {
-            AppleScript.setupOnce()
             Preferences.opensAtLogin = true
             Preferences.hasLaunchedBefore = true
         }
