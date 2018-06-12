@@ -9,6 +9,13 @@
 import Cocoa
 
 class SettingsViewController: NSViewController {
+    public static func show() {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let window = storyboard
+            .instantiateController(withIdentifier: "window")
+            as! NSWindowController
+        window.showWindow(nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

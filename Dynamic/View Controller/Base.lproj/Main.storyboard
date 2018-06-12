@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="cXd-3X-aO4">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
@@ -678,30 +678,6 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dynamic" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="2VH-rb-2tv">
-                    <items>
-                        <menuItem title="About" id="gZH-YT-Atk">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="nbV-1W-kuV"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Item" id="RTW-cj-Vo9">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem title="Preferences…" keyEquivalent="," id="2Xc-pd-May"/>
-                        <menuItem title="Help" keyEquivalent="?" id="fd8-BS-e5n">
-                            <connections>
-                                <action selector="showHelp:" target="Ady-hI-5gd" id="fne-IG-i9g"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Quit" keyEquivalent="q" id="TbN-1W-nia">
-                            <connections>
-                                <action selector="terminate:" target="Ady-hI-5gd" id="11a-bH-1Zg"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -768,7 +744,7 @@
                                     <gridCell row="0p6-ny-XqA" column="YiK-CN-yVF" id="RxA-M3-08i">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-P7-VwI">
                                             <rect key="frame" x="88" y="115" width="305" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Allow Script Execution" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KZZ-Ow-6B0">
+                                            <buttonCell key="cell" type="check" title="Allow Script Execution" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="KZZ-Ow-6B0">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -869,10 +845,10 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" constant="20" id="3EU-d3-ktQ"/>
+                            <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" constant="20" id="8nU-9p-Gbd"/>
                             <constraint firstAttribute="trailing" secondItem="mbn-Aa-NsX" secondAttribute="trailing" constant="20" id="BKh-mz-JSk"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" constant="20" id="FgL-X3-wYT"/>
-                            <constraint firstItem="Gir-OH-kC8" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" id="UNc-mL-zdm"/>
+                            <constraint firstItem="Gir-OH-kC8" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="UNc-mL-zdm"/>
                             <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="kyr-8o-v5X"/>
                             <constraint firstAttribute="trailing" secondItem="Gir-OH-kC8" secondAttribute="trailing" constant="20" symbolic="YES" id="lNX-Fu-jm4"/>
                             <constraint firstItem="mbn-Aa-NsX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4FC-o0-Dgl" secondAttribute="leading" constant="20" symbolic="YES" id="p3l-OL-e4x"/>

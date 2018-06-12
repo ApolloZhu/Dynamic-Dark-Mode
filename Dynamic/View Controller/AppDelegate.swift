@@ -17,23 +17,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         .statusItem(withLength: NSStatusItem.squareLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        guard AppleScript.isExecutable else {
-            NSWorkspace.shared.launchApplication(
-                withBundleIdentifier: "io.github.apollozhu.Dynamic.Launcher",
-                options: .default,
-                additionalEventParamDescriptor: nil,
-                launchIdentifier: nil
-            )
-            return NSApp.terminate(nil)
-        }
-        
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
-        statusBarItem.button?.action = #selector(toggleAppearance)
+        statusBarItem.button?.action = #selector(handleEvent)
+        statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        
+        AppleScript.setupIfNeeded()
         
         // Setup
-        if Preferences.hasLaunchedBefore {
-        } else {
+        if !Preferences.hasLaunchedBefore {
             Preferences.opensAtLogin = true
+            SettingsViewController.show()
             Preferences.hasLaunchedBefore = true
         }
         
@@ -64,8 +57,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    @objc private func toggleAppearance() {
-        AppleInterfaceStyle.toggle()
+    @objc private func handleEvent() {
+        if NSApp.currentEvent?.type == .rightMouseUp {
+            SettingsViewController.show()
+        } else {
+            AppleInterfaceStyle.toggle()
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
