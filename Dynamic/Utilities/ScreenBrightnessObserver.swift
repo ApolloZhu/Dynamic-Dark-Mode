@@ -17,18 +17,16 @@ extension Notification.Name {
 
 final class ScreenBrightnessObserver {
     static let shared = ScreenBrightnessObserver()
+    private init() { }
     
-    typealias ScreenBrightnessChangeHandler = (Float) -> Void
-    private var updateHandler: ScreenBrightnessChangeHandler?
-    
-    public func observe(using block: @escaping ScreenBrightnessChangeHandler) {
+    public func start() {
         DistributedNotificationCenter.default().addObserver(
             self,
             selector: #selector(updateForBrightnessChange),
             name: .brightnessDidChange,
             object: nil
         )
-        updateHandler = block
+        updateForBrightnessChange()
     }
     
     @objc private func updateForBrightnessChange() {
@@ -38,11 +36,23 @@ final class ScreenBrightnessObserver {
         #else
         os_log("Brightness Changed")
         #endif
-        updateHandler?(brightness)
+        let threshold = Preferences.brightnessThreshold
+        switch brightness {
+        case 0..<threshold:
+            AppleInterfaceStyle.darkAqua.enable()
+        case threshold...1:
+            AppleInterfaceStyle.aqua.enable()
+        default:
+            #if DEBUG
+            // The NoSense here is from the "AppleNoSenseDisplay" in IOKit
+            fatalError("NoSense Brightness")
+            #else
+            os_log("Dynamic - No Sense Brightness Fetched", type: .error)
+            #endif
+        }
     }
     
     public func stop() {
-        updateHandler = nil
         DistributedNotificationCenter.default().removeObserver(self)
     }
     

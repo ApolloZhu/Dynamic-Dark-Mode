@@ -37,24 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
         
         // Listen to Brightness Changes
-        ScreenBrightnessObserver.shared.observe(using: update(forBrightness:))
-        update(forBrightness: NSScreen.brightness)
-    }
-    
-    private func update(forBrightness brightness: Float) {
-        switch brightness {
-        case 0..<0.5:
-            AppleInterfaceStyle.darkAqua.enable()
-        case 0.5...1:
-            AppleInterfaceStyle.aqua.enable()
-        default:
-            #if DEBUG
-            // The NoSense here refers to the "AppleNoSenseDisplay" in IOKit
-            fatalError("NoSense Brightness")
-            #else
-            os_log("Dynamic - No Sense Brightness Fetched", type: .error)
-            #endif
-        }
+        ScreenBrightnessObserver.shared.start()
     }
     
     @objc private func handleEvent() {
