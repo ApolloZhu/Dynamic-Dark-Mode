@@ -9,6 +9,13 @@
 import Foundation
 import ServiceManagement
 
+enum Sandbox {
+    public static var isOn: Bool {
+        let env = ProcessInfo.processInfo.environment
+        return env.keys.contains("APP_SANDBOX_CONTAINER_ID")
+    }
+}
+
 enum Preferences {
     private static let preferences = UserDefaults.standard
     
@@ -32,6 +39,15 @@ extension Preferences {
     }
     
     static var hasLaunchedBefore: Bool {
+        get {
+            return preferences.bool(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+    
+    static var didSetup: Bool {
         get {
             return preferences.bool(forKey: #function)
         }

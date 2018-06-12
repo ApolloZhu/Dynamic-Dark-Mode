@@ -24,12 +24,16 @@ extension AppleScript {
     }
     
     fileprivate static var folder: URL {
-        return try! FileManager.default.url(
-            for: .applicationScriptsDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: false
-        )
+        if Sandbox.isOn {
+            return try! FileManager.default.url(
+                for: .applicationScriptsDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+        } else {
+            return Bundle.main.resourceURL!
+        }
     }
     
     fileprivate var url: URL {
@@ -41,15 +45,33 @@ extension AppleScript {
 
 extension AppleScript {
     public func execute() {
-        do {
-            try NSUserAppleScriptTask(url: url).execute { error in
-                guard let error = error else { return }
-                DispatchQueue.main.async {
-                    NSAlert(error: error).runModal()
+        if Sandbox.isOn {
+            do {
+                try NSUserAppleScriptTask(url: url).execute { error in
+                    guard let error = error else { return }
+                    DispatchQueue.main.async {
+                        NSAlert(error: error).runModal()
+                    }
                 }
+            } catch {
+                NSAlert(error: error).runModal()
             }
-        } catch {
-            NSAlert(error: error).runModal()
+        } else {
+            var errorInfo: NSDictionary? = nil
+            let script = NSAppleScript(contentsOf: url, error: &errorInfo)
+            script?.executeAndReturnError(&errorInfo)
+            guard let error = errorInfo else { return }
+            let alert = NSAlert()
+            alert.alertStyle = .critical
+            alert.messageText = NSLocalizedString(
+                "appleScriptExecution.error.title",
+                value: "Report Critical Bug To Developer",
+                comment: "When user sees this, basically this app fails. So try to persuade them to report this bug to developer so we can fix it earlier."
+            )
+            alert.informativeText = error.reduce("") {
+                "\($0)\($1.key): \($1.value)\n"
+            }
+            alert.runModal()
         }
     }
 }
@@ -58,6 +80,7 @@ extension AppleScript {
 
 extension AppleScript {
     public static func setupIfNeeded() {
+        guard Sandbox.isOn else { return }
         let test = folder.appendingPathComponent("test.scpt").path
         if FileManager.default.isWritableFile(atPath: test) { return }
         requestPermission()
@@ -103,6 +126,7 @@ extension AppleScript {
     }
     
     private static func letsMove() {
+        guard Sandbox.isOn else { return }
         for script in allCases {
             let src = Bundle.main.url(forResource: script.name,
                                       withExtension: nil)

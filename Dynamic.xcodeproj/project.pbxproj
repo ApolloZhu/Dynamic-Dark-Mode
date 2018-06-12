@@ -60,6 +60,8 @@
 		52C3512620CC5CAE0073F0CA /* toggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = toggle.scpt; sourceTree = "<group>"; };
 		52C3512820CC5CD10073F0CA /* on.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = on.scpt; sourceTree = "<group>"; };
 		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
+		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
+		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
 		735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dynamic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,8 @@
 		52168FAF20C8B47100869A9C = {
 			isa = PBXGroup;
 			children = (
+				52F44AF120CFEBA300E739F6 /* MAS.xcconfig */,
+				52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */,
 				52168FBA20C8B47100869A9C /* Dynamic */,
 				52C3511920CC57B60073F0CA /* DynamicLauncher */,
 				52168FB920C8B47100869A9C /* Products */,
@@ -317,6 +321,7 @@
 /* Begin XCBuildConfiguration section */
 		52168FC620C8B47200869A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -377,6 +382,7 @@
 		};
 		52168FC720C8B47200869A9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -430,9 +436,10 @@
 		};
 		52168FC920C8B47200869A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -452,9 +459,10 @@
 		};
 		52168FCA20C8B47200869A9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -474,9 +482,10 @@
 		};
 		52C3512420CC57C80073F0CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -495,9 +504,10 @@
 		};
 		52C3512520CC57C80073F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -514,6 +524,211 @@
 			};
 			name = Release;
 		};
+		52F44AEB20CFEAE200E739F6 /* Release Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = "Release Masless";
+		};
+		52F44AEC20CFEAE200E739F6 /* Release Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Release Masless";
+		};
+		52F44AED20CFEAE200E739F6 /* Release Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = DynamicLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = "Release Masless";
+		};
+		52F44AEE20CFEB5B00E739F6 /* Debug Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Masless";
+		};
+		52F44AEF20CFEB5B00E739F6 /* Debug Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = "Debug Masless";
+		};
+		52F44AF020CFEB5B00E739F6 /* Debug Masless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
+				INFOPLIST_FILE = DynamicLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = "Debug Masless";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,7 +736,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC620C8B47200869A9C /* Debug */,
+				52F44AEE20CFEB5B00E739F6 /* Debug Masless */,
 				52168FC720C8B47200869A9C /* Release */,
+				52F44AEB20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -530,7 +747,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC920C8B47200869A9C /* Debug */,
+				52F44AEF20CFEB5B00E739F6 /* Debug Masless */,
 				52168FCA20C8B47200869A9C /* Release */,
+				52F44AEC20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -539,7 +758,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52C3512420CC57C80073F0CA /* Debug */,
+				52F44AF020CFEB5B00E739F6 /* Debug Masless */,
 				52C3512520CC57C80073F0CA /* Release */,
+				52F44AED20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

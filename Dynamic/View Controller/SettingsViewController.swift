@@ -25,5 +25,4 @@ class SettingsViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
     }
-    
 }
