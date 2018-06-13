@@ -19,6 +19,7 @@ class SettingsViewController: NSViewController {
             windowController.showWindow(nil)
             window = windowController.window
         }
+        NSApp.activate(ignoringOtherApps: true)
         window?.makeKeyAndOrderFront(nil)
     }
     

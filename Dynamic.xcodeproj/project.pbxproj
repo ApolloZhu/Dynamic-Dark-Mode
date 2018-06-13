@@ -127,14 +127,9 @@
 		52168FCD20C8B57200869A9C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */,
-				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
-				52C3512620CC5CAE0073F0CA /* toggle.scpt */,
-				52C3512820CC5CD10073F0CA /* on.scpt */,
-				52C3512A20CC5D010073F0CA /* off.scpt */,
-				52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */,
-				5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */,
 				52C3511220CC53CC0073F0CA /* Preferences.swift */,
+				5265C6C920D0B84900488D39 /* Appearance */,
+				5265C6CA20D0B85B00488D39 /* Brightness */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -155,6 +150,27 @@
 				735038F8473E08B625FF1A48 /* Pods_Dynamic.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5265C6C920D0B84900488D39 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */,
+				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
+				52C3512620CC5CAE0073F0CA /* toggle.scpt */,
+				52C3512820CC5CD10073F0CA /* on.scpt */,
+				52C3512A20CC5D010073F0CA /* off.scpt */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		5265C6CA20D0B85B00488D39 /* Brightness */ = {
+			isa = PBXGroup;
+			children = (
+				52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */,
+				5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */,
+			);
+			path = Brightness;
 			sourceTree = "<group>";
 		};
 		52C3511920CC57B60073F0CA /* DynamicLauncher */ = {

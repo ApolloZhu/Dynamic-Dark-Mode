@@ -829,7 +829,12 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <binding destination="LnA-23-JR4" name="value" keyPath="values.onBetweenSunsetSunrise" id="J65-Qr-TYe"/>
+                                                <binding destination="LnA-23-JR4" name="value" keyPath="values.onBetweenSunsetSunrise" id="8r8-km-sLb">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                        <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </button>
                                     </gridCell>
