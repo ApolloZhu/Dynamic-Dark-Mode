@@ -855,7 +855,14 @@
                                                                 <menuItem title="Custom Range" id="Ibh-ok-jMp"/>
                                                             </items>
                                                         </menu>
+                                                        <connections>
+                                                            <binding destination="LnA-23-JR4" name="selectedIndex" keyPath="values.scheduleType" id="thK-oa-Uxp"/>
+                                                        </connections>
                                                     </popUpButtonCell>
+                                                    <connections>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduled" id="Qg5-FF-VER"/>
+                                                        <binding destination="LnA-23-JR4" name="selectedIndex" keyPath="values.scheduleType" id="pSM-7X-Odq"/>
+                                                    </connections>
                                                 </popUpButton>
                                             </subviews>
                                             <visibilityPriorities>
@@ -892,6 +899,14 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
+                                                    <connections>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="Wkf-BX-Jnm">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
+                                                            </dictionary>
+                                                        </binding>
+                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleStart" id="jQ0-uc-ZOH"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-Le-r1X">
                                                     <rect key="frame" x="189" y="7" width="39" height="17"/>
@@ -912,6 +927,14 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
+                                                    <connections>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="ECq-9L-4a9">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
+                                                            </dictionary>
+                                                        </binding>
+                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleEnd" id="hcm-HS-aQS"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>

@@ -15,20 +15,6 @@ extension Notification.Name {
     static let DarkModeOff = Notification.Name(#function)
 }
 
-@objc(UsesCustomRange)
-class UsesCustomRange: ValueTransformer {
-    static let notNil = ValueTransformer(forName: .isNilTransformerName)!
-
-    override class func allowsReverseTransformation() -> Bool {
-        return false
-    }
-    
-    override func transformedValue(_ value: Any?) -> Any? {
-        let condition = (value as? NSNumber)?.intValue == Scheduler.Zenith.custom.rawValue
-        return UsesCustomRange.notNil.transformedValue(condition ? 1 : nil)
-    }
-}
-
 public final class Scheduler {
     public static let shared = Scheduler()
     private init() { schedule() }

@@ -12,6 +12,9 @@ class SettingsViewController: NSViewController {
     private static weak var window: NSWindow? = nil
     public static func show() {
         if window == nil {
+            ValueTransformer.setValueTransformer(
+                UsesCustomRange(), forName: .usesCustomRangeTransformerName
+            )
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
             let windowController = storyboard
                 .instantiateController(withIdentifier: "window")
@@ -27,6 +30,26 @@ class SettingsViewController: NSViewController {
         NSUserDefaultsController.shared.save(nil)
         Preferences.reload()
     }
+}
+
+class UsesCustomRange: ValueTransformer {
+    override class func transformedValueClass() -> AnyClass {
+        return NSNumber.self
+    }
+    
+    override class func allowsReverseTransformation() -> Bool {
+        return false
+    }
+    
+    override func transformedValue(_ value: Any?) -> Any? {
+        return (value as? NSNumber)?.intValue
+            == Scheduler.Zenith.custom.rawValue
+    }
+}
+
+extension NSValueTransformerName {
+    static let usesCustomRangeTransformerName
+        = NSValueTransformerName(rawValue: "UsesCustomRange")
 }
 
 extension Preferences {
