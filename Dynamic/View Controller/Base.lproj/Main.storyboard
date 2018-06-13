@@ -900,6 +900,14 @@
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
                                                     <connections>
+                                                        <binding destination="LnA-23-JR4" name="enabled2" keyPath="values.scheduled" previousBinding="Wkf-BX-Jnm" id="lI0-L9-drC">
+                                                            <dictionary key="options">
+                                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                            </dictionary>
+                                                        </binding>
                                                         <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="Wkf-BX-Jnm">
                                                             <dictionary key="options">
                                                                 <string key="NSValueTransformerName">UsesCustomRange</string>
@@ -928,6 +936,14 @@
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
                                                     <connections>
+                                                        <binding destination="LnA-23-JR4" name="enabled2" keyPath="values.scheduled" previousBinding="ECq-9L-4a9" id="Cd5-21-xwl">
+                                                            <dictionary key="options">
+                                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                            </dictionary>
+                                                        </binding>
                                                         <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="ECq-9L-4a9">
                                                             <dictionary key="options">
                                                                 <string key="NSValueTransformerName">UsesCustomRange</string>
