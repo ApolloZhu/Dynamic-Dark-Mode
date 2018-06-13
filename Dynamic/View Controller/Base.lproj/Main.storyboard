@@ -824,7 +824,7 @@
                                     <gridCell row="KVs-Vb-rHX" column="YiK-CN-yVF" id="SrG-vm-cth">
                                         <button key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nom-bU-aoB">
                                             <rect key="frame" x="88" y="49" width="305" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Dark Mode On Between Sunset and Sunrise" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Dcd-f7-wbP">
+                                            <buttonCell key="cell" type="check" title="Dark Mode On Between Sunset and Sunrise" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="Dcd-f7-wbP">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -837,7 +837,7 @@
                                     <gridCell row="nEN-OW-DCn" column="YiK-CN-yVF" id="Sdi-ZD-NLs">
                                         <button key="contentView" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="G3R-Vc-yOZ">
                                             <rect key="frame" x="84" y="15" width="313" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Select Location" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pfi-nt-Rwy">
+                                            <buttonCell key="cell" type="push" title="Select Location" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pfi-nt-Rwy">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>

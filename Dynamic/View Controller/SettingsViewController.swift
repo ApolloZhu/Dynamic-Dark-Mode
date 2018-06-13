@@ -39,7 +39,8 @@ extension Preferences {
     public static func setup() {
         Preferences.adjustForBrightness = true
         Preferences.brightnessThreshold = 0.5
-        Preferences.onBetweenSunsetSunrise = true
+        #warning("TODO: Implement SunsetSunriseProvider")
+        Preferences.onBetweenSunsetSunrise = false
         Preferences.opensAtLogin = true
         Preferences.hasLaunchedBefore = true
     }
