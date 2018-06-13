@@ -19,7 +19,7 @@ enum Sandbox {
 enum Preferences {
     private static let preferences = NSUserDefaultsController.shared.defaults
     
-    private static func setPreferred(to value: Any,
+    private static func setPreferred(to value: Any?,
                                      forKey key: String = #function) {
         preferences.set(value, forKey: key)
     }
@@ -53,9 +53,39 @@ extension Preferences {
         }
     }
     
-    static var onBetweenSunsetSunrise: Bool {
+    static var scheduled: Bool {
         get {
             return preferences.bool(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+    
+    static var scheduleType: Scheduler.Zenith {
+        get {
+            return Scheduler.Zenith(
+                rawValue: preferences.integer(forKey: #function)
+            ) ?? .official
+        }
+        set {
+            #warning("Todo: Schedule Dark Mode")
+            setPreferred(to: newValue.rawValue)
+        }
+    }
+    
+    static var scheduleStart: Date? {
+        get {
+            return preferences.value(forKey: #function) as? Date
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+    
+    static var scheduleEnd: Date? {
+        get {
+            return preferences.value(forKey: #function) as? Date
         }
         set {
             setPreferred(to: newValue)
