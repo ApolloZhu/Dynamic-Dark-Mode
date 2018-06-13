@@ -15,9 +15,8 @@ extension Notification.Name {
     )
 }
 
-final class ScreenBrightnessObserver {
+final class ScreenBrightnessObserver: NSObject {
     static let shared = ScreenBrightnessObserver()
-    private init() { }
     
     public func start() {
         DistributedNotificationCenter.default().addObserver(
@@ -55,8 +54,35 @@ final class ScreenBrightnessObserver {
     public func stop() {
         DistributedNotificationCenter.default().removeObserver(self)
     }
-    
     deinit {
         stop()
+        // MARK: - Update Anyways
+        UserDefaults.standard.removeObserver(
+            self, forKeyPath: darkModeUserDefaultsKey
+        )
+    }
+
+    
+    private override init() {
+        super.init()
+        // Listen to Appearance Changes
+        UserDefaults.standard.addObserver(
+            self, forKeyPath: darkModeUserDefaultsKey,
+            options: .new, context: nil
+        )
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        let isDarkModeOn = AppleInterfaceStyle.isDark
+        #if DEBUG
+        print("User Defaults Turned Dark Mode \(isDarkModeOn ? "On" : "Off")")
+        #else
+        os_log("Dynamic - User Defaults Changed")
+        #endif
+        guard #available(OSX 10.14, *) else { return }
+        let styleName: NSAppearance.Name = isDarkModeOn ? .aqua : .darkAqua
+        NSAppearance.current = NSAppearance(named: styleName)
     }
 }

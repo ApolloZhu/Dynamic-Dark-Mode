@@ -21,23 +21,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.action = #selector(handleEvent)
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
         
+        // MARK: Other Setup
+        
         AppleScript.setupIfNeeded()
-        
-        // Setup
         if !Preferences.hasLaunchedBefore {
-            Preferences.opensAtLogin = true
+            Preferences.setup()
             SettingsViewController.show()
-            Preferences.hasLaunchedBefore = true
         }
-        
-        // Listen to Appearance Changes
-        UserDefaults.standard.addObserver(
-            self, forKeyPath: darkModeUserDefaultsKey,
-            options: .new, context: nil
-        )
-        
-        // Listen to Brightness Changes
-        ScreenBrightnessObserver.shared.start()
+        _ = ScreenBrightnessObserver.shared
+        Preferences.reload()
     }
     
     @objc private func handleEvent() {
@@ -47,24 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             AppleInterfaceStyle.toggle()
         }
     }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        let isDarkModeOn = AppleInterfaceStyle.isDark
-        #if DEBUG
-        print("User Defaults Turned Dark Mode \(isDarkModeOn ? "On" : "Off")")
-        #else
-        os_log("Dynamic - User Defaults Changed")
-        #endif
-        guard #available(OSX 10.14, *) else { return }
-        let styleName: NSAppearance.Name = isDarkModeOn ? .aqua : .darkAqua
-        NSAppearance.current = NSAppearance(named: styleName)
-    }
-    
+
     func applicationWillTerminate(_ aNotification: Notification) {
-        UserDefaults.standard.removeObserver(
-            self, forKeyPath: darkModeUserDefaultsKey
-        )
+
     }
 }

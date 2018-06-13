@@ -684,7 +684,7 @@
         <!--Window Controller-->
         <scene sceneID="tCd-rL-RxE">
             <objects>
-                <windowController storyboardIdentifier="window" id="cXd-3X-aO4" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="window" showSeguePresentationStyle="single" id="cXd-3X-aO4" sceneMemberID="viewController">
                     <window key="window" title="Dynamic" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="ZWC-1W-uDl">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>

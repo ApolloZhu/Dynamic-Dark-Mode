@@ -32,11 +32,9 @@ extension Preferences {
         }
         set {
             setPreferred(to: newValue)
-            guard newValue != adjustForBrightness else { return }
+            ScreenBrightnessObserver.shared.stop()
             if newValue {
                 ScreenBrightnessObserver.shared.start()
-            } else {
-                ScreenBrightnessObserver.shared.stop()
             }
         }
     }
@@ -78,15 +76,6 @@ extension Preferences {
     }
     
     static var hasLaunchedBefore: Bool {
-        get {
-            return preferences.bool(forKey: #function)
-        }
-        set {
-            setPreferred(to: newValue)
-        }
-    }
-    
-    static var didSetup: Bool {
         get {
             return preferences.bool(forKey: #function)
         }
