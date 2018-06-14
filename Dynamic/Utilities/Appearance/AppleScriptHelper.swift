@@ -66,7 +66,9 @@ extension AppleScript {
             alert.messageText = NSLocalizedString(
                 "appleScriptExecution.error.title",
                 value: "Report Critical Bug To Developer",
-                comment: "When user sees this, basically this app fails. So try to persuade them to report this bug to developer so we can fix it earlier."
+                comment: "When user sees this, basically this app fails. "
+                + "So try to persuade them to report this bug to developer "
+                + "so we can fix it earlier."
             )
             alert.informativeText = error.reduce("") {
                 "\($0)\($1.key): \($1.value)\n"
