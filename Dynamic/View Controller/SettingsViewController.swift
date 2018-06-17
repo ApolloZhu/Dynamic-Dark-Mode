@@ -55,7 +55,7 @@ extension SettingsViewController: NSTouchBarDelegate {
 
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         switch identifier.rawValue {
-        case TouchBarItemIdentifiers.thresholdPopoverItem.rawValue:
+        case MainTouchBarItemIdentifiers.thresholdPopoverItem.rawValue:
             let popoverItem = NSPopoverTouchBarItem(identifier: identifier)
             let sliderTouchBar = NSTouchBar()
             sliderTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue)]
@@ -74,18 +74,43 @@ extension SettingsViewController: NSTouchBarDelegate {
             sliderItem.slider.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             #warning("TODO: Consider to add NSSliderAccessories here? (images required)")
             return sliderItem
+        case MainTouchBarItemIdentifiers.scheduleTypePopoverItem.rawValue:
+            let popoverItem = NSPopoverTouchBarItem(identifier: identifier)
+            let scrubberTouchBar = NSTouchBar()
+            scrubberTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(rawValue: SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue)]
+            scrubberTouchBar.delegate = self
+            popoverItem.collapsedRepresentationLabel = "Schedule Mode"
+            popoverItem.popoverTouchBar = scrubberTouchBar
+            popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.scheduled", options: nil)
+            return popoverItem
+        case SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue:
+            let scrubber = NSScrubber()
+            scrubber.dataSource = self
+            scrubber.floatsSelectionViews = true
+            scrubber.isContinuous = true
+            scrubber.mode = .fixed
+            scrubber.floatsSelectionViews = true
+            scrubber.selectionOverlayStyle = .outlineOverlay
+            scrubber.scrubberLayout = NSScrubberProportionalLayout(numberOfVisibleItems: 5)
+            scrubber.backgroundColor = .scrubberTexturedBackground
+            #warning("BUG: Selected index not binded correctly.")
+            scrubber.bind(.selectedIndex, to: sharedUserDefaultsController, withKeyPath: "values.scheduleType", options: nil)
+            let scrubberItem = NSCustomTouchBarItem(identifier: identifier)
+            scrubberItem.view = scrubber
+            return scrubberItem
         default:
             fatalError("Unexpected identifier")
         }
     }
 
-    enum TouchBarItemIdentifiers: String, CaseIterable {
+    enum MainTouchBarItemIdentifiers: String, CaseIterable {
         case thresholdPopoverItem
-
+        case scheduleTypePopoverItem
     }
 
     enum SubTouchBarItemIdentifiers: String, CaseIterable {
         case thresholdSliderItem
+        case scheduleTypeScrubberItem
     }
 
 }
@@ -93,9 +118,35 @@ extension SettingsViewController: NSTouchBarDelegate {
 extension NSTouchBarItem.Identifier {
 
     struct Settings {
-        static let allMainItems: [NSTouchBarItem.Identifier] = SettingsViewController.TouchBarItemIdentifiers.allCases.map { return NSTouchBarItem.Identifier(rawValue: $0.rawValue) }
-        static let sliderItemIdentifier = NSTouchBarItem.Identifier(SettingsViewController.SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue)
+        static let allMainItems: [NSTouchBarItem.Identifier] = SettingsViewController.MainTouchBarItemIdentifiers.allCases.map { return NSTouchBarItem.Identifier(rawValue: $0.rawValue) }
         private init() {}
+    }
+
+}
+
+extension SettingsViewController: NSScrubberDataSource {
+
+    func numberOfItems(for scrubber: NSScrubber) -> Int {
+        return 5
+    }
+
+    func scrubber(_ scrubber: NSScrubber, viewForItemAt index: Int) -> NSScrubberItemView {
+        let view = NSScrubberTextItemView()
+        switch index {
+        case 0:
+            view.title = "Official"
+        case 1:
+            view.title = "Civil"
+        case 2:
+            view.title = "Nautical"
+        case 3:
+            view.title = "Astronimical"
+        case 4:
+            view.title = "Custom Range"
+        default:
+            fatalError("Unexpected index number")
+        }
+        return view
     }
 
 }
