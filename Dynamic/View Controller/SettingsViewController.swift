@@ -62,12 +62,12 @@ extension SettingsViewController: NSTouchBarDelegate {
             sliderTouchBar.delegate = self
             popoverItem.popoverTouchBar = sliderTouchBar
             popoverItem.pressAndHoldTouchBar = sliderTouchBar
-            popoverItem.collapsedRepresentationLabel = NSLocalizedString("io.github.apollozhu.Dynamic.AutoAdjustThreshold", comment: "Auto Adjust Threshold")
+            popoverItem.collapsedRepresentationLabel = String.Localized.SettingsViewController.autoAdjustThreshold
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             return popoverItem
         case SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue:
             let sliderItem = NSSliderTouchBarItem(identifier: identifier)
-            sliderItem.label = NSLocalizedString("io.github.apollozhu.Dynamic.AutoAdjustThreshold", comment: "Auto Adjust Threshold")
+            sliderItem.label = String.Localized.SettingsViewController.autoAdjustThreshold
             sliderItem.slider.minValue = 0
             sliderItem.slider.maxValue = 100
             sliderItem.slider.bind(.value, to: sharedUserDefaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
@@ -79,7 +79,7 @@ extension SettingsViewController: NSTouchBarDelegate {
             let scrubberTouchBar = NSTouchBar()
             scrubberTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(rawValue: SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue)]
             scrubberTouchBar.delegate = self
-            popoverItem.collapsedRepresentationLabel = NSLocalizedString("io.github.apollozhu.Dynamic.ScheduleMode", comment: "Schedule Mode")
+            popoverItem.collapsedRepresentationLabel = String.Localized.SettingsViewController.scheduleMode
             popoverItem.popoverTouchBar = scrubberTouchBar
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.scheduled", options: nil)
             return popoverItem
@@ -134,15 +134,15 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
         let view = NSScrubberTextItemView()
         switch index {
         case 0:
-            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Official", comment: "Official")
+            view.title = String.Localized.SettingsViewController.official
         case 1:
-            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Civil", comment: "Civil")
+            view.title = String.Localized.SettingsViewController.civil
         case 2:
-            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Nautical", comment: "Nautical")
+            view.title = String.Localized.SettingsViewController.nautical
         case 3:
-            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Astronimical", comment: "Astronimical")
+            view.title = String.Localized.SettingsViewController.astronimical
         case 4:
-            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.CustomRange", comment: "Custom Range")
+            view.title = String.Localized.SettingsViewController.customRange
         default:
             fatalError("Unexpected index number")
         }

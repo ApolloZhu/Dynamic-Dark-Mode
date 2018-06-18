@@ -6,11 +6,11 @@
   Copyright © 2018 Apollonian. All rights reserved.
 */
 
-"io.github.apollozhu.Dynamic.AutoAdjustThreshold" = "Auto Adjust Threshold";
-"io.github.apollozhu.Dynamic.ScheduleMode" = "Schedule Mode";
+"Localization.SettingsViewController.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"Localization.SettingsViewController.ScheduleMode" = "Schedule Mode";
 
-"io.github.apollozhu.Dynamic.Official" = "Official";
-"io.github.apollozhu.Dynamic.Civil" = "Civil";
-"io.github.apollozhu.Dynamic.Nautical" = "Nautical";
-"io.github.apollozhu.Dynamic.Astronimical" = "Astronimical";
-"io.github.apollozhu.Dynamic.CustomRange" = "Custom";
+"Localization.SettingsViewController.Official" = "Official";
+"Localization.SettingsViewController.Civil" = "Civil";
+"Localization.SettingsViewController.Nautical" = "Nautical";
+"Localization.SettingsViewController.Astronimical" = "Astronimical";
+"Localization.SettingsViewController.CustomRange" = "Custom";
