@@ -26,7 +26,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.action = #selector(handleEvent)
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
-        
+
+        // MARK: Control Strip Setup
+        #warning("Consider to add an optiion in settings to let the user choose whether or not to display the item in Control Strip?")
+        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
+        let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
+        let item = NSCustomTouchBarItem(identifier: identifier)
+        #warning("TODO: Change the button image when toggled")
+        let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"), target: self, action: #selector(controlStripItemTapped(_:)))
+        item.view = button
+        NSTouchBarItem.addSystemTrayItem(item)
+        DFRElementSetControlStripPresenceForIdentifier(identifier, true)
+
         // MARK: Other Setup
         
         AppleScript.setupIfNeeded()
@@ -36,6 +47,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         _ = ScreenBrightnessObserver.shared
         Preferences.reload()
+    }
+
+    @objc private func controlStripItemTapped(_ sender: NSButton) {
+        AppleInterfaceStyle.toggle()
     }
     
     @objc private func handleEvent() {
