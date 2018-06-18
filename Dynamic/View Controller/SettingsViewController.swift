@@ -62,12 +62,12 @@ extension SettingsViewController: NSTouchBarDelegate {
             sliderTouchBar.delegate = self
             popoverItem.popoverTouchBar = sliderTouchBar
             popoverItem.pressAndHoldTouchBar = sliderTouchBar
-            popoverItem.collapsedRepresentationLabel = "Auto Adjust Threshold"
+            popoverItem.collapsedRepresentationLabel = NSLocalizedString("io.github.apollozhu.Dynamic.AutoAdjustThreshold", comment: "Auto Adjust Threshold")
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             return popoverItem
         case SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue:
             let sliderItem = NSSliderTouchBarItem(identifier: identifier)
-            sliderItem.label = "Auto Adjust Threshold"
+            sliderItem.label = NSLocalizedString("io.github.apollozhu.Dynamic.AutoAdjustThreshold", comment: "Auto Adjust Threshold")
             sliderItem.slider.minValue = 0
             sliderItem.slider.maxValue = 100
             sliderItem.slider.bind(.value, to: sharedUserDefaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
@@ -79,7 +79,7 @@ extension SettingsViewController: NSTouchBarDelegate {
             let scrubberTouchBar = NSTouchBar()
             scrubberTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(rawValue: SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue)]
             scrubberTouchBar.delegate = self
-            popoverItem.collapsedRepresentationLabel = "Schedule Mode"
+            popoverItem.collapsedRepresentationLabel = NSLocalizedString("io.github.apollozhu.Dynamic.ScheduleMode", comment: "Schedule Mode")
             popoverItem.popoverTouchBar = scrubberTouchBar
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.scheduled", options: nil)
             return popoverItem
@@ -134,15 +134,15 @@ extension SettingsViewController: NSScrubberDataSource {
         let view = NSScrubberTextItemView()
         switch index {
         case 0:
-            view.title = "Official"
+            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Official", comment: "Official")
         case 1:
-            view.title = "Civil"
+            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Civil", comment: "Civil")
         case 2:
-            view.title = "Nautical"
+            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Nautical", comment: "Nautical")
         case 3:
-            view.title = "Astronimical"
+            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.Astronimical", comment: "Astronimical")
         case 4:
-            view.title = "Custom Range"
+            view.title = NSLocalizedString("io.github.apollozhu.Dynamic.CustomRange", comment: "Custom Range")
         default:
             fatalError("Unexpected index number")
         }

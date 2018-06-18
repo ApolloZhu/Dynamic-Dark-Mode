@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Dynamic
+
+  Created by Captain雪ノ下八幡 on 2018/6/18.
+  Copyright © 2018 Apollonian. All rights reserved.
+*/
+
+"io.github.apollozhu.Dynamic.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"io.github.apollozhu.Dynamic.ScheduleMode" = "Schedule Mode";
+
+"io.github.apollozhu.Dynamic.Official" = "Official";
+"io.github.apollozhu.Dynamic.Civil" = "Civil";
+"io.github.apollozhu.Dynamic.Nautical" = "Nautical";
+"io.github.apollozhu.Dynamic.Astronimical" = "Astronimical";
+"io.github.apollozhu.Dynamic.CustomRange" = "Custom";
