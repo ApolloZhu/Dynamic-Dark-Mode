@@ -86,6 +86,7 @@ extension SettingsViewController: NSTouchBarDelegate {
         case SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue:
             let scrubber = NSScrubber()
             scrubber.dataSource = self
+            scrubber.delegate = self
             scrubber.floatsSelectionViews = true
             scrubber.isContinuous = true
             scrubber.mode = .fixed
@@ -93,7 +94,6 @@ extension SettingsViewController: NSTouchBarDelegate {
             scrubber.selectionOverlayStyle = .outlineOverlay
             scrubber.scrubberLayout = NSScrubberProportionalLayout(numberOfVisibleItems: 5)
             scrubber.backgroundColor = .scrubberTexturedBackground
-            #warning("BUG: Selected index not binded correctly.")
             scrubber.bind(.selectedIndex, to: sharedUserDefaultsController, withKeyPath: "values.scheduleType", options: nil)
             let scrubberItem = NSCustomTouchBarItem(identifier: identifier)
             scrubberItem.view = scrubber
@@ -124,7 +124,7 @@ extension NSTouchBarItem.Identifier {
 
 }
 
-extension SettingsViewController: NSScrubberDataSource {
+extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
 
     func numberOfItems(for scrubber: NSScrubber) -> Int {
         return 5
@@ -147,6 +147,10 @@ extension SettingsViewController: NSScrubberDataSource {
             fatalError("Unexpected index number")
         }
         return view
+    }
+
+    func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
+        Preferences.scheduleType = Scheduler.Zenith(rawValue: selectedIndex)!
     }
 
 }
