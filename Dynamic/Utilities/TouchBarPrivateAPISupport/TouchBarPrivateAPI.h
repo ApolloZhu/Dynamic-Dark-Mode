@@ -1,11 +1,10 @@
 //
-//  TouchBarPrivateApi.h
+//  TouchBarPrivateAPI.h
 //  Dynamic
 //
-//  Created by Captain雪ノ下八幡 on 2018/6/18.
+//  Created by Captain雪ノ下八幡 on 2018/6/27.
 //  Copyright © 2018 Apollonian. All rights reserved.
 //
-// See: https://stackoverflow.com/questions/47988940/adding-button-to-nstouchbar-control-strip
 
 #import <AppKit/AppKit.h>
 extern void DFRElementSetControlStripPresenceForIdentifier(NSTouchBarItemIdentifier, BOOL);
