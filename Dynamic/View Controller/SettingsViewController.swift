@@ -25,7 +25,17 @@ class SettingsViewController: NSViewController {
         NSApp.activate(ignoringOtherApps: true)
         window?.makeKeyAndOrderFront(nil)
     }
-    
+
+    @IBOutlet var sharedUserDefaultsController: NSUserDefaultsController!
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        // Make the touch bar visible, check out the link below to view the magic.
+        // https://stackoverflow.com/questions/42342231/how-to-show-touch-bar-in-a-viewcontroller
+        view.window?.unbind(NSBindingName(rawValue: #keyPath(touchBar)))
+        view.window?.bind(NSBindingName(rawValue: #keyPath(touchBar)), to: self, withKeyPath: #keyPath(touchBar), options: nil)
+    }
+
     deinit {
         NSUserDefaultsController.shared.save(nil)
         Preferences.reload()

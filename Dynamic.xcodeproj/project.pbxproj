@@ -15,7 +15,7 @@
 		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
 		5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FDBD20D14B96006E9AF0 /* Scheduler.swift */; };
 		5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237AE5020CCC051009CF037 /* SettingsViewController.swift */; };
-		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
 		52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511220CC53CC0073F0CA /* Preferences.swift */; };
 		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
@@ -24,19 +24,22 @@
 		52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512620CC5CAE0073F0CA /* toggle.scpt */; };
 		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
 		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
+		706D395920E3766D0079535E /* SettingsViewController+TouchBarSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */; };
+		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */; };
 		CBBCAB8E78C6D298DDF7F5F1 /* Pods_DynamicLauncher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5237AE5220CCC084009CF037 /* CopyFiles */ = {
+		5237AE5220CCC084009CF037 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				5237AE5320CCC09F009CF037 /* DynamicLauncher.app in CopyFiles */,
+				5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -71,6 +74,11 @@
 		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
 		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
 		619F2E63A28F22DAD9390852 /* Pods-DynamicLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.release.xcconfig"; sourceTree = "<group>"; };
+		706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TouchBarSupport.swift"; sourceTree = "<group>"; };
+		706D395B20E377E40079535E /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
+		706D395E20E3796A0079535E /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		706D396320E37A5E0079535E /* Dynamic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamic-Bridging-Header.h"; sourceTree = "<group>"; };
+		706D396620E37A870079535E /* TouchBarPrivateAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateAPI.h; sourceTree = "<group>"; };
 		88EA90C5D6B00D262E96441C /* Pods-DynamicLauncher.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug masless.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug masless.xcconfig"; sourceTree = "<group>"; };
 		A85F5FCB123842467D0172A3 /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		AA2A0654FC318D2781A5572B /* Pods-Dynamic.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.debug masless.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.debug masless.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +156,8 @@
 		52168FCB20C8B51A00869A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				706D396320E37A5E0079535E /* Dynamic-Bridging-Header.h */,
+				706D396620E37A870079535E /* TouchBarPrivateAPI.h */,
 				52168FBF20C8B47200869A9C /* Assets.xcassets */,
 				52168FC420C8B47200869A9C /* Info.plist */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				52C3511220CC53CC0073F0CA /* Preferences.swift */,
+				706D395B20E377E40079535E /* Localizations.swift */,
 				5265C6C920D0B84900488D39 /* Appearance */,
 				5265C6CA20D0B85B00488D39 /* Brightness */,
 				5225FDBD20D14B96006E9AF0 /* Scheduler.swift */,
@@ -172,6 +183,7 @@
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
+				706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 		52168FDA20C9F87000869A9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				706D395E20E3796A0079535E /* DFRFoundation.framework */,
 				4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */,
 				CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */,
 			);
@@ -229,7 +242,7 @@
 				52168FB420C8B47100869A9C /* Sources */,
 				52168FB520C8B47100869A9C /* Frameworks */,
 				52168FB620C8B47100869A9C /* Resources */,
-				5237AE5220CCC084009CF037 /* CopyFiles */,
+				5237AE5220CCC084009CF037 /* Copy Files */,
 				CA607805D8FDF1201D5CEF8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -351,22 +364,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
 				"${BUILT_PRODUCTS_DIR}/LetsMove/LetsMove.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetsMove.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFB956228DE5FCF80533C85B /* [CP] Check Pods Manifest.lock */ = {
@@ -394,11 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706D395D20E377E40079535E /* Localizations.swift in Sources */,
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
+				706D395920E3766D0079535E /* SettingsViewController+TouchBarSupport.swift in Sources */,
 				52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */,
 				52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */,
 				52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */,
@@ -555,6 +568,7 @@
 			baseConfigurationReference = 2D78CBA541F8797900AB2CCF /* Pods-Dynamic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -568,7 +582,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -578,6 +594,7 @@
 			baseConfigurationReference = 2DB516C2D7FE967B75006F55 /* Pods-Dynamic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -591,7 +608,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -689,6 +708,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = Masless;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -699,6 +719,7 @@
 			baseConfigurationReference = 4964734EDCE359C68AB9DF0D /* Pods-Dynamic.release masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -709,10 +730,26 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"LetsMove\"",
+					"-framework",
+					"\"Solar\"",
+					"-framework",
+					"\"Sparkle\"",
+					"-framework",
+					"\"DFRFoundation\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = "Release Masless";
@@ -795,7 +832,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG Masless";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = "Debug Masless";
@@ -805,6 +842,7 @@
 			baseConfigurationReference = AA2A0654FC318D2781A5572B /* Pods-Dynamic.debug masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -815,10 +853,26 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"LetsMove\"",
+					"-framework",
+					"\"Solar\"",
+					"-framework",
+					"\"Sparkle\"",
+					"-framework",
+					"\"DFRFoundation\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = "Debug Masless";

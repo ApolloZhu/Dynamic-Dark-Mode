@@ -26,7 +26,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.action = #selector(handleEvent)
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
-        
+
+        // MARK: Control Strip Setup
+        #if Masless
+        #warning("TODO: Add option to disable displaying toggle button in Control Strip")
+        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
+        let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
+        let item = NSCustomTouchBarItem(identifier: identifier)
+        #warning("TODO: Redesign icon for toggle button")
+        let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"), target: self, action: #selector(toggleInterfaceStyle))
+        item.view = button
+        NSTouchBarItem.addSystemTrayItem(item)
+        DFRElementSetControlStripPresenceForIdentifier(identifier, true)
+        #endif
+
         // MARK: Other Setup
         
         AppleScript.setupIfNeeded()
@@ -37,6 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         _ = ScreenBrightnessObserver.shared
         Preferences.reload()
     }
+
+    @objc private func toggleInterfaceStyle() {
+        AppleInterfaceStyle.toggle()
+    }
     
     @objc private func handleEvent() {
         if NSApp.currentEvent?.type == .rightMouseUp {
@@ -44,9 +61,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             AppleInterfaceStyle.toggle()
         }
-    }
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-        
     }
 }

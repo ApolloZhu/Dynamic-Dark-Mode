@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -709,6 +709,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="527" height="306"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="8Qe-wF-aDU">
+                                <rect key="frame" x="0.0" y="0.0" width="527" height="306"/>
+                            </visualEffectView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-OH-kC8">
                                 <rect key="frame" x="18" y="262" width="491" height="24"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Settings" id="32v-z6-q8Z">
@@ -776,10 +779,10 @@
                                     <gridCell row="a4E-wA-3Lu" column="mIv-mJ-wP3" id="CNG-RS-q4q"/>
                                     <gridCell row="a4E-wA-3Lu" column="YiK-CN-yVF" id="GlW-SD-9AN">
                                         <stackView key="contentView" distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afo-PY-Wd8">
-                                            <rect key="frame" x="134" y="113" width="373" height="30"/>
+                                            <rect key="frame" x="134" y="126" width="373" height="17"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FoL-K6-ZlT">
-                                                    <rect key="frame" x="-2" y="7" width="137" height="17"/>
+                                                    <rect key="frame" x="-2" y="0.0" width="137" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Threshold:" id="do3-JG-x5l">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -787,8 +790,8 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <slider verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="D7P-I3-P50">
-                                                    <rect key="frame" x="139" y="6" width="236" height="19"/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="vxB-or-2n1"/>
+                                                    <rect key="frame" x="139" y="-1" width="236" height="19"/>
+                                                    <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="vxB-or-2n1"/>
                                                     <connections>
                                                         <binding destination="LnA-23-JR4" name="enabled" keyPath="values.adjustForBrightness" id="pvh-rT-z4Q"/>
                                                         <binding destination="LnA-23-JR4" name="value" keyPath="values.brightnessThreshold" id="g2x-U6-Ubf">
@@ -814,7 +817,7 @@
                                     </gridCell>
                                     <gridCell row="KVs-Vb-rHX" column="mIv-mJ-wP3" id="WhB-WM-6kQ">
                                         <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-ia-2BV">
-                                            <rect key="frame" x="47" y="88" width="69" height="17"/>
+                                            <rect key="frame" x="47" y="101" width="69" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Scheduled" id="O5v-cY-mFV">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -824,7 +827,7 @@
                                     </gridCell>
                                     <gridCell row="KVs-Vb-rHX" column="YiK-CN-yVF" id="SrG-vm-cth">
                                         <stackView key="contentView" distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8m-tC-reA">
-                                            <rect key="frame" x="134" y="88" width="373" height="17"/>
+                                            <rect key="frame" x="134" y="101" width="373" height="17"/>
                                             <subviews>
                                                 <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nom-bU-aoB">
                                                     <rect key="frame" x="-2" y="0.0" width="166" height="18"/>
@@ -842,7 +845,7 @@
                                                     </connections>
                                                 </button>
                                                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="HqP-de-szT">
-                                                    <rect key="frame" x="168" y="-3" width="208" height="22"/>
+                                                    <rect key="frame" x="168" y="-3" width="208" height="21"/>
                                                     <popUpButtonCell key="cell" type="push" title="Official Sunset Sunrise" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QiA-MM-zn7" id="ldF-2L-rc3">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
@@ -860,8 +863,8 @@
                                                         </connections>
                                                     </popUpButtonCell>
                                                     <connections>
-                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduled" id="Qg5-FF-VER"/>
                                                         <binding destination="LnA-23-JR4" name="selectedIndex" keyPath="values.scheduleType" id="pSM-7X-Odq"/>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduled" id="Qg5-FF-VER"/>
                                                     </connections>
                                                 </popUpButton>
                                             </subviews>
@@ -878,10 +881,10 @@
                                     <gridCell row="nEN-OW-DCn" column="mIv-mJ-wP3" id="pKZ-An-ToD"/>
                                     <gridCell row="nEN-OW-DCn" column="YiK-CN-yVF" id="Sdi-ZD-NLs">
                                         <stackView key="contentView" distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-AT-12X">
-                                            <rect key="frame" x="134" y="50" width="373" height="30"/>
+                                            <rect key="frame" x="134" y="70" width="373" height="23"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-vT-a00">
-                                                    <rect key="frame" x="-2" y="7" width="39" height="17"/>
+                                                    <rect key="frame" x="-2" y="3" width="39" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="From:" id="4da-BG-PBG">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -889,7 +892,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jii-fu-XyZ">
-                                                    <rect key="frame" x="43" y="4" width="143" height="27"/>
+                                                    <rect key="frame" x="43" y="0.0" width="143" height="27"/>
                                                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="q7e-Ig-rke">
                                                         <font key="font" metaFont="system"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="-978210000">
@@ -900,6 +903,12 @@
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
                                                     <connections>
+                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleStart" id="jQ0-uc-ZOH"/>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="Wkf-BX-Jnm">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
+                                                            </dictionary>
+                                                        </binding>
                                                         <binding destination="LnA-23-JR4" name="enabled2" keyPath="values.scheduled" previousBinding="Wkf-BX-Jnm" id="lI0-L9-drC">
                                                             <dictionary key="options">
                                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -908,16 +917,10 @@
                                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                             </dictionary>
                                                         </binding>
-                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="Wkf-BX-Jnm">
-                                                            <dictionary key="options">
-                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
-                                                            </dictionary>
-                                                        </binding>
-                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleStart" id="jQ0-uc-ZOH"/>
                                                     </connections>
                                                 </datePicker>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-Le-r1X">
-                                                    <rect key="frame" x="189" y="7" width="39" height="17"/>
+                                                    <rect key="frame" x="189" y="3" width="39" height="17"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="To:" id="hBx-FP-5Wr">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -925,7 +928,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8VY-21-7o1">
-                                                    <rect key="frame" x="234" y="4" width="142" height="27"/>
+                                                    <rect key="frame" x="234" y="0.0" width="142" height="27"/>
                                                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="ZOG-Sl-NlQ">
                                                         <font key="font" metaFont="system"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="-978177600">
@@ -936,6 +939,12 @@
                                                         <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                                                     </datePickerCell>
                                                     <connections>
+                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleEnd" id="hcm-HS-aQS"/>
+                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="ECq-9L-4a9">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
+                                                            </dictionary>
+                                                        </binding>
                                                         <binding destination="LnA-23-JR4" name="enabled2" keyPath="values.scheduled" previousBinding="ECq-9L-4a9" id="Cd5-21-xwl">
                                                             <dictionary key="options">
                                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -944,12 +953,6 @@
                                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                             </dictionary>
                                                         </binding>
-                                                        <binding destination="LnA-23-JR4" name="enabled" keyPath="values.scheduleType" id="ECq-9L-4a9">
-                                                            <dictionary key="options">
-                                                                <string key="NSValueTransformerName">UsesCustomRange</string>
-                                                            </dictionary>
-                                                        </binding>
-                                                        <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduleEnd" id="hcm-HS-aQS"/>
                                                     </connections>
                                                 </datePicker>
                                             </subviews>
@@ -974,7 +977,7 @@
                                     <gridCell row="jkp-Dn-iha" column="mIv-mJ-wP3" id="4K9-zZ-SHz"/>
                                     <gridCell row="jkp-Dn-iha" column="YiK-CN-yVF" yPlacement="center" id="oOh-cu-zbu">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QxR-HR-rHK">
-                                            <rect key="frame" x="132" y="12" width="377" height="18"/>
+                                            <rect key="frame" x="132" y="22" width="377" height="18"/>
                                             <buttonCell key="cell" type="check" title="Opens At Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IB3-f2-BQf">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1003,20 +1006,28 @@
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" constant="20" id="8nU-9p-Gbd"/>
                             <constraint firstAttribute="trailing" secondItem="mbn-Aa-NsX" secondAttribute="trailing" constant="20" id="BKh-mz-JSk"/>
                             <constraint firstItem="mbn-Aa-NsX" firstAttribute="top" secondItem="YVR-sd-FzV" secondAttribute="bottom" constant="8" id="BY5-ud-eEu"/>
+                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="Dkb-lJ-fLB"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" constant="20" id="FgL-X3-wYT"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="UNc-mL-zdm"/>
+                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerY" secondItem="4FC-o0-Dgl" secondAttribute="centerY" id="ZLK-a0-sgy"/>
                             <constraint firstAttribute="trailing" secondItem="YVR-sd-FzV" secondAttribute="trailing" constant="20" id="fpw-pI-elJ"/>
+                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerX" secondItem="Gir-OH-kC8" secondAttribute="centerX" id="kgj-Pv-1Bo"/>
                             <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="kyr-8o-v5X"/>
                             <constraint firstAttribute="trailing" secondItem="Gir-OH-kC8" secondAttribute="trailing" constant="20" symbolic="YES" id="lNX-Fu-jm4"/>
+                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" id="osc-4L-Ty4"/>
                             <constraint firstItem="mbn-Aa-NsX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4FC-o0-Dgl" secondAttribute="leading" constant="20" symbolic="YES" id="p3l-OL-e4x"/>
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="xDY-7K-0Ia"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sharedUserDefaultsController" destination="LnA-23-JR4" id="vEq-pv-Ubb"/>
+                        <outlet property="thresholdSlider" destination="D7P-I3-P50" id="mKM-Wp-QZL"/>
+                    </connections>
                 </viewController>
                 <customObject id="p91-G4-pcu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="LnA-23-JR4"/>
             </objects>
-            <point key="canvasLocation" x="599.5" y="229"/>
+            <point key="canvasLocation" x="693" y="229"/>
         </scene>
     </scenes>
 </document>
