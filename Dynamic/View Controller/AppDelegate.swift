@@ -28,15 +28,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
 
         // MARK: Control Strip Setup
-        #warning("Consider to add an optiion in settings to let the user choose whether or not to display the item in Control Strip?")
+        #if Masless
+        #warning("TODO: Add option to disable displaying toggle button in Control Strip")
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
         let item = NSCustomTouchBarItem(identifier: identifier)
-        #warning("TODO: Change the button image when toggled")
-        let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"), target: self, action: #selector(controlStripItemTapped(_:)))
+        #warning("TODO: Redesign icon for toggle button")
+        let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"), target: self, action: #selector(toggleInterfaceStyle))
         item.view = button
         NSTouchBarItem.addSystemTrayItem(item)
         DFRElementSetControlStripPresenceForIdentifier(identifier, true)
+        #endif
 
         // MARK: Other Setup
         
@@ -49,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Preferences.reload()
     }
 
-    @objc private func controlStripItemTapped(_ sender: NSButton) {
+    @objc private func toggleInterfaceStyle() {
         AppleInterfaceStyle.toggle()
     }
     

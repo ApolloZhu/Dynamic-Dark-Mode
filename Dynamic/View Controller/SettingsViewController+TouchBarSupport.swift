@@ -12,41 +12,41 @@ extension SettingsViewController: NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.defaultItemIdentifiers = NSTouchBarItem.Identifier.Settings.allMainItems
+        touchBar.defaultItemIdentifiers = [.thresholdPopoverItem, .scheduleTypePopoverItem]
         return touchBar
     }
 
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        switch identifier.rawValue {
-        case MainTouchBarItemIdentifiers.thresholdPopoverItem.rawValue:
+        switch identifier {
+        case .thresholdPopoverItem:
             let popoverItem = NSPopoverTouchBarItem(identifier: identifier)
             let sliderTouchBar = NSTouchBar()
-            sliderTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue)]
+            sliderTouchBar.defaultItemIdentifiers = [.thresholdSubSliderItem]
             sliderTouchBar.delegate = self
             popoverItem.popoverTouchBar = sliderTouchBar
             popoverItem.pressAndHoldTouchBar = sliderTouchBar
-            popoverItem.collapsedRepresentationLabel = String.Localized.SettingsViewController.autoAdjustThreshold
+            popoverItem.collapsedRepresentationLabel = LocalizedString.SettingsViewController.autoAdjustThreshold
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             return popoverItem
-        case SubTouchBarItemIdentifiers.thresholdSliderItem.rawValue:
+        case .thresholdSubSliderItem:
             let sliderItem = NSSliderTouchBarItem(identifier: identifier)
-            sliderItem.label = String.Localized.SettingsViewController.autoAdjustThreshold
+            sliderItem.label = LocalizedString.SettingsViewController.autoAdjustThreshold
             sliderItem.slider.minValue = 0
             sliderItem.slider.maxValue = 100
             sliderItem.slider.bind(.value, to: sharedUserDefaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
             sliderItem.slider.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             #warning("TODO: Consider to add NSSliderAccessories here? (images required)")
             return sliderItem
-        case MainTouchBarItemIdentifiers.scheduleTypePopoverItem.rawValue:
+        case .scheduleTypePopoverItem:
             let popoverItem = NSPopoverTouchBarItem(identifier: identifier)
             let scrubberTouchBar = NSTouchBar()
-            scrubberTouchBar.defaultItemIdentifiers = [NSTouchBarItem.Identifier(rawValue: SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue)]
+            scrubberTouchBar.defaultItemIdentifiers = [.scheduleTypeSubScrubberItem]
             scrubberTouchBar.delegate = self
-            popoverItem.collapsedRepresentationLabel = String.Localized.SettingsViewController.scheduleMode
+            popoverItem.collapsedRepresentationLabel = LocalizedString.SettingsViewController.scheduleMode
             popoverItem.popoverTouchBar = scrubberTouchBar
             popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.scheduled", options: nil)
             return popoverItem
-        case SubTouchBarItemIdentifiers.scheduleTypeScrubberItem.rawValue:
+        case .scheduleTypeSubScrubberItem:
             let scrubber = NSScrubber()
             scrubber.dataSource = self
             scrubber.delegate = self
@@ -65,24 +65,46 @@ extension SettingsViewController: NSTouchBarDelegate {
             fatalError("Unexpected identifier")
         }
     }
+}
 
-    enum MainTouchBarItemIdentifiers: String, CaseIterable {
-        case thresholdPopoverItem
-        case scheduleTypePopoverItem
+extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
+    func numberOfItems(for scrubber: NSScrubber) -> Int {
+        return 5
     }
 
-    enum SubTouchBarItemIdentifiers: String, CaseIterable {
-        case thresholdSliderItem
-        case scheduleTypeScrubberItem
+    func scrubber(_ scrubber: NSScrubber, viewForItemAt index: Int) -> NSScrubberItemView {
+        let view = NSScrubberTextItemView()
+        switch index {
+        case 0:
+            view.title = LocalizedString.SunsetSunrise.official
+        case 1:
+            view.title = LocalizedString.SunsetSunrise.civil
+        case 2:
+            view.title = LocalizedString.SunsetSunrise.nautical
+        case 3:
+            view.title = LocalizedString.SunsetSunrise.astronimical
+        case 4:
+            view.title = LocalizedString.SunsetSunrise.customRange
+        default:
+            fatalError("Unexpected index number")
+        }
+        return view
     }
 
+    func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
+        Preferences.scheduleType = Scheduler.Zenith(rawValue: selectedIndex)!
+    }
+}
+
+extension NSTouchBarItem.Identifier: ExpressibleByStringLiteral {
+    public init(stringLiteral value: StringLiteralType) {
+        self.init(rawValue: value)
+    }
 }
 
 extension NSTouchBarItem.Identifier {
-
-    struct Settings {
-        static let allMainItems: [NSTouchBarItem.Identifier] = SettingsViewController.MainTouchBarItemIdentifiers.allCases.map { return NSTouchBarItem.Identifier(rawValue: $0.rawValue) }
-        private init() {}
-    }
-
+    static let thresholdPopoverItem = "thresholdPopoverItem" as NSTouchBarItem.Identifier
+    static let scheduleTypePopoverItem = "scheduleTypePopoverItem" as NSTouchBarItem.Identifier
+    static let thresholdSubSliderItem = "thresholdSubSliderItem" as NSTouchBarItem.Identifier
+    static let scheduleTypeSubScrubberItem = "scheduleTypeSubSliderItem" as NSTouchBarItem.Identifier
 }

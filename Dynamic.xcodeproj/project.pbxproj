@@ -26,7 +26,6 @@
 		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
 		706D395920E3766D0079535E /* SettingsViewController+TouchBarSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
-		706D395F20E3796A0079535E /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D395E20E3796A0079535E /* DFRFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */; };
 		CBBCAB8E78C6D298DDF7F5F1 /* Pods_DynamicLauncher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */; };
 /* End PBXBuildFile section */
@@ -92,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				706D395F20E3796A0079535E /* DFRFoundation.framework in Frameworks */,
 				84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,9 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
-				706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */,
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
+				706D395820E3766D0079535E /* SettingsViewController+TouchBarSupport.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -366,22 +364,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
 				"${BUILT_PRODUCTS_DIR}/LetsMove/LetsMove.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LetsMove.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFB956228DE5FCF80533C85B /* [CP] Check Pods Manifest.lock */ = {
@@ -712,6 +708,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = Masless;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -733,10 +730,21 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"LetsMove\"",
+					"-framework",
+					"\"Solar\"",
+					"-framework",
+					"\"Sparkle\"",
+					"-framework",
+					"\"DFRFoundation\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Dynamic/Utilities/TouchBarPrivateAPISupport/Dynamic-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,7 +832,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG Masless";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = "Debug Masless";
@@ -845,10 +853,21 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"LetsMove\"",
+					"-framework",
+					"\"Solar\"",
+					"-framework",
+					"\"Sparkle\"",
+					"-framework",
+					"\"DFRFoundation\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Dynamic/Utilities/TouchBarPrivateAPISupport/Dynamic-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

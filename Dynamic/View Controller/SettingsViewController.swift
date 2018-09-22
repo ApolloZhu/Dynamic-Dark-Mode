@@ -42,37 +42,6 @@ class SettingsViewController: NSViewController {
     }
 }
 
-extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
-
-    func numberOfItems(for scrubber: NSScrubber) -> Int {
-        return 5
-    }
-
-    func scrubber(_ scrubber: NSScrubber, viewForItemAt index: Int) -> NSScrubberItemView {
-        let view = NSScrubberTextItemView()
-        switch index {
-        case 0:
-            view.title = String.Localized.SettingsViewController.official
-        case 1:
-            view.title = String.Localized.SettingsViewController.civil
-        case 2:
-            view.title = String.Localized.SettingsViewController.nautical
-        case 3:
-            view.title = String.Localized.SettingsViewController.astronimical
-        case 4:
-            view.title = String.Localized.SettingsViewController.customRange
-        default:
-            fatalError("Unexpected index number")
-        }
-        return view
-    }
-
-    func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
-        Preferences.scheduleType = Scheduler.Zenith(rawValue: selectedIndex)!
-    }
-
-}
-
 class UsesCustomRange: ValueTransformer {
     override class func transformedValueClass() -> AnyClass {
         return NSNumber.self
