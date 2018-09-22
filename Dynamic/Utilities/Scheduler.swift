@@ -3,7 +3,7 @@
 //  Dynamic
 //
 //  Created by Apollo Zhu on 6/13/18.
-//  Copyright © 2018 Apollonian. All rights reserved.
+//  Copyright © 2018 Dynamic. All rights reserved.
 //
 
 import CoreLocation
@@ -49,6 +49,8 @@ public final class Scheduler {
                                              at loc: CLLocationCoordinate2D) {
         let solar = Solar(coordinate: loc)!
         switch zenithType {
+        case .custom:
+            break
         case .official:
             darkMode = (
                 on: solar.sunset!,
@@ -69,9 +71,6 @@ public final class Scheduler {
                 on: solar.astronomicalSunset!,
                 off: solar.astronomicalSunrise!
             )
-        default:
-            #warning("TODO: Implement custom range")
-            break
         }
     }
 }
