@@ -6,26 +6,46 @@
 //  Copyright © 2018 Apollonian. All rights reserved.
 //
 
-import Foundation
 extension String {
-    
-    struct Localized {
-        
-        struct SettingsViewController {
-
-            static let autoAdjustThreshold = NSLocalizedString("Localization.SettingsViewController.AutoAdjustThreshold", comment: "AutoAdjustThreshold")
-            static let scheduleMode = NSLocalizedString("Localization.SettingsViewController.ScheduleMode", comment: "ScheduleMode")
-            
-            static let official = NSLocalizedString("Localization.SettingsViewController.Official", comment: "Official")
-            static let civil = NSLocalizedString("Localization.SettingsViewController.Civil", comment: "Civil")
-            static let nautical = NSLocalizedString("Localization.SettingsViewController.Nautical", comment: "Nautical")
-            static let astronimical = NSLocalizedString("Localization.SettingsViewController.Astronimical", comment: "Astronimical")
-            static let customRange = NSLocalizedString("Localization.SettingsViewController.CustomRange", comment: "CustomRange")
-            
-            private init() {}
+    enum Localized {
+        enum SettingsViewController {
+            static let autoAdjustThreshold = NSLocalizedString(
+                "SettingsViewController.AutoAdjustThreshold",
+                value: "Auto Adjust Threshold",
+                comment: "AutoAdjustThreshold"
+            )
+            static let scheduleMode = NSLocalizedString(
+                "SettingsViewController.ScheduleMode",
+                value: "Schedule Mode",
+                comment: "ScheduleMode"
+            )
         }
-        
-        private init() {}
+        enum SunsetSunrise {
+            static let official = NSLocalizedString(
+                "SunsetSunrise.Official",
+                value: "Official",
+                comment: "Official"
+            )
+            static let civil = NSLocalizedString(
+                "SunsetSunrise.Civil",
+                value: "Civil",
+                comment: "Civil"
+            )
+            static let nautical = NSLocalizedString(
+                "SunsetSunrise.Nautical",
+                value: "Nautical",
+                comment: "Nautical"
+            )
+            static let astronimical = NSLocalizedString(
+                "SunsetSunrise.Astronimical",
+                value: "Astronimical",
+                comment: "Astronimical"
+            )
+            static let customRange = NSLocalizedString(
+                "SunsetSunrise.CustomRange",
+                value: "Custom",
+                comment: "CustomRange"
+            )
+        }
     }
-    
 }

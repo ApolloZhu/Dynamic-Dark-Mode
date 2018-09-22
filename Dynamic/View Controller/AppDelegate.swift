@@ -60,8 +60,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             AppleInterfaceStyle.toggle()
         }
     }
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-        
-    }
 }
