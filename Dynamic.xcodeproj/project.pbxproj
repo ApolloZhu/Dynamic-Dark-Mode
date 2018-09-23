@@ -289,7 +289,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = Dynamic;
+				ORGANIZATIONNAME = "Dynamic Dark Mode";
 				TargetAttributes = {
 					52168FB720C8B47100869A9C = {
 						CreatedOnToolsVersion = 10.0;

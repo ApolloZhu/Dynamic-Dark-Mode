@@ -1,12 +1,12 @@
-With the update of macOS Mojave, the Dark Mode is truly the Dark Mode, not just a dark menu bar. But why does it not respond to brightness changes? And why can't we just turn it on and off by simply clicking a button? To address these inconvinence, Dyanmic will help you become more productive.
+Dynamic Dark Mode is the app you are looking for to power up dark mode on macOS Mojave. Instead of looking for the switch in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
 
 ![Settings for Dynamic Dark Mode](https://user-images.githubusercontent.com/10842684/45924686-60bad000-bed4-11e8-960c-1264de24f314.png)
 
 ## License
 
 ```
-Dynamic - Automatic Dark Mode Switch
-Copyright (C) 2018  Dynamic @ApolloZhu
+Dynamic Dark Mode - the smart, automatic Dark Mode toggle for macOS
+Copyright (C) 2018 Zhiyu Zhu (@ApolloZhu)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

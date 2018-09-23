@@ -737,6 +737,14 @@ DQ
                                             <action selector="close:" target="2dW-oa-vyd" id="IeT-ID-Z24"/>
                                         </connections>
                                     </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="895-Eu-EGc">
+                                        <rect key="frame" x="18" y="245" width="368" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Right click on the menu bar icon to show this settings again." id="PdZ-gQ-K3j">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7JC-il-y7k" secondAttribute="trailing" constant="20" symbolic="YES" id="8dt-Ic-EoO"/>
@@ -744,6 +752,7 @@ DQ
                                     <constraint firstItem="7JC-il-y7k" firstAttribute="leading" secondItem="mbn-Aa-NsX" secondAttribute="trailing" constant="12" symbolic="YES" id="O1m-oO-anL"/>
                                     <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="fXU-J8-Vjt"/>
                                     <constraint firstAttribute="bottom" secondItem="7JC-il-y7k" secondAttribute="bottom" constant="20" symbolic="YES" id="nlV-hZ-azm"/>
+                                    <constraint firstItem="895-Eu-EGc" firstAttribute="leading" secondItem="8Qe-wF-aDU" secondAttribute="leading" constant="20" symbolic="YES" id="nsl-jc-aFn"/>
                                 </constraints>
                             </visualEffectView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-OH-kC8">
@@ -755,7 +764,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <gridView xPlacement="fill" yPlacement="fill" rowAlignment="none" rowSpacing="8" columnSpacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-sd-FzV">
-                                <rect key="frame" x="0.0" y="83" width="507" height="159"/>
+                                <rect key="frame" x="0.0" y="66" width="507" height="159"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="159" id="08r-sX-jLc"/>
                                 </constraints>
@@ -1038,7 +1047,6 @@ DQ
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" constant="20" id="8nU-9p-Gbd"/>
                             <constraint firstItem="FRC-Pw-AXx" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="9SF-84-mro"/>
                             <constraint firstAttribute="trailing" secondItem="FRC-Pw-AXx" secondAttribute="trailing" constant="20" symbolic="YES" id="AWo-Mc-DBI"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="Dkb-lJ-fLB"/>
@@ -1046,9 +1054,11 @@ DQ
                             <constraint firstItem="FRC-Pw-AXx" firstAttribute="leading" secondItem="Gir-OH-kC8" secondAttribute="trailing" constant="8" symbolic="YES" id="L0b-7G-jqX"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="UNc-mL-zdm"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerY" secondItem="4FC-o0-Dgl" secondAttribute="centerY" id="ZLK-a0-sgy"/>
+                            <constraint firstItem="895-Eu-EGc" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" id="bag-2T-Gin"/>
                             <constraint firstAttribute="trailing" secondItem="YVR-sd-FzV" secondAttribute="trailing" constant="20" id="fpw-pI-elJ"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerX" secondItem="4FC-o0-Dgl" secondAttribute="centerX" id="kgj-Pv-1Bo"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" id="osc-4L-Ty4"/>
+                            <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="895-Eu-EGc" secondAttribute="bottom" constant="20" id="vrn-Fm-q4S"/>
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="xDY-7K-0Ia"/>
                         </constraints>
                     </view>
