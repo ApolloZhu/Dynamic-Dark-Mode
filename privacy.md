@@ -1,8 +1,9 @@
 # Privacy Policy
 
 App "Dynamic" and it's original author Zhiyu Zhu (sometimes known as Apollo or Apollonian)
-is NOT interested in your personal data AT ALL. We'll ensure others who contribute to this
-app also does not add any suspicous stuff to the app. If you can't trust us, the source of
+is NOT interested in your personal data AT ALL. We'll ensure [others who contribute to this
+app](https://github.com/ApolloZhu/Dynamic-Dark-Mode/graphs/contributors) also 
+does not add any suspicous stuff to the app. If you can't trust us, the source of
 this app is hosted at [https://github.com/ApolloZhu/Dynamic](https://github.com/ApolloZhu/Dynamic).
 For your information, it is licensed under [GNU General Public License v3.0](./LICENSE).
 
