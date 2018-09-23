@@ -16,6 +16,7 @@
 		5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FDBD20D14B96006E9AF0 /* Scheduler.swift */; };
 		5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237AE5020CCC051009CF037 /* SettingsViewController.swift */; };
 		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		524712E32157786A00F48CA0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524712E22157786A00F48CA0 /* Credits.rtf */; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
 		52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511220CC53CC0073F0CA /* Preferences.swift */; };
 		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		523718342157468900AEC921 /* privacy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy.md; sourceTree = "<group>"; };
 		523718352157469800AEC921 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		524712E22157786A00F48CA0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
 		52C3511220CC53CC0073F0CA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		52C3511820CC57B60073F0CA /* DynamicLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				52168FBF20C8B47200869A9C /* Assets.xcassets */,
 				52168FC420C8B47200869A9C /* Info.plist */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
+				524712E22157786A00F48CA0 /* Credits.rtf */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3512B20CC5D010073F0CA /* off.scpt in Resources */,
+				524712E32157786A00F48CA0 /* Credits.rtf in Resources */,
 				52C3512920CC5CD10073F0CA /* on.scpt in Resources */,
 				52168FC020C8B47200869A9C /* Assets.xcassets in Resources */,
 				52168FD520C9A63B00869A9C /* Main.storyboard in Resources */,

@@ -103,7 +103,10 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     // MARK: - Real World
 
     private lazy var manager: CLLocationManager = {
-        let manager = CLLocationManager()
+        var manager: CLLocationManager!
+        DispatchQueue.main.sync {
+            manager = CLLocationManager()
+        }
         manager.delegate = self
         return manager
     }()

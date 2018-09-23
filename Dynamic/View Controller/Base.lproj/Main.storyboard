@@ -747,7 +747,7 @@ DQ
                                 </constraints>
                             </visualEffectView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-OH-kC8">
-                                <rect key="frame" x="18" y="262" width="491" height="24"/>
+                                <rect key="frame" x="18" y="262" width="462" height="24"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Settings for Dynamic Dark Mode" id="32v-z6-q8Z">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1026,16 +1026,28 @@ DQ
                                     </gridCell>
                                 </gridCells>
                             </gridView>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FRC-Pw-AXx">
+                                <rect key="frame" x="484" y="261" width="25" height="25"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gzp-bN-vpn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="p91-G4-pcu" id="MSX-jU-GmM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="top" secondItem="Gir-OH-kC8" secondAttribute="bottom" constant="20" id="8nU-9p-Gbd"/>
+                            <constraint firstItem="FRC-Pw-AXx" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="9SF-84-mro"/>
+                            <constraint firstAttribute="trailing" secondItem="FRC-Pw-AXx" secondAttribute="trailing" constant="20" symbolic="YES" id="AWo-Mc-DBI"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="Dkb-lJ-fLB"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" constant="20" symbolic="YES" id="FgL-X3-wYT"/>
+                            <constraint firstItem="FRC-Pw-AXx" firstAttribute="leading" secondItem="Gir-OH-kC8" secondAttribute="trailing" constant="8" symbolic="YES" id="L0b-7G-jqX"/>
                             <constraint firstItem="Gir-OH-kC8" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" constant="20" symbolic="YES" id="UNc-mL-zdm"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerY" secondItem="4FC-o0-Dgl" secondAttribute="centerY" id="ZLK-a0-sgy"/>
                             <constraint firstAttribute="trailing" secondItem="YVR-sd-FzV" secondAttribute="trailing" constant="20" id="fpw-pI-elJ"/>
-                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerX" secondItem="Gir-OH-kC8" secondAttribute="centerX" id="kgj-Pv-1Bo"/>
-                            <constraint firstAttribute="trailing" secondItem="Gir-OH-kC8" secondAttribute="trailing" constant="20" symbolic="YES" id="lNX-Fu-jm4"/>
+                            <constraint firstItem="8Qe-wF-aDU" firstAttribute="centerX" secondItem="4FC-o0-Dgl" secondAttribute="centerX" id="kgj-Pv-1Bo"/>
                             <constraint firstItem="8Qe-wF-aDU" firstAttribute="top" secondItem="4FC-o0-Dgl" secondAttribute="top" id="osc-4L-Ty4"/>
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="xDY-7K-0Ia"/>
                         </constraints>
