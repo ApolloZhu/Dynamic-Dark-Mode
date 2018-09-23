@@ -1,7 +1,8 @@
-<a style="float:right" href="https://itunes.apple.com/app/id1437090290">
+<h1>
+Dynamic Dark Mode
+<a style="float:right" target="_blank" href="https://itunes.apple.com/app/id1437090290">
 <img alt="Download on the Mac App Store" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg"></a>
-
-# Dynamic Dark Mode
+</h1>
 
 *Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave.
 
