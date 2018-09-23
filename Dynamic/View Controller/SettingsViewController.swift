@@ -42,7 +42,7 @@ class SettingsViewController: NSViewController {
 
     override func viewDidDisappear() {
         super.viewDidDisappear()
-        UNUserNotificationCenter.current().removeAllNotifications()
+        removeAllNotifications()
     }
 }
 

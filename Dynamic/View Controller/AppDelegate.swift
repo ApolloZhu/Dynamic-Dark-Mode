@@ -24,7 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         PFMoveToApplicationsFolderIfNecessary()
         #endif
 
-        UNUserNotificationCenter.current().delegate = Scheduler.shared
+        if #available(OSX 10.14, *) {
+            UNUserNotificationCenter.current().delegate = Scheduler.shared
+        } else {
+            NSUserNotificationCenter.default.delegate = Scheduler.shared
+        }
 
         // MARK: - Menu Bar Item Setup
         

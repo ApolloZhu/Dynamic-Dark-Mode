@@ -45,6 +45,7 @@ extension AppleScript {
 
 extension AppleScript {
     public func execute() {
+        guard preferences.didSetupAppleScript else { return }
         if Sandbox.isOn {
             do {
                 try NSUserAppleScriptTask(url: url).execute { error in
@@ -54,7 +55,9 @@ extension AppleScript {
                     }
                 }
             } catch {
-                NSAlert(error: error).runModal()
+                DispatchQueue.main.async {
+                    NSAlert(error: error).runModal()
+                }
             }
         } else {
             var errorInfo: NSDictionary? = nil
@@ -67,13 +70,15 @@ extension AppleScript {
                 "appleScriptExecution.error.title",
                 value: "Report Critical Bug To Developer",
                 comment: "When user sees this, basically this app fails. "
-                + "So try to persuade them to report this bug to developer "
-                + "so we can fix it earlier."
+                    + "So try to persuade them to report this bug to developer "
+                    + "so we can fix it earlier."
             )
             alert.informativeText = error.reduce("") {
                 "\($0)\($1.key): \($1.value)\n"
             }
-            alert.runModal()
+            DispatchQueue.main.async {
+                alert.runModal()
+            }
         }
     }
 }
@@ -81,11 +86,21 @@ extension AppleScript {
 // MARK: - Dirty Work
 
 extension AppleScript {
+    private static let lock = NSLock()
+    private static var isSettingUp = false
     public static func setupIfNeeded() {
         guard Sandbox.isOn else { return }
+        if preferences.didSetupAppleScript { return }
         let path = AppleScript.toggleDarkMode.url.path
         if FileManager.default.fileExists(atPath: path) { return }
-        requestPermission()
+        lock.lock()
+        defer { lock.unlock() }
+        if isSettingUp { return }
+        isSettingUp = true
+        DispatchQueue.main.async {
+            SettingsViewController.show()
+            requestPermission()
+        }
     }
     
     private static func requestPermission() {
@@ -103,6 +118,7 @@ extension AppleScript {
             value: "Please open this folder so our app can help you manage dark mode",
             comment: "Convince them to open the current folder presented."
         )
+        selectPanel.level = .floating
         selectPanel.begin { _ in
             handleSelection(selectedURL: selectPanel.url)
         }
@@ -118,11 +134,13 @@ extension AppleScript {
             )
             alert.informativeText = NSLocalizedString(
                 "appleScriptFolderSelection.error.message",
-                value: "You must select the prompted folder for this to work.",
-                comment: "Indicate selecting the prompted folder is required"
+                value: "You MUST select the prompted thing for this app to work.",
+                comment: "Indicate selecting the prompted thing is required"
             )
             alert.runModal()
-            return /*to*/ setupIfNeeded() /*again*/
+            return DispatchQueue.main.async {
+                requestPermission()
+            }
         }
         letsMove()
     }
@@ -132,10 +150,15 @@ extension AppleScript {
         for script in allCases {
             let src = Bundle.main.url(forResource: script.name,
                                       withExtension: nil)
+            let destination = script.url
             // Just to make sure there is nothing else there
-            try? FileManager.default.removeItem(at: script.url)
+            try? FileManager.default.removeItem(at: destination)
             // Before we install the scripts
-            try! FileManager.default.copyItem(at: src!, to: script.url)
+            try! FileManager.default.copyItem(at: src!, to: destination)
         }
+        preferences.didSetupAppleScript = true
+        lock.lock()
+        isSettingUp = false
+        lock.unlock()
     }
 }

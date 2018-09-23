@@ -164,26 +164,6 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         schedule(atLocation: location.coordinate)
         return true
     }
-
-    private func notifyUsingPlacemark(named name: String) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert]) { authorized, _ in
-            center.getNotificationSettings { settings in
-                guard settings.authorizationStatus == .authorized else { return }
-                guard authorized else { return }
-                let content = UNMutableNotificationContent()
-                content.title = LocalizedString.Location.useCache
-                content.subtitle = name
-                let request = UNNotificationRequest(
-                    identifier: "Scheduler.location.useCache",
-                    content: content,
-                    trigger: nil
-                )
-                center.removeAllNotifications()
-                center.add(request)
-            }
-        }
-    }
 }
 
 public enum Zenith: Int, CaseIterable {
@@ -218,6 +198,39 @@ extension DateComponents: Comparable {
     }
 }
 
+// MARK: - Notification
+
+extension Scheduler {
+    private func notifyUsingPlacemark(named name: String) {
+        if #available(OSX 10.14, *) {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert]) { authorized, _ in
+                center.getNotificationSettings { settings in
+                    guard settings.authorizationStatus == .authorized else { return }
+                    guard authorized else { return }
+                    let content = UNMutableNotificationContent()
+                    content.title = LocalizedString.Location.useCache
+                    content.subtitle = name
+                    let request = UNNotificationRequest(
+                        identifier: "Scheduler.location.useCache",
+                        content: content,
+                        trigger: nil
+                    )
+                    removeAllNotifications()
+                    center.add(request)
+                }
+            }
+        } else {
+            let center = NSUserNotificationCenter.default
+            let notification = NSUserNotification()
+            notification.title = LocalizedString.Location.useCache
+            notification.subtitle = name
+            center.deliver(notification)
+        }
+    }
+}
+
+@available(OSX 10.14, *)
 extension Scheduler: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(
         _ center: UNUserNotificationCenter,
@@ -227,9 +240,19 @@ extension Scheduler: UNUserNotificationCenterDelegate {
     ) { completionHandler(.alert) }
 }
 
-extension UNUserNotificationCenter {
-    func removeAllNotifications() {
-        removeAllPendingNotificationRequests()
-        removeAllDeliveredNotifications()
+extension Scheduler: NSUserNotificationCenterDelegate {
+    public func userNotificationCenter(
+        _ center: NSUserNotificationCenter,
+        shouldPresent notification: NSUserNotification
+    ) -> Bool { return true }
+}
+
+func removeAllNotifications() {
+    if #available(OSX 10.14, *) {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        center.removeAllDeliveredNotifications()
+    } else {
+        NSUserNotificationCenter.default.removeAllDeliveredNotifications()
     }
 }

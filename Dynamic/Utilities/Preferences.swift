@@ -220,4 +220,13 @@ extension UserDefaults {
             setPreferred(to: newValue)
         }
     }
+    
+    var didSetupAppleScript: Bool {
+        get {
+            return preferences.bool(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
 }
