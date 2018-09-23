@@ -21,3 +21,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
+
+<details>
+<summary></summary>
+
+<script type="text/javascript">
+  window.onload = function () {
+    document.getElementsByClassName("project-name")[0].innerHTML = "Dynamic Dark Mode";
+  }
+</script>
+
+</details>
