@@ -22,12 +22,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #if canImport(LetsMove) && !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
         #endif
+
+        // MARK: - Menu Bar Item Setup
         
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
-        statusBarItem.button?.action = #selector(handleEvent)
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        statusBarItem.button?.action = #selector(handleEvent)
 
-        // MARK: Control Strip Setup
+        DispatchQueue.global(qos: .userInteractive).async(execute: setup)
+        DispatchQueue.global(qos: .userInitiated).async(execute: setupTouchBar)
+    }
+
+    @objc private func handleEvent() {
+        if NSApp.currentEvent?.type == .rightMouseUp {
+            SettingsViewController.show()
+        } else {
+            AppleInterfaceStyle.toggle()
+        }
+    }
+
+    // MARK: - Control Strip Setup
+
+    private func setupTouchBar() {
         #if Masless
         #warning("TODO: Add option to disable displaying toggle button in Control Strip")
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
@@ -39,27 +55,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSTouchBarItem.addSystemTrayItem(item)
         DFRElementSetControlStripPresenceForIdentifier(identifier, true)
         #endif
-
-        // MARK: Other Setup
-        Preferences.setupObservers()
-        AppleScript.setupIfNeeded()
-        if !preferences.hasLaunchedBefore {
-            Preferences.setup()
-            SettingsViewController.show()
-        }
-        _ = ScreenBrightnessObserver.shared
     }
 
     @objc private func toggleInterfaceStyle() {
         AppleInterfaceStyle.toggle()
     }
-    
-    @objc private func handleEvent() {
-        if NSApp.currentEvent?.type == .rightMouseUp {
-            SettingsViewController.show()
-        } else {
-            AppleInterfaceStyle.toggle()
+
+    // MARK: - Other Setup
+
+    private func setup() {
+        Preferences.setupObservers()
+        AppleScript.setupIfNeeded()
+        if !preferences.hasLaunchedBefore {
+            Preferences.setup()
+            DispatchQueue.main.async(execute: SettingsViewController.show)
         }
+        _ = ScreenBrightnessObserver.shared
     }
 
     func applicationWillTerminate(_ notification: Notification) {

@@ -59,6 +59,9 @@
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen + Brightness.swift"; sourceTree = "<group>"; };
 		5225FDBD20D14B96006E9AF0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		523718332157467A00AEC921 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		523718342157468900AEC921 /* privacy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy.md; sourceTree = "<group>"; };
+		523718352157469800AEC921 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
 		52C3511220CC53CC0073F0CA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -124,6 +127,9 @@
 		52168FAF20C8B47100869A9C = {
 			isa = PBXGroup;
 			children = (
+				523718332157467A00AEC921 /* README.md */,
+				523718342157468900AEC921 /* privacy.md */,
+				523718352157469800AEC921 /* LICENSE */,
 				52F44AF120CFEBA300E739F6 /* MAS.xcconfig */,
 				52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */,
 				52168FBA20C8B47100869A9C /* Dynamic */,

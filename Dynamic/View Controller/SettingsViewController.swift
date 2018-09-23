@@ -26,6 +26,10 @@ class SettingsViewController: NSViewController {
         window?.makeKeyAndOrderFront(nil)
     }
 
+    @IBAction func close(_ sender: Any) {
+        SettingsViewController.window?.close()
+    }
+
     override func viewDidAppear() {
         super.viewDidAppear()
         // The following is required to attach touchbar to a view controller.
