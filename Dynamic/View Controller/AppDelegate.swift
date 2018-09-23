@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import UserNotifications
 import os.log
 import ServiceManagement
 #if canImport(LetsMove)
@@ -22,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #if canImport(LetsMove) && !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
         #endif
+
+        UNUserNotificationCenter.current().delegate = Scheduler.shared
 
         // MARK: - Menu Bar Item Setup
         

@@ -48,4 +48,16 @@ enum LocalizedString {
             comment: "CustomRange"
         )
     }
+    enum Location {
+        static let notAvailable = NSLocalizedString(
+            "Location.notAvailable",
+            value: "Location Service Unavailable",
+            comment: "Failed to attain user location for sunset/sunrise calculation."
+        )
+        static let useCache = NSLocalizedString(
+            "Location.useCache",
+            value: "Scheduled Using Previous Location",
+            comment: "Can't fetch user's current location. Using cache instead."
+        )
+    }
 }

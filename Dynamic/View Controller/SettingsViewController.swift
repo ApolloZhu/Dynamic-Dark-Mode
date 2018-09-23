@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import UserNotifications
 
 class SettingsViewController: NSViewController {
     private static weak var window: NSWindow? = nil
@@ -37,6 +38,11 @@ class SettingsViewController: NSViewController {
         view.window?.unbind(NSBindingName(rawValue: #keyPath(touchBar)))
         view.window?.bind(NSBindingName(rawValue: #keyPath(touchBar)), to: self, withKeyPath: #keyPath(touchBar), options: nil)
         NSUserDefaultsController.shared.appliesImmediately = true
+    }
+
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        UNUserNotificationCenter.current().removeAllNotifications()
     }
 }
 

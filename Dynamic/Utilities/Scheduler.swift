@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import UserNotifications
 import Solar
 import Schedule
 
@@ -14,27 +15,32 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public static let shared = Scheduler()
     private override init() { super.init() }
 
+    private var isScheduling = false
     public func schedule() {
+        if isScheduling { return }
+        isScheduling = true
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .notDetermined:
+            manager.stopUpdatingLocation()
             if #available(OSX 10.14, *) {
                 manager.requestLocation()
             } else {
                 manager.startUpdatingLocation()
             }
         default:
-            schedule(atLocation: nil)
+            scheduleAtCachedLocation()
         }
     }
 
     private var task: Task?
 
     #warning("FIXME: This is what I have after 3 months of consideration, but can do better")
-    private func schedule(atLocation location: CLLocation?) {
+    private func schedule(atLocation coordinate: CLLocationCoordinate2D?) {
+        defer { isScheduling = false }
         guard preferences.scheduled else { return cancel() }
         let now = Date()
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
-        if let coordinate = location?.coordinate
+        if let coordinate = coordinate
             , CLLocationCoordinate2DIsValid(coordinate)
             , preferences.scheduleZenithType != .custom {
             let scheduledDate: Date
@@ -64,9 +70,8 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
             }
             return task = Schedule.at(scheduledDate).do(onElapse: schedule)
         }
-        // Avoid recursion in a bad way, but ok
-        guard preferences.scheduleZenithType == .custom else {
-            return preferences.scheduleZenithType = .custom
+        if preferences.scheduleZenithType != .custom {
+            preferences.scheduleZenithType = .custom
         }
         #warning("FIXME: This is gonna be a catastrophe when a user moves across timezone")
         let current = Calendar.current.dateComponents([.hour, .minute], from: now)
@@ -76,22 +81,22 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         let end = Calendar.current.dateComponents(
             [.hour, .minute], from: preferences.scheduleEnd
         )
-        let scheduledDate: Date
-        if current.hour! <= end.hour! && current.minute! < end.minute! {
+        let scheduledDate: Date!
+        if current < end {
             AppleInterfaceStyle.darkAqua.enable()
             scheduledDate = Calendar.current.date(
                 bySettingHour: end.hour!, minute: end.minute!, second: 0, of: now
-            )!
-        } else if current.hour! <= start.hour! && current.minute! < start.minute! {
+            )
+        } else if current < start {
             AppleInterfaceStyle.aqua.enable()
             scheduledDate = Calendar.current.date(
                 bySettingHour: start.hour!, minute: start.minute!, second: 0, of: now
-            )!
+            )
         } else {
             AppleInterfaceStyle.darkAqua.enable()
             scheduledDate = Calendar.current.date(
                 bySettingHour: end.hour!, minute: end.minute!, second: 0, of: tomorrow
-            )!
+            )
         }
         task = Schedule.at(scheduledDate).do(onElapse: schedule)
     }
@@ -115,7 +120,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
                                 didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedAlways {
             print("denied")
-            schedule(atLocation: nil)
+            scheduleAtCachedLocation()
         }
     }
 
@@ -123,12 +128,61 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
                                 didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
-        schedule(atLocation: location)
+        preferences.location = location
+        schedule(atLocation: location.coordinate)
     }
 
-    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        NSAlert(error: error).runModal()
-        schedule(atLocation: nil)
+    public func locationManager(_ manager: CLLocationManager,
+                                didFailWithError error: Error) {
+        if !scheduleAtCachedLocation() {
+            let alert = NSAlert()
+            alert.messageText = LocalizedString.Location.notAvailable
+            alert.informativeText = error.localizedDescription
+            alert.alertStyle = .warning
+            alert.runModal()
+        }
+    }
+
+    @discardableResult
+    private func scheduleAtCachedLocation() -> Bool {
+        guard let location = preferences.location
+            , preferences.scheduleZenithType != .custom
+            else {
+            schedule(atLocation: nil)
+            return false
+        }
+        if let name = preferences.placemark {
+            notifyUsingPlacemark(named: name)
+        } else {
+            CLGeocoder().reverseGeocodeLocation(location)
+            { [weak self] placemarks, _ in
+                guard let name = placemarks?.first?.name else { return }
+                preferences.placemark = name
+                self?.notifyUsingPlacemark(named: name)
+            }
+        }
+        schedule(atLocation: location.coordinate)
+        return true
+    }
+
+    private func notifyUsingPlacemark(named name: String) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert]) { authorized, _ in
+            center.getNotificationSettings { settings in
+                guard settings.authorizationStatus == .authorized else { return }
+                guard authorized else { return }
+                let content = UNMutableNotificationContent()
+                content.title = LocalizedString.Location.useCache
+                content.subtitle = name
+                let request = UNNotificationRequest(
+                    identifier: "Scheduler.location.useCache",
+                    content: content,
+                    trigger: nil
+                )
+                center.removeAllNotifications()
+                center.add(request)
+            }
+        }
     }
 }
 
@@ -154,5 +208,28 @@ extension Solar {
         case .astronimical:
             return (astronomicalSunrise!, astronomicalSunset!)
         }
+    }
+}
+
+extension DateComponents: Comparable {
+    public static func < (lhs: DateComponents, rhs: DateComponents) -> Bool {
+        return lhs.hour! < rhs.hour!
+            || lhs.hour! == rhs.hour! && lhs.minute! < rhs.minute!
+    }
+}
+
+extension Scheduler: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void
+    ) { completionHandler(.alert) }
+}
+
+extension UNUserNotificationCenter {
+    func removeAllNotifications() {
+        removeAllPendingNotificationRequests()
+        removeAllDeliveredNotifications()
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreLocation
 import ServiceManagement
 
 enum Sandbox {
@@ -164,6 +165,56 @@ extension UserDefaults {
     @objc dynamic var hasLaunchedBefore: Bool {
         get {
             return preferences.bool(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+
+    var latitude: CLLocationDegrees? {
+        get {
+            return preferences.value(forKey: #function) as? Double
+        }
+        set {
+            setPreferred(to: newValue)
+            placemark = nil
+        }
+    }
+
+    var longitude: CLLocationDegrees? {
+        get {
+            return preferences.value(forKey: #function) as? Double
+        }
+        set {
+            setPreferred(to: newValue)
+            placemark = nil
+        }
+    }
+
+    var location: CLLocation? {
+        get {
+            guard let lat = latitude, let lon = longitude else { return nil }
+            return CLLocation(latitude: lat, longitude: lon)
+        }
+        set {
+            coordinate = newValue?.coordinate
+        }
+    }
+
+    var coordinate: CLLocationCoordinate2D? {
+        get {
+            guard let lat = latitude, let lon = longitude else { return nil }
+            return CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        }
+        set {
+            latitude = newValue?.latitude
+            longitude = newValue?.longitude
+        }
+    }
+
+    var placemark: String? {
+        get {
+            return preferences.string(forKey: #function)
         }
         set {
             setPreferred(to: newValue)
