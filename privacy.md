@@ -11,3 +11,14 @@ She doesn't not have access to your personal data either (since we aren't collec
 
 However, you should read [Apple's Privacy Policy](https://www.apple.com/legal/privacy/)
 to check what they report to us to help fix problems you encountered while using our app.
+
+<details>
+<summary></summary>
+
+<script type="text/javascript">
+  window.onload = function () {
+    document.getElementsByClassName("project-name")[0].innerHTML = "Dynamic Dark Mode";
+  }
+</script>
+
+</details>
