@@ -8,7 +8,6 @@
 import AppKit
 
 extension SettingsViewController: NSTouchBarDelegate {
-
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
@@ -17,6 +16,7 @@ extension SettingsViewController: NSTouchBarDelegate {
     }
 
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        let defaultsController = NSUserDefaultsController.shared
         switch identifier {
         case .thresholdPopoverItem:
             let popoverItem = NSPopoverTouchBarItem(identifier: identifier)
@@ -26,15 +26,15 @@ extension SettingsViewController: NSTouchBarDelegate {
             popoverItem.popoverTouchBar = sliderTouchBar
             popoverItem.pressAndHoldTouchBar = sliderTouchBar
             popoverItem.collapsedRepresentationLabel = LocalizedString.SettingsViewController.autoAdjustThreshold
-            popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
+            popoverItem.view?.bind(.enabled, to: defaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             return popoverItem
         case .thresholdSubSliderItem:
             let sliderItem = NSSliderTouchBarItem(identifier: identifier)
             sliderItem.label = LocalizedString.SettingsViewController.autoAdjustThreshold
             sliderItem.slider.minValue = 0
             sliderItem.slider.maxValue = 100
-            sliderItem.slider.bind(.value, to: sharedUserDefaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
-            sliderItem.slider.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
+            sliderItem.slider.bind(.value, to: defaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
+            sliderItem.slider.bind(.enabled, to: defaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
             #warning("TODO: Consider to add NSSliderAccessories here? (images required)")
             return sliderItem
         case .scheduleTypePopoverItem:
@@ -44,7 +44,7 @@ extension SettingsViewController: NSTouchBarDelegate {
             scrubberTouchBar.delegate = self
             popoverItem.collapsedRepresentationLabel = LocalizedString.SettingsViewController.scheduleMode
             popoverItem.popoverTouchBar = scrubberTouchBar
-            popoverItem.view?.bind(.enabled, to: sharedUserDefaultsController, withKeyPath: "values.scheduled", options: nil)
+            popoverItem.view?.bind(.enabled, to: defaultsController, withKeyPath: "values.scheduled", options: nil)
             return popoverItem
         case .scheduleTypeSubScrubberItem:
             let scrubber = NSScrubber()
@@ -57,7 +57,7 @@ extension SettingsViewController: NSTouchBarDelegate {
             scrubber.selectionOverlayStyle = .outlineOverlay
             scrubber.scrubberLayout = NSScrubberProportionalLayout(numberOfVisibleItems: 5)
             scrubber.backgroundColor = .scrubberTexturedBackground
-            scrubber.bind(.selectedIndex, to: sharedUserDefaultsController, withKeyPath: "values.scheduleType", options: nil)
+            scrubber.bind(.selectedIndex, to: defaultsController, withKeyPath: "values.scheduleType", options: nil)
             let scrubberItem = NSCustomTouchBarItem(identifier: identifier)
             scrubberItem.view = scrubber
             return scrubberItem
@@ -92,7 +92,7 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
     }
 
     func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
-        Preferences.scheduleType = Scheduler.Zenith(rawValue: selectedIndex)!
+        preferences.scheduleType = selectedIndex
     }
 }
 

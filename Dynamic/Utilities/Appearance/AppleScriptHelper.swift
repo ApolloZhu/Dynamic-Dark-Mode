@@ -83,8 +83,8 @@ extension AppleScript {
 extension AppleScript {
     public static func setupIfNeeded() {
         guard Sandbox.isOn else { return }
-        let test = folder.appendingPathComponent("test.scpt").path
-        if FileManager.default.isWritableFile(atPath: test) { return }
+        let path = AppleScript.toggleDarkMode.url.path
+        if FileManager.default.fileExists(atPath: path) { return }
         requestPermission()
     }
     

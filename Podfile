@@ -7,9 +7,11 @@ target 'Dynamic' do
 
   # Pods for Dynamic
   pod 'Solar'
+  pod 'Schedule'
+
+  # Masless Only
   pod 'LetsMove', :configurations => ['Debug Masless', 'Release Masless']
   pod 'Sparkle', :configurations => ['Debug Masless', 'Release Masless']
-
 end
 
 target 'DynamicLauncher' do

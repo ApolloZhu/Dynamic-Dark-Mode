@@ -1,24 +1,28 @@
 PODS:
   - LetsMove (1.24)
+  - Schedule (0.1.1)
   - Solar (2.1.0)
   - Sparkle (1.20.0)
 
 DEPENDENCIES:
   - LetsMove
+  - Schedule
   - Solar
   - Sparkle
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - LetsMove
+    - Schedule
     - Solar
     - Sparkle
 
 SPEC CHECKSUMS:
   LetsMove: fefe56bc7bc7fb7d37049e28a14f297961229fc5
+  Schedule: 72165b347cee20cfa4dd08a8b7a1c0b940b6805d
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Sparkle: 48999e7ee032f05ca05e28451eadf4af8ede6b44
 
-PODFILE CHECKSUM: acc3e58a1ca94dcf0fb347f0a6ec9e0caed0405f
+PODFILE CHECKSUM: 984f8b9ff883404c1767e7f1bce4843ce8707ce8
 
 COCOAPODS: 1.6.0.beta.1

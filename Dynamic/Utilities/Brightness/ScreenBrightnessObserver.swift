@@ -35,7 +35,7 @@ final class ScreenBrightnessObserver: NSObject {
         #else
         os_log("Brightness Changed")
         #endif
-        let threshold = Preferences.brightnessThreshold
+        let threshold = preferences.brightnessThreshold
         switch brightness {
         case 0..<threshold:
             AppleInterfaceStyle.darkAqua.enable()

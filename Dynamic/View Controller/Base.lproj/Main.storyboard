@@ -1019,10 +1019,6 @@
                             <constraint firstItem="YVR-sd-FzV" firstAttribute="leading" secondItem="4FC-o0-Dgl" secondAttribute="leading" id="xDY-7K-0Ia"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="sharedUserDefaultsController" destination="LnA-23-JR4" id="vEq-pv-Ubb"/>
-                        <outlet property="thresholdSlider" destination="D7P-I3-P50" id="mKM-Wp-QZL"/>
-                    </connections>
                 </viewController>
                 <customObject id="p91-G4-pcu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="LnA-23-JR4"/>

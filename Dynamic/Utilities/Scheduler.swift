@@ -7,70 +7,149 @@
 //
 
 import CoreLocation
-import UserNotifications
 import Solar
+import Schedule
 
-extension Notification.Name {
-    static let DarkModeOn = Notification.Name(#function)
-    static let DarkModeOff = Notification.Name(#function)
+public final class Scheduler: NSObject, CLLocationManagerDelegate {
+    public static let shared = Scheduler()
+    private override init() { super.init() }
+
+    public func schedule() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .notDetermined:
+            if #available(OSX 10.14, *) {
+                manager.requestLocation()
+            } else {
+                manager.startUpdatingLocation()
+            }
+        default:
+            schedule(atLocation: nil)
+        }
+    }
+
+    private var task: Task?
+
+    #warning("FIXME: This is what I have after 3 months of consideration, but can do better")
+    private func schedule(atLocation location: CLLocation?) {
+        guard preferences.scheduled else { return cancel() }
+        let now = Date()
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
+        if let coordinate = location?.coordinate
+            , CLLocationCoordinate2DIsValid(coordinate)
+            , preferences.scheduleZenithType != .custom {
+            let scheduledDate: Date
+            let solar = Solar(for: now, coordinate: coordinate)!
+            let dates = solar.sunriseSunsetTime
+            if now < dates.sunrise {
+                AppleInterfaceStyle.darkAqua.enable()
+                scheduledDate = dates.sunrise
+                let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: now)!
+                let pastSolar = Solar(for: yesterday, coordinate: coordinate)!
+                preferences.scheduleStart = pastSolar.sunriseSunsetTime.sunset
+                preferences.scheduleEnd = scheduledDate
+            } else {
+                let futureSolar = Solar(for: tomorrow, coordinate: coordinate)!
+                let futureDates = futureSolar.sunriseSunsetTime
+                if now < dates.sunset {
+                    AppleInterfaceStyle.aqua.enable()
+                    scheduledDate = dates.sunset
+                    preferences.scheduleStart = scheduledDate
+                    preferences.scheduleEnd = futureDates.sunrise
+                } else { // after sunset
+                    AppleInterfaceStyle.darkAqua.enable()
+                    preferences.scheduleStart = dates.sunset
+                    scheduledDate = futureDates.sunrise
+                    preferences.scheduleEnd = scheduledDate
+                }
+            }
+            return task = Schedule.at(scheduledDate).do(onElapse: schedule)
+        }
+        // Avoid recursion in a bad way, but ok
+        guard preferences.scheduleZenithType == .custom else {
+            return preferences.scheduleZenithType = .custom
+        }
+        #warning("FIXME: This is gonna be a catastrophe when a user moves across timezone")
+        let current = Calendar.current.dateComponents([.hour, .minute], from: now)
+        let start = Calendar.current.dateComponents(
+            [.hour, .minute], from: preferences.scheduleStart
+        )
+        let end = Calendar.current.dateComponents(
+            [.hour, .minute], from: preferences.scheduleEnd
+        )
+        let scheduledDate: Date
+        if current.hour! <= end.hour! && current.minute! < end.minute! {
+            AppleInterfaceStyle.darkAqua.enable()
+            scheduledDate = Calendar.current.date(
+                bySettingHour: end.hour!, minute: end.minute!, second: 0, of: now
+            )!
+        } else if current.hour! <= start.hour! && current.minute! < start.minute! {
+            AppleInterfaceStyle.aqua.enable()
+            scheduledDate = Calendar.current.date(
+                bySettingHour: start.hour!, minute: start.minute!, second: 0, of: now
+            )!
+        } else {
+            AppleInterfaceStyle.darkAqua.enable()
+            scheduledDate = Calendar.current.date(
+                bySettingHour: end.hour!, minute: end.minute!, second: 0, of: tomorrow
+            )!
+        }
+        task = Schedule.at(scheduledDate).do(onElapse: schedule)
+    }
+
+    public func cancel() {
+        task?.cancel()
+    }
+
+    // MARK: - Real World
+
+    private lazy var manager: CLLocationManager = {
+        let manager = CLLocationManager()
+        manager.delegate = self
+        return manager
+    }()
+
+    public func locationManager(_ manager: CLLocationManager,
+                                didChangeAuthorization status: CLAuthorizationStatus) {
+        if status != .authorizedAlways {
+            print("denied")
+            schedule(atLocation: nil)
+        }
+    }
+
+    public func locationManager(_ manager: CLLocationManager,
+                                didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        manager.stopUpdatingLocation()
+        schedule(atLocation: location)
+    }
+
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        NSAlert(error: error).runModal()
+        schedule(atLocation: nil)
+    }
 }
 
-public final class Scheduler {
-    public static let shared = Scheduler()
-    private init() { schedule() }
-    
-    public var darkMode: (on: Date, off: Date)? {
-        didSet {
-            schedule()
-        }
-    }
-    
-    private var timer: Timer?
-    
-    private func schedule() {
-        guard let darkMode = darkMode else { return }
-        let closer = min(darkMode.on, darkMode.off)
-        timer = Timer(fire: closer, interval: 0, repeats: false)
-        { [weak self] _ in
-            self?.timer?.invalidate()
-            self?.schedule()
-        }
-    }
-    
-    public enum Zenith: Int, CaseIterable {
-        case official
-        case civil
-        case nautical
-        case astronimical
-        case custom
-    }
-    
-    public func scheduleBetweenSunsetSunrise(ofType zenithType: Zenith,
-                                             at loc: CLLocationCoordinate2D) {
-        let solar = Solar(coordinate: loc)!
-        switch zenithType {
+public enum Zenith: Int, CaseIterable {
+    case official
+    case civil
+    case nautical
+    case astronimical
+    case custom
+}
+
+extension Solar {
+    fileprivate var sunriseSunsetTime: (sunrise: Date, sunset: Date) {
+        switch preferences.scheduleZenithType {
         case .custom:
-            break
+            fatalError("No custom zenith type in solar")
         case .official:
-            darkMode = (
-                on: solar.sunset!,
-                off: solar.sunrise!
-            )
+            return (sunrise!, sunset!)
         case .civil:
-            darkMode = (
-                on: solar.civilSunset!,
-                off: solar.civilSunrise!
-            )
+            return (civilSunrise!, civilSunset!)
         case .nautical:
-            darkMode = (
-                on: solar.nauticalSunset!,
-                off: solar.nauticalSunrise!
-            )
+            return (nauticalSunrise!, nauticalSunset!)
         case .astronimical:
-            darkMode = (
-                on: solar.astronomicalSunset!,
-                off: solar.astronomicalSunrise!
-            )
+            return (astronomicalSunrise!, astronomicalSunset!)
         }
     }
 }

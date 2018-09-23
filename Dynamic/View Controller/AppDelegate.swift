@@ -41,14 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #endif
 
         // MARK: Other Setup
-        
+        Preferences.setupObservers()
         AppleScript.setupIfNeeded()
-        if !Preferences.hasLaunchedBefore {
+        if !preferences.hasLaunchedBefore {
             Preferences.setup()
             SettingsViewController.show()
         }
         _ = ScreenBrightnessObserver.shared
-        Preferences.reload()
     }
 
     @objc private func toggleInterfaceStyle() {
@@ -61,5 +60,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             AppleInterfaceStyle.toggle()
         }
+    }
+
+    func applicationWillTerminate(_ notification: Notification) {
+        Preferences.removeObservers()
+        Scheduler.shared.cancel()
     }
 }
