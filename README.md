@@ -1,4 +1,16 @@
-Dynamic Dark Mode is the app you are looking for to power up dark mode on macOS Mojave. Instead of looking for the switch in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
+<a style="float:right" href="https://itunes.apple.com/app/id1437090290">
+<img alt="Download on the Mac App Store" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg"></a>
+
+# Dynamic Dark Mode
+
+*Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave.
+
+Instead of looking for the switch for dark mode in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
+
+## Usage
+
+- Click the menu bar icon to toggle Dark Mode
+- Right click the menu bar icon to show settings
 
 ![Settings for Dynamic Dark Mode](https://user-images.githubusercontent.com/10842684/45924686-60bad000-bed4-11e8-960c-1264de24f314.png)
 
