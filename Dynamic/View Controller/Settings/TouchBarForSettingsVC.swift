@@ -1,5 +1,5 @@
 //
-//  SettingsViewController+TouchBarSupport.swift
+//  TouchBarForSettingsVC.swift
 //  Dynamic
 //
 //  Created by Captain雪ノ下八幡 on 2018/6/27.

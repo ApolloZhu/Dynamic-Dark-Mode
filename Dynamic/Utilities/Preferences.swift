@@ -220,13 +220,31 @@ extension UserDefaults {
             setPreferred(to: newValue)
         }
     }
-    
-    var didSetupAppleScript: Bool {
+
+    @objc dynamic var didSetupAppleScript: Bool {
         get {
             return preferences.bool(forKey: #function)
         }
         set {
             setPreferred(to: newValue)
+        }
+    }
+
+    var rawSettingsStyle: Int {
+        get {
+            return preferences.integer(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+
+    var settingsStyle: SettingsViewController.Style {
+        get {
+            return SettingsViewController.Style(rawValue: rawSettingsStyle) ?? .rightClick
+        }
+        set {
+            rawSettingsStyle = newValue.rawValue
         }
     }
 }

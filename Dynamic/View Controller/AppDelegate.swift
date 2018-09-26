@@ -71,17 +71,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Other Setup
 
     private func setup() {
-        Preferences.setupObservers()
-        AppleScript.setupIfNeeded()
-        if !preferences.hasLaunchedBefore {
+        if preferences.hasLaunchedBefore {
+            start()
+        } else {
             Preferences.setup()
-            DispatchQueue.main.async(execute: SettingsViewController.show)
+            DispatchQueue.main.async(execute: Welcome.show)
         }
-        _ = ScreenBrightnessObserver.shared
     }
 
     func applicationWillTerminate(_ notification: Notification) {
         Preferences.removeObservers()
         Scheduler.shared.cancel()
+    }
+}
+
+func start() {
+    DispatchQueue.main.async {
+        Preferences.setupObservers()
+        AppleScript.setupIfNeeded()
+        _ = ScreenBrightnessObserver.shared
     }
 }

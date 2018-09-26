@@ -34,7 +34,6 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
 
     private var task: Task?
 
-    #warning("FIXME: This is what I have after 3 months of consideration, but can do better")
     private func schedule(atLocation coordinate: CLLocationCoordinate2D?) {
         defer { isScheduling = false }
         guard preferences.scheduled else { return cancel() }
@@ -46,6 +45,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
             let scheduledDate: Date
             let solar = Solar(for: now, coordinate: coordinate)!
             let dates = solar.sunriseSunsetTime
+            #warning("FIXME: Having trouble figuring out time zone")
             if now < dates.sunrise {
                 AppleInterfaceStyle.darkAqua.enable()
                 scheduledDate = dates.sunrise
@@ -108,10 +108,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     // MARK: - Real World
 
     private lazy var manager: CLLocationManager = {
-        var manager: CLLocationManager!
-        DispatchQueue.main.sync {
-            manager = CLLocationManager()
-        }
+        var manager = CLLocationManager()
         manager.delegate = self
         return manager
     }()

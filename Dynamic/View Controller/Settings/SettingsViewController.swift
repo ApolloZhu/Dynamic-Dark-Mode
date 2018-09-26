@@ -9,15 +9,22 @@
 import Cocoa
 import UserNotifications
 
+extension NSStoryboard {
+    static let main = NSStoryboard(name: "Main", bundle: nil)
+}
+
 class SettingsViewController: NSViewController {
+    enum Style: Int {
+        case rightClick
+        case menu
+    }
     private static weak var window: NSWindow? = nil
     public static func show() {
         if window == nil {
             ValueTransformer.setValueTransformer(
                 UsesCustomRange(), forName: .usesCustomRangeTransformerName
             )
-            let storyboard = NSStoryboard(name: "Main", bundle: nil)
-            let windowController = storyboard
+            let windowController = NSStoryboard.main
                 .instantiateController(withIdentifier: "window")
                 as! NSWindowController
             windowController.showWindow(nil)
@@ -72,6 +79,5 @@ extension Preferences {
         preferences.scheduleZenithType = .official
         preferences.scheduled = true
         preferences.opensAtLogin = true
-        preferences.hasLaunchedBefore = true
     }
 }

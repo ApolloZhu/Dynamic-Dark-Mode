@@ -43,21 +43,23 @@ extension AppleScript {
 
 // MARK: Execution
 
+public func showError(_ error: Error?) {
+    guard let error = error else { return }
+    DispatchQueue.main.async {
+        NSAlert(error: error).runModal()
+    }
+}
+
 extension AppleScript {
-    public func execute() {
+    public func execute(then handle: @escaping ((Error?) -> Void) = showError) {
         guard preferences.didSetupAppleScript else { return }
         if Sandbox.isOn {
             do {
                 try NSUserAppleScriptTask(url: url).execute { error in
-                    guard let error = error else { return }
-                    DispatchQueue.main.async {
-                        NSAlert(error: error).runModal()
-                    }
+                    handle(error)
                 }
             } catch {
-                DispatchQueue.main.async {
-                    NSAlert(error: error).runModal()
-                }
+                handle(error)
             }
         } else {
             var errorInfo: NSDictionary? = nil
@@ -92,13 +94,17 @@ extension AppleScript {
         guard Sandbox.isOn else { return }
         if preferences.didSetupAppleScript { return }
         let path = AppleScript.toggleDarkMode.url.path
-        if FileManager.default.fileExists(atPath: path) { return }
+        if FileManager.default.fileExists(atPath: path) {
+            return preferences.didSetupAppleScript = true
+        }
         lock.lock()
         defer { lock.unlock() }
         if isSettingUp { return }
         isSettingUp = true
         DispatchQueue.main.async {
-            SettingsViewController.show()
+            if preferences.hasLaunchedBefore {
+                SettingsViewController.show()
+            }
             requestPermission()
         }
     }
@@ -108,14 +114,14 @@ extension AppleScript {
         selectPanel.directoryURL = folder
         selectPanel.canChooseDirectories = true
         selectPanel.canChooseFiles = false
-        selectPanel.prompt = NSLocalizedString(
+        selectPanel.title = NSLocalizedString(
             "appleScriptFolderSelection.title",
             value: "Select Apple Script Folder",
             comment: ""
         )
         selectPanel.prompt = NSLocalizedString(
             "appleScriptFolderSelection.message",
-            value: "Please open this folder so our app can help you manage dark mode",
+            value: "Click to let Dynamic Dark Mode automate dark mode for you",
             comment: "Convince them to open the current folder presented."
         )
         selectPanel.level = .floating
@@ -134,7 +140,7 @@ extension AppleScript {
             )
             alert.informativeText = NSLocalizedString(
                 "appleScriptFolderSelection.error.message",
-                value: "You MUST select the prompted thing for this app to work.",
+                value: "You MUST select the prompted folder for this app to work.",
                 comment: "Indicate selecting the prompted thing is required"
             )
             alert.runModal()
