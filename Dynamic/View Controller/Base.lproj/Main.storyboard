@@ -897,7 +897,7 @@ DQ
                                 <subviews>
                                     <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ik9-Rl-d1Q">
                                         <rect key="frame" x="-1" y="21" width="433" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Left click on the menu bar icon to show menu, then choose Settings" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="EJk-BY-RUI">
+                                        <buttonCell key="cell" type="radio" title="Left click on the menu bar icon to show menu, then choose Settings" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="1" inset="2" id="EJk-BY-RUI">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>

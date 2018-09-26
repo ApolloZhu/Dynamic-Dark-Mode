@@ -230,7 +230,7 @@ extension UserDefaults {
         }
     }
 
-    var rawSettingsStyle: Int {
+    @objc dynamic var rawSettingsStyle: Int {
         get {
             return preferences.integer(forKey: #function)
         }

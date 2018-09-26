@@ -19,7 +19,7 @@ class SettingsViewController: NSViewController {
         case menu
     }
     private static weak var window: NSWindow? = nil
-    public static func show() {
+    @objc public static func show() {
         if window == nil {
             ValueTransformer.setValueTransformer(
                 UsesCustomRange(), forName: .usesCustomRangeTransformerName
@@ -79,5 +79,6 @@ extension Preferences {
         preferences.scheduleZenithType = .official
         preferences.scheduled = true
         preferences.opensAtLogin = true
+        preferences.settingsStyle = .rightClick
     }
 }
