@@ -31,10 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // Command-Shift-T
-        let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: [.command, .shift], timestamp: 0, windowNumber: 0, context: nil, characters: "T", charactersIgnoringModifiers: "t", isARepeat: false, keyCode: UInt16(kVK_ANSI_T))
-        let shortcut = MASShortcut(event: event)
-        let shortcuts = [preferences.toggleShortcutKey: shortcut!]
-        MASShortcutBinder.shared()?.registerDefaultShortcuts(shortcuts)
         MASShortcutBinder.shared()?.bindShortcut(
             withDefaultsKey: preferences.toggleShortcutKey,
             toAction: toggleInterfaceStyle
@@ -147,4 +143,11 @@ func start() {
         AppleScript.setupIfNeeded()
         _ = ScreenBrightnessObserver.shared
     }
+    guard preferences.value(forKey: preferences.toggleShortcutKey) == nil else { return }
+    let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: [.command, .shift], timestamp: 0, windowNumber: 0, context: nil, characters: "T", charactersIgnoringModifiers: "t", isARepeat: false, keyCode: UInt16(kVK_ANSI_T))
+    let shortcut = MASShortcut(event: event)!
+    let shortcuts = [preferences.toggleShortcutKey: shortcut]
+    MASShortcutBinder.shared()?.registerDefaultShortcuts(shortcuts)
+    let data = try! NSKeyedArchiver.archivedData(withRootObject: shortcut, requiringSecureCoding: true)
+    preferences.set(data, forKey: preferences.toggleShortcutKey)
 }

@@ -686,7 +686,7 @@
             <objects>
                 <windowController storyboardIdentifier="window" showSeguePresentationStyle="single" id="cXd-3X-aO4" sceneMemberID="viewController">
                     <window key="window" title="Dynamic" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="ZWC-1W-uDl">
-                        <windowStyleMask key="styleMask" titled="YES" texturedBackground="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                         <connections>
@@ -705,8 +705,8 @@
         <scene sceneID="nDq-M4-5lX">
             <objects>
                 <windowController storyboardIdentifier="setup" showSeguePresentationStyle="single" id="E5A-g3-bTg" customClass="Welcome" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="T1i-3L-V9g">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+                    <window key="window" title="Setup" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="T1i-3L-V9g">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                         <connections>
@@ -980,10 +980,10 @@ DQ
                                 <rect key="frame" x="0.0" y="0.0" width="534" height="336"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-Aa-NsX">
-                                        <rect key="frame" x="350" y="13" width="100" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Quit (⌘Q)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vzJ-gO-E1h">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                        <rect key="frame" x="20" y="19" width="73" height="19"/>
+                                        <buttonCell key="cell" type="recessed" title="Quit (⌘Q)" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vzJ-gO-E1h">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="systemBold" size="12"/>
                                             <string key="keyEquivalent">q</string>
                                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
@@ -996,6 +996,9 @@ DQ
                                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4NB-3a-2UR">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                                         </buttonCell>
                                         <connections>
                                             <action selector="close:" target="2dW-oa-vyd" id="IeT-ID-Z24"/>
@@ -1004,8 +1007,7 @@ DQ
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7JC-il-y7k" secondAttribute="trailing" constant="20" symbolic="YES" id="8dt-Ic-EoO"/>
-                                    <constraint firstItem="mbn-Aa-NsX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Qe-wF-aDU" secondAttribute="leading" constant="20" symbolic="YES" id="GLd-0X-oNS"/>
-                                    <constraint firstItem="7JC-il-y7k" firstAttribute="leading" secondItem="mbn-Aa-NsX" secondAttribute="trailing" constant="12" symbolic="YES" id="O1m-oO-anL"/>
+                                    <constraint firstItem="mbn-Aa-NsX" firstAttribute="leading" secondItem="8Qe-wF-aDU" secondAttribute="leading" constant="20" symbolic="YES" id="GLd-0X-oNS"/>
                                     <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="fXU-J8-Vjt"/>
                                     <constraint firstAttribute="bottom" secondItem="7JC-il-y7k" secondAttribute="bottom" constant="20" symbolic="YES" id="nlV-hZ-azm"/>
                                 </constraints>
@@ -1021,7 +1023,7 @@ DQ
                             <gridView xPlacement="fill" yPlacement="fill" rowAlignment="none" rowSpacing="8" columnSpacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-sd-FzV">
                                 <rect key="frame" x="0.0" y="61" width="514" height="211"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="211" id="Wgj-9p-eMY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="211" id="Wgj-9p-eMY"/>
                                 </constraints>
                                 <rows>
                                     <gridRow id="0p6-ny-XqA"/>
