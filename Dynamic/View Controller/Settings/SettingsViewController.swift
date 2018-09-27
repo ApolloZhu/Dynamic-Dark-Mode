@@ -71,14 +71,3 @@ extension NSValueTransformerName {
     static let usesCustomRangeTransformerName
         = NSValueTransformerName(rawValue: "UsesCustomRange")
 }
-
-extension Preferences {    
-    public static func setup() {
-        preferences.adjustForBrightness = true
-        preferences.brightnessThreshold = 0.5
-        preferences.scheduleZenithType = .official
-        preferences.scheduled = true
-        preferences.opensAtLogin = true
-        preferences.settingsStyle = .rightClick
-    }
-}

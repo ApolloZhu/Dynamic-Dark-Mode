@@ -37,10 +37,10 @@ enum LocalizedString {
             value: "Nautical",
             comment: "Nautical"
         )
-        static let astronimical = NSLocalizedString(
-            "SunsetSunrise.Astronimical",
-            value: "Astronimical",
-            comment: "Astronimical"
+        static let astronomical = NSLocalizedString(
+            "SunsetSunrise.Astronomical",
+            value: "Astronomical",
+            comment: "Astronomical"
         )
         static let customRange = NSLocalizedString(
             "SunsetSunrise.CustomRange",

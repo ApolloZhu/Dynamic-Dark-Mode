@@ -10,6 +10,7 @@ import CoreLocation
 import UserNotifications
 import Solar
 import Schedule
+import os.log
 
 public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public static let shared = Scheduler()
@@ -68,7 +69,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
                     preferences.scheduleEnd = scheduledDate
                 }
             }
-            return task = Schedule.at(scheduledDate).do(onElapse: schedule)
+            return task = Plan.at(scheduledDate).do(onElapse: schedule)
         }
         if preferences.scheduleZenithType != .custom {
             preferences.scheduleZenithType = .custom
@@ -98,7 +99,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
                 bySettingHour: end.hour!, minute: end.minute!, second: 0, of: tomorrow
             )
         }
-        task = Schedule.at(scheduledDate).do(onElapse: schedule)
+        task = Plan.at(scheduledDate).do(onElapse: schedule)
     }
 
     public func cancel() {
@@ -116,7 +117,11 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager,
                                 didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedAlways {
-            print("denied")
+            #if DEBUG
+            print("Denied Location Access")
+            #else
+            os_log(.fault, "Dynamic - Can't Access Location")
+            #endif
             scheduleAtCachedLocation()
         }
     }
@@ -167,7 +172,7 @@ public enum Zenith: Int, CaseIterable {
     case official
     case civil
     case nautical
-    case astronimical
+    case astronomical
     case custom
 }
 
@@ -182,7 +187,7 @@ extension Solar {
             return (civilSunrise!, civilSunset!)
         case .nautical:
             return (nauticalSunrise!, nauticalSunset!)
-        case .astronimical:
+        case .astronomical:
             return (astronomicalSunrise!, astronomicalSunset!)
         }
     }

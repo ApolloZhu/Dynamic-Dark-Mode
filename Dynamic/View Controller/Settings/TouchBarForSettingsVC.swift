@@ -82,7 +82,7 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
         case 2:
             view.title = LocalizedString.SunsetSunrise.nautical
         case 3:
-            view.title = LocalizedString.SunsetSunrise.astronimical
+            view.title = LocalizedString.SunsetSunrise.astronomical
         case 4:
             view.title = LocalizedString.SunsetSunrise.customRange
         default:

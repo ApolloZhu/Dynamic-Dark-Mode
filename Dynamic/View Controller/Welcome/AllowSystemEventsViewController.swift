@@ -9,8 +9,8 @@
 import Cocoa
 
 class AllowSystemEventsViewController: NSViewController {
-    override func viewDidAppear() {
-        super.viewDidAppear()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         let script: AppleScript = AppleInterfaceStyle.isDark
             ? .enableDarkMode : .disableDarkMode
         script.execute { [weak self] error in

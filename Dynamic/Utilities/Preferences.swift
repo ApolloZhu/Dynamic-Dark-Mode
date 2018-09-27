@@ -9,6 +9,7 @@
 import Cocoa
 import CoreLocation
 import ServiceManagement
+import MASShortcut
 
 enum Sandbox {
     public static var isOn: Bool {
@@ -21,7 +22,18 @@ enum Sandbox {
 typealias Preferences = UserDefaults
 public let preferences = NSUserDefaultsController.shared.defaults
 
-extension UserDefaults {
+extension Preferences {
+    public static func setup() {
+        preferences.adjustForBrightness = true
+        preferences.brightnessThreshold = 0.5
+        preferences.scheduleZenithType = .official
+        preferences.scheduled = true
+        preferences.opensAtLogin = true
+        preferences.settingsStyle = .rightClick
+    }
+}
+
+extension Preferences {
     private static var handles: [NSKeyValueObservation] = []
 
     public static func removeObservers() {
@@ -246,5 +258,9 @@ extension UserDefaults {
         set {
             rawSettingsStyle = newValue.rawValue
         }
+    }
+
+    var toggleShortcutKey: String {
+        return "toggleShortcut"
     }
 }

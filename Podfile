@@ -8,6 +8,7 @@ target 'Dynamic' do
   # Pods for Dynamic
   pod 'Solar'
   pod 'Schedule'
+  pod 'MASShortcut'
 
   # Masless Only
   pod 'LetsMove', :configurations => ['Debug Masless', 'Release Masless']

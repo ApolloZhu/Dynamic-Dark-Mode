@@ -8,8 +8,7 @@
 
 import AppKit
 import UserNotifications
-import os.log
-import ServiceManagement
+import MASShortcut
 #if canImport(LetsMove)
 import LetsMove
 #endif
@@ -18,8 +17,8 @@ import LetsMove
 class AppDelegate: NSObject, NSApplicationDelegate {
     private lazy var statusBarItem = NSStatusBar.system
         .statusItem(withLength: NSStatusItem.squareLength)
-    private var token: NSKeyValueObservation?
-    
+    private var settingsStyleObservation: NSKeyValueObservation?
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         #if canImport(LetsMove) && !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
@@ -31,12 +30,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSUserNotificationCenter.default.delegate = Scheduler.shared
         }
 
+        // Command-Shift-T
+        let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: [.command, .shift], timestamp: 0, windowNumber: 0, context: nil, characters: "T", charactersIgnoringModifiers: "t", isARepeat: false, keyCode: UInt16(kVK_ANSI_T))
+        let shortcut = MASShortcut(event: event)
+        let shortcuts = [preferences.toggleShortcutKey: shortcut!]
+        MASShortcutBinder.shared()?.registerDefaultShortcuts(shortcuts)
+        MASShortcutBinder.shared()?.bindShortcut(
+            withDefaultsKey: preferences.toggleShortcutKey,
+            toAction: toggleInterfaceStyle
+        )
+
         // MARK: - Menu Bar Item Setup
         
         statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
         statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
         statusBarItem.button?.action = #selector(handleEvent)
-        token = preferences.observe(\.rawSettingsStyle, options: [.initial, .new])
+        settingsStyleObservation = preferences.observe(\.rawSettingsStyle, options: [.initial, .new])
         { [weak self] _, change in
             guard let self = self else { return }
             if change.newValue == 1 {
@@ -58,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func buildMenu() -> NSMenu {
+    private func buildMenu() -> NSMenu {
         let menu = NSMenu()
         let toggleItem = NSMenuItem(
             title: NSLocalizedString(
@@ -66,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 value: "Toggle Dark Mode",
                 comment: "Action item to toggle in from menu bar"),
             action: #selector(toggleInterfaceStyle),
-            keyEquivalent: "\u{000d}" // return
+            keyEquivalent: ""
         )
         menu.addItem(toggleItem)
         menu.addItem(.separator())
@@ -126,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        token?.invalidate()
+        settingsStyleObservation?.invalidate()
         Preferences.removeObservers()
         Scheduler.shared.cancel()
     }

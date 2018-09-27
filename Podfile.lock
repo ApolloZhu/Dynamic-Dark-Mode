@@ -1,11 +1,13 @@
 PODS:
   - LetsMove (1.24)
-  - Schedule (0.1.1)
+  - MASShortcut (2.3.6)
+  - Schedule (1.0.0)
   - Solar (2.1.0)
   - Sparkle (1.20.0)
 
 DEPENDENCIES:
   - LetsMove
+  - MASShortcut
   - Schedule
   - Solar
   - Sparkle
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - LetsMove
+    - MASShortcut
     - Schedule
     - Solar
     - Sparkle
 
 SPEC CHECKSUMS:
   LetsMove: fefe56bc7bc7fb7d37049e28a14f297961229fc5
-  Schedule: 72165b347cee20cfa4dd08a8b7a1c0b940b6805d
+  MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
+  Schedule: 64f334e01daa6f80201ab147b59cb4f1e118ae74
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Sparkle: 48999e7ee032f05ca05e28451eadf4af8ede6b44
 
-PODFILE CHECKSUM: 7912f0664e0a55fdf30cd6b6efa57c89ee665e41
+PODFILE CHECKSUM: ae03eed5bd7a3916e5b4e647cba9656c0f546206
 
 COCOAPODS: 1.6.0.beta.1
