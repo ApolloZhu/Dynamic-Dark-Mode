@@ -140,7 +140,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 func start() {
     DispatchQueue.main.async {
         Preferences.setupObservers()
-        AppleScript.setupIfNeeded()
+        AppleScript.checkPermission()
         _ = ScreenBrightnessObserver.shared
     }
     guard preferences.value(forKey: preferences.toggleShortcutKey) == nil else { return }

@@ -117,11 +117,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager,
                                 didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedAlways {
-            #if DEBUG
-            print("Denied Location Access")
-            #else
-            os_log(.fault, "Dynamic - Can't Access Location")
-            #endif
+            log(.info, "Dynamic - Can't Access Location")
             scheduleAtCachedLocation()
         }
     }
