@@ -14,7 +14,7 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ### Latest Release
 
-[Download 1.0 (1)](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/download/1.0.1/Dynamic.zip)
+[Download 1.0 (2)](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/download/1.0.2/Dynamic.zip)
 
 ### Not Yet, But I'm Trying:
 
