@@ -37,12 +37,8 @@ final class ScreenBrightnessObserver: NSObject {
         case threshold...1:
             AppleInterfaceStyle.aqua.enable()
         default:
-            #if DEBUG
             // The NoSense here is from the "AppleNoSenseDisplay" in IOKit
-            fatalError("NoSense Brightness")
-            #else
-            os_log("Dynamic - No Sense Brightness Fetched", type: .error)
-            #endif
+            log(.fault, "Dynamic - No Sense Brightness Fetched")
         }
     }
     

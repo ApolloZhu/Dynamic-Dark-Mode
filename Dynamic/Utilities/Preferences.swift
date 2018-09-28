@@ -11,13 +11,6 @@ import CoreLocation
 import ServiceManagement
 import MASShortcut
 
-enum Sandbox {
-    public static var isOn: Bool {
-        let env = ProcessInfo.processInfo.environment
-        return env.keys.contains("APP_SANDBOX_CONTAINER_ID")
-    }
-}
-
 /// ~/Library/Preferences/io.github.apollozhu.Dynamic.plist
 typealias Preferences = UserDefaults
 public let preferences = NSUserDefaultsController.shared.defaults
@@ -227,15 +220,6 @@ extension Preferences {
     var placemark: String? {
         get {
             return preferences.string(forKey: #function)
-        }
-        set {
-            setPreferred(to: newValue)
-        }
-    }
-
-    @objc dynamic var didSetupAppleScript: Bool {
-        get {
-            return preferences.bool(forKey: #function)
         }
         set {
             setPreferred(to: newValue)

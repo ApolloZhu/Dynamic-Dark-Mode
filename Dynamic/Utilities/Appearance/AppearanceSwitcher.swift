@@ -28,12 +28,8 @@ extension NSAppearance {
         case .darkAqua, .accessibilityHighContrastDarkAqua:
             return true
         default:
-            #if DEBUG
-            fatalError("\(name) Is Not System Appearance")
-            #else
-            os_log("Dynamic - Checking Non-System Appearance", type: .error)
-            return nil
-            #endif
+            log(.error, "Dynamic - Checking Non-System Appearance")
+            return false
         }
     }
 }
@@ -60,6 +56,7 @@ extension AppleInterfaceStyle {
     }
     
     // MARK: - Toggle Dark Mode
+
     static func toggle() {
         AppleScript.toggleDarkMode.execute()
     }

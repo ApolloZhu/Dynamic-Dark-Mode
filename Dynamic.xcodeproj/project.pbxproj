@@ -19,7 +19,6 @@
 		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		524712E32157786A00F48CA0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524712E22157786A00F48CA0 /* Credits.rtf */; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
-		5268864C215AF89B009A2FE3 /* ScriptSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864B215AF89B009A2FE3 /* ScriptSetupViewController.swift */; };
 		5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */; };
 		52688652215B046B009A2FE3 /* OpenSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */; };
 		52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688653215B2FA8009A2FE3 /* SlideSegue.swift */; };
@@ -30,6 +29,7 @@
 		52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512620CC5CAE0073F0CA /* toggle.scpt */; };
 		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
 		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
+		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
 		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */; };
@@ -72,7 +72,6 @@
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		524712E22157786A00F48CA0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
-		5268864B215AF89B009A2FE3 /* ScriptSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptSetupViewController.swift; sourceTree = "<group>"; };
 		5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSystemEventsViewController.swift; sourceTree = "<group>"; };
 		52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsViewController.swift; sourceTree = "<group>"; };
 		52688653215B2FA8009A2FE3 /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		52C3512620CC5CAE0073F0CA /* toggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = toggle.scpt; sourceTree = "<group>"; };
 		52C3512820CC5CD10073F0CA /* on.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = on.scpt; sourceTree = "<group>"; };
 		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
+		52DC7980215ECB48005EE97E /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
 		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
 		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
 		619F2E63A28F22DAD9390852 /* Pods-DynamicLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +192,7 @@
 				5265C6C920D0B84900488D39 /* Appearance */,
 				5265C6CA20D0B85B00488D39 /* Brightness */,
 				5225FDBD20D14B96006E9AF0 /* Scheduler.swift */,
+				52DC7980215ECB48005EE97E /* Auxiliary.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -243,7 +244,6 @@
 			children = (
 				5214CD8E215B3BED008A7E83 /* Welcome.swift */,
 				52688653215B2FA8009A2FE3 /* SlideSegue.swift */,
-				5268864B215AF89B009A2FE3 /* ScriptSetupViewController.swift */,
 				5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */,
 				52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */,
 			);
@@ -341,6 +341,9 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
 								enabled = 1;
 							};
 						};
@@ -463,13 +466,13 @@
 			files = (
 				706D395D20E377E40079535E /* Localizations.swift in Sources */,
 				5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */,
+				52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */,
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
-				5268864C215AF89B009A2FE3 /* ScriptSetupViewController.swift in Sources */,
 				52688652215B046B009A2FE3 /* OpenSettingsViewController.swift in Sources */,
 				706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */,
 				5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */,
@@ -683,7 +686,7 @@
 			baseConfigurationReference = A85F5FCB123842467D0172A3 /* Pods-DynamicLauncher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -706,7 +709,7 @@
 			baseConfigurationReference = 619F2E63A28F22DAD9390852 /* Pods-DynamicLauncher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -825,7 +828,7 @@
 			baseConfigurationReference = D3261CD208CCFBF73B34DA72 /* Pods-DynamicLauncher.release masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -950,7 +953,7 @@
 			baseConfigurationReference = 88EA90C5D6B00D262E96441C /* Pods-DynamicLauncher.debug masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "$(LAUNCHER_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
