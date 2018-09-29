@@ -19,6 +19,7 @@
 		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		524712E32157786A00F48CA0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524712E22157786A00F48CA0 /* Credits.rtf */; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
+		5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266354C215F177C008176E9 /* AllowLocationViewController.swift */; };
 		5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */; };
 		52688652215B046B009A2FE3 /* OpenSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */; };
 		52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688653215B2FA8009A2FE3 /* SlideSegue.swift */; };
@@ -72,6 +73,7 @@
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		524712E22157786A00F48CA0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
+		5266354C215F177C008176E9 /* AllowLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowLocationViewController.swift; sourceTree = "<group>"; };
 		5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSystemEventsViewController.swift; sourceTree = "<group>"; };
 		52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsViewController.swift; sourceTree = "<group>"; };
 		52688653215B2FA8009A2FE3 /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				5214CD8E215B3BED008A7E83 /* Welcome.swift */,
 				52688653215B2FA8009A2FE3 /* SlideSegue.swift */,
 				5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */,
+				5266354C215F177C008176E9 /* AllowLocationViewController.swift */,
 				52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */,
 			);
 			path = Welcome;
@@ -473,6 +476,7 @@
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
+				5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */,
 				52688652215B046B009A2FE3 /* OpenSettingsViewController.swift in Sources */,
 				706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */,
 				5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */,

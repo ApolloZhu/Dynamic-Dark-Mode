@@ -8,21 +8,23 @@
 
 import Cocoa
 
-class AllowSystemEventsViewController: NSViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if AppleScript.requestPermission() {
-            performSegue(withIdentifier: "next", sender: nil)
-        } else {
-            showPreferences.isHidden = false
+class AllowSystemEventsViewController: NSViewController, SetupStep {
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        AppleScript.requestPermission { authorized in
+            DispatchQueue.main.async { [weak self] in
+                if authorized {
+                    self?.showNext()
+                } else {
+                    self?.showPreferences.isHidden = false
+                }
+            }
         }
     }
     @IBOutlet weak var showPreferences: NSButton!
     @IBAction func openPreferences(_ sender: NSButton) {
-        if AppleScript.requestPermission() {
-            performSegue(withIdentifier: "next", sender: nil)
-        } else {
-            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")!)
-        }
+        AppleScript.redirectToSystemPreferences()
+        #warning("Remove this when Apple fixed their bug")
+        exit(-1)
     }
 }
