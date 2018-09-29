@@ -21,7 +21,11 @@ extension Preferences {
         preferences.brightnessThreshold = 0.5
         preferences.scheduleZenithType = .official
         preferences.scheduled = true
+        // I personally would want this as login item,
+        // but that might violate the review guidline.
+        #if Masless
         preferences.opensAtLogin = true
+        #endif
         preferences.settingsStyle = .rightClick
     }
 }

@@ -33,18 +33,27 @@ public func showError(_ info: NSDictionary?, title: String? = nil) {
 }
 
 public func showCriticalErrorMessage(_ text: String, title: String? = nil) {
-    let alert = NSAlert()
-    alert.alertStyle = .critical
-    alert.messageText = title ?? NSLocalizedString(
-        "appleScriptExecution.error.title",
-        value: "Report Critical Bug To Developer",
-        comment: "When user sees this, basically this app fails. "
-            + "So try to persuade them to report this bug to developer "
-            + "so we can fix it earlier."
-    )
-    alert.informativeText = text
+    runModal(ofNSAlert: { alert in
+        alert.alertStyle = .critical
+        alert.messageText = title ?? NSLocalizedString(
+            "appleScriptExecution.error.title",
+            value: "Report Critical Bug To Developer",
+            comment: "When user sees this, basically this app fails. "
+                + "So try to persuade them to report this bug to developer "
+                + "so we can fix it earlier."
+        )
+        alert.informativeText = text
+    })
+}
+
+public func runModal(
+    ofNSAlert configure: @escaping (inout NSAlert) -> Void,
+    then process: @escaping (NSApplication.ModalResponse) -> Void = { _ in }
+) {
     DispatchQueue.main.async {
-        alert.runModal()
+        var alert = NSAlert()
+        configure(&alert)
+        process(alert.runModal())
     }
 }
 

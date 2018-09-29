@@ -784,7 +784,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2DF-h9-FPn">
-                                <rect key="frame" x="18" y="178" width="444" height="34"/>
+                                <rect key="frame" x="18" y="64" width="444" height="34"/>
                                 <textFieldCell key="cell" selectable="YES" title="Dynamic Dark Mode needs to send commands to the built-in &quot;System Events&quot; in order to toggle dark mode for you." id="mGd-Ks-iSW">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -800,8 +800,8 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NcA-9Z-xxY">
-                                <rect key="frame" x="201" y="20" width="78" height="24"/>
-                                <buttonCell key="cell" type="recessed" title="Next &gt;&gt;" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="X4y-Vz-jYE">
+                                <rect key="frame" x="149" y="20" width="183" height="24"/>
+                                <buttonCell key="cell" type="recessed" title="Exit &amp; Configure &gt;&gt;" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="X4y-Vz-jYE">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                     <font key="font" metaFont="systemSemibold" size="20"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -819,20 +819,93 @@ DQ
                             <constraint firstAttribute="trailing" secondItem="Se9-Id-fqb" secondAttribute="trailing" constant="20" symbolic="YES" id="7Lo-Gc-TYK"/>
                             <constraint firstAttribute="bottom" secondItem="NcA-9Z-xxY" secondAttribute="bottom" constant="20" symbolic="YES" id="D4q-RU-7cG"/>
                             <constraint firstItem="NcA-9Z-xxY" firstAttribute="centerX" secondItem="IK5-LB-yIa" secondAttribute="centerX" id="Gew-vp-lza"/>
+                            <constraint firstItem="NcA-9Z-xxY" firstAttribute="top" secondItem="2DF-h9-FPn" secondAttribute="bottom" constant="20" id="Gss-Jh-n7Q"/>
                             <constraint firstItem="Se9-Id-fqb" firstAttribute="leading" secondItem="IK5-LB-yIa" secondAttribute="leading" constant="20" symbolic="YES" id="dFj-Ps-3vm"/>
                             <constraint firstItem="2DF-h9-FPn" firstAttribute="leading" secondItem="IK5-LB-yIa" secondAttribute="leading" constant="20" symbolic="YES" id="enG-af-Bva"/>
-                            <constraint firstItem="2DF-h9-FPn" firstAttribute="top" secondItem="Se9-Id-fqb" secondAttribute="bottom" constant="8" symbolic="YES" id="fAi-9O-Jig"/>
                             <constraint firstAttribute="trailing" secondItem="2DF-h9-FPn" secondAttribute="trailing" constant="20" symbolic="YES" id="swZ-Wb-KfJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="showPreferences" destination="NcA-9Z-xxY" id="ipq-V7-Z1p"/>
-                        <segue destination="CU9-Xg-N4r" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="d9v-i2-So9"/>
+                        <segue destination="lOD-ba-8bz" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="HdU-Qz-Gb6"/>
                     </connections>
                 </viewController>
                 <customObject id="8ov-0x-qta" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1711" y="671"/>
+            <point key="canvasLocation" x="1200" y="671"/>
+        </scene>
+        <!--Allow Location View Controller-->
+        <scene sceneID="Xa4-Qn-JpH">
+            <objects>
+                <viewController id="lOD-ba-8bz" customClass="AllowLocationViewController" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="8PT-jY-Y07">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-X8-HHl">
+                                <rect key="frame" x="18" y="220" width="444" height="30"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Allow Access Current Location" id="jwe-Zh-ib0">
+                                    <font key="font" metaFont="system" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="r9s-NW-yyD">
+                                <rect key="frame" x="18" y="64" width="444" height="34"/>
+                                <textFieldCell key="cell" selectable="YES" id="ZMe-eD-uJT">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tgT-6s-Hvl">
+                                <rect key="frame" x="261" y="20" width="199" height="24"/>
+                                <buttonCell key="cell" type="recessed" title="Open Preferences &gt;&gt;" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="pDT-Ae-cZU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemSemibold" size="20"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="openPreferences:" target="lOD-ba-8bz" id="AkQ-oe-mM9"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-Zg-fjo">
+                                <rect key="frame" x="20" y="19" width="41" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="Skip" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i9M-2z-rxR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="skip:" target="lOD-ba-8bz" id="dth-YZ-ZlN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0LW-X8-HHl" secondAttribute="trailing" constant="20" symbolic="YES" id="SOf-pD-kQt"/>
+                            <constraint firstAttribute="trailing" secondItem="r9s-NW-yyD" secondAttribute="trailing" constant="20" symbolic="YES" id="TL6-vK-Ry9"/>
+                            <constraint firstItem="tgT-6s-Hvl" firstAttribute="top" secondItem="r9s-NW-yyD" secondAttribute="bottom" constant="20" id="VcM-no-DSK"/>
+                            <constraint firstAttribute="bottom" secondItem="tgT-6s-Hvl" secondAttribute="bottom" constant="20" symbolic="YES" id="YAO-ow-2dU"/>
+                            <constraint firstItem="Vup-Zg-fjo" firstAttribute="leading" secondItem="8PT-jY-Y07" secondAttribute="leading" constant="20" symbolic="YES" id="a1P-UY-0D5"/>
+                            <constraint firstItem="tgT-6s-Hvl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vup-Zg-fjo" secondAttribute="trailing" constant="168" id="c4V-U2-Tos"/>
+                            <constraint firstAttribute="trailing" secondItem="tgT-6s-Hvl" secondAttribute="trailing" constant="20" symbolic="YES" id="fTG-Hh-oOm"/>
+                            <constraint firstItem="0LW-X8-HHl" firstAttribute="top" secondItem="8PT-jY-Y07" secondAttribute="top" constant="20" symbolic="YES" id="rRB-Wj-3iv"/>
+                            <constraint firstAttribute="bottom" secondItem="Vup-Zg-fjo" secondAttribute="bottom" constant="20" symbolic="YES" id="rpP-xf-ZIx"/>
+                            <constraint firstItem="0LW-X8-HHl" firstAttribute="leading" secondItem="8PT-jY-Y07" secondAttribute="leading" constant="20" symbolic="YES" id="w1q-ou-Neg"/>
+                            <constraint firstItem="r9s-NW-yyD" firstAttribute="leading" secondItem="8PT-jY-Y07" secondAttribute="leading" constant="20" symbolic="YES" id="x7e-Wj-Nr1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showPreferences" destination="tgT-6s-Hvl" id="S18-Py-utZ"/>
+                        <segue destination="CU9-Xg-N4r" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="60H-Ve-Cll"/>
+                    </connections>
+                </viewController>
+                <customObject id="0nq-5m-8FB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="671"/>
         </scene>
         <!--Open Settings View Controller-->
         <scene sceneID="qcf-Tz-rCQ">
@@ -924,7 +997,7 @@ DQ
                 </viewController>
                 <customObject id="sDf-KV-Imv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="671"/>
+            <point key="canvasLocation" x="2264" y="671"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9wO-1C-pMw">

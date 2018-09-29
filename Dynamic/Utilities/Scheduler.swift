@@ -132,13 +132,12 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
 
     public func locationManager(_ manager: CLLocationManager,
                                 didFailWithError error: Error) {
-        if !scheduleAtCachedLocation() {
-            let alert = NSAlert()
+        guard !scheduleAtCachedLocation() else { return }
+        runModal(ofNSAlert: { alert in
             alert.messageText = LocalizedString.Location.notAvailable
             alert.informativeText = error.localizedDescription
             alert.alertStyle = .warning
-            alert.runModal()
-        }
+        })
     }
 
     @discardableResult

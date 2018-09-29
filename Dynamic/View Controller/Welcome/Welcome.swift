@@ -16,6 +16,7 @@ class Welcome: NSWindowController {
                 .instantiateController(withIdentifier: "setup")
                 as? Welcome
         }
+        welcome?.window?.level = .floating
         welcome?.showWindow(nil)
         NSApp.activate(ignoringOtherApps: true)
         welcome?.window?.makeKeyAndOrderFront(nil)
@@ -23,5 +24,15 @@ class Welcome: NSWindowController {
     static func close() {
         welcome?.close()
         welcome = nil
+    }
+}
+
+protocol SetupStep: class { }
+
+extension SetupStep where Self: NSViewController {
+    func showNext() {
+        DispatchQueue.main.async { [weak self] in
+            self?.performSegue(withIdentifier: "next", sender: nil)
+        }
     }
 }
