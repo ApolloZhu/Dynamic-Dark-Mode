@@ -17,7 +17,7 @@ extension Notification.Name {
 
 final class ScreenBrightnessObserver: NSObject {
     static let shared = ScreenBrightnessObserver()
-    
+
     public func start() {
         DistributedNotificationCenter.default().addObserver(
             self,

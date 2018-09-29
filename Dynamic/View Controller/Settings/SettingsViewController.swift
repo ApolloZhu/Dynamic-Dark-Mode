@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import UserNotifications
 
 extension NSStoryboard {
     static let main = NSStoryboard(name: "Main", bundle: nil)
@@ -50,6 +49,14 @@ class SettingsViewController: NSViewController {
     override func viewDidDisappear() {
         super.viewDidDisappear()
         removeAllNotifications()
+    }
+
+    @IBAction func reSetup(_ sender: Any) {
+        let name = Bundle.main.bundleIdentifier!
+        preferences.removePersistentDomain(forName: name)
+        Preferences.setup()
+        close(self)
+        Welcome.show()
     }
 }
 
