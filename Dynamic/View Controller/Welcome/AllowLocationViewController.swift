@@ -9,7 +9,6 @@
 import Cocoa
 import CoreLocation
 
-
 class AllowLocationViewController: NSViewController, SetupStep {
 
     @IBOutlet weak var showPreferences: NSButton!
@@ -57,7 +56,7 @@ class AllowLocationViewController: NSViewController, SetupStep {
     }
 }
 
-fileprivate func redirectToSystemPreferences() {
+private func redirectToSystemPreferences() {
     NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")!)
 }
 

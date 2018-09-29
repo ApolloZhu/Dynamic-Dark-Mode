@@ -1052,6 +1052,7 @@ DQ
                                     <constraint firstItem="7JC-il-y7k" firstAttribute="leading" secondItem="S9k-5A-MTH" secondAttribute="trailing" constant="12" id="aqN-IC-GMQ"/>
                                     <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="fXU-J8-Vjt"/>
                                     <constraint firstAttribute="bottom" secondItem="7JC-il-y7k" secondAttribute="bottom" constant="20" symbolic="YES" id="nlV-hZ-azm"/>
+                                    <constraint firstItem="S9k-5A-MTH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mbn-Aa-NsX" secondAttribute="trailing" constant="8" id="vk2-0w-txL"/>
                                     <constraint firstAttribute="bottom" secondItem="S9k-5A-MTH" secondAttribute="bottom" constant="20" id="yss-0c-ESk"/>
                                 </constraints>
                             </visualEffectView>

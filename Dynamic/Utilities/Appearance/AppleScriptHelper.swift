@@ -19,15 +19,15 @@ public enum AppleScript: String, CaseIterable {
 // MARK: - Handy Properties
 
 extension AppleScript {
-    fileprivate var name: String {
+    private var name: String {
         return "\(rawValue).scpt"
     }
     
-    fileprivate static var folder: URL {
+    private static var folder: URL {
         return Bundle.main.resourceURL!
     }
     
-    fileprivate var url: URL {
+    private var url: URL {
         return AppleScript.folder.appendingPathComponent(name)
     }
 }
@@ -82,6 +82,7 @@ You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.
     }
 
     public static func requestPermission(
+        retryOnInternalError: Bool = true,
         then process: @escaping (_ authorized: Bool) -> Void
     ) {
         DispatchQueue.global().async {
@@ -101,19 +102,25 @@ You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.
                 return process(true)
             case errAEEventNotPermitted:
                 break
-            case errOSAInvalidID:
+            case errOSAInvalidID, -1751: // These two are supposed to be the same
                 #warning("Figure out what causes this")
-                runModal(ofNSAlert: { alert in
-                    alert.messageText = NSLocalizedString(
-                        "AppleScript.errorOSInvalidID",
-                        value: "Something Went Wrong",
-                        comment: "Please try again"
-                    )
-                })
+                if retryOnInternalError {
+                    log(.error, "Dynamic - OSStatus %{public}d", status)
+                    requestPermission(retryOnInternalError: false, then: process)
+                } else {
+                    runModal(ofNSAlert: { alert in
+                        alert.messageText = NSLocalizedString(
+                            "AppleScript.errorOSInvalidID",
+                            value: "Something Went Wrong",
+                            comment: "Please try again"
+                        )
+                        alert.informativeText = "\(status)"
+                    })
+                }
             case errAEEventWouldRequireUserConsent, procNotFound:
                 showCriticalErrorMessage("\(status)")
             default:
-                log(.error, "Dynamic - Unhandled OSStatus")
+                log(.fault, "Dynamic - Unhandled OSStatus %{public}d", status)
             }
             process(false)
         }

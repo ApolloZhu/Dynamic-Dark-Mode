@@ -8,7 +8,6 @@
 
 import Cocoa
 
-
 enum Sandbox {
     public static var isOn: Bool {
         let env = ProcessInfo.processInfo.environment
@@ -63,6 +62,7 @@ import os.log
 
 func log(_ type: OSLogType = .default, log: OSLog = .default,
          _ message: StaticString, _ args: CVarArg...) {
+    os_log(type, log: log, message, args)
     #if DEBUG
     let content = String(format: "\(message)", args)
     if type == .fault {
@@ -70,7 +70,5 @@ func log(_ type: OSLogType = .default, log: OSLog = .default,
     } else {
         print(content)
     }
-    #else
-    os_log(type, log: log, message, args)
     #endif
 }
