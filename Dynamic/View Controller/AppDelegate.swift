@@ -24,11 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         PFMoveToApplicationsFolderIfNecessary()
         #endif
 
-        if #available(OSX 10.14, *) {
-            UNUserNotificationCenter.current().delegate = Scheduler.shared
-        } else {
-            NSUserNotificationCenter.default.delegate = Scheduler.shared
-        }
+        UNUserNotificationCenter.current().delegate = Scheduler.shared
 
         // Command-Shift-T
         MASShortcutBinder.shared()?.bindShortcut(
@@ -137,17 +133,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+private var started = false
 func start() {
+    setDefaultToggleShortcut()
+    if started { return }
+    started = true
     DispatchQueue.main.async {
         Preferences.setupObservers()
         AppleScript.checkPermission()
         _ = ScreenBrightnessObserver.shared
     }
+}
+
+private func setDefaultToggleShortcut() {
     guard preferences.value(forKey: preferences.toggleShortcutKey) == nil else { return }
     let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: [.command, .shift], timestamp: 0, windowNumber: 0, context: nil, characters: "T", charactersIgnoringModifiers: "t", isARepeat: false, keyCode: UInt16(kVK_ANSI_T))
     let shortcut = MASShortcut(event: event)!
     let shortcuts = [preferences.toggleShortcutKey: shortcut]
     MASShortcutBinder.shared()?.registerDefaultShortcuts(shortcuts)
     let data = try! NSKeyedArchiver.archivedData(withRootObject: shortcut, requiringSecureCoding: true)
-    preferences.set(data, forKey: preferences.toggleShortcutKey)
+    preferences.setPreferred(to: data, forKey: preferences.toggleShortcutKey)
 }

@@ -10,7 +10,7 @@ import Cocoa
 
 class Welcome: NSWindowController {
     private static var welcome: Welcome? = nil
-    static func show() {
+    public static func show() {
         if welcome == nil {
             welcome = NSStoryboard.main
                 .instantiateController(withIdentifier: "setup")
@@ -21,7 +21,7 @@ class Welcome: NSWindowController {
         NSApp.activate(ignoringOtherApps: true)
         welcome?.window?.makeKeyAndOrderFront(nil)
     }
-    static func close() {
+    public static func close() {
         welcome?.close()
         welcome = nil
     }

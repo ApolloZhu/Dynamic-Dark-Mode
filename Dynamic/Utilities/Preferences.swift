@@ -88,7 +88,7 @@ extension Preferences {
         ]
     }
 
-    private func setPreferred(to value: Any?, forKey key: String = #function) {
+    func setPreferred(to value: Any?, forKey key: String = #function) {
         (NSUserDefaultsController.shared.values as AnyObject).setValue(value, forKey: "\(key)")
     }
 

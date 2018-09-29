@@ -1035,12 +1035,24 @@ DQ
                                             <action selector="close:" target="2dW-oa-vyd" id="IeT-ID-Z24"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-5A-MTH">
+                                        <rect key="frame" x="354" y="13" width="96" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Re-setup" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nFa-hm-K6y">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="reSetup:" target="2dW-oa-vyd" id="R8n-XV-A2D"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7JC-il-y7k" secondAttribute="trailing" constant="20" symbolic="YES" id="8dt-Ic-EoO"/>
                                     <constraint firstItem="mbn-Aa-NsX" firstAttribute="leading" secondItem="8Qe-wF-aDU" secondAttribute="leading" constant="20" symbolic="YES" id="GLd-0X-oNS"/>
+                                    <constraint firstItem="7JC-il-y7k" firstAttribute="leading" secondItem="S9k-5A-MTH" secondAttribute="trailing" constant="12" id="aqN-IC-GMQ"/>
                                     <constraint firstAttribute="bottom" secondItem="mbn-Aa-NsX" secondAttribute="bottom" constant="20" id="fXU-J8-Vjt"/>
                                     <constraint firstAttribute="bottom" secondItem="7JC-il-y7k" secondAttribute="bottom" constant="20" symbolic="YES" id="nlV-hZ-azm"/>
+                                    <constraint firstAttribute="bottom" secondItem="S9k-5A-MTH" secondAttribute="bottom" constant="20" id="yss-0c-ESk"/>
                                 </constraints>
                             </visualEffectView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-OH-kC8">
