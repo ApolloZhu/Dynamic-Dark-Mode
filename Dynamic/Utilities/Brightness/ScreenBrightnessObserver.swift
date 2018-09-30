@@ -27,24 +27,31 @@ final class ScreenBrightnessObserver: NSObject {
         )
         updateForBrightnessChange()
     }
-    
-    @objc private func updateForBrightnessChange() {
+
+    public var mode: AppleInterfaceStyle? {
         let brightness = NSScreen.brightness
         let threshold = preferences.brightnessThreshold
         switch brightness {
         case 0..<threshold:
-            AppleInterfaceStyle.darkAqua.enable()
+            return .darkAqua
         case threshold...1:
-            AppleInterfaceStyle.aqua.enable()
+            return .aqua
         default:
             // The NoSense here is from the "AppleNoSenseDisplay" in IOKit
             log(.fault, "Dynamic - No Sense Brightness Fetched")
+            return nil
         }
+    }
+    
+    @objc private func updateForBrightnessChange() {
+        guard let mode = self.mode else { return }
+        AppleScript.checkPermission(onSuccess: mode.enable)
     }
     
     public func stop() {
         DistributedNotificationCenter.default().removeObserver(self)
     }
+
     deinit {
         stop()
         // MARK: - Update Anyways
@@ -53,7 +60,6 @@ final class ScreenBrightnessObserver: NSObject {
         )
     }
 
-    
     private override init() {
         super.init()
         // Listen to Appearance Changes

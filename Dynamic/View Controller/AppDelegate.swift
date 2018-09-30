@@ -140,8 +140,17 @@ func start() {
     started = true
     DispatchQueue.main.async {
         Preferences.setupObservers()
-        AppleScript.checkPermission()
         _ = ScreenBrightnessObserver.shared
+        AppleScript.checkPermission {
+            DispatchQueue.main.async {
+                Scheduler.shared.getCurrentMode {
+                    guard let style = $0
+                        ?? ScreenBrightnessObserver.shared.mode
+                        else { return }
+                    style.enable()
+                }
+            }
+        }
     }
 }
 

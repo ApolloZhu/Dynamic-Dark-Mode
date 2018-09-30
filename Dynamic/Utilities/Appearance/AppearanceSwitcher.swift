@@ -14,7 +14,7 @@ import AppKit
 
 let darkModeUserDefaultsKey = "AppleInterfaceStyle"
 
-enum AppleInterfaceStyle: String {
+public enum AppleInterfaceStyle: String {
     case aqua
     case darkAqua
 }

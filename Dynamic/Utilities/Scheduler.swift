@@ -16,10 +16,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public static let shared = Scheduler()
     private override init() { super.init() }
 
-    private var isScheduling = false
-    public func schedule() {
-        if isScheduling { return }
-        isScheduling = true
+    private func requestLocationUpdate() -> Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .notDetermined:
             manager.stopUpdatingLocation()
@@ -28,54 +25,75 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
             } else {
                 manager.startUpdatingLocation()
             }
+            return true
         default:
+            return false
+        }
+    }
+
+    private var isScheduling = false
+    public func schedule() {
+        if isScheduling { return }
+        isScheduling = true
+        if !requestLocationUpdate() {
             scheduleAtCachedLocation()
         }
     }
 
+    public typealias StyleProcessor = (AppleInterfaceStyle?) -> Void
+    private var _callback: StyleProcessor?
+    private var callback: StyleProcessor? {
+        get {
+            defer { _callback = nil }
+            return _callback
+        }
+        set {
+            _callback = newValue
+        }
+    }
+    public func getCurrentMode(then process: @escaping StyleProcessor) {
+        callback = process
+        if requestLocationUpdate() { return }
+        callback?(nil)
+    }
+
     private var task: Task?
 
-    private func schedule(atLocation coordinate: CLLocationCoordinate2D?) {
-        defer { isScheduling = false }
-        guard preferences.scheduled else { return cancel() }
+    public func mode(atLocation coordinate: CLLocationCoordinate2D?) -> (style: AppleInterfaceStyle, date: Date?) {
         let now = Date()
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
         if let coordinate = coordinate
             , CLLocationCoordinate2DIsValid(coordinate)
             , preferences.scheduleZenithType != .custom {
-            defer { removeAllNotifications() }
             let scheduledDate: Date
             let solar = Solar(for: now, coordinate: coordinate)!
             let dates = solar.sunriseSunsetTime
-            #warning("FIXME: Having trouble figuring out time zone")
             if now < dates.sunrise {
-                AppleInterfaceStyle.darkAqua.enable()
                 scheduledDate = dates.sunrise
                 let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: now)!
                 let pastSolar = Solar(for: yesterday, coordinate: coordinate)!
                 preferences.scheduleStart = pastSolar.sunriseSunsetTime.sunset
                 preferences.scheduleEnd = scheduledDate
+                return (.darkAqua, scheduledDate)
             } else {
                 let futureSolar = Solar(for: tomorrow, coordinate: coordinate)!
                 let futureDates = futureSolar.sunriseSunsetTime
                 if now < dates.sunset {
-                    AppleInterfaceStyle.aqua.enable()
                     scheduledDate = dates.sunset
                     preferences.scheduleStart = scheduledDate
                     preferences.scheduleEnd = futureDates.sunrise
+                    return (.aqua, scheduledDate)
                 } else { // after sunset
-                    AppleInterfaceStyle.darkAqua.enable()
                     preferences.scheduleStart = dates.sunset
                     scheduledDate = futureDates.sunrise
                     preferences.scheduleEnd = scheduledDate
+                    return (.darkAqua, scheduledDate)
                 }
             }
-            return task = Plan.at(scheduledDate).do(onElapse: schedule)
         }
         if preferences.scheduleZenithType != .custom {
             preferences.scheduleZenithType = .custom
         }
-        #warning("FIXME: This is gonna be a catastrophe when a user moves across timezone")
         let current = Calendar.current.dateComponents([.hour, .minute], from: now)
         let start = Calendar.current.dateComponents(
             [.hour, .minute], from: preferences.scheduleStart
@@ -83,24 +101,33 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         let end = Calendar.current.dateComponents(
             [.hour, .minute], from: preferences.scheduleEnd
         )
-        let scheduledDate: Date!
+        if start == end { return (.current, nil) }
         if current < end {
-            AppleInterfaceStyle.darkAqua.enable()
-            scheduledDate = Calendar.current.date(
+            return (.darkAqua, Calendar.current.date(
                 bySettingHour: end.hour!, minute: end.minute!, second: 0, of: now
-            )
+            ))
         } else if current < start {
-            AppleInterfaceStyle.aqua.enable()
-            scheduledDate = Calendar.current.date(
+            return (.aqua, Calendar.current.date(
                 bySettingHour: start.hour!, minute: start.minute!, second: 0, of: now
-            )
-        } else {
-            AppleInterfaceStyle.darkAqua.enable()
-            scheduledDate = Calendar.current.date(
+            ))
+        } else if start > end {
+            return (.darkAqua, Calendar.current.date(
                 bySettingHour: end.hour!, minute: end.minute!, second: 0, of: tomorrow
-            )
+            ))
+        } else {
+            return (.aqua, Calendar.current.date(
+                bySettingHour: start.hour!, minute: start.minute!, second: 0, of: tomorrow
+            ))
         }
-        task = Plan.at(scheduledDate).do(onElapse: schedule)
+    }
+
+    private func schedule(atLocation coordinate: CLLocationCoordinate2D?) {
+        defer { isScheduling = false }
+        removeAllNotifications()
+        let decision = mode(atLocation: coordinate)
+        AppleScript.checkPermission(onSuccess: decision.style.enable)
+        guard let date = decision.date else { return }
+        task = Plan.at(date).do(onElapse: schedule)
     }
 
     public func cancel() {
@@ -128,7 +155,12 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         preferences.location = location
-        schedule(atLocation: location.coordinate)
+        let coordinate = location.coordinate
+        if isScheduling {
+            schedule(atLocation: coordinate)
+        } else {
+            callback?(mode(atLocation: coordinate).style)
+        }
     }
 
     public func locationManager(_ manager: CLLocationManager,

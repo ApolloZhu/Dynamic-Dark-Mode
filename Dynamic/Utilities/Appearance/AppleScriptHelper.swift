@@ -40,14 +40,18 @@ extension AppleScript {
             var errorInfo: NSDictionary? = nil
             let script = NSAppleScript(contentsOf: self.url, error: &errorInfo)
             script?.executeAndReturnError(&errorInfo)
-            showError(errorInfo)
+            showError(errorInfo, title: NSLocalizedString(
+                "AppleScript.execute.error",
+                value: "Failed to Toggle Dark Mode",
+                comment: "something went wrong. But it's okay"
+            ))
         }
     }
 }
 
 extension AppleScript {
     public static func checkPermission(
-        executeWhenAuthorized onSuccess: @escaping () -> Void = { }
+        onSuccess: @escaping () -> Void = { }
     ) {
         requestPermission { authorized in
             if authorized { return onSuccess() }
@@ -99,7 +103,9 @@ extension AppleScript {
                 return process(true)
             case errAEEventNotPermitted:
                 break
-            case errOSAInvalidID, -1751: // These two are supposed to be the same
+            case errOSAInvalidID, -1751,
+                 errAEEventWouldRequireUserConsent,
+                 procNotFound:
                 #warning("Figure out what causes this")
                 if retryOnInternalError {
                     log(.error, "Dynamic - OSStatus %{public}d", status)
@@ -107,17 +113,16 @@ extension AppleScript {
                 } else {
                     runModal(ofNSAlert: { alert in
                         alert.messageText = NSLocalizedString(
-                            "AppleScript.errorOSInvalidID",
+                            "AppleScript.authorization.failed",
                             value: "Something Went Wrong",
-                            comment: "Please try again"
+                            comment: "Generic error happened"
                         )
                         alert.informativeText = "\(status)"
                     })
                 }
-            case errAEEventWouldRequireUserConsent, procNotFound:
-                showCriticalErrorMessage("\(status)")
             default:
                 log(.fault, "Dynamic - Unhandled OSStatus %{public}d", status)
+                showCriticalErrorMessage("\(status)")
             }
             process(false)
         }

@@ -51,13 +51,13 @@ extension Preferences {
             { _, change in changeHandler(change) }
         }
         handles = [
-            observe(\.adjustForBrightness, observeInitial: true) { change in
+            observe(\.adjustForBrightness) { change in
                 ScreenBrightnessObserver.shared.stop()
                 if change.newValue == true {
                     ScreenBrightnessObserver.shared.start()
                 }
             },
-            observe(\.scheduled, observeInitial: true) { change in
+            observe(\.scheduled) { change in
                 if change.newValue == true {
                     Scheduler.shared.schedule()
                 } else {

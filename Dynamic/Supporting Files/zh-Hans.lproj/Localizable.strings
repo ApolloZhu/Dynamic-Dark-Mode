@@ -1,11 +1,14 @@
 /* No comment provided by engineer. */
 "AppleScript.authorization.error" = "你并未允许“自动深色模式”管理深色模式。";
 
+/* Generic error happened */
+"AppleScript.authorization.failed" = "出错了 QAQ";
+
 /* No comment provided by engineer. */
 "AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。该设置需要您重新打开“自动深色模式”才会生效。";
 
-/* Please try again */
-"AppleScript.errorOSInvalidID" = "出错了 QAQ";
+/* something went wrong. But it's okay */
+"AppleScript.execute.error" = "未能切换暗色模式";
 
 /* Scare the user so they report bugs. */
 "appleScriptExecution.error.title" = "告诉开发者 TA 们又写严重的 Bug 了";

@@ -101,7 +101,7 @@
 "LE2-aR-0XJ.title" = "前置所有窗口";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to send commands to the built-in \"System Events\" in order to toggle dark mode for you."; ObjectID = "mGd-Ks-iSW"; */
-"mGd-Ks-iSW.title" = "“自动深色模式”需要能够向系统自带的“System Events”发送请求才能为您切换深色模式。";
+"mGd-Ks-iSW.title" = "“自动深色模式”需要能够向系统自带的“System Events”（系统事件）发送请求才能为您切换深色模式。";
 
 /* Class = "NSTextFieldCell"; title = "Shortcut"; ObjectID = "MI9-bf-6dt"; */
 "MI9-bf-6dt.title" = "切换快捷键";
