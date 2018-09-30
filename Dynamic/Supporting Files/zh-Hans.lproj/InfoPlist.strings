@@ -1,0 +1,9 @@
+/* Bundle name */
+"CFBundleName" = "自动深色模式";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "版权所有 © 2018 自动深色模式。保留所有权利。";
+
+/* Privacy - Location Usage Description */
+"NSLocationUsageDescription" = "自动深色模式以此计算日出日落时间。";
+

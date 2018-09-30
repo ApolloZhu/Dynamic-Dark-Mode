@@ -66,10 +66,7 @@ extension AppleScript {
             #warning("Remove the RESTART line when apple has solved the bug.")
             alert.informativeText = NSLocalizedString(
                 "AppleScript.authorization.instruction",
-                value: """
-We'll take you to System Preferences.
-You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.
-""",
+                value: "We'll take you to System Preferences.\nYou may need to RESTART Dynamic Dark Mode to allow the new settings take effect.",
                 comment: ""
             )
         }, then: { _ in

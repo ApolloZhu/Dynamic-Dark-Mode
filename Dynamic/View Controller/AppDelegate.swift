@@ -75,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             title: NSLocalizedString(
                 "Menu.preferences",
                 value: "Preferences…",
-                comment: "Settings"),
+                comment: "Drop down menu item to show preferences"),
             action: #selector(SettingsViewController.show),
             keyEquivalent: ","
         )

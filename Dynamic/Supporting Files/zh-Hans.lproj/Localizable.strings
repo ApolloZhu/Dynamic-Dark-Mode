@@ -1,0 +1,54 @@
+/* No comment provided by engineer. */
+"AppleScript.authorization.error" = "你并未允许“自动深色模式”管理深色模式。";
+
+/* No comment provided by engineer. */
+"AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。该设置需要您重新打开“自动深色模式”才会生效。";
+
+/* Please try again */
+"AppleScript.errorOSInvalidID" = "出错了 QAQ";
+
+/* Scare the user so they report bugs. */
+"appleScriptExecution.error.title" = "告诉开发者 TA 们又写严重的 Bug 了";
+
+/* Failed to attain user location for sunset/sunrise calculation. */
+"Location.notAvailable" = "无法获取当前位置";
+
+/* Can't fetch user's current location. Using cache instead. */
+"Location.useCache" = "使用之前的位置定时";
+
+/* Drop down menu item to show preferences */
+"Menu.preferences" = "偏好设置...";
+
+/* Use system translation for quit */
+"Menu.quit" = "退出";
+
+/* Action item to toggle in from menu bar */
+"Menu.toggle" = "切换深色模式";
+
+/* AutoAdjustThreshold */
+"SettingsViewController.AutoAdjustThreshold" = "自动切换阀值";
+
+/* ScheduleMode */
+"SettingsViewController.ScheduleMode" = "定时选项";
+
+/* Astronomical */
+"SunsetSunrise.Astronomical" = "天文";
+
+/* Civil */
+"SunsetSunrise.Civil" = "法定";
+
+/* CustomRange */
+"SunsetSunrise.CustomRange" = "自定";
+
+/* Nautical */
+"SunsetSunrise.Nautical" = "航海";
+
+/* Official */
+"SunsetSunrise.Official" = "标准";
+
+/* No comment provided by engineer. */
+"SystemPreferences.open" = "打开“系统偏好设置”";
+
+/* No comment provided by engineer. */
+"SystemPreferences.skip" = "跳过";
+

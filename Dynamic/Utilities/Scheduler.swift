@@ -43,6 +43,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         if let coordinate = coordinate
             , CLLocationCoordinate2DIsValid(coordinate)
             , preferences.scheduleZenithType != .custom {
+            defer { removeAllNotifications() }
             let scheduledDate: Date
             let solar = Solar(for: now, coordinate: coordinate)!
             let dates = solar.sunriseSunsetTime

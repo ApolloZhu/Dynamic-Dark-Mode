@@ -15,6 +15,9 @@
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
 		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
 		5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225FDBD20D14B96006E9AF0 /* Scheduler.swift */; };
+		5236A8ED21606035009DA3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5236A8EB21606035009DA3A3 /* InfoPlist.strings */; };
+		5236A8F021606035009DA3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5236A8EE21606035009DA3A3 /* InfoPlist.strings */; };
+		5236A8F321606035009DA3A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5236A8F121606035009DA3A3 /* Localizable.strings */; };
 		5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237AE5020CCC051009CF037 /* SettingsViewController.swift */; };
 		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		524712E32157786A00F48CA0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524712E22157786A00F48CA0 /* Credits.rtf */; };
@@ -67,11 +70,16 @@
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen + Brightness.swift"; sourceTree = "<group>"; };
 		5225FDBD20D14B96006E9AF0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		5236A8EC21606035009DA3A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5236A8EF21606035009DA3A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5236A8F221606035009DA3A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		523718332157467A00AEC921 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		523718342157468900AEC921 /* privacy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy.md; sourceTree = "<group>"; };
 		523718352157469800AEC921 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		524712E22157786A00F48CA0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		525324F921603D7300904D76 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		525324FA21603D7300904D76 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
 		5266354C215F177C008176E9 /* AllowLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowLocationViewController.swift; sourceTree = "<group>"; };
 		5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSystemEventsViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +95,8 @@
 		52C3512620CC5CAE0073F0CA /* toggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = toggle.scpt; sourceTree = "<group>"; };
 		52C3512820CC5CD10073F0CA /* on.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = on.scpt; sourceTree = "<group>"; };
 		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
+		52C88EF82160678A003AF0B2 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		52DC7980215ECB48005EE97E /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
 		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
 		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
@@ -143,6 +153,8 @@
 			children = (
 				523718332157467A00AEC921 /* README.md */,
 				523718342157468900AEC921 /* privacy.md */,
+				52C88EF82160678A003AF0B2 /* CHANGELOG.md */,
+				52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */,
 				523718352157469800AEC921 /* LICENSE */,
 				52F44AF120CFEBA300E739F6 /* MAS.xcconfig */,
 				52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */,
@@ -180,6 +192,8 @@
 				706D396620E37A870079535E /* TouchBarPrivateAPI.h */,
 				52168FBF20C8B47200869A9C /* Assets.xcassets */,
 				52168FC420C8B47200869A9C /* Info.plist */,
+				5236A8F121606035009DA3A3 /* Localizable.strings */,
+				5236A8EB21606035009DA3A3 /* InfoPlist.strings */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
 				524712E22157786A00F48CA0 /* Credits.rtf */,
 			);
@@ -269,6 +283,7 @@
 				52C3511C20CC57C80073F0CA /* Assets.xcassets */,
 				52C3511E20CC57C80073F0CA /* MainMenu.xib */,
 				52C3512120CC57C80073F0CA /* Info.plist */,
+				5236A8EE21606035009DA3A3 /* InfoPlist.strings */,
 				52C3512220CC57C80073F0CA /* DynamicLauncher.entitlements */,
 			);
 			path = DynamicLauncher;
@@ -360,6 +375,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
@@ -378,9 +394,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3512B20CC5D010073F0CA /* off.scpt in Resources */,
+				5236A8ED21606035009DA3A3 /* InfoPlist.strings in Resources */,
 				524712E32157786A00F48CA0 /* Credits.rtf in Resources */,
 				52C3512920CC5CD10073F0CA /* on.scpt in Resources */,
 				52168FC020C8B47200869A9C /* Assets.xcassets in Resources */,
+				5236A8F321606035009DA3A3 /* Localizable.strings in Resources */,
 				52168FD520C9A63B00869A9C /* Main.storyboard in Resources */,
 				52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */,
 			);
@@ -391,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3511D20CC57C80073F0CA /* Assets.xcassets in Resources */,
+				5236A8F021606035009DA3A3 /* InfoPlist.strings in Resources */,
 				52C3512020CC57C80073F0CA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,14 +520,40 @@
 			isa = PBXVariantGroup;
 			children = (
 				52168FD620C9A63B00869A9C /* Base */,
+				525324F921603D7300904D76 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5236A8EB21606035009DA3A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5236A8EC21606035009DA3A3 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5236A8EE21606035009DA3A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5236A8EF21606035009DA3A3 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5236A8F121606035009DA3A3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5236A8F221606035009DA3A3 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		52C3511E20CC57C80073F0CA /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				52C3511F20CC57C80073F0CA /* Base */,
+				525324FA21603D7300904D76 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -521,6 +566,7 @@
 			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -582,6 +628,7 @@
 			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -736,6 +783,7 @@
 			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -855,6 +903,7 @@
 			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
