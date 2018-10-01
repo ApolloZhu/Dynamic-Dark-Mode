@@ -11,7 +11,6 @@ import CoreLocation
 import ServiceManagement
 import MASShortcut
 
-/// ~/Library/Preferences/io.github.apollozhu.Dynamic.plist
 typealias Preferences = UserDefaults
 public let preferences = NSUserDefaultsController.shared.defaults
 
@@ -81,7 +80,7 @@ extension Preferences {
             },
             observe(\.opensAtLogin, observeInitial: true) { change in
                 assert(SMLoginItemSetEnabled(
-                    "io.github.apollozhu.Dynamic.Launcher" as CFString,
+                    "io.github.apollozhu.DynamicDarkMode.Launcher" as CFString,
                     change.newValue ?? true
                 ))
             }
