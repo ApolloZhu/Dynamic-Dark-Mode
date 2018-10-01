@@ -26,7 +26,7 @@ extension Preferences {
         #if Masless
         preferences.opensAtLogin = true
         #endif
-        preferences.settingsStyle = .rightClick
+        preferences.settingsStyle = .menu
     }
 }
 
@@ -241,7 +241,7 @@ extension Preferences {
 
     var settingsStyle: SettingsViewController.Style {
         get {
-            return SettingsViewController.Style(rawValue: rawSettingsStyle) ?? .rightClick
+            return SettingsViewController.Style(rawValue: rawSettingsStyle) ?? .menu
         }
         set {
             rawSettingsStyle = newValue.rawValue

@@ -387,9 +387,9 @@ DQ
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKA-XO-R2D">
                                 <rect key="frame" x="20" y="52" width="464" height="38"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ik9-Rl-d1Q">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ik9-Rl-d1Q">
                                         <rect key="frame" x="-1" y="21" width="467" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Left click on the menu bar icon to show menu, then choose Preferences..." bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="1" inset="2" id="EJk-BY-RUI">
+                                        <buttonCell key="cell" type="radio" title="Left click on the menu bar icon to show menu, then choose Preferences..." bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="EJk-BY-RUI">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -397,9 +397,9 @@ DQ
                                             <action selector="configureStyle:" target="CU9-Xg-N4r" id="9RA-kb-Vsh"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-TO-AqP">
+                                    <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-TO-AqP">
                                         <rect key="frame" x="-1" y="-1" width="217" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Right click on the menu bar icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="qmW-4e-u5z">
+                                        <buttonCell key="cell" type="radio" title="Right click on the menu bar icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qmW-4e-u5z">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -472,7 +472,7 @@ DQ
                                 <rect key="frame" x="0.0" y="0.0" width="534" height="314"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-Aa-NsX">
-                                        <rect key="frame" x="20" y="19" width="73" height="19"/>
+                                        <rect key="frame" x="20" y="19" width="71" height="19"/>
                                         <buttonCell key="cell" type="recessed" title="Quit (⌘Q)" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vzJ-gO-E1h">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="systemBold" size="12"/>

@@ -14,8 +14,8 @@ extension NSStoryboard {
 
 class SettingsViewController: NSViewController {
     enum Style: Int {
-        case rightClick
         case menu
+        case rightClick
     }
     private static weak var window: NSWindow? = nil
     @objc public static func show() {
