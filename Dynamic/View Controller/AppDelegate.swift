@@ -40,9 +40,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         settingsStyleObservation = preferences.observe(\.rawSettingsStyle, options: [.initial, .new])
         { [weak self] _, change in
             guard let self = self else { return }
-            if change.newValue == 1 {
+            switch preferences.settingsStyle {
+            case .menu:
                 self.statusBarItem.menu = self.buildMenu()
-            } else {
+            case .rightClick:
                 self.statusBarItem.menu = nil
             }
         }

@@ -811,7 +811,7 @@ DQ
                                     <gridCell row="exL-9l-mx9" column="YiK-CN-yVF" id="qPU-ZD-O10">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wrw-IL-hmE">
                                             <rect key="frame" x="135" y="-2" width="381" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Show Dropdown Menu Instead" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UGa-lO-tpW">
+                                            <buttonCell key="cell" type="check" title="Single Click to Toggle, Right Click for Preferences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UGa-lO-tpW">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
