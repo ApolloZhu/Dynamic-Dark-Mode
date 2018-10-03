@@ -72,8 +72,8 @@ final class ScreenBrightnessObserver: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?,
                                context: UnsafeMutableRawPointer?) {
-        let isDarkModeOn = AppleInterfaceStyle.isDark
         guard #available(OSX 10.14, *) else { return }
+        let isDarkModeOn = AppleInterfaceStyle.isDark
         let styleName: NSAppearance.Name = isDarkModeOn ? .aqua : .darkAqua
         NSAppearance.current = NSAppearance(named: styleName)
     }
