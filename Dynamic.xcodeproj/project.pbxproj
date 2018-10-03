@@ -85,6 +85,11 @@
 		5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSystemEventsViewController.swift; sourceTree = "<group>"; };
 		52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsViewController.swift; sourceTree = "<group>"; };
 		52688653215B2FA8009A2FE3 /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
+		5291EF0521656269002C10DE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		5291EF062165626A002C10DE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5291EF072165626B002C10DE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5291EF082165626B002C10DE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5291EF092165626B002C10DE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52C3511220CC53CC0073F0CA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		52C3511820CC57B60073F0CA /* DynamicLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3511A20CC57B60073F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -376,6 +381,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				de,
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
@@ -521,6 +527,7 @@
 			children = (
 				52168FD620C9A63B00869A9C /* Base */,
 				525324F921603D7300904D76 /* zh-Hans */,
+				5291EF0521656269002C10DE /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -529,6 +536,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5236A8EC21606035009DA3A3 /* zh-Hans */,
+				5291EF082165626B002C10DE /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5236A8EF21606035009DA3A3 /* zh-Hans */,
+				5291EF092165626B002C10DE /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -545,6 +554,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5236A8F221606035009DA3A3 /* zh-Hans */,
+				5291EF072165626B002C10DE /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -554,6 +564,7 @@
 			children = (
 				52C3511F20CC57C80073F0CA /* Base */,
 				525324FA21603D7300904D76 /* zh-Hans */,
+				5291EF062165626A002C10DE /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

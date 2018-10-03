@@ -11,7 +11,7 @@
 "AppleScript.execute.error" = "未能切换暗色模式";
 
 /* Scare the user so they report bugs. */
-"appleScriptExecution.error.title" = "告诉开发者 TA 们又写严重的 Bug 了";
+"Bug.general.title" = "告诉开发者 TA 们又写严重的 Bug 了";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
 "Location.notAvailable" = "无法获取当前位置";

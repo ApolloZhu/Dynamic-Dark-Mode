@@ -35,7 +35,7 @@ public func showCriticalErrorMessage(_ text: String, title: String? = nil) {
     runModal(ofNSAlert: { alert in
         alert.alertStyle = .critical
         alert.messageText = title ?? NSLocalizedString(
-            "appleScriptExecution.error.title",
+            "Bug.general.title",
             value: "Report Critical Bug To Developer",
             comment: "Scare the user so they report bugs."
         )
