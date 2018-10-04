@@ -1,58 +1,58 @@
 /* No comment provided by engineer. */
-"AppleScript.authorization.error" = "Failed to Toggle Dark Mode";
+"AppleScript.authorization.error" = "Umschalten des Dark Modes fehlgeschlagen";
 
 /* Generic error happened */
-"AppleScript.authorization.failed" = "Something Went Wrong";
+"AppleScript.authorization.failed" = "Etwas lief falsch";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.
-You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.";
+"AppleScript.authorization.instruction" = "Wir öffnen die Systemeinstellungen für Sie.
+Automatischer Dark Mode muss gegebenenfalls neu gestartet werden, um die Einstellungen zu übernehmen.";
 
 /* something went wrong. But it's okay */
-"AppleScript.execute.error" = "Failed to Toggle Dark Mode";
+"AppleScript.execute.error" = "Umschalten des Dark Modes fehlgeschlagen";
 
 /* Scare the user so they report bugs. */
-"Bug.general.title" = "Report Critical Bug To Developer";
+"Bug.general.title" = "Kritischen Bug an den Developer melden";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
-"Location.notAvailable" = "Location Service Unavailable";
+"Location.notAvailable" = "Zugriff auf Position fehlgeschlagen";
 
 /* Can't fetch user's current location. Using cache instead. */
-"Location.useCache" = "Scheduled Using Previous Location";
+"Location.useCache" = "Verwendet vorherige Position";
 
 /* Drop down menu item to show preferences */
-"Menu.preferences" = "Preferences…";
+"Menu.preferences" = "Einstellungen…";
 
 /* Use system translation for quit */
-"Menu.quit" = "Quit";
+"Menu.quit" = "Beenden";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "Toggle Dark Mode";
+"Menu.toggle" = "Dark Mode umschalten";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"SettingsViewController.AutoAdjustThreshold" = "Schwelle automatisch einstellen";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Schedule Mode";
+"SettingsViewController.ScheduleMode" = "Geplanter Modus";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomical";
+"SunsetSunrise.Astronomical" = "Astronomisch";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Civil";
+"SunsetSunrise.Civil" = "Zivil";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Custom";
+"SunsetSunrise.CustomRange" = "Eigene";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautical";
+"SunsetSunrise.Nautical" = "Nautische";
 
 /* Official */
-"SunsetSunrise.Official" = "Official";
+"SunsetSunrise.Official" = "Offizielle";
 
 /* No comment provided by engineer. */
-"SystemPreferences.open" = "Open System Preferences";
+"SystemPreferences.open" = "Öffne Systemeinstellungen";
 
 /* No comment provided by engineer. */
-"SystemPreferences.skip" = "Skip";
+"SystemPreferences.skip" = "Überspringen";
 
