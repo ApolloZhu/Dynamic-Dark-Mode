@@ -5,7 +5,8 @@
 "AppleScript.authorization.failed" = "出错了 QAQ";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。该设置需要您重新打开“自动深色模式”才会生效。";
+"AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。
+该设置需要您重新打开“自动深色模式”才会生效。";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "未能切换暗色模式";

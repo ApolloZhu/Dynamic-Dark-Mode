@@ -1,0 +1,11 @@
+/* Bundle name */
+"CFBundleName" = "Dynamic Dark Mode";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. All rights reserved.";
+
+/* Privacy - AppleEvents Sending Usage Description */
+"NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
+
+/* Privacy - Location Usage Description */
+"NSLocationUsageDescription" = "This is how Dynamic Dark Mode calculates sunset/sunrise time.";

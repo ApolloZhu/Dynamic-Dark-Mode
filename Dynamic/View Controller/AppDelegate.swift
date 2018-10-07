@@ -65,7 +65,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let toggleItem = NSMenuItem(
             title: NSLocalizedString(
                 "Menu.toggle",
-                value: "Toggle Dark Mode",
                 comment: "Action item to toggle in from menu bar"),
             action: #selector(toggleInterfaceStyle),
             keyEquivalent: ""
@@ -75,7 +74,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let preferencesItem = NSMenuItem(
             title: NSLocalizedString(
                 "Menu.preferences",
-                value: "Preferences…",
                 comment: "Drop down menu item to show preferences"),
             action: #selector(SettingsViewController.show),
             keyEquivalent: ","
@@ -86,7 +84,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let quitItem = NSMenuItem(
             title: NSLocalizedString(
                 "Menu.quit",
-                value: "Quit",
                 comment: "Use system translation for quit"),
             action: #selector(NSApplication.terminate(_:)),
             keyEquivalent: "Q"

@@ -75,12 +75,10 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
             alert.messageText = LocalizedString.Location.notAvailable
             alert.addButton(withTitle: NSLocalizedString(
                 "SystemPreferences.open",
-                value: "Open System Preferences",
                 comment: ""
             ))
             alert.addButton(withTitle: NSLocalizedString(
                 "SystemPreferences.skip",
-                value: "Skip",
                 comment: ""
             ))
             alert.alertStyle = .warning

@@ -36,7 +36,6 @@ public func showCriticalErrorMessage(_ text: String, title: String? = nil) {
         alert.alertStyle = .critical
         alert.messageText = title ?? NSLocalizedString(
             "Bug.general.title",
-            value: "Report Critical Bug To Developer",
             comment: "Scare the user so they report bugs."
         )
         alert.informativeText = text
