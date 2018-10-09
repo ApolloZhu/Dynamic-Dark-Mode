@@ -1,57 +1,57 @@
 /* No comment provided by engineer. */
-"AppleScript.authorization.error" = "You didn't allow Dynamic Dark Mode to manage dark mode";
+"AppleScript.authorization.error" = "Vi ne permisis Aŭtomatikan Malluman Modon administri la malluman modon.";
 
 /* Generic error happened */
-"AppleScript.authorization.failed" = "Something Went Wrong";
+"AppleScript.authorization.failed" = "Io Estas Malrajta";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.
-You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.";
+"AppleScript.authorization.instruction" = "Ni alportos vin al Sistemaj Preferoj.
+Vi eble bezonas REKOMENCI Aŭtomatikan Malluman Modon por efekti la nova agordoj.";
 
 /* something went wrong. But it's okay */
-"AppleScript.execute.error" = "Failed to Toggle Dark Mode";
+"AppleScript.execute.error" = "Malsukcesis baskuligi la malluman modon.";
 
 /* Scare the user so they report bugs. */
-"Bug.general.title" = "Report Critical Bug To Developer";
+"Bug.general.title" = "Raportu Gravan Eraron al la Ellaboranto";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
-"Location.notAvailable" = "Can't Fetch Current Location";
+"Location.notAvailable" = "Ne Eblas Ricevi la Nuna Lokon";
 
 /* Can't fetch user's current location. Using cache instead. */
-"Location.useCache" = "Scheduled Using Previous Location";
+"Location.useCache" = "Tempoplanis Uzi Antaŭan Lokon";
 
 /* Drop down menu item to show preferences */
-"Menu.preferences" = "Preferences…";
+"Menu.preferences" = "Preferoj…";
 
 /* Use system translation for quit */
-"Menu.quit" = "Quit";
+"Menu.quit" = "Forlasu";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "Toggle Dark Mode";
+"Menu.toggle" = "Baskuligu la Malluman Modon";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"SettingsViewController.AutoAdjustThreshold" = "Ĝustigi la Sojlon Aŭtomatike";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Schedule Mode";
+"SettingsViewController.ScheduleMode" = "Tempoplana Modo";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomical";
+"SunsetSunrise.Astronomical" = "Astronomia";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Civil";
+"SunsetSunrise.Civil" = "Civila";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Custom";
+"SunsetSunrise.CustomRange" = "Agordi";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautical";
+"SunsetSunrise.Nautical" = "Naŭtika";
 
 /* Official */
-"SunsetSunrise.Official" = "Official";
+"SunsetSunrise.Official" = "Ofica";
 
 /* No comment provided by engineer. */
-"SystemPreferences.open" = "Open System Preferences";
+"SystemPreferences.open" = "Iru al Sistemaj Preferoj";
 
 /* No comment provided by engineer. */
-"SystemPreferences.skip" = "Skip";
+"SystemPreferences.skip" = "Preterpasu";
