@@ -1,11 +1,11 @@
 /* Bundle name */
-"CFBundleName" = "Dynamic Dark Mode";
+"CFBundleName" = "Aŭtomatika Malluma Modo";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. All rights reserved.";
+"NSHumanReadableCopyright" = "Kopirajto © 2018 Aŭtomatika Malluma Modo. Ĉiuj rajtoj rezervitaj.";
 
 /* Privacy - AppleEvents Sending Usage Description */
-"NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
+"NSAppleEventsUsageDescription" = "Aŭtomatika Malluma Modo bezonas ĉi tion por administri la malluman modon.";
 
 /* Privacy - Location Usage Description */
-"NSLocationUsageDescription" = "This is how Dynamic Dark Mode calculates sunset/sunrise time.";
+"NSLocationUsageDescription" = "Aŭtomatika Malluma Modo bezonas ĉi tion por kalkuli la tempon de sunleviĝo/sunsubiro.";
