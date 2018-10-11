@@ -2,5 +2,4 @@
 "CFBundleName" = "$(PRODUCT_NAME)";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. All rights reserved.";
-
+"NSHumanReadableCopyright" = "Kopirajto © 2018 Aŭtomatika Malluma Modo. Ĉiuj rajtoj rezervitaj.";
