@@ -1,57 +1,57 @@
 /* No comment provided by engineer. */
-"AppleScript.authorization.error" = "You didn't allow Dynamic Dark Mode to manage dark mode";
+"AppleScript.authorization.error" = "У Dynamic Dark Mode нет разрешения управлять темным оформлением";
 
 /* Generic error happened */
-"AppleScript.authorization.failed" = "Something Went Wrong";
+"AppleScript.authorization.failed" = "Что-то пошло не так";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.
-You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.";
+"AppleScript.authorization.instruction" = "Переход в Системные настройки. Возможно, понадобится перезапустить Dynamic Dark Mode, чтобы новые настройки вступили в силу.";
 
 /* something went wrong. But it's okay */
-"AppleScript.execute.error" = "Failed to Toggle Dark Mode";
+"AppleScript.execute.error" = "Не удалось сменить оформление";
 
 /* Scare the user so they report bugs. */
-"Bug.general.title" = "Report Critical Bug To Developer";
+"Bug.general.title" = "Сообщить об ошибке разработчикам";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
-"Location.notAvailable" = "Can't Fetch Current Location";
+"Location.notAvailable" = "Не удалось определить местоположение";
 
 /* Can't fetch user's current location. Using cache instead. */
-"Location.useCache" = "Scheduled Using Previous Location";
+"Location.useCache" = "Расписание составлено на основе последней геолокации";
 
 /* Drop down menu item to show preferences */
-"Menu.preferences" = "Preferences…";
+"Menu.preferences" = "Настройки…";
 
 /* Use system translation for quit */
-"Menu.quit" = "Quit";
+"Menu.quit" = "Выход";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "Toggle Dark Mode";
+"Menu.toggle" = "Сменить режим";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"SettingsViewController.AutoAdjustThreshold" = "Автонастройка порога";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Schedule Mode";
+"SettingsViewController.ScheduleMode" = "Расписание";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomical";
+"SunsetSunrise.Astronomical" = "Астрономическое";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Civil";
+"SunsetSunrise.Civil" = "Гражданское";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Custom";
+"SunsetSunrise.CustomRange" = "Пользовательское";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautical";
+"SunsetSunrise.Nautical" = "Навигационное";
 
 /* Official */
-"SunsetSunrise.Official" = "Official";
+"SunsetSunrise.Official" = "Официальное";
 
 /* No comment provided by engineer. */
-"SystemPreferences.open" = "Open System Preferences";
+"SystemPreferences.open" = "Открыть Системные настройки";
 
 /* No comment provided by engineer. */
-"SystemPreferences.skip" = "Skip";
+"SystemPreferences.skip" = "Пропустить";
+
