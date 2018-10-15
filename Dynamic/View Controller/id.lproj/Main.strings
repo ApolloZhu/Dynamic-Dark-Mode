@@ -3,187 +3,187 @@
 "1Xt-HY-uBw.title" = "Dynamic";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
-"32v-z6-q8Z.title" = "Dynamic Dark Mode Preferences";
+"32v-z6-q8Z.title" = "Pengaturan Dynamic Dark Mode";
 
 /* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
-"4J7-dP-txa.title" = "Enter Full Screen";
+"4J7-dP-txa.title" = "Masuk Layar Penuh";
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "4NB-3a-2UR"; */
-"4NB-3a-2UR.title" = "Save";
+"4NB-3a-2UR.title" = "Simpan";
 
 /* Class = "NSTextFieldCell"; title = "Auto Adjust"; ObjectID = "4Oz-wH-7ZV"; */
-"4Oz-wH-7ZV.title" = "Auto Adjust";
+"4Oz-wH-7ZV.title" = "Penyesuaian Otomatis";
 
 /* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
-"4da-BG-PBG.title" = "From:";
+"4da-BG-PBG.title" = "Dari:";
 
 /* Class = "NSMenuItem"; title = "Quit Dynamic"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit Dynamic";
+"4sb-4s-VLi.title" = "Keluar dari Dynamic";
 
 /* Class = "NSMenuItem"; title = "About Dynamic"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About Dynamic";
+"5kV-Vb-QxS.title" = "Tentang Dynamic";
 
 /* Class = "NSTextFieldCell"; title = "To Open Preferences..."; ObjectID = "87M-Sa-k9k"; */
-"87M-Sa-k9k.title" = "To Open Preferences...";
+"87M-Sa-k9k.title" = "Untuk membuka pengaturan...";
 
 /* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
-"92J-gp-8D9.title" = "Allow Controlling System Events";
+"92J-gp-8D9.title" = "Ijinkan kontrol terhadap kejadian dari sistem";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
-"AYu-sK-qS6.title" = "Main Menu";
+"AYu-sK-qS6.title" = "Menu Utama";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
-"BOF-NM-1cW.title" = "Preferences…";
+"BOF-NM-1cW.title" = "Pengaturan…";
 
 /* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
-"Buz-5v-iiv.title" = "Welcome to Dynamic Dark Mode";
+"Buz-5v-iiv.title" = "Salamat Datang di Dynamic Dark Mode";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
-"DVo-aG-piG.title" = "Close";
+"DVo-aG-piG.title" = "Tutup";
 
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
-"Dcd-f7-wbP.title" = "Dark Mode On Between";
+"Dcd-f7-wbP.title" = "Mode Gelap Diantara";
 
 /* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "Left click on the menu bar icon to show menu, then choose Preferences...";
+"EJk-BY-RUI.title" = "Klik kiri pada ikon bar menu untuk menampilkan menu, kemudian pilih Pengaturan...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
-"F2S-fz-NVQ.title" = "Help";
+"F2S-fz-NVQ.title" = "Bantuan";
 
 /* Class = "NSMenuItem"; title = "Dynamic Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Dynamic Help";
+"FKE-Sm-Kum.title" = "Bantuan Dynamic";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
-"H8h-7b-M4v.title" = "View";
+"H8h-7b-M4v.title" = "Lihat";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
-"HyV-fh-RgO.title" = "View";
+"HyV-fh-RgO.title" = "Lihat";
 
 /* Class = "NSButtonCell"; title = "Opens At Login"; ObjectID = "IB3-f2-BQf"; */
-"IB3-f2-BQf.title" = "Opens At Login";
+"IB3-f2-BQf.title" = "Buka saat Login";
 
 /* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
-"Ibh-ok-jMp.title" = "Custom Range";
+"Ibh-ok-jMp.title" = "Rentang Pribadi";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
-"Kd2-mp-pUS.title" = "Show All";
+"Kd2-mp-pUS.title" = "Tampilkan Semua";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "Bring All to Front";
+"LE2-aR-0XJ.title" = "Tampilkan Semua Kedepan";
 
 /* Class = "NSTextFieldCell"; title = "Shortcut"; ObjectID = "MI9-bf-6dt"; */
-"MI9-bf-6dt.title" = "Shortcut";
+"MI9-bf-6dt.title" = "Jalan Pintas";
 
 /* Class = "NSMenuItem"; title = "Astronomical Sunset Sunrise"; ObjectID = "N5L-wl-yWc"; */
-"N5L-wl-yWc.title" = "Astronomical Sunset Sunrise";
+"N5L-wl-yWc.title" = "Matahari Tenggelam Terbit Berdasarkan Astronomis";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
-"NMo-om-nkz.title" = "Services";
+"NMo-om-nkz.title" = "Layanan";
 
 /* Class = "NSTextFieldCell"; title = "Scheduled"; ObjectID = "O5v-cY-mFV"; */
-"O5v-cY-mFV.title" = "Scheduled";
+"O5v-cY-mFV.title" = "Dijadwalkan";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
-"OY7-WF-poV.title" = "Minimize";
+"OY7-WF-poV.title" = "Memperkecil";
 
 /* Class = "NSMenuItem"; title = "Hide Dynamic"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Hide Dynamic";
+"Olw-nP-bQN.title" = "Sembunyikan Dynamic";
 
 /* Class = "NSMenuItem"; title = "Official Sunset Sunrise"; ObjectID = "QiA-MM-zn7"; */
-"QiA-MM-zn7.title" = "Official Sunset Sunrise";
+"QiA-MM-zn7.title" = "Matahari Tenggelam Terbit Resmi";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
-"R4o-n2-Eq4.title" = "Zoom";
+"R4o-n2-Eq4.title" = "Perbesar";
 
 /* Class = "NSMenuItem"; title = "Nautical Sunset Sunrise"; ObjectID = "RtR-kN-8f8"; */
-"RtR-kN-8f8.title" = "Nautical Sunset Sunrise";
+"RtR-kN-8f8.title" = "Matahari Tenggelam Terbit Berdasarkan Nautika";
 
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
-"T1i-3L-V9g.title" = "Setup";
+"T1i-3L-V9g.title" = "Mempersiapkan";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
-"Td7-aD-5lo.title" = "Window";
+"Td7-aD-5lo.title" = "Jendela";
 
 /* Class = "NSButtonCell"; title = "Single Click to Toggle, Right Click for Preferences"; ObjectID = "UGa-lO-tpW"; */
-"UGa-lO-tpW.title" = "Single Click to Toggle, Right Click for Preferences";
+"UGa-lO-tpW.title" = "Klik satu kali untuk beralih, klik kanan untuk Pengaturan";
 
 /* Class = "NSMenuItem"; title = "Civil Sunset Sunrise"; ObjectID = "VHN-z1-e7t"; */
-"VHN-z1-e7t.title" = "Civil Sunset Sunrise";
+"VHN-z1-e7t.title" = "Matahari Tenggelam Terbit Berdasarkan Sipil";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
-"Vdr-fp-XzO.title" = "Hide Others";
+"Vdr-fp-XzO.title" = "Sembunyikan yang Lain";
 
 /* Class = "NSButtonCell"; title = "Exit & Configure >>"; ObjectID = "X4y-Vz-jYE"; */
-"X4y-Vz-jYE.title" = "Exit & Configure >>";
+"X4y-Vz-jYE.title" = "Keluar & Konfigurasi >>";
 
 /* Class = "NSButtonCell"; title = "Start >>"; ObjectID = "YvB-h5-jjV"; */
-"YvB-h5-jjV.title" = "Start >>";
+"YvB-h5-jjV.title" = "Mulai >>";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
-"ZMe-eD-uJT.title" = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night.";
+"ZMe-eD-uJT.title" = "Dynamic Dark Mode perlu mengetahu lokasi Anda sekarang untuk melakukan perhitungan waktu matahari tenggelam/terbit, dengan demikian mode gelap dapat dinyalakan pada saat malam hari.";
 
 /* Class = "NSWindow"; title = "Dynamic"; ObjectID = "ZWC-1W-uDl"; */
 "ZWC-1W-uDl.title" = "Dynamic";
 
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
-"aTl-1u-JFS.title" = "Print…";
+"aTl-1u-JFS.title" = "Cetak…";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
-"aUF-d1-5bR.title" = "Window";
+"aUF-d1-5bR.title" = "Jendela";
 
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
-"bib-Uj-vzu.title" = "File";
+"bib-Uj-vzu.title" = "Berkas";
 
 /* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
-"dMs-cI-mzQ.title" = "File";
+"dMs-cI-mzQ.title" = "Berkas";
 
 /* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
-"do3-JG-x5l.title" = "Threshold:";
+"do3-JG-x5l.title" = "Ambang Batas:";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
-"hBx-FP-5Wr.title" = "To:";
+"hBx-FP-5Wr.title" = "Ke:";
 
 /* Class = "NSTextFieldCell"; title = "This is where you can later decide if you want to turn on and off dark mode based on your screen brightness, set a custom schedule of when to turn it on and off, or according to the calculated sunset-sunrise time based your location."; ObjectID = "heB-g6-Sln"; */
-"heB-g6-Sln.title" = "This is where you can later decide if you want to turn on and off dark mode based on your screen brightness, set a custom schedule of when to turn it on and off, or according to the calculated sunset-sunrise time based your location.";
+"heB-g6-Sln.title" = "Ini merupakan bagian yang dapat Anda atur nanti jika Anda ingin menyalakan dan mematikan mode gelap berdasarkan tingkat cerahan layar Anda, pengaturan penjadwalan pribadi untuk mematikan dan menyalakan, atau berdasarkan perhitungan waktu matahari tenggelam-terbit berdasarkan lokasi Anda.";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
-"hz9-B4-Xy5.title" = "Services";
+"hz9-B4-Xy5.title" = "Layanan";
 
 /* Class = "NSButtonCell"; title = "Skip"; ObjectID = "i9M-2z-rxR"; */
-"i9M-2z-rxR.title" = "Skip";
+"i9M-2z-rxR.title" = "Lewati";
 
 /* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
-"jwe-Zh-ib0.title" = "Allow Access Current Location";
+"jwe-Zh-ib0.title" = "Ijinkan mengakses lokasi saat ini";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to send commands to the built-in \"System Events\" in order to toggle dark mode for you."; ObjectID = "mGd-Ks-iSW"; */
-"mGd-Ks-iSW.title" = "Dynamic Dark Mode needs to send commands to the built-in \"System Events\" in order to toggle dark mode for you.";
+"mGd-Ks-iSW.title" = "Dynamic Dark Mode butuh mengirimkan perintah ke \"Kejadian dari Sistem\" guna mengalihkan ke mode gelap untuk Anda.";
 
 /* Class = "NSButtonCell"; title = "Re-setup"; ObjectID = "nFa-hm-K6y"; */
-"nFa-hm-K6y.title" = "Re-setup";
+"nFa-hm-K6y.title" = "Mempersiapkan Ulang";
 
 /* Class = "NSButtonCell"; title = "Open Preferences >>"; ObjectID = "pDT-Ae-cZU"; */
-"pDT-Ae-cZU.title" = "Open Preferences >>";
+"pDT-Ae-cZU.title" = "Buka Pengaturan >>";
 
 /* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
-"qIS-W8-SiK.title" = "Page Setup…";
+"qIS-W8-SiK.title" = "Halaman Persiapan…";
 
 /* Class = "NSButtonCell"; title = "Right click on the menu bar icon"; ObjectID = "qmW-4e-u5z"; */
-"qmW-4e-u5z.title" = "Right click on the menu bar icon";
+"qmW-4e-u5z.title" = "Klik kanan pada ikon di menu bar";
 
 /* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
-"tF8-qA-5Bo.title" = "Other";
+"tF8-qA-5Bo.title" = "Lainnya";
 
 /* Class = "NSMenu"; title = "Dynamic"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Dynamic";
 
 /* Class = "NSButtonCell"; title = "Quit (⌘Q)"; ObjectID = "vzJ-gO-E1h"; */
-"vzJ-gO-E1h.title" = "Quit (⌘Q)";
+"vzJ-gO-E1h.title" = "Keluar (⌘Q)";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
-"wpr-3q-Mcd.title" = "Help";
+"wpr-3q-Mcd.title" = "Bantuan";
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
-"y0s-hF-kCC.title" = "Setup >>";
+"y0s-hF-kCC.title" = "Mempersiapkan >>";
 
 /* Class = "NSButtonCell"; title = "Turn On Dark Mode Based On Brightness"; ObjectID = "znm-gt-cHP"; */
-"znm-gt-cHP.title" = "Turn On Dark Mode Based On Brightness";
+"znm-gt-cHP.title" = "Nyalakan Mode Gelap Berdasarkan Tingkat Kecerahan";

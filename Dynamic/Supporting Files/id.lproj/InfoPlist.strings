@@ -2,10 +2,10 @@
 "CFBundleName" = "Dynamic Dark Mode";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. All rights reserved.";
+"NSHumanReadableCopyright" = "Hak cipta © 2018 Dynamic Dark Mode. Seluruh Hak Cipta.";
 
 /* Privacy - AppleEvents Sending Usage Description */
-"NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
+"NSAppleEventsUsageDescription" = "Ini merupakan prosedur bagaimana Dynamic Dark Mode mengatur mode gelap untuk Anda.";
 
 /* Privacy - Location Usage Description */
-"NSLocationUsageDescription" = "This is how Dynamic Dark Mode calculates sunset/sunrise time.";
+"NSLocationUsageDescription" = "Ini merupakan prosedur bagaimana Dynamic Dark Mode mengkalkulasi waktu matahari terbenam dan terbit.";
