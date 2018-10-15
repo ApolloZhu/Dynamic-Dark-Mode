@@ -1,57 +1,57 @@
 /* No comment provided by engineer. */
-"AppleScript.authorization.error" = "You didn't allow Dynamic Dark Mode to manage dark mode";
+"AppleScript.authorization.error" = "Anda tidak mengijinkan Dynamic Dark Mode untuk mengatur mode gelap";
 
 /* Generic error happened */
-"AppleScript.authorization.failed" = "Something Went Wrong";
+"AppleScript.authorization.failed" = "Terdapat sebuah kesalahan";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.
+"AppleScript.authorization.instruction" = "Kami akan membawa Anda ke pengaturan sistem.
 You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.";
 
 /* something went wrong. But it's okay */
-"AppleScript.execute.error" = "Failed to Toggle Dark Mode";
+"AppleScript.execute.error" = "Gagal untuk beralih ke mode gelap";
 
 /* Scare the user so they report bugs. */
-"Bug.general.title" = "Report Critical Bug To Developer";
+"Bug.general.title" = "Laporkan bug penting ke pengembang";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
-"Location.notAvailable" = "Can't Fetch Current Location";
+"Location.notAvailable" = "Tidak dapat mendapatkan lokasi saat ini";
 
 /* Can't fetch user's current location. Using cache instead. */
-"Location.useCache" = "Scheduled Using Previous Location";
+"Location.useCache" = "Dijadwalkan menggunakan lokasi sebelumnya";
 
 /* Drop down menu item to show preferences */
-"Menu.preferences" = "Preferences…";
+"Menu.preferences" = "Pengaturan";
 
 /* Use system translation for quit */
-"Menu.quit" = "Quit";
+"Menu.quit" = "Keluar";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "Toggle Dark Mode";
+"Menu.toggle" = "Beralih ke Mode Gelap";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Auto Adjust Threshold";
+"SettingsViewController.AutoAdjustThreshold" = "Pengaturan Batas Otomatis";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Schedule Mode";
+"SettingsViewController.ScheduleMode" = "Modus Jadwal";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomical";
+"SunsetSunrise.Astronomical" = "Astronomis";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Civil";
+"SunsetSunrise.Civil" = "Sipil";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Custom";
+"SunsetSunrise.CustomRange" = "Pribadi";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautical";
+"SunsetSunrise.Nautical" = "Nautika";
 
 /* Official */
-"SunsetSunrise.Official" = "Official";
+"SunsetSunrise.Official" = "Resmi";
 
 /* No comment provided by engineer. */
-"SystemPreferences.open" = "Open System Preferences";
+"SystemPreferences.open" = "Buka Pengaturan Sistem";
 
 /* No comment provided by engineer. */
-"SystemPreferences.skip" = "Skip";
+"SystemPreferences.skip" = "Lewati";
