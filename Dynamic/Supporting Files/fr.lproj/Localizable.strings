@@ -1,0 +1,57 @@
+/* No comment provided by engineer. */
+"AppleScript.authorization.error" = "Vous n'avez pas autorisé Dynamic Dark Dynamic Dark Mode à gérer le Mode sombre";
+
+/* Generic error happened */
+"AppleScript.authorization.failed" = "Quelque chose c'est mal passé";
+
+/* No comment provided by engineer. */
+"AppleScript.authorization.instruction" = "Nous allons vous ouvrir les Préférences système.
+Vous allez devoir redémarrer Dynamic Dark Mode afin que les changements soient pris en compte.";
+
+/* something went wrong. But it's okay */
+"AppleScript.execute.error" = "Echec du passage en Mode sombre";
+
+/* Scare the user so they report bugs. */
+"Bug.general.title" = "Envoyer un rapport de bug critique au développeur";
+
+/* Failed to attain user location for sunset/sunrise calculation. */
+"Location.notAvailable" = "Impossible de récupérer la position géographique actuelle";
+
+/* Can't fetch user's current location. Using cache instead. */
+"Location.useCache" = "Planifié en fonction de la position géographique précédente";
+
+/* Drop down menu item to show preferences */
+"Menu.preferences" = "Préférences…";
+
+/* Use system translation for quit */
+"Menu.quit" = "Quitter";
+
+/* Action item to toggle in from menu bar */
+"Menu.toggle" = "Basculer en Mode sombre";
+
+/* AutoAdjustThreshold */
+"SettingsViewController.AutoAdjustThreshold" = "Ajustement automatique du seuil";
+
+/* ScheduleMode */
+"SettingsViewController.ScheduleMode" = "Mode planifié";
+
+/* Astronomical */
+"SunsetSunrise.Astronomical" = "Astronomique";
+
+/* Civil */
+"SunsetSunrise.Civil" = "Civil";
+
+/* CustomRange */
+"SunsetSunrise.CustomRange" = "Personnalisé";
+
+/* Nautical */
+"SunsetSunrise.Nautical" = "Nautique";
+
+/* Official */
+"SunsetSunrise.Official" = "Officiel";
+
+/* No comment provided by engineer. */
+"SystemPreferences.open" = "Ouvrir les Préférences système";
+
+/* No comment provided by engineer. */
+"SystemPreferences.skip" = "Passer";

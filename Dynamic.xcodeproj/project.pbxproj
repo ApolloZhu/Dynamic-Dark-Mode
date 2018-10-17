@@ -134,6 +134,11 @@
 		AA2A0654FC318D2781A5572B /* Pods-Dynamic.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.debug masless.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.debug masless.xcconfig"; sourceTree = "<group>"; };
 		CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicLauncher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3261CD208CCFBF73B34DA72 /* Pods-DynamicLauncher.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.release masless.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.release masless.xcconfig"; sourceTree = "<group>"; };
+		ED6A51F921772F27004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		ED6A51FB21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED6A51FC21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED6A51FD21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDF6DB69217741AA00F38F66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +408,7 @@
 				id,
 				eo,
 				ru,
+				fr,
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
@@ -552,6 +558,7 @@
 				52972627216A06ED00C62F19 /* id */,
 				5297262C216BD4F000C62F19 /* eo */,
 				52972631216BD50300C62F19 /* ru */,
+				ED6A51F921772F27004DEFEA /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -565,6 +572,7 @@
 				5297262A216A06EE00C62F19 /* id */,
 				5297262F216BD4F300C62F19 /* eo */,
 				52972634216BD50300C62F19 /* ru */,
+				ED6A51FC21772F28004DEFEA /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -578,6 +586,7 @@
 				5297262B216A06EE00C62F19 /* id */,
 				52972630216BD4F500C62F19 /* eo */,
 				52972635216BD50400C62F19 /* ru */,
+				ED6A51FD21772F28004DEFEA /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -591,6 +600,7 @@
 				52972629216A06EE00C62F19 /* id */,
 				5297262E216BD4F300C62F19 /* eo */,
 				52972633216BD50300C62F19 /* ru */,
+				ED6A51FB21772F28004DEFEA /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -604,6 +614,7 @@
 				52972628216A06EE00C62F19 /* id */,
 				5297262D216BD4F200C62F19 /* eo */,
 				52972632216BD50300C62F19 /* ru */,
+				EDF6DB69217741AA00F38F66 /* fr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
