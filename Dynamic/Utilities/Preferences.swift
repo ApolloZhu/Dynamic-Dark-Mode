@@ -80,7 +80,7 @@ extension Preferences {
             },
             observe(\.opensAtLogin, observeInitial: true) { change in
                 assert(SMLoginItemSetEnabled(
-                    "io.github.apollozhu.DynamicDarkMode.Launcher" as CFString,
+                    "io.github.apollozhu.Dynamic.Launcher" as CFString,
                     change.newValue ?? true
                 ))
             }

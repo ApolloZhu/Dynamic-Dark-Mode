@@ -32,6 +32,7 @@ class SlideSegue: NSStoryboardSegue, NSViewControllerPresentationAnimator {
                 $0.animator().alphaValue = 0
             }
             presented.animator().frame.origin = .zero
+            presented.animator().frame.size.width = frameWidth
         }
     }
 

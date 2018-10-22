@@ -45,7 +45,8 @@
 "Dcd-f7-wbP.title" = "Mode sombre activé par";
 
 /* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "Effectuez un clic droit sur l'icône de la barre de menu et choissisez Préférences…";
+"EJk-BY-RUI.title" = "Effectuez un clic droit sur l'icône de la barre de menu et choissisez
+Préférences…";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Aide";

@@ -45,7 +45,8 @@
 "Dcd-f7-wbP.title" = "Mode Gelap Diantara";
 
 /* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "Klik kiri pada ikon bar menu untuk menampilkan menu, kemudian pilih Pengaturan...";
+"EJk-BY-RUI.title" = "Klik kiri pada ikon bar menu untuk menampilkan menu, kemudian pilih
+Pengaturan...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Bantuan";

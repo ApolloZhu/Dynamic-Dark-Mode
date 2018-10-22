@@ -59,7 +59,8 @@
 "DVo-aG-piG.title" = "Закрыть";
 
 /* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "Левый клик на иконке в статус-баре, чтобы показать меню, затем выбрать Настройки...";
+"EJk-BY-RUI.title" = "Левый клик на иконке в статус-баре, чтобы показать меню,
+затем выбрать Настройки...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Справка";

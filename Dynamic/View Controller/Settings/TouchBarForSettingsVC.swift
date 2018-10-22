@@ -35,7 +35,6 @@ extension SettingsViewController: NSTouchBarDelegate {
             sliderItem.slider.maxValue = 100
             sliderItem.slider.bind(.value, to: defaultsController, withKeyPath: "values.brightnessThreshold", options: nil)
             sliderItem.slider.bind(.enabled, to: defaultsController, withKeyPath: "values.adjustForBrightness", options: nil)
-            #warning("TODO: Consider to add NSSliderAccessories here? (images required)")
             return sliderItem
         case .scheduleTypePopoverItem:
             let popoverItem = NSPopoverTouchBarItem(identifier: identifier)

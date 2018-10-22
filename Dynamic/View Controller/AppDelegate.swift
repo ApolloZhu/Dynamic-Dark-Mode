@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #if Masless
         #warning("TODO: Add option to disable displaying toggle button in Control Strip")
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
-        let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.DynamicDarkMode.switch")
+        let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
         let item = NSCustomTouchBarItem(identifier: identifier)
         #warning("TODO: Redesign icon for toggle button")
         let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"), target: self, action: #selector(toggleInterfaceStyle))
