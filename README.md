@@ -1,10 +1,4 @@
-<h1>
-Dynamic Dark Mode
-<!--
-<a style="float:right" target="_blank" href="https://itunes.apple.com/app/id1437090290">
-<img alt="Download on the Mac App Store" src="http://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg"></a>
--->
-</h1>
+# Dynamic Dark Mode
 
 *Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave.
 
@@ -53,6 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <script type="text/javascript">
   window.onload = function () {
     document.getElementsByClassName("project-name")[0].innerHTML = "Dynamic Dark Mode";
+    document.getElementById("dynamic-dark-mode").style.display="none";
   }
 </script>
 
