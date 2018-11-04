@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"AppleScript.authorization.error" = "你并未允许“自动深色模式”管理深色模式。";
+"AppleScript.authorization.error" = "你并未允许“自动深色模式”管理外观模式。";
 
 /* Generic error happened */
 "AppleScript.authorization.failed" = "出错了 QAQ";
@@ -9,7 +9,7 @@
 该设置需要您重新打开“自动深色模式”才会生效。";
 
 /* something went wrong. But it's okay */
-"AppleScript.execute.error" = "未能切换暗色模式";
+"AppleScript.execute.error" = "未能切换外观模式";
 
 /* Scare the user so they report bugs. */
 "Bug.general.title" = "告诉开发者 TA 们又写严重的 Bug 了";
@@ -27,7 +27,7 @@
 "Menu.quit" = "退出";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "切换深色模式";
+"Menu.toggle" = "切换外观模式";
 
 /* AutoAdjustThreshold */
 "SettingsViewController.AutoAdjustThreshold" = "自动切换阀值";
