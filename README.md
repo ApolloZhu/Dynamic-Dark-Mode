@@ -12,14 +12,13 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ## Install
 
-### Latest Release
+You can download the [latest release](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest) directly, or install via Homebrew Cask:
 
-[Dynamic Dark Mode v1.0 (6) Release Page](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/tag/1.0.6)
+```
+brew cask install dynamic
+```
 
-OR install with `brew cask install dynamic`
-
-### Mac App Store
-Apple will not include *Dynamic Dark Mode* on the Mac App Store because they believe it to be in violation of their application guidelines: specifically, it changes a System Preference. Since that's exactly what *Dynamic Dark Mode* is written to do, it's unlikely to be included on the Mac App Store unless Apple changes their policy. For easy installation and updates, use Homebrew.
+This app will NEVER be available on the Mac App Store [based on an nonexisting guideline](https://github.com/ApolloZhu/Dynamic-Dark-Mode/issues/10).
 
 ## Usage
 
