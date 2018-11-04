@@ -14,25 +14,9 @@ import os.log
 
 public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public static let shared = Scheduler()
-    private override init() { super.init() }
-
-    private func requestLocationUpdate() -> Bool {
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways, .notDetermined:
-            manager.stopUpdatingLocation()
-            if #available(OSX 10.14, *) {
-                manager.requestLocation()
-            } else {
-                manager.startUpdatingLocation()
-            }
-            return true
-        default:
-            return false
-        }
-    }
 
     private var isScheduling = false
-    public func schedule() {
+    @objc public func schedule() {
         if isScheduling { return }
         isScheduling = true
         if !requestLocationUpdate() {
@@ -121,7 +105,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    private func schedule(atLocation coordinate: CLLocationCoordinate2D?) {
+    private func scheduleAtLocation(_ coordinate: CLLocationCoordinate2D?) {
         defer { isScheduling = false }
         removeAllNotifications()
         let decision = mode(atLocation: coordinate)
@@ -134,6 +118,35 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         task?.cancel()
     }
 
+    // MARK: - Missed Schedule
+
+    private override init() {
+        super.init()
+        NSWorkspace.shared.notificationCenter.addObserver(
+            self, selector: #selector(workspaceDidWake),
+            name: NSWorkspace.didWakeNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(schedule),
+            name: Notification.Name.NSSystemClockDidChange,
+            object: nil
+        )
+    }
+
+    deinit {
+        NSWorkspace.shared.notificationCenter.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc private func workspaceDidWake() {
+        guard let task = task else { return schedule() }
+        if !task.restOfLifetime.isPositive &&
+            task.countOfExecutions < 1 {
+            task.execute()
+        }
+    }
+
     // MARK: - Real World
 
     private lazy var manager: CLLocationManager = {
@@ -141,6 +154,21 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         manager.delegate = self
         return manager
     }()
+
+    private func requestLocationUpdate() -> Bool {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .notDetermined:
+            manager.stopUpdatingLocation()
+            if #available(OSX 10.14, *) {
+                manager.requestLocation()
+            } else {
+                manager.startUpdatingLocation()
+            }
+            return true
+        default:
+            return false
+        }
+    }
 
     public func locationManager(_ manager: CLLocationManager,
                                 didChangeAuthorization status: CLAuthorizationStatus) {
@@ -157,7 +185,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         preferences.location = location
         let coordinate = location.coordinate
         if isScheduling {
-            schedule(atLocation: coordinate)
+            scheduleAtLocation(coordinate)
         } else {
             callback?(mode(atLocation: coordinate).style)
         }
@@ -165,6 +193,11 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
 
     public func locationManager(_ manager: CLLocationManager,
                                 didFailWithError error: Error) {
+        manager.stopUpdatingLocation()
+        guard isScheduling else {
+            callback?(mode(atLocation: preferences.coordinate).style)
+            return
+        }
         guard !scheduleAtCachedLocation() else { return }
         runModal(ofNSAlert: { alert in
             alert.messageText = LocalizedString.Location.notAvailable
@@ -178,7 +211,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
         guard let location = preferences.location
             , preferences.scheduleZenithType != .custom
             else {
-            schedule(atLocation: nil)
+            scheduleAtLocation(nil)
             return false
         }
         if let name = preferences.placemark {
@@ -191,7 +224,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
                 self?.notifyUsingPlacemark(named: name)
             }
         }
-        schedule(atLocation: location.coordinate)
+        scheduleAtLocation(location.coordinate)
         return true
     }
 }
