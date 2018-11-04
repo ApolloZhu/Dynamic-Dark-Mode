@@ -4,22 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Changed
+- Chinese translation of toggle dark mode
+
+### Fixed
+- No scheduled change during sleep
+
 ## [1.0.6] - 2018-10-22
 ### Added
 - French translation
 - Indonesian translation
 - Russian translation
-- German Translation
+- German translation
 
 ### Fixed
-- Some parts of interface elements been cut off
+- Some parts of the interface elements been cut off
 
 ### Removed
-- Hope to get on Mac App Store
+- Hope to be included in the Mac App Store
 
 ## [1.0.5] - 2018-09-30
 ### Fixed
-- False alarm about `-1751` apple script error
+- False alarm about `-1751` AppleScript error
 - Wrongly turning on dark mode when custom schedule spans within a single day
 
 ## [1.0.4] - 2018-09-29
@@ -37,10 +44,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2] - 2018-09-28
 ### Changed
-- Start using non-sandbox-escaping method to control system events
+- Start using non-sandbox-escaping method to control System Events
 
 ### Removed
-- Request for accessing `~/Library/Application Scripts/${bundleIdentifier}`
+- Request to access `~/Library/Application Scripts/${bundleIdentifier}`
 
 ## [1.0.1] - 2018-09-26
 ### Added
