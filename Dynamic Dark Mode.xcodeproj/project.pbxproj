@@ -406,7 +406,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 52168FB320C8B47100869A9C /* Build configuration list for PBXProject "Dynamic" */;
+			buildConfigurationList = 52168FB320C8B47100869A9C /* Build configuration list for PBXProject "Dynamic Dark Mode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1098,7 +1098,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52168FB320C8B47100869A9C /* Build configuration list for PBXProject "Dynamic" */ = {
+		52168FB320C8B47100869A9C /* Build configuration list for PBXProject "Dynamic Dark Mode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC620C8B47200869A9C /* Debug */,

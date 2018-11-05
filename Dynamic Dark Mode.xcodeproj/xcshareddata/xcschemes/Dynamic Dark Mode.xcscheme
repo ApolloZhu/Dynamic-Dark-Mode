@@ -17,7 +17,7 @@
                BlueprintIdentifier = "52168FB720C8B47100869A9C"
                BuildableName = "Dynamic Dark Mode.app"
                BlueprintName = "Dynamic Dark Mode"
-               ReferencedContainer = "container:Dynamic.xcodeproj">
+               ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
             BuildableName = "Dynamic Dark Mode.app"
             BlueprintName = "Dynamic Dark Mode"
-            ReferencedContainer = "container:Dynamic.xcodeproj">
+            ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
             BuildableName = "Dynamic Dark Mode.app"
             BlueprintName = "Dynamic Dark Mode"
-            ReferencedContainer = "container:Dynamic.xcodeproj">
+            ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -83,7 +83,7 @@
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
             BuildableName = "Dynamic Dark Mode.app"
             BlueprintName = "Dynamic Dark Mode"
-            ReferencedContainer = "container:Dynamic.xcodeproj">
+            ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
