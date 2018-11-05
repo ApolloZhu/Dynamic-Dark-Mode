@@ -10,7 +10,6 @@ import CoreLocation
 import UserNotifications
 import Solar
 import Schedule
-import os.log
 
 public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public static let shared = Scheduler()
@@ -173,7 +172,7 @@ public final class Scheduler: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager,
                                 didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedAlways {
-            log(.info, "Dynamic - Can't Access Location")
+            log(.info, "Dynamic Dark Mode - Can't Access Location")
             scheduleAtCachedLocation()
         }
     }

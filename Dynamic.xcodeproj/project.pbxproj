@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227DCC3CCE5447A63A72E85A /* Pods_Dynamic_Dark_Mode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FA87572D9440C6D2C7E69B /* Pods_Dynamic_Dark_Mode.framework */; };
 		5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214CD8E215B3BED008A7E83 /* Welcome.swift */; };
 		52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FBB20C8B47100869A9C /* AppDelegate.swift */; };
 		52168FC020C8B47200869A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52168FBF20C8B47200869A9C /* Assets.xcassets */; };
@@ -36,7 +37,6 @@
 		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
 		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
-		84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */; };
 		CBBCAB8E78C6D298DDF7F5F1 /* Pods_DynamicLauncher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +55,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1BF880EB59FFBE2C21E74FC0 /* Pods-Dynamic Dark Mode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release.xcconfig"; sourceTree = "<group>"; };
+		23F74B4103C18233BD6C090F /* Pods-Dynamic Dark Mode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.debug.xcconfig"; sourceTree = "<group>"; };
 		2D78CBA541F8797900AB2CCF /* Pods-Dynamic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB516C2D7FE967B75006F55 /* Pods-Dynamic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.release.xcconfig"; sourceTree = "<group>"; };
+		33A83F14EC576D06D70D083A /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
 		4964734EDCE359C68AB9DF0D /* Pods-Dynamic.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic.release masless.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic/Pods-Dynamic.release masless.xcconfig"; sourceTree = "<group>"; };
 		4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dynamic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FA87572D9440C6D2C7E69B /* Pods_Dynamic_Dark_Mode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dynamic_Dark_Mode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5214CD8E215B3BED008A7E83 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
-		52168FB820C8B47100869A9C /* Dynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamic Dark Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52168FBB20C8B47100869A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52168FBF20C8B47200869A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52168FC420C8B47200869A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		ED6A51FC21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED6A51FD21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDF6DB69217741AA00F38F66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		FF86833FE0BCFB03336A37CB /* Pods-Dynamic Dark Mode.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.debug masless.xcconfig"; path = "Pods/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.debug masless.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84AC50052319AC6C940CD748 /* Pods_Dynamic.framework in Frameworks */,
+				227DCC3CCE5447A63A72E85A /* Pods_Dynamic_Dark_Mode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +177,10 @@
 				88EA90C5D6B00D262E96441C /* Pods-DynamicLauncher.debug masless.xcconfig */,
 				619F2E63A28F22DAD9390852 /* Pods-DynamicLauncher.release.xcconfig */,
 				D3261CD208CCFBF73B34DA72 /* Pods-DynamicLauncher.release masless.xcconfig */,
+				23F74B4103C18233BD6C090F /* Pods-Dynamic Dark Mode.debug.xcconfig */,
+				FF86833FE0BCFB03336A37CB /* Pods-Dynamic Dark Mode.debug masless.xcconfig */,
+				1BF880EB59FFBE2C21E74FC0 /* Pods-Dynamic Dark Mode.release.xcconfig */,
+				33A83F14EC576D06D70D083A /* Pods-Dynamic Dark Mode.release masless.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,7 +206,7 @@
 		52168FB920C8B47100869A9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52168FB820C8B47100869A9C /* Dynamic.app */,
+				52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */,
 				52C3511820CC57B60073F0CA /* DynamicLauncher.app */,
 			);
 			name = Products;
@@ -258,6 +267,7 @@
 				706D395E20E3796A0079535E /* DFRFoundation.framework */,
 				4FD3C614308BF3706BBC3D4F /* Pods_Dynamic.framework */,
 				CC8FCB4DC18A325265A67679 /* Pods_DynamicLauncher.framework */,
+				50FA87572D9440C6D2C7E69B /* Pods_Dynamic_Dark_Mode.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -320,9 +330,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52168FB720C8B47100869A9C /* Dynamic */ = {
+		52168FB720C8B47100869A9C /* Dynamic Dark Mode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52168FC820C8B47200869A9C /* Build configuration list for PBXNativeTarget "Dynamic" */;
+			buildConfigurationList = 52168FC820C8B47200869A9C /* Build configuration list for PBXNativeTarget "Dynamic Dark Mode" */;
 			buildPhases = (
 				FFB956228DE5FCF80533C85B /* [CP] Check Pods Manifest.lock */,
 				52168FB420C8B47100869A9C /* Sources */,
@@ -335,9 +345,9 @@
 			);
 			dependencies = (
 			);
-			name = Dynamic;
+			name = "Dynamic Dark Mode";
 			productName = Dynamic;
-			productReference = 52168FB820C8B47100869A9C /* Dynamic.app */;
+			productReference = 52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */;
 			productType = "com.apple.product-type.application";
 		};
 		52C3511720CC57B60073F0CA /* DynamicLauncher */ = {
@@ -415,7 +425,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52168FB720C8B47100869A9C /* Dynamic */,
+				52168FB720C8B47100869A9C /* Dynamic Dark Mode */,
 				52C3511720CC57B60073F0CA /* DynamicLauncher */,
 			);
 		};
@@ -474,7 +484,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
 				"${BUILT_PRODUCTS_DIR}/Schedule/Schedule.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
@@ -491,7 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic/Pods-Dynamic-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFB956228DE5FCF80533C85B /* [CP] Check Pods Manifest.lock */ = {
@@ -505,7 +515,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Dynamic-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Dynamic Dark Mode-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -741,7 +751,7 @@
 		};
 		52168FC920C8B47200869A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D78CBA541F8797900AB2CCF /* Pods-Dynamic.debug.xcconfig */;
+			baseConfigurationReference = 23F74B4103C18233BD6C090F /* Pods-Dynamic Dark Mode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -768,7 +778,7 @@
 		};
 		52168FCA20C8B47200869A9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DB516C2D7FE967B75006F55 /* Pods-Dynamic.release.xcconfig */;
+			baseConfigurationReference = 1BF880EB59FFBE2C21E74FC0 /* Pods-Dynamic Dark Mode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -897,7 +907,7 @@
 		};
 		52F44AEC20CFEAE200E739F6 /* Release Masless */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4964734EDCE359C68AB9DF0D /* Pods-Dynamic.release masless.xcconfig */;
+			baseConfigurationReference = 33A83F14EC576D06D70D083A /* Pods-Dynamic Dark Mode.release masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1023,7 +1033,7 @@
 		};
 		52F44AEF20CFEB5B00E739F6 /* Debug Masless */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA2A0654FC318D2781A5572B /* Pods-Dynamic.debug masless.xcconfig */;
+			baseConfigurationReference = FF86833FE0BCFB03336A37CB /* Pods-Dynamic Dark Mode.debug masless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1099,7 +1109,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52168FC820C8B47200869A9C /* Build configuration list for PBXNativeTarget "Dynamic" */ = {
+		52168FC820C8B47200869A9C /* Build configuration list for PBXNativeTarget "Dynamic Dark Mode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC920C8B47200869A9C /* Debug */,

@@ -1,11 +1,12 @@
 /* Bundle name */
 "CFBundleName" = "Aŭtomatika Malluma Modo";
 
-/* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Kopirajto © 2018 Aŭtomatika Malluma Modo. Ĉiuj rajtoj rezervitaj.";
-
 /* Privacy - AppleEvents Sending Usage Description */
 "NSAppleEventsUsageDescription" = "Aŭtomatika Malluma Modo bezonas ĉi tion por administri la malluman modon.";
 
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Kopirajto © 2018 Aŭtomatika Malluma Modo. Ĉiuj rajtoj rezervitaj.";
+
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Aŭtomatika Malluma Modo bezonas ĉi tion por kalkuli la tempon de sunleviĝo/sunsubiro.";
+

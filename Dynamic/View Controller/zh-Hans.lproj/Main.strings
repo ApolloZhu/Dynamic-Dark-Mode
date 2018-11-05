@@ -1,4 +1,4 @@
-/* Class = "NSMenuItem"; title = "Dynamic"; ObjectID = "1Xt-HY-uBw"; */
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "自动深色模式";
 
 /* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
@@ -13,10 +13,10 @@
 /* Class = "NSTextFieldCell"; title = "Auto Adjust"; ObjectID = "4Oz-wH-7ZV"; */
 "4Oz-wH-7ZV.title" = "自动切换";
 
-/* Class = "NSMenuItem"; title = "Quit Dynamic"; ObjectID = "4sb-4s-VLi"; */
+/* Class = "NSMenuItem"; title = "Quit Dynamic Dark Mode"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "退出“自动深色模式”";
 
-/* Class = "NSMenuItem"; title = "About Dynamic"; ObjectID = "5kV-Vb-QxS"; */
+/* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
 "5kV-Vb-QxS.title" = "关于“自动深色模式”";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
@@ -64,8 +64,8 @@
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "帮助";
 
-/* Class = "NSMenuItem"; title = "Dynamic Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "“自动深色模式”帮助";
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "自动深色模式帮助";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "显示";
@@ -118,7 +118,7 @@
 /* Class = "NSTextFieldCell"; title = "Scheduled"; ObjectID = "O5v-cY-mFV"; */
 "O5v-cY-mFV.title" = "定时";
 
-/* Class = "NSMenuItem"; title = "Hide Dynamic"; ObjectID = "Olw-nP-bQN"; */
+/* Class = "NSMenuItem"; title = "Hide Dynamic Dark Mode"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "隐藏自动深色模式";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
@@ -154,7 +154,7 @@
 /* Class = "NSButtonCell"; title = "Single Click to Toggle, Right Click for Preferences"; ObjectID = "UGa-lO-tpW"; */
 "UGa-lO-tpW.title" = "点击图标切换，右键显示设置";
 
-/* Class = "NSMenu"; title = "Dynamic"; ObjectID = "uQy-DD-JDr"; */
+/* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "自动深色模式";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
@@ -184,6 +184,6 @@
 /* Class = "NSButtonCell"; title = "Turn On Dark Mode Based On Brightness"; ObjectID = "znm-gt-cHP"; */
 "znm-gt-cHP.title" = "根据屏幕亮度启用深色模式";
 
-/* Class = "NSWindow"; title = "Dynamic"; ObjectID = "ZWC-1W-uDl"; */
+/* Class = "NSWindow"; title = "Dynamic Dark Mode"; ObjectID = "ZWC-1W-uDl"; */
 "ZWC-1W-uDl.title" = "自动深色模式";
 

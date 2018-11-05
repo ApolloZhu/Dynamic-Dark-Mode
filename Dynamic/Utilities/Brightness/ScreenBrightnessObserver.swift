@@ -7,7 +7,6 @@
 //
 
 import AppKit
-import os.log
 
 extension Notification.Name {
     static let brightnessDidChange = Notification.Name(
@@ -38,7 +37,7 @@ final class ScreenBrightnessObserver: NSObject {
             return .aqua
         default:
             // The NoSense here is from the "AppleNoSenseDisplay" in IOKit
-            log(.fault, "Dynamic - No Sense Brightness Fetched")
+            log(.fault, "Dynamic Dark Mode - No Sense Brightness Fetched")
             return nil
         }
     }

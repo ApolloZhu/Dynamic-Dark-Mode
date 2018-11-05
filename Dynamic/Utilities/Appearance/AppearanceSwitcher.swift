@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import os.log
 import AppKit
 
 // MARK: - Detect Dark Mode

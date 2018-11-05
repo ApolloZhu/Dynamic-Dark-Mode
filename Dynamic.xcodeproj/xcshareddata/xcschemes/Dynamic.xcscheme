@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52168FB720C8B47100869A9C"
-               BuildableName = "Dynamic.app"
-               BlueprintName = "Dynamic"
+               BuildableName = "Dynamic Dark Mode.app"
+               BlueprintName = "Dynamic Dark Mode"
                ReferencedContainer = "container:Dynamic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic.app"
-            BlueprintName = "Dynamic"
+            BuildableName = "Dynamic Dark Mode.app"
+            BlueprintName = "Dynamic Dark Mode"
             ReferencedContainer = "container:Dynamic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic.app"
-            BlueprintName = "Dynamic"
+            BuildableName = "Dynamic Dark Mode.app"
+            BlueprintName = "Dynamic Dark Mode"
             ReferencedContainer = "container:Dynamic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,8 +81,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic.app"
-            BlueprintName = "Dynamic"
+            BuildableName = "Dynamic Dark Mode.app"
+            BlueprintName = "Dynamic Dark Mode"
             ReferencedContainer = "container:Dynamic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Dynamic" id="1Xt-HY-uBw">
+                            <menuItem title="Dynamic Dark Mode" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Dynamic" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Dynamic Dark Mode" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Dynamic" id="5kV-Vb-QxS">
+                                        <menuItem title="About Dynamic Dark Mode" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -30,7 +30,8 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Dynamic" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Dynamic Dark Mode" keyEquivalent="" id="Olw-nP-bQN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -48,7 +49,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Dynamic" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Dynamic Dark Mode" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -122,7 +123,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Dynamic Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Dynamic Dark Mode Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -136,7 +137,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dynamic" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dynamic_Dark_Mode" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +147,7 @@
         <scene sceneID="tCd-rL-RxE">
             <objects>
                 <windowController storyboardIdentifier="window" showSeguePresentationStyle="single" id="cXd-3X-aO4" sceneMemberID="viewController">
-                    <window key="window" title="Dynamic" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="ZWC-1W-uDl">
+                    <window key="window" title="Dynamic Dark Mode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="ZWC-1W-uDl">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -165,7 +166,7 @@
         <!--Window Controller-->
         <scene sceneID="nDq-M4-5lX">
             <objects>
-                <windowController storyboardIdentifier="setup" showSeguePresentationStyle="single" id="E5A-g3-bTg" customClass="Welcome" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="setup" showSeguePresentationStyle="single" id="E5A-g3-bTg" customClass="Welcome" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Setup" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="T1i-3L-V9g">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -201,7 +202,7 @@ DQ
                                 </buttonCell>
                                 <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
-                                    <segue destination="QVP-6o-dbP" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="wWp-o5-VnG"/>
+                                    <segue destination="QVP-6o-dbP" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic_Dark_Mode" customModuleProvider="target" id="wWp-o5-VnG"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-bv-tjf">
@@ -239,7 +240,7 @@ DQ
         <!--Allow System Events View Controller-->
         <scene sceneID="ykG-Jb-wxl">
             <objects>
-                <viewController id="QVP-6o-dbP" customClass="AllowSystemEventsViewController" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QVP-6o-dbP" customClass="AllowSystemEventsViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="IK5-LB-yIa">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -288,7 +289,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="showPreferences" destination="NcA-9Z-xxY" id="ipq-V7-Z1p"/>
-                        <segue destination="lOD-ba-8bz" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="HdU-Qz-Gb6"/>
+                        <segue destination="lOD-ba-8bz" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic_Dark_Mode" customModuleProvider="target" id="HdU-Qz-Gb6"/>
                     </connections>
                 </viewController>
                 <customObject id="8ov-0x-qta" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -298,7 +299,7 @@ DQ
         <!--Allow Location View Controller-->
         <scene sceneID="Xa4-Qn-JpH">
             <objects>
-                <viewController id="lOD-ba-8bz" customClass="AllowLocationViewController" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lOD-ba-8bz" customClass="AllowLocationViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="8PT-jY-Y07">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,7 +362,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="showPreferences" destination="tgT-6s-Hvl" id="S18-Py-utZ"/>
-                        <segue destination="CU9-Xg-N4r" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic" customModuleProvider="target" id="60H-Ve-Cll"/>
+                        <segue destination="CU9-Xg-N4r" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic_Dark_Mode" customModuleProvider="target" id="60H-Ve-Cll"/>
                     </connections>
                 </viewController>
                 <customObject id="0nq-5m-8FB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -371,7 +372,7 @@ DQ
         <!--Open Settings View Controller-->
         <scene sceneID="qcf-Tz-rCQ">
             <objects>
-                <viewController id="CU9-Xg-N4r" customClass="OpenSettingsViewController" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CU9-Xg-N4r" customClass="OpenSettingsViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="RSE-zA-kQh">
                         <rect key="frame" x="0.0" y="0.0" width="504" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -465,7 +466,7 @@ DQ
         <!--Settings View Controller-->
         <scene sceneID="9wO-1C-pMw">
             <objects>
-                <viewController id="2dW-oa-vyd" customClass="SettingsViewController" customModule="Dynamic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2dW-oa-vyd" customClass="SettingsViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="4FC-o0-Dgl">
                         <rect key="frame" x="0.0" y="0.0" width="534" height="314"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>

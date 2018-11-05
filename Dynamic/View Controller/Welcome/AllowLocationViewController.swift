@@ -89,7 +89,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
             case .alertSecondButtonReturn:
                 self?.showNextOnce()
             default:
-                log(.error, "Dynamic - Unhandled Location Request Response")
+                log(.error, "Dynamic Dark Mode - Unhandled Location Request Response")
             }
         })
     }

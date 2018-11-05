@@ -16,7 +16,7 @@ class OpenSettingsViewController: NSViewController {
     @IBAction func start(_ sender: Any) {
         preferences.hasLaunchedBefore = true
         Welcome.close()
-        Dynamic.start()
+        startUpdating()
         SettingsViewController.show()
     }
 }

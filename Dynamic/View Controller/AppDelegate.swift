@@ -117,7 +117,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func setup() {
         if preferences.hasLaunchedBefore {
-            start()
+            startUpdating()
         } else {
             Preferences.setup()
             DispatchQueue.main.async(execute: Welcome.show)
@@ -132,7 +132,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 private var started = false
-func start() {
+func startUpdating() {
     setDefaultToggleShortcut()
     if started { return }
     started = true

@@ -1,5 +1,5 @@
-/* Class = "NSMenuItem"; title = "Dynamic"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "Dynamic";
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Dynamic Dark Mode";
 
 /* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
 "4da-BG-PBG.title" = "С:";
@@ -13,11 +13,11 @@
 /* Class = "NSTextFieldCell"; title = "Auto Adjust"; ObjectID = "4Oz-wH-7ZV"; */
 "4Oz-wH-7ZV.title" = "Автонастройка";
 
-/* Class = "NSMenuItem"; title = "Quit Dynamic"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Выйти из Dynamic";
+/* Class = "NSMenuItem"; title = "Quit Dynamic Dark Mode"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Выйти из Dynamic Dark Mode";
 
-/* Class = "NSMenuItem"; title = "About Dynamic"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "О программе Dynamic";
+/* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "О программе Dynamic Dark Mode";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
 "32v-z6-q8Z.title" = "Настройки Dynamic Dark Mode";
@@ -65,8 +65,8 @@
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Справка";
 
-/* Class = "NSMenuItem"; title = "Dynamic Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Справка о Dynamic";
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Справка о Dynamic Dark Mode";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "Вид";
@@ -119,8 +119,8 @@
 /* Class = "NSTextFieldCell"; title = "Scheduled"; ObjectID = "O5v-cY-mFV"; */
 "O5v-cY-mFV.title" = "Расписание";
 
-/* Class = "NSMenuItem"; title = "Hide Dynamic"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Скрыть Dynamic";
+/* Class = "NSMenuItem"; title = "Hide Dynamic Dark Mode"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Скрыть Dynamic Dark Mode";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
 "OY7-WF-poV.title" = "Свернуть";
@@ -155,8 +155,8 @@
 /* Class = "NSButtonCell"; title = "Single Click to Toggle, Right Click for Preferences"; ObjectID = "UGa-lO-tpW"; */
 "UGa-lO-tpW.title" = "Одно касание, чтобы сменить режим. Нажатие в правом нижнем углу, чтобы открыть Настройки";
 
-/* Class = "NSMenu"; title = "Dynamic"; ObjectID = "uQy-DD-JDr"; */
-"uQy-DD-JDr.title" = "Dynamic";
+/* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Dynamic Dark Mode";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Скрыть остальные";
@@ -185,6 +185,6 @@
 /* Class = "NSButtonCell"; title = "Turn On Dark Mode Based On Brightness"; ObjectID = "znm-gt-cHP"; */
 "znm-gt-cHP.title" = "Менять режим в зависимости от яркости экрана";
 
-/* Class = "NSWindow"; title = "Dynamic"; ObjectID = "ZWC-1W-uDl"; */
-"ZWC-1W-uDl.title" = "Dynamic";
+/* Class = "NSWindow"; title = "Dynamic Dark Mode"; ObjectID = "ZWC-1W-uDl"; */
+"ZWC-1W-uDl.title" = "Dynamic Dark Mode";
 

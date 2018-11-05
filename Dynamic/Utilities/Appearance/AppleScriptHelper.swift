@@ -105,7 +105,7 @@ extension AppleScript {
                  procNotFound:
                 #warning("Figure out what causes this")
                 if retryOnInternalError {
-                    log(.error, "Dynamic - OSStatus %{public}d", status)
+                    log(.error, "Dynamic Dark Mode - OSStatus %{public}d", status)
                     requestPermission(retryOnInternalError: false, then: process)
                 } else {
                     runModal(ofNSAlert: { alert in
@@ -117,7 +117,7 @@ extension AppleScript {
                     })
                 }
             default:
-                log(.fault, "Dynamic - Unhandled OSStatus %{public}d", status)
+                log(.fault, "Dynamic Dark Mode - Unhandled OSStatus %{public}d", status)
                 showCriticalErrorMessage("\(status)")
             }
             process(false)

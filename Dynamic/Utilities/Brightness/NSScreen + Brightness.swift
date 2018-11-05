@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import os.log
 
 extension NSScreen {
     /**
@@ -28,13 +27,13 @@ extension NSScreen {
             &iterator
         )
         guard gotService == kIOReturnSuccess else {
-            log(.fault, "Dynamic - Display Connection Failed")
+            log(.fault, "Dynamic Dark Mode - Display Connection Failed")
             return -1
         }
         while true {
             let display: io_object_t = IOIteratorNext(iterator)
             guard display != 0 else {
-                log(.fault, "Dynamic - No Display Found")
+                log(.fault, "Dynamic Dark Mode - No Display Found")
                 return -1
             }
             var brightness: Float = 0
