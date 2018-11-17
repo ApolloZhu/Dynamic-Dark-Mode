@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Dynamic
+//  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 6/6/18.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
@@ -142,7 +142,7 @@ func startUpdating() {
         AppleScript.checkPermission {
             DispatchQueue.main.async {
                 Scheduler.shared.getCurrentMode {
-                    guard let style = $0
+                    guard let style = $0?.style
                         ?? ScreenBrightnessObserver.shared.mode
                         else { return }
                     style.enable()

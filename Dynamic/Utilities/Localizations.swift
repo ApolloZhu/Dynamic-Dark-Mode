@@ -1,6 +1,6 @@
 //
 //  Localizations.swift
-//  Dynamic
+//  Dynamic Dark Mode
 //
 //  Created by Captain雪ノ下八幡 on 2018/6/18.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
@@ -42,6 +42,10 @@ enum LocalizedString {
         )
     }
     enum Location {
+        static let notAuthorized = NSLocalizedString(
+            "Location.notAuthorized",
+            comment: "User did not authorize this app to use location."
+        )
         static let notAvailable = NSLocalizedString(
             "Location.notAvailable",
             comment: "Failed to attain user location for sunset/sunrise calculation."
