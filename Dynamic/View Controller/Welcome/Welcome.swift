@@ -1,6 +1,6 @@
 //
 //  Welcome.swift
-//  Dynamic
+//  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 9/26/18.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.

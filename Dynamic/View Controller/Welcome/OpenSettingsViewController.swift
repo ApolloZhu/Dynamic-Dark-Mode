@@ -1,6 +1,6 @@
 //
 //  OpenSettingsViewController.swift
-//  Dynamic
+//  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 9/25/18.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
