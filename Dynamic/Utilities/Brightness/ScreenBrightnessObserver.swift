@@ -1,6 +1,6 @@
 //
 //  ScreenBrightnessObserver.swift
-//  Dynamic
+//  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 6/8/18.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
