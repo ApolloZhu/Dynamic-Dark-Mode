@@ -17,7 +17,6 @@ public enum Location {
 }
 
 public final class LocationManager: NSObject, CLLocationManagerDelegate {
-    
     private var isFetching = false
     private var retryCount = 5
     private var _callback: Location.Processor?
@@ -38,9 +37,8 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         callback = processor
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .notDetermined:
-            manager.stopUpdatingLocation()
             manager.startUpdatingLocation()
-        default:
+        case .denied, .restricted:
             break
         }
     }
@@ -55,7 +53,10 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager,
                                 didChangeAuthorization status: CLAuthorizationStatus) {
-        if status != .authorizedAlways {
+        switch status {
+        case .authorizedAlways, .notDetermined:
+            break
+        case .denied, .restricted:
             runModal(ofNSAlert: { alert in
                 alert.messageText = LocalizedString.Location.notAuthorized
             })
