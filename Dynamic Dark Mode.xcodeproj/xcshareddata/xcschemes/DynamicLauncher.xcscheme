@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52168FB720C8B47100869A9C"
-               BuildableName = "Dynamic Dark Mode.app"
-               BlueprintName = "Dynamic Dark Mode"
+               BlueprintIdentifier = "52C3511720CC57B60073F0CA"
+               BuildableName = "DynamicLauncher.app"
+               BlueprintName = "DynamicLauncher"
                ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic Dark Mode.app"
-            BlueprintName = "Dynamic Dark Mode"
+            BlueprintIdentifier = "52C3511720CC57B60073F0CA"
+            BuildableName = "DynamicLauncher.app"
+            BlueprintName = "DynamicLauncher"
             ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,18 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic Dark Mode.app"
-            BlueprintName = "Dynamic Dark Mode"
+            BlueprintIdentifier = "52C3511720CC57B60073F0CA"
+            BuildableName = "DynamicLauncher.app"
+            BlueprintName = "DynamicLauncher"
             ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-hasLaunchedBefore false"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52168FB720C8B47100869A9C"
-            BuildableName = "Dynamic Dark Mode.app"
-            BlueprintName = "Dynamic Dark Mode"
+            BlueprintIdentifier = "52C3511720CC57B60073F0CA"
+            BuildableName = "DynamicLauncher.app"
+            BlueprintName = "DynamicLauncher"
             ReferencedContainer = "container:Dynamic Dark Mode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
