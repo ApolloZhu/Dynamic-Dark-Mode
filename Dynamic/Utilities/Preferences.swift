@@ -49,6 +49,9 @@ extension Preferences {
             return preferences.observe(keyPath, options: options)
             { _, change in changeHandler(change) }
         }
+        if preferences.adjustForBrightness {
+            ScreenBrightnessObserver.shared.start(withInitialUpdate: false)
+        }
         handles = [
             observe(\.adjustForBrightness) { change in
                 ScreenBrightnessObserver.shared.stop()

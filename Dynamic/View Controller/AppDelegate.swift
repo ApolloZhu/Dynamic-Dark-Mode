@@ -84,7 +84,6 @@ func startUpdating() {
     started = true
     DispatchQueue.main.async {
         Preferences.setupObservers()
-        _ = ScreenBrightnessObserver.shared
         AppleScript.checkPermission {
             DispatchQueue.main.async {
                 Scheduler.shared.getCurrentMode {
