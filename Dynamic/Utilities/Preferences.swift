@@ -238,9 +238,9 @@ extension Preferences {
         }
     }
 
-    var settingsStyle: SettingsViewController.Style {
+    var settingsStyle: StatusBarItem.Style {
         get {
-            return SettingsViewController.Style(rawValue: rawSettingsStyle) ?? .menu
+            return StatusBarItem.Style(rawValue: rawSettingsStyle) ?? .menu
         }
         set {
             rawSettingsStyle = newValue.rawValue

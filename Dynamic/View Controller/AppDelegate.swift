@@ -15,14 +15,12 @@ import LetsMove
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private lazy var statusBarItem = NSStatusBar.system
-        .statusItem(withLength: NSStatusItem.squareLength)
-    private var settingsStyleObservation: NSKeyValueObservation?
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         #if canImport(LetsMove) && !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
         #endif
+
+        StatusBarItem.only.startObserving()
 
         UNUserNotificationCenter.current().delegate = Scheduler.shared
 
@@ -32,65 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             toAction: toggleInterfaceStyle
         )
 
-        // MARK: - Menu Bar Item Setup
-        
-        statusBarItem.button?.image = #imageLiteral(resourceName: "status_bar_icon")
-        statusBarItem.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
-        statusBarItem.button?.action = #selector(handleEvent)
-        settingsStyleObservation = preferences.observe(\.rawSettingsStyle, options: [.initial, .new])
-        { [weak self] _, change in
-            guard let self = self else { return }
-            switch preferences.settingsStyle {
-            case .menu:
-                self.statusBarItem.menu = self.buildMenu()
-            case .rightClick:
-                self.statusBarItem.menu = nil
-            }
-        }
-
         DispatchQueue.global(qos: .userInteractive).async(execute: setup)
         DispatchQueue.global(qos: .userInitiated).async(execute: setupTouchBar)
     }
-
-    @objc private func handleEvent() {
-        if NSApp.currentEvent?.type == .rightMouseUp {
-            SettingsViewController.show()
-        } else {
-            AppleInterfaceStyle.toggle()
-        }
-    }
-
-    private func buildMenu() -> NSMenu {
-        let menu = NSMenu()
-        let toggleItem = NSMenuItem(
-            title: NSLocalizedString(
-                "Menu.toggle",
-                comment: "Action item to toggle in from menu bar"),
-            action: #selector(toggleInterfaceStyle),
-            keyEquivalent: ""
-        )
-        menu.addItem(toggleItem)
-        menu.addItem(.separator())
-        let preferencesItem = NSMenuItem(
-            title: NSLocalizedString(
-                "Menu.preferences",
-                comment: "Drop down menu item to show preferences"),
-            action: #selector(SettingsViewController.show),
-            keyEquivalent: ","
-        )
-        preferencesItem.keyEquivalentModifierMask = .command
-        preferencesItem.target = SettingsViewController.self
-        menu.addItem(preferencesItem)
-        let quitItem = NSMenuItem(
-            title: NSLocalizedString(
-                "Menu.quit",
-                comment: "Use system translation for quit"),
-            action: #selector(NSApplication.terminate(_:)),
-            keyEquivalent: "Q"
-        )
-        quitItem.keyEquivalentModifierMask = .command
-        menu.addItem(quitItem)
-        return menu
+    
+    public func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        SettingsViewController.show()
+        return false
     }
 
     // MARK: - Control Strip Setup
@@ -125,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        settingsStyleObservation?.invalidate()
+        StatusBarItem.only.stopObserving()
         Preferences.removeObservers()
         Scheduler.shared.cancel()
     }

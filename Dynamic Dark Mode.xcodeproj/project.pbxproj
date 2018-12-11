@@ -29,6 +29,7 @@
 		5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */; };
 		52688652215B046B009A2FE3 /* OpenSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688651215B046B009A2FE3 /* OpenSettingsViewController.swift */; };
 		52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688653215B2FA8009A2FE3 /* SlideSegue.swift */; };
+		52BC0C7321C00CFC005E8E45 /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */; };
 		52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511220CC53CC0073F0CA /* Preferences.swift */; };
 		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
 		52C3511D20CC57C80073F0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3511C20CC57C80073F0CA /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		52972633216BD50300C62F19 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52972634216BD50300C62F19 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52972635216BD50400C62F19 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
 		52C3511220CC53CC0073F0CA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		52C3511820CC57B60073F0CA /* DynamicLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C3511A20CC57B60073F0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
 				706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */,
+				52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				520EF73821A056A3003326F2 /* Location.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
+				52BC0C7321C00CFC005E8E45 /* StatusBarItem.swift in Sources */,
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
 				5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */,
