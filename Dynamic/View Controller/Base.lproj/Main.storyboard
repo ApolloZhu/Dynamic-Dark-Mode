@@ -362,106 +362,11 @@ DQ
                     </view>
                     <connections>
                         <outlet property="showPreferences" destination="tgT-6s-Hvl" id="S18-Py-utZ"/>
-                        <segue destination="CU9-Xg-N4r" kind="custom" identifier="next" customClass="SlideSegue" customModule="Dynamic_Dark_Mode" customModuleProvider="target" id="60H-Ve-Cll"/>
                     </connections>
                 </viewController>
                 <customObject id="0nq-5m-8FB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1730" y="671"/>
-        </scene>
-        <!--Open Settings View Controller-->
-        <scene sceneID="qcf-Tz-rCQ">
-            <objects>
-                <viewController id="CU9-Xg-N4r" customClass="OpenSettingsViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="RSE-zA-kQh">
-                        <rect key="frame" x="0.0" y="0.0" width="504" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GEg-LZ-8Dh">
-                                <rect key="frame" x="18" y="220" width="468" height="30"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="To Open Preferences..." id="87M-Sa-k9k">
-                                    <font key="font" metaFont="system" size="25"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKA-XO-R2D">
-                                <rect key="frame" x="20" y="52" width="464" height="38"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ik9-Rl-d1Q">
-                                        <rect key="frame" x="-1" y="21" width="467" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Left click on the menu bar icon to show menu, then choose Preferences..." bezelStyle="regularSquare" imagePosition="left" state="on" tag="1" inset="2" id="EJk-BY-RUI">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="configureStyle:" target="CU9-Xg-N4r" id="9RA-kb-Vsh"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-TO-AqP">
-                                        <rect key="frame" x="-1" y="-1" width="217" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Right click on the menu bar icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qmW-4e-u5z">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="configureStyle:" target="CU9-Xg-N4r" id="Leb-4c-JWI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lj1-gs-RLv">
-                                <rect key="frame" x="212" y="20" width="80" height="24"/>
-                                <buttonCell key="cell" type="recessed" title="Start &gt;&gt;" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="YvB-h5-jjV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                    <font key="font" metaFont="systemSemibold" size="20"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                </buttonCell>
-                                <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
-                                <connections>
-                                    <action selector="start:" target="CU9-Xg-N4r" id="yez-KL-By0"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="raa-AE-2GJ">
-                                <rect key="frame" x="18" y="144" width="468" height="68"/>
-                                <textFieldCell key="cell" selectable="YES" id="heB-g6-Sln">
-                                    <font key="font" metaFont="system"/>
-                                    <string key="title">This is where you can later decide if you want to turn on and off dark mode based on your screen brightness, set a custom schedule of when to turn it on and off, or according to the calculated sunset-sunrise time based your location.</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="hKA-XO-R2D" firstAttribute="centerX" secondItem="RSE-zA-kQh" secondAttribute="centerX" id="1jD-3W-2f6"/>
-                            <constraint firstItem="Lj1-gs-RLv" firstAttribute="top" secondItem="hKA-XO-R2D" secondAttribute="bottom" constant="8" symbolic="YES" id="3zX-ky-hwf"/>
-                            <constraint firstItem="raa-AE-2GJ" firstAttribute="leading" secondItem="RSE-zA-kQh" secondAttribute="leading" constant="20" symbolic="YES" id="9Fc-sa-3cj"/>
-                            <constraint firstItem="GEg-LZ-8Dh" firstAttribute="top" secondItem="RSE-zA-kQh" secondAttribute="top" constant="20" symbolic="YES" id="Bmx-bV-moK"/>
-                            <constraint firstAttribute="trailing" secondItem="GEg-LZ-8Dh" secondAttribute="trailing" constant="20" symbolic="YES" id="Ee2-1p-8L9"/>
-                            <constraint firstAttribute="trailing" secondItem="raa-AE-2GJ" secondAttribute="trailing" constant="20" symbolic="YES" id="Fgc-Gf-mZO"/>
-                            <constraint firstAttribute="bottom" secondItem="Lj1-gs-RLv" secondAttribute="bottom" constant="20" symbolic="YES" id="SOe-fQ-OY3"/>
-                            <constraint firstItem="raa-AE-2GJ" firstAttribute="centerX" secondItem="RSE-zA-kQh" secondAttribute="centerX" id="Z9P-pz-FvK"/>
-                            <constraint firstAttribute="trailing" secondItem="hKA-XO-R2D" secondAttribute="trailing" constant="20" id="Zia-pK-IQj"/>
-                            <constraint firstItem="hKA-XO-R2D" firstAttribute="leading" secondItem="RSE-zA-kQh" secondAttribute="leading" constant="20" symbolic="YES" id="bEc-D7-nHF"/>
-                            <constraint firstItem="Lj1-gs-RLv" firstAttribute="centerX" secondItem="RSE-zA-kQh" secondAttribute="centerX" id="bQR-GW-9kM"/>
-                            <constraint firstItem="GEg-LZ-8Dh" firstAttribute="leading" secondItem="RSE-zA-kQh" secondAttribute="leading" constant="20" symbolic="YES" id="c3H-xZ-bzm"/>
-                            <constraint firstItem="raa-AE-2GJ" firstAttribute="top" secondItem="GEg-LZ-8Dh" secondAttribute="bottom" constant="8" symbolic="YES" id="vXZ-eN-39u"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="sDf-KV-Imv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2264" y="671"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9wO-1C-pMw">

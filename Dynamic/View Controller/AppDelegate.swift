@@ -65,7 +65,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if preferences.hasLaunchedBefore {
             startUpdating()
         } else {
-            Preferences.setup()
             DispatchQueue.main.async(execute: Welcome.show)
         }
     }
@@ -77,11 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-private var started = false
 func startUpdating() {
     setDefaultToggleShortcut()
-    if started { return }
-    started = true
     DispatchQueue.main.async {
         Preferences.setupObservers()
         AppleScript.checkPermission {

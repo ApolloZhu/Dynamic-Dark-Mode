@@ -27,7 +27,7 @@ class Welcome: NSWindowController {
     }
 }
 
-protocol SetupStep: class { }
+protocol SetupStep: AnyObject { }
 
 extension SetupStep where Self: NSViewController {
     func showNext() {

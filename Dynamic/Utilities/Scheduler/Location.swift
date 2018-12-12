@@ -22,7 +22,10 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
     private var _callback: Location.Processor?
     private var callback: Location.Processor? {
         get {
-            defer { _callback = nil }
+            defer {
+                _callback = nil
+                isFetching = false
+            }
             return _callback
         }
         set {

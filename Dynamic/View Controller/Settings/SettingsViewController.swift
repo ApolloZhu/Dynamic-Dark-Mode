@@ -50,7 +50,7 @@ class SettingsViewController: NSViewController {
     @IBAction func reSetup(_ sender: Any) {
         let name = Bundle.main.bundleIdentifier!
         preferences.removePersistentDomain(forName: name)
-        Preferences.setup()
+        Preferences.removeObservers()
         close(self)
         Welcome.show()
     }
