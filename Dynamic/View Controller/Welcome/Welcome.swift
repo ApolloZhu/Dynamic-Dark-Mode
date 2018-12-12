@@ -10,6 +10,7 @@ import Cocoa
 
 class Welcome: NSWindowController {
     private static var welcome: Welcome? = nil
+    
     public static func show() {
         if welcome == nil {
             welcome = NSStoryboard.main
@@ -21,18 +22,9 @@ class Welcome: NSWindowController {
         NSApp.activate(ignoringOtherApps: true)
         welcome?.window?.makeKeyAndOrderFront(nil)
     }
+    
     public static func close() {
         welcome?.close()
         welcome = nil
-    }
-}
-
-protocol SetupStep: AnyObject { }
-
-extension SetupStep where Self: NSViewController {
-    func showNext() {
-        DispatchQueue.main.async { [weak self] in
-            self?.performSegue(withIdentifier: "next", sender: nil)
-        }
     }
 }

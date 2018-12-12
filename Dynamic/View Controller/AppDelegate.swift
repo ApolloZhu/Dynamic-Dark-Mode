@@ -76,18 +76,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-func startUpdating() {
+func startUpdating(then onComplete: (() -> Void)? = nil) {
     setDefaultToggleShortcut()
     DispatchQueue.main.async {
         Preferences.setupObservers()
-        AppleScript.checkPermission {
-            DispatchQueue.main.async {
-                Scheduler.shared.getCurrentMode {
-                    guard let style = $0?.style
-                        ?? ScreenBrightnessObserver.shared.mode
-                        else { return }
-                    style.enable()
-                }
+        Scheduler.shared.getCurrentMode {
+            guard let style = $0?.style
+                ?? ScreenBrightnessObserver.shared.mode
+                else { onComplete?();return }
+            AppleScript.requestPermission {
+                defer { onComplete?() }
+                guard $0 else { return }
+                style.enable()
             }
         }
     }

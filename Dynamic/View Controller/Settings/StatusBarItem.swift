@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
 //
 
-import AppKit
+import Cocoa
 
 public final class StatusBarItem {
     public static let only = StatusBarItem()

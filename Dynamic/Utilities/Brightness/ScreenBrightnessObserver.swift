@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
 //
 
-import AppKit
+import Cocoa
 
 extension Notification.Name {
     static let brightnessDidChange = Notification.Name(

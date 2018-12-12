@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
 //
 
-import AppKit
+import Cocoa
 
 // MARK: - All Apple Scripts
 
@@ -65,7 +65,6 @@ extension AppleScript {
                 "AppleScript.authorization.error",
                 comment: ""
             )
-            #warning("Remove the RESTART line when apple has solved the bug.")
             alert.informativeText = NSLocalizedString(
                 "AppleScript.authorization.instruction",
                 comment: ""

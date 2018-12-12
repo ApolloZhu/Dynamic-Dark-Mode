@@ -9,7 +9,7 @@
 import Cocoa
 import CoreLocation
 
-class AllowLocationViewController: NSViewController {
+class AllowLocationViewController: NSViewController, LastSetupStep {
 
     @IBOutlet weak var showPreferences: NSButton!
 
@@ -22,7 +22,7 @@ class AllowLocationViewController: NSViewController {
     var isNotAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            launchOnce()
+            showNextOnce()
             return false
         case .denied, .notDetermined, .restricted:
             return true
@@ -39,7 +39,7 @@ class AllowLocationViewController: NSViewController {
     // MARK: - Navigation
 
     @IBAction func skip(_ sender: Any) {
-        launchOnce()
+        showNextOnce()
     }
 
     @IBAction func openPreferences(_ sender: NSButton) {
@@ -49,18 +49,13 @@ class AllowLocationViewController: NSViewController {
     private var lock = NSLock()
     private var firstTime = true
 
-    func launchOnce() {
+    func showNextOnce() {
         manager.delegate = nil
         lock.lock()
         defer { lock.unlock() }
         guard firstTime else { return }
         firstTime = false
-        
-        preferences.hasLaunchedBefore = true
-        Preferences.setup()
-        Welcome.close()
-        startUpdating()
-        SettingsViewController.show()
+        showNext()
     }
 }
 
@@ -74,7 +69,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         guard locations.first != nil else { return }
-        launchOnce()
+        showNextOnce()
     }
 
     func locationManager(_ manager: CLLocationManager,
@@ -95,7 +90,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
             case .alertFirstButtonReturn:
                 redirectToSystemPreferences()
             case .alertSecondButtonReturn:
-                self?.launchOnce()
+                self?.showNextOnce()
             default:
                 log(.error, "Dynamic Dark Mode - Unhandled Location Request Response")
             }
@@ -105,7 +100,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
-            launchOnce()
+            showNextOnce()
         }
     }
 }

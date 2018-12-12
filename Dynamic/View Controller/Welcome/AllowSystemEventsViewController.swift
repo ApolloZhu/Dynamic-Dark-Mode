@@ -21,10 +21,15 @@ class AllowSystemEventsViewController: NSViewController, SetupStep {
             }
         }
     }
+    
     @IBOutlet weak var showPreferences: NSButton!
     @IBAction func openPreferences(_ sender: NSButton) {
-        AppleScript.redirectToSystemPreferences()
-        #warning("Remove this when Apple fixed their bug")
-        exit(-1)
+        AppleScript.requestPermission { [weak self] authorized in
+            if authorized {
+                self?.showNext()
+            } else {
+                AppleScript.redirectToSystemPreferences()
+            }
+        }
     }
 }

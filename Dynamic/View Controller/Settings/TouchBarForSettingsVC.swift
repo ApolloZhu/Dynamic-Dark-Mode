@@ -5,7 +5,8 @@
 //  Created by Captain雪ノ下八幡 on 2018/6/27.
 //  Copyright © 2018 Dynamic Dark Mode. All rights reserved.
 //
-import AppKit
+
+import Cocoa
 
 extension SettingsViewController: NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {

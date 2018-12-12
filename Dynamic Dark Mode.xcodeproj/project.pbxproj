@@ -36,6 +36,7 @@
 		52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512620CC5CAE0073F0CA /* toggle.scpt */; };
 		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
 		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
+		52CC197121C0AD6A0061DE35 /* SetupStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC197021C0AD6A0061DE35 /* SetupStep.swift */; };
 		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
 		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
@@ -128,6 +129,7 @@
 		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
 		52C88EF82160678A003AF0B2 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		52CC197021C0AD6A0061DE35 /* SetupStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStep.swift; sourceTree = "<group>"; };
 		52DC7980215ECB48005EE97E /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
 		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
 		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				5214CD8E215B3BED008A7E83 /* Welcome.swift */,
 				52688653215B2FA8009A2FE3 /* SlideSegue.swift */,
+				52CC197021C0AD6A0061DE35 /* SetupStep.swift */,
 				5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */,
 				5266354C215F177C008176E9 /* AllowLocationViewController.swift */,
 			);
@@ -546,6 +549,7 @@
 				706D395D20E377E40079535E /* Localizations.swift in Sources */,
 				5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */,
 				52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */,
+				52CC197121C0AD6A0061DE35 /* SetupStep.swift in Sources */,
 				520EF73A21A08D1B003326F2 /* Solar.swift in Sources */,
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */,
