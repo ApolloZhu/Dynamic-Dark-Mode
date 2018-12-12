@@ -29,25 +29,25 @@
 "Menu.toggle" = "Beralih ke Mode Gelap";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Pengaturan Batas Otomatis";
+"SettingsViewController.autoAdjustThreshold" = "Pengaturan Batas Otomatis";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Modus Jadwal";
+"SettingsViewController.scheduleMode" = "Modus Jadwal";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomis";
+"SunsetSunrise.astronomical" = "Astronomis";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Sipil";
+"SunsetSunrise.civil" = "Sipil";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Pribadi";
+"SunsetSunrise.customRange" = "Pribadi";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautika";
+"SunsetSunrise.nautical" = "Nautika";
 
 /* Official */
-"SunsetSunrise.Official" = "Resmi";
+"SunsetSunrise.official" = "Resmi";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Buka Pengaturan Sistem";

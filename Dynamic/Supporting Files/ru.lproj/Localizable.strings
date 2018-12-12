@@ -29,25 +29,25 @@
 "Menu.toggle" = "Сменить режим";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Автонастройка порога";
+"SettingsViewController.autoAdjustThreshold" = "Автонастройка порога";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Расписание";
+"SettingsViewController.scheduleMode" = "Расписание";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Астрономическое";
+"SunsetSunrise.astronomical" = "Астрономическое";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Гражданское";
+"SunsetSunrise.civil" = "Гражданское";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Пользовательское";
+"SunsetSunrise.customRange" = "Пользовательское";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Навигационное";
+"SunsetSunrise.nautical" = "Навигационное";
 
 /* Official */
-"SunsetSunrise.Official" = "Официальное";
+"SunsetSunrise.official" = "Официальное";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Открыть Системные настройки";

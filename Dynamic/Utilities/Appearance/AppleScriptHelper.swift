@@ -42,6 +42,7 @@ extension AppleScript {
             script?.executeAndReturnError(&errorInfo)
             showError(errorInfo, title: NSLocalizedString(
                 "AppleScript.execute.error",
+                value: "Failed to Toggle Dark Mode",
                 comment: "something went wrong. But it's okay"
             ))
         }
@@ -63,10 +64,12 @@ extension AppleScript {
             alert.alertStyle = .critical
             alert.messageText = NSLocalizedString(
                 "AppleScript.authorization.error",
+                value: "You didn't allow Dynamic Dark Mode to manage dark mode",
                 comment: ""
             )
             alert.informativeText = NSLocalizedString(
                 "AppleScript.authorization.instruction",
+                value: "We'll take you to System Preferences.",
                 comment: ""
             )
         }, then: { _ in
@@ -110,6 +113,7 @@ extension AppleScript {
                     runModal(ofNSAlert: { alert in
                         alert.messageText = NSLocalizedString(
                             "AppleScript.authorization.failed",
+                            value: "Something Went Wrong",
                             comment: "Generic error happened"
                         )
                         alert.informativeText = "\(status)"

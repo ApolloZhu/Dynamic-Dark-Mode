@@ -29,25 +29,25 @@
 "Menu.toggle" = "Baskuligu la Malluman Modon";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Ĝustigi la Sojlon Aŭtomatike";
+"SettingsViewController.autoAdjustThreshold" = "Ĝustigi la Sojlon Aŭtomatike";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Tempoplana Modo";
+"SettingsViewController.scheduleMode" = "Tempoplana Modo";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomia";
+"SunsetSunrise.astronomical" = "Astronomia";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Civila";
+"SunsetSunrise.civil" = "Civila";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Agordi";
+"SunsetSunrise.customRange" = "Agordi";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Naŭtika";
+"SunsetSunrise.nautical" = "Naŭtika";
 
 /* Official */
-"SunsetSunrise.Official" = "Ofica";
+"SunsetSunrise.official" = "Ofica";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Iru al Sistemaj Preferoj";

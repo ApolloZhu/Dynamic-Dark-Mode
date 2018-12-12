@@ -81,10 +81,12 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
             alert.messageText = LocalizedString.Location.notAvailable
             alert.addButton(withTitle: NSLocalizedString(
                 "SystemPreferences.open",
+                value: "Open System Preferences",
                 comment: ""
             ))
             alert.addButton(withTitle: NSLocalizedString(
                 "SystemPreferences.skip",
+                value: "Skip",
                 comment: ""
             ))
             alert.alertStyle = .warning
@@ -102,8 +104,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways {
-            showNextOnce()
-        }
+        if isNotAuthorized { return }
+        showNextOnce()
     }
 }

@@ -29,25 +29,25 @@
 "Menu.toggle" = "切换外观模式";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "自动切换阀值";
+"SettingsViewController.autoAdjustThreshold" = "自动切换阀值";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "定时选项";
+"SettingsViewController.scheduleMode" = "定时选项";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "天文";
+"SunsetSunrise.astronomical" = "天文";
 
 /* Civil */
-"SunsetSunrise.Civil" = "法定";
+"SunsetSunrise.civil" = "法定";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "自定";
+"SunsetSunrise.customRange" = "自定";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "航海";
+"SunsetSunrise.nautical" = "航海";
 
 /* Official */
-"SunsetSunrise.Official" = "标准";
+"SunsetSunrise.official" = "标准";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "打开“系统偏好设置”";

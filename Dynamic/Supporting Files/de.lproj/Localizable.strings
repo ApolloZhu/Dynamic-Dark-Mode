@@ -29,25 +29,25 @@
 "Menu.toggle" = "Dark Mode umschalten";
 
 /* AutoAdjustThreshold */
-"SettingsViewController.AutoAdjustThreshold" = "Schwelle automatisch einstellen";
+"SettingsViewController.autoAdjustThreshold" = "Schwelle automatisch einstellen";
 
 /* ScheduleMode */
-"SettingsViewController.ScheduleMode" = "Geplanter Modus";
+"SettingsViewController.scheduleMode" = "Geplanter Modus";
 
 /* Astronomical */
-"SunsetSunrise.Astronomical" = "Astronomisch";
+"SunsetSunrise.astronomical" = "Astronomisch";
 
 /* Civil */
-"SunsetSunrise.Civil" = "Zivil";
+"SunsetSunrise.civil" = "Zivil";
 
 /* CustomRange */
-"SunsetSunrise.CustomRange" = "Eigene";
+"SunsetSunrise.customRange" = "Eigene";
 
 /* Nautical */
-"SunsetSunrise.Nautical" = "Nautische";
+"SunsetSunrise.nautical" = "Nautische";
 
 /* Official */
-"SunsetSunrise.Official" = "Offizielle";
+"SunsetSunrise.official" = "Offizielle";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Öffne Systemeinstellungen";
