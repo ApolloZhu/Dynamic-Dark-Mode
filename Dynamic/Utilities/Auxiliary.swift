@@ -17,13 +17,6 @@ enum Sandbox {
 
 // MARK: - Error Handling
 
-public func showError(_ error: Error?) {
-    guard let error = error else { return }
-    DispatchQueue.main.async {
-        NSAlert(error: error).runModal()
-    }
-}
-
 public func showError(_ info: NSDictionary?, title: String? = nil) {
     guard let error = info else { return }
     showCriticalErrorMessage(error.reduce("") {

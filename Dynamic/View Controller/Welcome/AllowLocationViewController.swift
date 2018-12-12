@@ -43,14 +43,17 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
     }
 
     @IBAction func openPreferences(_ sender: NSButton) {
-        redirectToSystemPreferences()
+        if isNotAuthorized {
+            redirectToSystemPreferences()
+        } else {
+            showNextOnce()
+        }
     }
 
     private var lock = NSLock()
     private var firstTime = true
 
-    func showNextOnce() {
-        manager.delegate = nil
+    func showNextOnce() {        
         lock.lock()
         defer { lock.unlock() }
         guard firstTime else { return }

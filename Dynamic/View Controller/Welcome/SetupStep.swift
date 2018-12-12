@@ -8,12 +8,23 @@
 
 import Cocoa
 
+var presentors = [NSViewController]()
+
+func releasePresentors() {
+    while case let presentor? = presentors.popLast() {
+        presentor.presentedViewControllers?.forEach {
+            presentor.dismiss($0)
+        }
+    }
+}
+
 protocol SetupStep: AnyObject {
     func showNext()
 }
 
 extension SetupStep where Self: NSViewController {
     func showNext() {
+        presentors.append(self)
         DispatchQueue.main.async { [weak self] in
             self?.performSegue(withIdentifier: "next", sender: nil)
         }
@@ -27,6 +38,7 @@ extension LastSetupStep where Self: NSViewController {
         preferences.hasLaunchedBefore = true
         Preferences.setup()
         Welcome.close()
+        releasePresentors()
         startUpdating {
             DispatchQueue.main.async {
                 SettingsViewController.show()

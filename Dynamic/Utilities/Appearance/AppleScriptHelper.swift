@@ -35,7 +35,7 @@ extension AppleScript {
 // MARK: - Execution
 
 extension AppleScript {
-    public func execute(then handle: @escaping ((Error?) -> Void) = showError) {
+    public func execute() {
         AppleScript.checkPermission {
             var errorInfo: NSDictionary? = nil
             let script = NSAppleScript(contentsOf: self.url, error: &errorInfo)

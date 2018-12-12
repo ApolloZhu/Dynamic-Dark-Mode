@@ -16,6 +16,8 @@ class Welcome: NSWindowController {
             welcome = NSStoryboard.main
                 .instantiateController(withIdentifier: "setup")
                 as? Welcome
+            releasePresentors()
+            presentors.append(welcome!.contentViewController!)
         }
         welcome?.window?.level = .floating
         welcome?.showWindow(nil)

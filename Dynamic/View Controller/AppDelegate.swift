@@ -70,6 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        releasePresentors()
         StatusBarItem.only.stopObserving()
         Preferences.removeObservers()
         Scheduler.shared.cancel()
