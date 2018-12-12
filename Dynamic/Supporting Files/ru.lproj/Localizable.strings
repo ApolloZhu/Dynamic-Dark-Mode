@@ -5,7 +5,7 @@
 "AppleScript.authorization.failed" = "Что-то пошло не так";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Переход в Системные настройки. Возможно, понадобится перезапустить Dynamic Dark Mode, чтобы новые настройки вступили в силу.";
+"AppleScript.authorization.instruction" = "Переход в Системные настройки.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Не удалось сменить оформление";

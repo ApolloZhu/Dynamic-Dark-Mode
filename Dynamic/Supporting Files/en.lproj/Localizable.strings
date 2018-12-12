@@ -5,8 +5,7 @@
 "AppleScript.authorization.failed" = "Something Went Wrong";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.
-You may need to RESTART Dynamic Dark Mode to allow the new settings take effect.";
+"AppleScript.authorization.instruction" = "We'll take you to System Preferences.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Failed to Toggle Dark Mode";

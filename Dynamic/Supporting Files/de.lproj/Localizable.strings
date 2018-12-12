@@ -5,8 +5,7 @@
 "AppleScript.authorization.failed" = "Etwas lief falsch";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Wir öffnen die Systemeinstellungen für Sie.
-Automatischer Dark Mode muss gegebenenfalls neu gestartet werden, um die Einstellungen zu übernehmen.";
+"AppleScript.authorization.instruction" = "Wir öffnen die Systemeinstellungen für Sie.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Umschalten des Dark Modes fehlgeschlagen";

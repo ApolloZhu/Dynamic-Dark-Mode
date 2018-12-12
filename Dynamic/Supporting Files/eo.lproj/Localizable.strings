@@ -5,8 +5,7 @@
 "AppleScript.authorization.failed" = "Io Estas Malrajta";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Ni alportos vin al Sistemaj Preferoj.
-Vi eble bezonas REKOMENCI Aŭtomatikan Malluman Modon por efekti la nova agordoj.";
+"AppleScript.authorization.instruction" = "Ni alportos vin al Sistemaj Preferoj.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Malsukcesis baskuligi la malluman modon.";

@@ -22,11 +22,11 @@
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
 "32v-z6-q8Z.title" = "自动深色模式设置";
 
-/* Class = "NSTextFieldCell"; title = "To Open Preferences..."; ObjectID = "87M-Sa-k9k"; */
-"87M-Sa-k9k.title" = "通过以下方式打开设置";
-
 /* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
 "92J-gp-8D9.title" = "允许控制“System Events”";
+
+/* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
+"apZ-rU-OFQ.title" = "显示下拉菜单";
 
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "打印…";
@@ -58,8 +58,8 @@
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "关闭";
 
-/* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "左键点击菜单栏图标，然后在下拉菜单中选择“偏好设置...”";
+/* Class = "NSMenuItem"; title = "Hidden"; ObjectID = "eib-A2-uKg"; */
+"eib-A2-uKg.title" = "隐藏";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "帮助";
@@ -72,9 +72,6 @@
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
 "hBx-FP-5Wr.title" = "至:";
-
-/* Class = "NSTextFieldCell"; title = "This is where you can later decide if you want to turn on and off dark mode based on your screen brightness, set a custom schedule of when to turn it on and off, or according to the calculated sunset-sunrise time based your location."; ObjectID = "heB-g6-Sln"; */
-"heB-g6-Sln.title" = "之后您能通过偏好设置修改是否根据屏幕亮度切换深色模式，是否定时启用停用，以及日出日落计算方法等等。";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "显示";
@@ -133,14 +130,17 @@
 /* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
 "qIS-W8-SiK.title" = "页面设置…";
 
-/* Class = "NSButtonCell"; title = "Right click on the menu bar icon"; ObjectID = "qmW-4e-u5z"; */
-"qmW-4e-u5z.title" = "右键点击菜单栏按钮";
-
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
 "R4o-n2-Eq4.title" = "缩放";
 
+/* Class = "NSMenuItem"; title = "Toggle Dark Mode"; ObjectID = "RMC-yX-fzH"; */
+"RMC-yX-fzH.title" = "切换外观模式";
+
 /* Class = "NSMenuItem"; title = "Nautical Sunset Sunrise"; ObjectID = "RtR-kN-8f8"; */
 "RtR-kN-8f8.title" = "航海日出日落";
+
+/* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
+"scf-Wn-qXQ.title" = "菜单栏图标";
 
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
 "T1i-3L-V9g.title" = "配置";
@@ -150,9 +150,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
 "tF8-qA-5Bo.title" = "其他";
-
-/* Class = "NSButtonCell"; title = "Single Click to Toggle, Right Click for Preferences"; ObjectID = "UGa-lO-tpW"; */
-"UGa-lO-tpW.title" = "点击图标切换，右键显示设置";
 
 /* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "自动深色模式";
@@ -169,14 +166,11 @@
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
 "wpr-3q-Mcd.title" = "帮助";
 
-/* Class = "NSButtonCell"; title = "Exit & Configure >>"; ObjectID = "X4y-Vz-jYE"; */
-"X4y-Vz-jYE.title" = "退出并设置 >>";
+/* Class = "NSButtonCell"; title = "Check Permission >>"; ObjectID = "X4y-Vz-jYE"; */
+"X4y-Vz-jYE.title" = "确认权限 >>";
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
 "y0s-hF-kCC.title" = "开始配置 >>";
-
-/* Class = "NSButtonCell"; title = "Start >>"; ObjectID = "YvB-h5-jjV"; */
-"YvB-h5-jjV.title" = "开始使用 >>";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "“自动深色模式”需要访问您的当前位置来计算日出日落时间，以便在合适的时候为您自动切换深色模式。";

@@ -5,8 +5,7 @@
 "AppleScript.authorization.failed" = "Quelque chose c'est mal passé";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Nous allons vous ouvrir les Préférences système.
-Vous allez devoir redémarrer Dynamic Dark Mode afin que les changements soient pris en compte.";
+"AppleScript.authorization.instruction" = "Nous allons vous ouvrir les Préférences système.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Echec du passage en Mode sombre";

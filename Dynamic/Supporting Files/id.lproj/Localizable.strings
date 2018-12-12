@@ -5,8 +5,7 @@
 "AppleScript.authorization.failed" = "Terdapat sebuah kesalahan";
 
 /* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Kami akan membawa Anda ke pengaturan sistem.
-Anda mungkin membutuhkan untuk MENJALANKAN ULANG Dynamic Dark Mode untuk melihat dapak dari pengaturan baru.";
+"AppleScript.authorization.instruction" = "Kami akan membawa Anda ke pengaturan sistem.";
 
 /* something went wrong. But it's okay */
 "AppleScript.execute.error" = "Gagal untuk beralih ke mode gelap";
