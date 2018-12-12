@@ -35,8 +35,8 @@ protocol LastSetupStep: SetupStep { }
 
 extension LastSetupStep where Self: NSViewController {
     func showNext() {
-        preferences.hasLaunchedBefore = true
         Preferences.setup()
+        preferences.hasLaunchedBefore = true
         Welcome.close()
         releasePresentors()
         startUpdating {

@@ -74,6 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         StatusBarItem.only.stopObserving()
         Preferences.removeObservers()
         Scheduler.shared.cancel()
+        ScreenBrightnessObserver.shared.stop()
     }
 }
 
@@ -82,13 +83,16 @@ func startUpdating(then onComplete: (() -> Void)? = nil) {
     DispatchQueue.main.async {
         Preferences.setupObservers()
         Scheduler.shared.getCurrentMode {
-            guard let style = $0?.style
-                ?? ScreenBrightnessObserver.shared.mode
-                else { onComplete?();return }
-            AppleScript.requestPermission {
-                defer { onComplete?() }
-                guard $0 else { return }
-                style.enable()
+            if let style = $0?.style
+                ?? ScreenBrightnessObserver.shared.mode {
+                AppleScript.requestPermission {
+                    defer { onComplete?() }
+                    guard $0 else { return }
+                    style.enable()
+                }
+            } else {
+                alertLocationNotAvailable(dueTo: $1!)
+                onComplete?()
             }
         }
     }

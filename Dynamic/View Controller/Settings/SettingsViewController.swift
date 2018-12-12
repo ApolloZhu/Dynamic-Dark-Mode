@@ -51,6 +51,8 @@ class SettingsViewController: NSViewController {
         let name = Bundle.main.bundleIdentifier!
         preferences.removePersistentDomain(forName: name)
         Preferences.removeObservers()
+        Scheduler.shared.cancel()
+        ScreenBrightnessObserver.shared.stop()
         close(self)
         Welcome.show()
     }

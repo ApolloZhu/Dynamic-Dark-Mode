@@ -16,33 +16,44 @@ public enum Location {
     public typealias Processor = (Location) -> Void
 }
 
+extension CLError {
+    static let nsDenied = NSError(
+        domain: CLError.errorDomain,
+        code: CLError.Code.denied.rawValue,
+        userInfo: nil
+    )
+    static let denied = CLError(_nsError: nsDenied)
+}
+
+func ==(lhs: Error?, rhs: CLError) -> Bool {
+    return CLError.nsDenied.isEqual(to: lhs)
+}
+
 public final class LocationManager: NSObject, CLLocationManagerDelegate {
+    private var lock = NSLock()
     private var isFetching = false
     private var retryCount = 5
     private var _callback: Location.Processor?
-    private var callback: Location.Processor? {
-        get {
-            defer {
-                _callback = nil
-                isFetching = false
-            }
-            return _callback
-        }
-        set {
-            _callback = newValue
-        }
+    private func callback(_ withLocation: Location) {
+        lock.lock()
+        _callback?(withLocation)
+        _callback = nil
+        isFetching = false
+        lock.unlock()
     }
     
     public func fetch(then processor: @escaping Location.Processor) {
-        if isFetching { return }
+        lock.lock()
+        if isFetching { return lock.unlock() }
         isFetching = true
         retryCount = 5
-        callback = processor
+        _callback = processor
+        lock.unlock()
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .notDetermined:
             manager.startUpdatingLocation()
         case .denied, .restricted:
-            break
+            callback(.failed(CLError.denied))
         }
     }
     
@@ -58,12 +69,10 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
                                 didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .notDetermined:
-            break
+            manager.startUpdatingLocation()
         case .denied, .restricted:
-            runModal(ofNSAlert: { alert in
-                alert.messageText = LocalizedString.Location.notAuthorized
-            })
             manager.stopUpdatingLocation()
+            callback(.failed(CLError.denied))
         }
     }
     
@@ -72,7 +81,7 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         preferences.location = location
-        callback?(.current(location))
+        callback(.current(location))
     }
     
     public func locationManager(_ manager: CLLocationManager,
@@ -81,9 +90,21 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         guard retryCount == 0 else { return }
         manager.stopUpdatingLocation()
         if let location = preferences.location {
-            callback?(.cached(location))
+            callback(.cached(location))
         } else {
-            callback?(.failed(error))
+            callback(.failed(error))
         }
     }
+}
+
+func alertLocationNotAvailable(dueTo error: Error? = nil) {
+    runModal(ofNSAlert: { alert in
+        alert.messageText = error == CLError.denied
+            ? LocalizedString.Location.notAuthorized
+            : LocalizedString.Location.notAvailable
+        if let errorDescription = error?.localizedDescription {
+            alert.informativeText = errorDescription
+        }
+        alert.alertStyle = .warning
+    })
 }

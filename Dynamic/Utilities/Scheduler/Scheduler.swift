@@ -28,19 +28,9 @@ public final class Scheduler: NSObject {
             case .cached(let location):
                 self.scheduleAtCachedLocation(location)
             case .failed(let error):
-                self.alertLocationNotAvailable(dueTo: error)
+                alertLocationNotAvailable(dueTo: error)
             }
         }
-    }
-    
-    private func alertLocationNotAvailable(dueTo error: Error? = nil) {
-        runModal(ofNSAlert: { alert in
-            alert.messageText = LocalizedString.Location.notAvailable
-            if let errorDescription = error?.localizedDescription {
-                alert.informativeText = errorDescription
-            }
-            alert.alertStyle = .warning
-        })
     }
     
     private func scheduleAtLocation(_ location: CLLocation?) {
@@ -73,13 +63,13 @@ public final class Scheduler: NSObject {
     
     // Mark: - Mode
     
-    public func getCurrentMode(then process: @escaping (Mode?) -> Void) {
+    public func getCurrentMode(then process: @escaping (Mode?, Error?) -> Void) {
         LocationManager.serial.fetch { [unowned self] in
             switch $0 {
             case .current(let location), .cached(let location):
-                process(self.mode(atLocation: location.coordinate))
-            case .failed:
-                process(nil)
+                process(self.mode(atLocation: location.coordinate), nil)
+            case .failed(let error):
+                process(nil, error)
             }
         }
     }

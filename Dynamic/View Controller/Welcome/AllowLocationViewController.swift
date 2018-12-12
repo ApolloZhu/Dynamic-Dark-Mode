@@ -19,7 +19,7 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
         return manager
     }()
 
-    var isNotAuthorized: Bool {
+    var whenNotAuthorized: Bool {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             showNextOnce()
@@ -31,7 +31,7 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        guard isNotAuthorized else { return }
+        guard whenNotAuthorized else { return }
         showPreferences.isHidden = false
         manager.requestLocation()
     }
@@ -43,22 +43,17 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
     }
 
     @IBAction func openPreferences(_ sender: NSButton) {
-        if isNotAuthorized {
-            redirectToSystemPreferences()
-        } else {
-            showNextOnce()
-        }
+        guard whenNotAuthorized else { return }
+        redirectToSystemPreferences()
     }
 
-    private var lock = NSLock()
     private var firstTime = true
 
-    func showNextOnce() {        
-        lock.lock()
-        defer { lock.unlock() }
-        guard firstTime else { return }
-        firstTime = false
-        showNext()
+    func showNextOnce() {
+        if firstTime {
+            firstTime = false
+            showNext()
+        }
     }
 }
 
@@ -78,7 +73,9 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didFailWithError error: Error) {
         runModal(ofNSAlert: { alert in
-            alert.messageText = LocalizedString.Location.notAvailable
+            alert.messageText = error == CLError.denied
+                ? LocalizedString.Location.notAuthorized
+                : LocalizedString.Location.notAvailable
             alert.addButton(withTitle: NSLocalizedString(
                 "SystemPreferences.open",
                 value: "Open System Preferences",
@@ -104,7 +101,6 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
-        if isNotAuthorized { return }
-        showNextOnce()
+        _ = whenNotAuthorized
     }
 }
