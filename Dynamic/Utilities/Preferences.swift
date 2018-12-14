@@ -87,10 +87,20 @@ extension Preferences {
                 }
             },
             observe(\.opensAtLogin, observeInitial: true) { change in
-                assert(SMLoginItemSetEnabled(
+                guard !SMLoginItemSetEnabled(
                     "io.github.apollozhu.Dynamic.Launcher" as CFString,
                     change.newValue ?? true
-                ))
+                ) else { return }
+                runModal(ofNSAlert: { alert in
+                    alert.messageText = NSLocalizedString(
+                        "Preferences.opensAtLogin.failed",
+                        value: "Failed to update opens at login settings",
+                        comment: """
+                        This is used for both enable and disable opens at login.\
+                        It indicates the operation to update this settings failed.
+                        """
+                    )
+                })
             }
         ]
     }

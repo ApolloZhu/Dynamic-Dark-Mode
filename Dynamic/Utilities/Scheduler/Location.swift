@@ -16,6 +16,26 @@ public enum Location {
     public typealias Processor = (Location) -> Void
 }
 
+extension Location {
+    static var deniedAccess: Bool {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .notDetermined:
+            return false
+        case .denied, .restricted:
+            return true
+        }
+    }
+    
+    static var allowsAccess: Bool {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            return true
+        case .denied, .notDetermined, .restricted:
+            return false
+        }
+    }
+}
+
 extension CLError {
     static let nsDenied = NSError(
         domain: CLError.errorDomain,
@@ -29,7 +49,7 @@ func ==(lhs: Error?, rhs: CLError) -> Bool {
     return CLError.nsDenied.isEqual(to: lhs)
 }
 
-public final class LocationManager: NSObject, CLLocationManagerDelegate {
+final class LocationManager: NSObject, CLLocationManagerDelegate {
     private var lock = NSLock()
     private var isFetching = false
     private var retryCount = 5
@@ -42,6 +62,8 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         lock.unlock()
     }
     
+    public weak var delegate: CLLocationManagerDelegate?
+    
     public func fetch(then processor: @escaping Location.Processor) {
         lock.lock()
         if isFetching { return lock.unlock() }
@@ -49,11 +71,10 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         retryCount = 5
         _callback = processor
         lock.unlock()
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways, .notDetermined:
-            manager.startUpdatingLocation()
-        case .denied, .restricted:
+        if Location.deniedAccess {
             callback(.failed(CLError.denied))
+        } else {
+            manager.startUpdatingLocation()
         }
     }
     
@@ -65,27 +86,27 @@ public final class LocationManager: NSObject, CLLocationManagerDelegate {
         return manager
     }()
     
-    public func locationManager(_ manager: CLLocationManager,
-                                didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .notDetermined:
-            manager.startUpdatingLocation()
-        case .denied, .restricted:
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+        delegate?.locationManager?(manager, didChangeAuthorization: status)
+        if Location.deniedAccess {
             manager.stopUpdatingLocation()
             callback(.failed(CLError.denied))
+        } else {
+            manager.startUpdatingLocation()
         }
     }
     
-    public func locationManager(_ manager: CLLocationManager,
-                                didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         preferences.location = location
         callback(.current(location))
     }
     
-    public func locationManager(_ manager: CLLocationManager,
-                                didFailWithError error: Error) {
+    func locationManager(_ manager: CLLocationManager,
+                         didFailWithError error: Error) {
         retryCount -= 1
         guard retryCount == 0 else { return }
         manager.stopUpdatingLocation()

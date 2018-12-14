@@ -12,19 +12,12 @@ import CoreLocation
 class AllowLocationViewController: NSViewController, LastSetupStep {
 
     @IBOutlet weak var showPreferences: NSButton!
-
-    private lazy var manager: CLLocationManager = {
-        let manager = CLLocationManager()
-        manager.delegate = self
-        return manager
-    }()
-
+    
     var whenNotAuthorized: Bool {
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways:
+        if Location.allowsAccess {
             showNextOnce()
             return false
-        case .denied, .notDetermined, .restricted:
+        } else {
             return true
         }
     }
@@ -33,7 +26,17 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
         super.viewDidAppear()
         guard whenNotAuthorized else { return }
         showPreferences.isHidden = false
-        manager.requestLocation()
+        LocationManager.serial.delegate = self
+        LocationManager.serial.fetch { [weak self] in
+            switch $0 {
+            case .failed(let error):
+                self?.onError(error)
+            case .cached:
+                self?.onError()
+            case .current:
+                self?.showNextOnce()
+            }
+        }
     }
 
     // MARK: - Navigation
@@ -64,14 +67,7 @@ private func redirectToSystemPreferences() {
 // MARK: - Delegate Implementation
 
 extension AllowLocationViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager,
-                         didUpdateLocations locations: [CLLocation]) {
-        guard locations.first != nil else { return }
-        showNextOnce()
-    }
-
-    func locationManager(_ manager: CLLocationManager,
-                         didFailWithError error: Error) {
+    private func onError(_ error: Error? = nil) {
         runModal(ofNSAlert: { alert in
             alert.messageText = error == CLError.denied
                 ? LocalizedString.Location.notAuthorized

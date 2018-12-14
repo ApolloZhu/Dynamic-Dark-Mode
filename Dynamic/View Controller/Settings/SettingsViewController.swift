@@ -25,6 +25,7 @@ class SettingsViewController: NSViewController {
             windowController.showWindow(nil)
             window = windowController.window
         }
+        window?.windowController?.showWindow(nil)
         NSApp.activate(ignoringOtherApps: true)
         window?.makeKeyAndOrderFront(nil)
     }

@@ -33,7 +33,7 @@ extension SetupStep where Self: NSViewController {
 
 protocol LastSetupStep: SetupStep { }
 
-extension LastSetupStep where Self: NSViewController {
+extension LastSetupStep {
     func showNext() {
         Preferences.setup()
         preferences.hasLaunchedBefore = true
