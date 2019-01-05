@@ -93,6 +93,7 @@ public final class StatusBarItem {
             case .hidden:
                 guard let statusBarItem = self.statusBarItem else { return }
                 NSStatusBar.system.removeStatusItem(statusBarItem)
+                self.statusBarItem = nil
             }
         }
     }
