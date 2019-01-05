@@ -80,16 +80,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 func startUpdating(then onComplete: (() -> Void)? = nil) {
     setDefaultToggleShortcut()
+    func enableStyleWithPermission(style: AppleInterfaceStyle) {
+        AppleScript.requestPermission {
+            defer { onComplete?() }
+            guard $0 else { return }
+            style.enable()
+        }
+    }
     DispatchQueue.main.async {
         Preferences.setupObservers()
+        let basedOnBrightness = preferences.adjustForBrightness
+            ? ScreenBrightnessObserver.shared.mode
+            : nil
+        guard preferences.scheduled else {
+            guard let style = basedOnBrightness else { onComplete?();return }
+            return enableStyleWithPermission(style: style)
+        }
         Scheduler.shared.getCurrentMode {
-            if let style = $0?.style
-                ?? ScreenBrightnessObserver.shared.mode {
-                AppleScript.requestPermission {
-                    defer { onComplete?() }
-                    guard $0 else { return }
-                    style.enable()
-                }
+            if let style = $0?.style ?? basedOnBrightness {
+                enableStyleWithPermission(style: style)
             } else {
                 alertLocationNotAvailable(dueTo: $1!)
                 onComplete?()
