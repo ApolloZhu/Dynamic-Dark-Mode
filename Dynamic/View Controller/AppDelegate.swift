@@ -19,10 +19,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #if canImport(LetsMove) && !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
         #endif
+        
+        let handler = NSGetUncaughtExceptionHandler()
 
-        StatusBarItem.only.startObserving()
-
+        NSSetUncaughtExceptionHandler { exception in
+            runModal(ofNSAlert: { alert in
+                alert.alertStyle = .critical
+                alert.messageText = NSLocalizedString(
+                    "LetsMove",
+                    value: "Please move Dynamic Dark Mode to /Applications folder.",
+                    comment: "Dynamic Dark Mode must be saved in the system wide Applications folder."
+                )
+                alert.informativeText = [
+                    exception.reason,
+                    exception.name.rawValue,
+                    exception.userInfo?.reduce("", {
+                        (result: String, pair: (key: AnyHashable, value: Any))
+                        -> String in return "\(result)\(pair.key): \(pair.value)\n"
+                    }),
+                    zip(exception.callStackReturnAddresses, exception.callStackSymbols).reduce("", {
+                        (result: String, pair: (addr: NSNumber, name: String))
+                        -> String in "\(result)\(pair.addr)\t\(pair.name)\n"
+                    })
+                ].compactMap { $0 }.reduce("", { $0 + $1 })
+            })
+        }
+        
         UNUserNotificationCenter.current().delegate = Scheduler.shared
+        
+        NSSetUncaughtExceptionHandler(handler)
 
         // Command-Shift-T
         MASShortcutBinder.shared()?.bindShortcut(
@@ -72,9 +97,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         releasePresentors()
         StatusBarItem.only.stopObserving()
-        Preferences.removeObservers()
+        Preferences.stopObserving()
         Scheduler.shared.cancel()
-        ScreenBrightnessObserver.shared.stop()
+        ScreenBrightnessObserver.shared.stopObserving()
     }
 }
 
@@ -88,7 +113,8 @@ func startUpdating(then onComplete: (() -> Void)? = nil) {
         }
     }
     DispatchQueue.main.async {
-        Preferences.setupObservers()
+        Preferences.startObserving()
+        StatusBarItem.only.startObserving()
         let basedOnBrightness = preferences.adjustForBrightness
             ? ScreenBrightnessObserver.shared.mode
             : nil

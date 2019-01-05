@@ -37,13 +37,13 @@ extension Preferences {
 extension Preferences {
     private static var handles: [NSKeyValueObservation] = []
 
-    public static func removeObservers() {
+    public static func stopObserving() {
         handles.lazy.forEach { $0.invalidate() }
         handles = []
     }
 
-    public static func setupObservers() {
-        removeObservers()
+    public static func startObserving() {
+        stopObserving()
         func observe<Value>(
             _ keyPath: KeyPath<UserDefaults, Value>,
             observeInitial: Bool = false,
@@ -55,13 +55,13 @@ extension Preferences {
             { _, change in changeHandler(change) }
         }
         if preferences.adjustForBrightness {
-            ScreenBrightnessObserver.shared.start(withInitialUpdate: false)
+            ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
         }
         handles = [
             observe(\.adjustForBrightness) { change in
-                ScreenBrightnessObserver.shared.stop()
+                ScreenBrightnessObserver.shared.stopObserving()
                 if change.newValue == true {
-                    ScreenBrightnessObserver.shared.start()
+                    ScreenBrightnessObserver.shared.startObserving()
                 }
             },
             observe(\.scheduled) { change in

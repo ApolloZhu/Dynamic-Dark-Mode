@@ -17,7 +17,7 @@ extension Notification.Name {
 final class ScreenBrightnessObserver: NSObject {
     static let shared = ScreenBrightnessObserver()
 
-    public func start(withInitialUpdate: Bool = true) {
+    public func startObserving(withInitialUpdate: Bool = true) {
         DistributedNotificationCenter.default().addObserver(
             self,
             selector: #selector(updateForBrightnessChange),
@@ -48,12 +48,12 @@ final class ScreenBrightnessObserver: NSObject {
         AppleScript.checkPermission(onSuccess: mode.enable)
     }
     
-    public func stop() {
+    public func stopObserving() {
         DistributedNotificationCenter.default().removeObserver(self)
     }
 
     deinit {
-        stop()
+        stopObserving()
         // MARK: - Update Anyways
         UserDefaults.standard.removeObserver(
             self, forKeyPath: darkModeUserDefaultsKey

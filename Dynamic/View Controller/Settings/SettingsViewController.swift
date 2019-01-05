@@ -51,9 +51,10 @@ class SettingsViewController: NSViewController {
     @IBAction func reSetup(_ sender: Any) {
         let name = Bundle.main.bundleIdentifier!
         preferences.removePersistentDomain(forName: name)
-        Preferences.removeObservers()
+        Preferences.stopObserving()
+        StatusBarItem.only.stopObserving()
         Scheduler.shared.cancel()
-        ScreenBrightnessObserver.shared.stop()
+        ScreenBrightnessObserver.shared.stopObserving()
         close(self)
         Welcome.show()
     }
