@@ -17,6 +17,10 @@ enum Sandbox {
 
 // MARK: - Error Handling
 
+struct AnError: LocalizedError {
+    let errorDescription: String?
+}
+
 public func showError(_ info: NSDictionary?, title: String? = nil) {
     guard let error = info else { return }
     showCriticalErrorMessage(error.reduce("") {
@@ -37,12 +41,12 @@ public func showCriticalErrorMessage(_ text: String, title: String? = nil) {
 }
 
 public func runModal(
-    ofNSAlert configure: @escaping (inout NSAlert) -> Void,
+    ofNSAlert configure: @escaping (NSAlert) -> Void,
     then process: @escaping (NSApplication.ModalResponse) -> Void = { _ in }
 ) {
     DispatchQueue.main.async {
-        var alert = NSAlert()
-        configure(&alert)
+        let alert = NSAlert()
+        configure(alert)
         process(alert.runModal())
     }
 }
@@ -62,4 +66,21 @@ func log(_ type: OSLogType = .default, log: OSLog = .default,
         print(content)
     }
     #endif
+}
+
+import CoreLocation
+
+extension CLAuthorizationStatus: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .notDetermined:
+            return "CLAuthorizationStatus.notDetermined"
+        case .restricted:
+            return "CLAuthorizationStatus.restricted"
+        case .denied:
+            return "CLAuthorizationStatus.denied"
+        case .authorizedAlways:
+            return "CLAuthorizationStatus.authorizedAlways"
+        }
+    }
 }

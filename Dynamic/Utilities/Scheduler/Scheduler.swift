@@ -52,9 +52,16 @@ public final class Scheduler: NSObject {
         } else {
             CLGeocoder().reverseGeocodeLocation(location)
             { [weak self] placemarks, _ in
-                guard let name = placemarks?.first?.name else { return }
-                preferences.placemark = name
-                self?.notifyUsingPlacemark(named: name)
+                if let name = placemarks?.first?.name {
+                    preferences.placemark = name
+                    self?.notifyUsingPlacemark(named: name)
+                } else {
+                    self?.notifyUsingPlacemark(named: DateFormatter.localizedString(
+                        from: location.timestamp, dateStyle: .medium, timeStyle: .none
+                    ) + String(format:
+                        " @ <%.2f,%.2f>", location.coordinate.latitude, location.coordinate.longitude
+                    ))
+                }
             }
         }
         scheduleAtLocation(location)

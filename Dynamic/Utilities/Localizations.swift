@@ -59,6 +59,11 @@ enum LocalizedString {
             value: "Can't Fetch Current Location",
             comment: "Failed to attain user location for sunset/sunrise calculation."
         )
+        static let timeout = NSLocalizedString(
+            "Location.timeout",
+            value: "Timedout. Check your network connection.",
+            comment: "Took too long to use up retries, most likely off Wi-Fi."
+        )
         static let useCache = NSLocalizedString(
             "Location.useCache",
             value: "Scheduled Using Previous Location",
