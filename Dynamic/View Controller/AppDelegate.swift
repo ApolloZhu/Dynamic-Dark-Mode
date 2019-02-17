@@ -120,7 +120,7 @@ func startUpdating(then onComplete: CompletionHandler? = nil) {
                 if let style = basedOnBrightness {
                     enableStyleWithPermission(style: style)
                 } else {
-                    alertLocationNotAvailable(dueTo: error)
+                    Location.alertNotAvailable(dueTo: error)
                     onComplete?()
                 }
             }

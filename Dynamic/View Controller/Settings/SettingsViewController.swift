@@ -45,7 +45,7 @@ class SettingsViewController: NSViewController {
 
     override func viewDidDisappear() {
         super.viewDidDisappear()
-        removeAllNotifications()
+        UserNotification.removeAll()
     }
 
     @IBAction func reSetup(_ sender: Any) {

@@ -15,53 +15,14 @@ public enum Location {
     case failed(Error)
 }
 
-extension Location {
-    static var deniedAccess: Bool {
-        let status = CLLocationManager.authorizationStatus()
-        switch status {
-        case .authorizedAlways, .notDetermined:
-            return false
-        case .denied, .restricted:
-            return true
-        @unknown default:
-            remindReportingBug(status.description)
-            return false
-        }
-    }
-    
-    static var allowsAccess: Bool {
-        let status = CLLocationManager.authorizationStatus()
-        switch status {
-        case .authorizedAlways:
-            return true
-        case .denied, .notDetermined, .restricted:
-            return false
-        @unknown default:
-            remindReportingBug(status.description)
-            return false
-        }
-    }
-}
-
-extension CLError {
-    static let nsDenied = NSError(
-        domain: CLError.errorDomain,
-        code: CLError.Code.denied.rawValue,
-        userInfo: nil
-    )
-    static let denied = CLError(_nsError: nsDenied)
-}
-
-func == (lhs: Error?, rhs: CLError) -> Bool {
-    return CLError.nsDenied.isEqual(to: lhs)
-}
-
 final class LocationManager: NSObject, CLLocationManagerDelegate {
-    private var lock = NSLock()
+    public static let serial = LocationManager()
     
     private var retryCount = 5
     private let timeout = Interval(seconds: 4)
     typealias Callback = (id: UUID, process: Handler<Location>, onTimeout: Task)
+    
+    private var lock = NSLock()
     private var callbacks: [Callback] = [] {
         didSet { if callbacks.isEmpty { manager.stopUpdatingLocation() } }
     }
@@ -74,8 +35,6 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         callback.onTimeout.cancel()
         callback.process(location)
     }
-    
-    public weak var delegate: CLLocationManagerDelegate?
     
     public func fetch(then processor: @escaping Handler<Location>) {
         lock.lock()
@@ -98,8 +57,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         ), run: callback.process)
     }
     
-    public static let serial = LocationManager()
-    
+    public weak var delegate: CLLocationManagerDelegate?
     private lazy var manager: CLLocationManager = {
         var manager = CLLocationManager()
         manager.delegate = self
@@ -151,13 +109,75 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }
 }
 
-func alertLocationNotAvailable(dueTo error: Error? = nil) {
-    runModal(ofNSAlert: { alert in
-        alert.alertStyle = .warning
-        alert.messageText = error == CLError.denied
-            ? LocalizedString.Location.notAuthorized
-            : LocalizedString.Location.notAvailable
-        guard let error = error else { return }
-        alert.informativeText = error.localizedDescription
-    })
+extension Location {
+    static func alertNotAvailable(dueTo error: Error? = nil) {
+        runModal(ofNSAlert: { alert in
+            alert.alertStyle = .warning
+            alert.messageText = error == CLError.denied
+                ? LocalizedString.Location.notAuthorized
+                : LocalizedString.Location.notAvailable
+            guard let error = error else { return }
+            alert.informativeText = error.localizedDescription
+        })
+    }
+}
+
+// MARK: - Core Location
+
+extension Location {
+    static var deniedAccess: Bool {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
+        case .authorizedAlways, .notDetermined:
+            return false
+        case .denied, .restricted:
+            return true
+        @unknown default:
+            remindReportingBug(status.description)
+            return false
+        }
+    }
+    
+    static var allowsAccess: Bool {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
+        case .authorizedAlways:
+            return true
+        case .denied, .notDetermined, .restricted:
+            return false
+        @unknown default:
+            remindReportingBug(status.description)
+            return false
+        }
+    }
+}
+
+extension CLError {
+    static let nsDenied = NSError(
+        domain: CLError.errorDomain,
+        code: CLError.Code.denied.rawValue,
+        userInfo: nil
+    )
+    static let denied = CLError(_nsError: nsDenied)
+}
+
+func == (lhs: Error?, rhs: CLError) -> Bool {
+    return CLError.nsDenied.isEqual(to: lhs)
+}
+
+extension CLAuthorizationStatus: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .notDetermined:
+            return "CLAuthorizationStatus.notDetermined"
+        case .restricted:
+            return "CLAuthorizationStatus.restricted"
+        case .denied:
+            return "CLAuthorizationStatus.denied"
+        case .authorizedAlways:
+            return "CLAuthorizationStatus.authorizedAlways"
+        @unknown default:
+            return "CLAuthorizationStatus.\(self.rawValue)"
+        }
+    }
 }

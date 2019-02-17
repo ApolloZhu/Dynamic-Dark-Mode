@@ -29,7 +29,7 @@ public final class Scheduler: NSObject {
             case .cached(let location):
                 scheduleAtCachedLocation(location, enableCurrentStyle: enableCurrentStyle)
             case .failed(let error):
-                alertLocationNotAvailable(dueTo: error)
+                Location.alertNotAvailable(dueTo: error)
             }
         }
         LocationManager.serial.fetch(then: processLocation)
@@ -37,7 +37,7 @@ public final class Scheduler: NSObject {
     
     private func scheduleAtLocation(_ location: CLLocation?,
                                     enableCurrentStyle: Bool) {
-        removeAllNotifications()
+        UserNotification.removeAll()
         let decision = mode(atLocation: location?.coordinate)
         if enableCurrentStyle {
             AppleScript.checkPermission(onSuccess: decision.style.enable)
@@ -54,13 +54,13 @@ public final class Scheduler: NSObject {
             scheduleAtLocation(nil, enableCurrentStyle: enableCurrentStyle)
             return false
         }
-        removeAllNotifications()
-        sendNotification(.useCache,
-                         title: LocalizedString.Location.useCache,
-                         subtitle: preferences.placemark ??
-                            String(format:"<%.2f,%.2f>",
-                                   location.coordinate.latitude,
-                                   location.coordinate.longitude))
+        UserNotification.removeAll()
+        UserNotification.send(.useCache,
+                              title: LocalizedString.Location.useCache,
+                              subtitle: preferences.placemark ??
+                                String(format:"<%.2f,%.2f>",
+                                       location.coordinate.latitude,
+                                       location.coordinate.longitude))
         scheduleAtLocation(location, enableCurrentStyle: enableCurrentStyle)
         return true
     }

@@ -196,45 +196,18 @@ extension Preferences {
             setPreferred(to: newValue)
         }
     }
-
-    private var latitude: CLLocationDegrees? {
-        get {
-            return preferences.value(forKey: #function) as? Double
-        }
-        set {
-            setPreferred(to: newValue)
-            placemark = nil
-        }
-    }
-
-    private var longitude: CLLocationDegrees? {
-        get {
-            return preferences.value(forKey: #function) as? Double
-        }
-        set {
-            setPreferred(to: newValue)
-            placemark = nil
-        }
-    }
-
+    
     var location: CLLocation? {
         get {
-            guard let lat = latitude, let lon = longitude else { return nil }
-            return CLLocation(latitude: lat, longitude: lon)
+            return preferences.data(forKey: #function).flatMap { try? NSKeyedUnarchiver
+                .unarchivedObject(ofClass: CLLocation.self, from: $0)
+            }
         }
         set {
-            coordinate = newValue?.coordinate
-        }
-    }
-    
-    private var coordinate: CLLocationCoordinate2D? {
-        get {
-            guard let lat = latitude, let lon = longitude else { return nil }
-            return CLLocationCoordinate2D(latitude: lat, longitude: lon)
-        }
-        set {
-            latitude = newValue?.latitude
-            longitude = newValue?.longitude
+            placemark = nil
+            setPreferred(to: newValue.flatMap { try? NSKeyedArchiver
+                .archivedData(withRootObject: $0, requiringSecureCoding: true)
+            })
         }
     }
 
