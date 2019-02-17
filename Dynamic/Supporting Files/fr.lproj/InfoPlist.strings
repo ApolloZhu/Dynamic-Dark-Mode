@@ -2,7 +2,7 @@
 "CFBundleName" = "Dynamic Dark Mode";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. Tous droits réservés.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. Tous droits réservés.";
 
 /* Privacy - AppleEvents Sending Usage Description */
 "NSAppleEventsUsageDescription" = "Dynamic Dark Mode nécessite cette autorisation pour gèrer l'activation du Mode sombre pour vous.";

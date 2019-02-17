@@ -31,7 +31,7 @@
 	<key>NSAppleEventsUsageDescription</key>
 	<string>This is how Dynamic Dark Mode manage the dark mode for you.</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Dynamic Dark Mode. All rights reserved.</string>
+	<string>Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>This is how Dynamic Dark Mode calculates sunset/sunrise time.</string>
 	<key>NSMainStoryboardFile</key>

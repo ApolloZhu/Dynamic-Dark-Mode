@@ -2,7 +2,7 @@
 "CFBundleName" = "Automatischer Dark Mode";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Automatischer Dark Mode. All Rechte vorbehalten.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Automatischer Dark Mode. All Rechte vorbehalten.";
 
 /* Privacy - AppleEvents Sending Usage Description */
 "NSAppleEventsUsageDescription" = "Wie Automatischer Dark Mode den Dark Mode verwaltet.";

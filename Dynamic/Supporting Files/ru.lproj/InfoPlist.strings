@@ -5,7 +5,7 @@
 "NSAppleEventsUsageDescription" = "Так Dynamic Dark Mode управляет темным режимом.";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018 Dynamic Dark Mode. Все права защищены.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. Все права защищены.";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Так Dynamic Dark Mode рассчитывает время рассвета/заката.";

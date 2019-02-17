@@ -2,7 +2,7 @@
 "CFBundleName" = "Dynamic Dark Mode";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Hak cipta © 2018 Dynamic Dark Mode. Seluruh Hak Cipta.";
+"NSHumanReadableCopyright" = "Hak cipta © 2018-2019 Dynamic Dark Mode. Seluruh Hak Cipta.";
 
 /* Privacy - AppleEvents Sending Usage Description */
 "NSAppleEventsUsageDescription" = "Ini merupakan prosedur bagaimana Dynamic Dark Mode mengatur mode gelap untuk Anda.";
