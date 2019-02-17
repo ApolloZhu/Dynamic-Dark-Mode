@@ -48,18 +48,13 @@ public final class Scheduler: NSObject {
             scheduleAtLocation(nil)
             return false
         }
-        func notifyIsUsingPlacemark(named name: String) {
-            sendNotification(.useCache,
-                             title: LocalizedString.Location.useCache,
-                             subtitle: name)
-            removeAllNotifications()
-        }
-        notifyIsUsingPlacemark(named: preferences.placemark ??
-            String(format:"<%.2f,%.2f>",
-                   location.coordinate.latitude,
-                   location.coordinate.longitude
-            )
-        )
+        removeAllNotifications()
+        sendNotification(.useCache,
+                         title: LocalizedString.Location.useCache,
+                         subtitle: preferences.placemark ??
+                            String(format:"<%.2f,%.2f>",
+                                   location.coordinate.latitude,
+                                   location.coordinate.longitude))
         scheduleAtLocation(location)
         return true
     }

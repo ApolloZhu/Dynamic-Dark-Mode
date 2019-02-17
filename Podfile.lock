@@ -3,7 +3,7 @@ PODS:
   - MASShortcut (2.3.6)
   - Schedule (1.0.0)
   - Solar (2.1.0)
-  - Sparkle (1.21.2)
+  - Sparkle (1.21.3)
 
 DEPENDENCIES:
   - LetsMove
@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
   Schedule: 64f334e01daa6f80201ab147b59cb4f1e118ae74
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
-  Sparkle: 1678d4707e7665960c7d1b43aca125e6392d11c4
+  Sparkle: 3f75576db8b0265adef36c43249d747f22d0b708
 
 PODFILE CHECKSUM: c18f247baf975a86a3f0843f1b9c8a959975cf4d
 
