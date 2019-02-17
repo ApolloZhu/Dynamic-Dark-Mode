@@ -51,7 +51,7 @@ extension AppleScript {
 
 extension AppleScript {
     public static func checkPermission(
-        onSuccess: @escaping () -> Void = { }
+        onSuccess: @escaping CompletionHandler = { }
     ) {
         requestPermission { authorized in
             if authorized { return onSuccess() }
@@ -83,7 +83,7 @@ extension AppleScript {
 
     public static func requestPermission(
         retryOnInternalError: Bool = true,
-        then process: @escaping (_ authorized: Bool) -> Void
+        then process: @escaping Handler<Bool>
     ) {
         DispatchQueue.global().async {
             let systemEvents = "com.apple.systemevents"

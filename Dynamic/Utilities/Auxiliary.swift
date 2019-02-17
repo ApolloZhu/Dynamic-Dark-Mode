@@ -15,6 +15,9 @@ enum Sandbox {
     }
 }
 
+public typealias Handler<T> = (T) -> Void
+public typealias CompletionHandler = () -> Void
+
 // MARK: - Error Handling
 
 struct AnError: LocalizedError {
@@ -46,8 +49,8 @@ public func remindReportingBug(_ text: String, title: String? = nil) {
 }
 
 public func runModal(
-    ofNSAlert configure: @escaping (NSAlert) -> Void,
-    then process: @escaping (NSApplication.ModalResponse) -> Void = { _ in }
+    ofNSAlert configure: @escaping Handler<NSAlert>,
+    then process: @escaping Handler<NSApplication.ModalResponse> = { _ in }
 ) {
     DispatchQueue.main.async {
         let alert = NSAlert()
@@ -110,13 +113,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler:
-        @escaping (UNNotificationPresentationOptions) -> Void
+        @escaping Handler<UNNotificationPresentationOptions>
     ) { completionHandler(.alert) }
     
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping () -> Void) {
+        withCompletionHandler completionHandler: @escaping CompletionHandler) {
         defer { completionHandler() }
         let id = response.notification.request.identifier
         switch NotificationIdentifier(rawValue: id)! {
@@ -142,7 +145,7 @@ enum NotificationIdentifier: String {
 }
 
 func sendNotification(_ identifier: NotificationIdentifier, title: String, subtitle: String,
-                      then handle: ((Error?) -> Void)? = nil) {
+                      then handle: (Handler<Error?>)? = nil) {
     let center = UNUserNotificationCenter.current()
     center.requestAuthorization(options: [.alert]) { authorized, _ in
         guard authorized else {

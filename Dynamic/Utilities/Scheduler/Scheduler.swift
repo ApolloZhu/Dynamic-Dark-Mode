@@ -14,19 +14,20 @@ import Schedule
 public final class Scheduler: NSObject {
     public static let shared = Scheduler()
     
-    private var task: Task?
+    private weak var task: Task?
     
     public func cancel() {
+        task?.cancel()
         task = nil
     }
     
-    @objc public func schedule() {
+    @objc public func schedule(enableCurrentStyle: Bool = true) {
         func processLocation(_ result: Location) {
             switch result {
             case .current(let location):
-                scheduleAtLocation(location)
+                scheduleAtLocation(location, enableCurrentStyle: enableCurrentStyle)
             case .cached(let location):
-                scheduleAtCachedLocation(location)
+                scheduleAtCachedLocation(location, enableCurrentStyle: enableCurrentStyle)
             case .failed(let error):
                 alertLocationNotAvailable(dueTo: error)
             }
@@ -34,18 +35,23 @@ public final class Scheduler: NSObject {
         LocationManager.serial.fetch(then: processLocation)
     }
     
-    private func scheduleAtLocation(_ location: CLLocation?) {
+    private func scheduleAtLocation(_ location: CLLocation?,
+                                    enableCurrentStyle: Bool) {
         removeAllNotifications()
         let decision = mode(atLocation: location?.coordinate)
-        AppleScript.checkPermission(onSuccess: decision.style.enable)
+        if enableCurrentStyle {
+            AppleScript.checkPermission(onSuccess: decision.style.enable)
+        }
         guard let date = decision.date else { return }
-        task = Plan.at(date).do(onElapse: schedule)
+        cancel()
+        task = Plan.at(date).do { [weak self] in self?.schedule() }
     }
     
     @discardableResult
-    private func scheduleAtCachedLocation(_ location: CLLocation) -> Bool {
+    private func scheduleAtCachedLocation(_ location: CLLocation,
+                                          enableCurrentStyle: Bool) -> Bool {
         guard preferences.scheduleZenithType != .custom else {
-            scheduleAtLocation(nil)
+            scheduleAtLocation(nil, enableCurrentStyle: enableCurrentStyle)
             return false
         }
         removeAllNotifications()
@@ -55,19 +61,19 @@ public final class Scheduler: NSObject {
                             String(format:"<%.2f,%.2f>",
                                    location.coordinate.latitude,
                                    location.coordinate.longitude))
-        scheduleAtLocation(location)
+        scheduleAtLocation(location, enableCurrentStyle: enableCurrentStyle)
         return true
     }
     
     // Mark: - Mode
     
-    public func getCurrentMode(then process: @escaping (Mode?, Error?) -> Void) {
+    public func getCurrentMode(then process: @escaping Handler<Result<Mode, Error>>) {
         LocationManager.serial.fetch { [unowned self] in
             switch $0 {
             case .current(let location), .cached(let location):
-                process(self.mode(atLocation: location.coordinate), nil)
+                process(.success(self.mode(atLocation: location.coordinate)))
             case .failed(let error):
-                process(nil, error)
+                process(.failure(error))
             }
         }
     }
@@ -140,11 +146,14 @@ public final class Scheduler: NSObject {
     
     private override init() {
         super.init()
-        NSWorkspace.shared.notificationCenter.addObserver(
-            self, selector: #selector(workspaceDidWake),
-            name: NSWorkspace.didWakeNotification,
-            object: nil
-        )
+        for name in [NSWorkspace.didWakeNotification,
+                     NSWorkspace.screensDidWakeNotification,
+                     NSWorkspace.sessionDidBecomeActiveNotification] {
+            NSWorkspace.shared.notificationCenter.addObserver(
+                self, selector: #selector(workspaceDidWake),
+                name: name, object: nil
+            )
+        }
         NotificationCenter.default.addObserver(
             self, selector: #selector(schedule),
             name: Notification.Name.NSSystemClockDidChange,
@@ -158,10 +167,13 @@ public final class Scheduler: NSObject {
     }
     
     @objc private func workspaceDidWake() {
-        guard let task = task else { return schedule() }
-        if !task.restOfLifetime.isPositive &&
-            task.countOfExecutions < 1 {
+        if let task = task,
+            !task.restOfLifetime.isPositive,
+             task.countOfExecutions < 1 {
             task.execute()
+            cancel()
+        } else if preferences.scheduled {
+            schedule()
         }
     }
 }

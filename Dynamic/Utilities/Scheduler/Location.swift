@@ -13,8 +13,6 @@ public enum Location {
     case current(CLLocation)
     case cached(CLLocation)
     case failed(Error)
-    
-    public typealias Processor = (Location) -> Void
 }
 
 extension Location {
@@ -54,7 +52,7 @@ extension CLError {
     static let denied = CLError(_nsError: nsDenied)
 }
 
-func ==(lhs: Error?, rhs: CLError) -> Bool {
+func == (lhs: Error?, rhs: CLError) -> Bool {
     return CLError.nsDenied.isEqual(to: lhs)
 }
 
@@ -63,24 +61,23 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private var retryCount = 5
     private let timeout = Interval(seconds: 4)
-    private var callbacks: [(id: UUID, process: Location.Processor, onTimeout: Task)] = [] {
-        didSet {
-            if callbacks.isEmpty {
-                manager.stopUpdatingLocation()
-            }
-        }
+    typealias Callback = (id: UUID, process: Handler<Location>, onTimeout: Task)
+    private var callbacks: [Callback] = [] {
+        didSet { if callbacks.isEmpty { manager.stopUpdatingLocation() } }
     }
     private func callback(_ location: Location) {
         lock.lock()
-        defer { lock.unlock() }
-        guard !callbacks.isEmpty else { return }
-        callbacks.removeFirst().process(location)
+        guard !callbacks.isEmpty else { return lock.unlock() }
+        let callback = callbacks.removeFirst()
         retryCount = 5
+        lock.unlock()
+        callback.onTimeout.cancel()
+        callback.process(location)
     }
     
     public weak var delegate: CLLocationManagerDelegate?
     
-    public func fetch(then processor: @escaping Location.Processor) {
+    public func fetch(then processor: @escaping Handler<Location>) {
         lock.lock()
         let id = UUID()
         let task = Plan.after(timeout).do(onElapse: onTimeout)
@@ -92,15 +89,13 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private func onTimeout(_ task: Task) {
         lock.lock()
-        callbacks.removeAll {
-            guard task.tags.contains($0.id.uuidString)
-                else { return false }
-            onError(AnError(errorDescription:
-                LocalizedString.Location.timeout
-            ), run: $0.process)
-            return true
-        }
+        let idx = callbacks.firstIndex { task.tags.contains($0.id.uuidString) }
+        let callback = callbacks.remove(at: idx!) // should not be nil
         lock.unlock()
+        callback.onTimeout.cancel()
+        onError(AnError(errorDescription:
+            LocalizedString.Location.timeout
+        ), run: callback.process)
     }
     
     public static let serial = LocationManager()
@@ -146,7 +141,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    private func onError(_ error: Error, run callback: ((Location) -> Void)! = nil) {
+    private func onError(_ error: Error, run callback: Handler<Location>! = nil) {
         let callback = callback ?? self.callback
         if let location = preferences.location {
             callback(.cached(location))

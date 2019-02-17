@@ -46,7 +46,7 @@ extension Preferences {
         func observe<Value>(
             _ keyPath: KeyPath<UserDefaults, Value>,
             observeInitial: Bool = false,
-            changeHandler: @escaping (NSKeyValueObservedChange<Value>) -> Void
+            changeHandler: @escaping Handler<NSKeyValueObservedChange<Value>>
         ) -> NSKeyValueObservation {
             let options: NSKeyValueObservingOptions =
                 observeInitial ? [.initial, .new] : [.new]
@@ -105,7 +105,8 @@ extension Preferences {
     }
 
     func setPreferred(to value: Any?, forKey key: String = #function) {
-        (NSUserDefaultsController.shared.values as AnyObject).setValue(value, forKey: "\(key)")
+        (NSUserDefaultsController.shared.values as AnyObject)
+            .setValue(value, forKey: "\(key)")
     }
 
     @objc dynamic var adjustForBrightness: Bool {

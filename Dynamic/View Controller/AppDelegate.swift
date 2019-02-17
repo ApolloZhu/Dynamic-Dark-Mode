@@ -30,18 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     value: "Please move Dynamic Dark Mode to /Applications folder.",
                     comment: "Dynamic Dark Mode must be saved in the system wide Applications folder."
                 )
-                alert.informativeText = [
-                    exception.reason,
-                    exception.name.rawValue,
-                    exception.userInfo?.reduce("", {
-                        (result: String, pair: (key: AnyHashable, value: Any))
-                        -> String in return "\(result)\(pair.key): \(pair.value)\n"
-                    }),
-                    zip(exception.callStackReturnAddresses, exception.callStackSymbols).reduce("", {
-                        (result: String, pair: (addr: NSNumber, name: String))
-                        -> String in "\(result)\(pair.addr)\t\(pair.name)\n"
-                    })
-                ].compactMap { $0 }.reduce("", { $0 + $1 })
+                alert.informativeText = exception.reason ?? ""
+                    + "(" + exception.name.rawValue + ")"
             })
         }
         
@@ -103,7 +93,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-func startUpdating(then onComplete: (() -> Void)? = nil) {
+func startUpdating(then onComplete: CompletionHandler? = nil) {
     setDefaultToggleShortcut()
     func enableStyleWithPermission(style: AppleInterfaceStyle) {
         AppleScript.requestPermission {
@@ -122,13 +112,19 @@ func startUpdating(then onComplete: (() -> Void)? = nil) {
             guard let style = basedOnBrightness else { onComplete?();return }
             return enableStyleWithPermission(style: style)
         }
-        Scheduler.shared.getCurrentMode {
-            if let style = $0?.style ?? basedOnBrightness {
-                enableStyleWithPermission(style: style)
-            } else {
-                alertLocationNotAvailable(dueTo: $1!)
-                onComplete?()
+        Scheduler.shared.getCurrentMode { result in
+            switch result {
+            case .success(let mode):
+                enableStyleWithPermission(style: mode.style)
+            case .failure(let error):
+                if let style = basedOnBrightness {
+                    enableStyleWithPermission(style: style)
+                } else {
+                    alertLocationNotAvailable(dueTo: error)
+                    onComplete?()
+                }
             }
+            Scheduler.shared.schedule(enableCurrentStyle: false)
         }
     }
 }
