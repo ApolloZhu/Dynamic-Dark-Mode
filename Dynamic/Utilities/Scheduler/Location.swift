@@ -19,19 +19,27 @@ public enum Location {
 
 extension Location {
     static var deniedAccess: Bool {
-        switch CLLocationManager.authorizationStatus() {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
         case .authorizedAlways, .notDetermined:
             return false
         case .denied, .restricted:
             return true
+        @unknown default:
+            remindReportingBug(status.description)
+            return false
         }
     }
     
     static var allowsAccess: Bool {
-        switch CLLocationManager.authorizationStatus() {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
         case .authorizedAlways:
             return true
         case .denied, .notDetermined, .restricted:
+            return false
+        @unknown default:
+            remindReportingBug(status.description)
             return false
         }
     }
@@ -54,10 +62,10 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     private var lock = NSLock()
     
     private var retryCount = 5
-    private let timeout = Interval(seconds: 2)
-    private var _callbacks: [(id: UUID, process: Location.Processor, onTimeout: Task)] = [] {
+    private let timeout = Interval(seconds: 4)
+    private var callbacks: [(id: UUID, process: Location.Processor, onTimeout: Task)] = [] {
         didSet {
-            if _callbacks.isEmpty {
+            if callbacks.isEmpty {
                 manager.stopUpdatingLocation()
             }
         }
@@ -65,10 +73,8 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     private func callback(_ location: Location) {
         lock.lock()
         defer { lock.unlock() }
-        guard !_callbacks.isEmpty else { return }
-        let task = _callbacks.removeFirst()
-        task.onTimeout.cancel()
-        task.process(location)
+        guard !callbacks.isEmpty else { return }
+        callbacks.removeFirst().process(location)
         retryCount = 5
     }
     
@@ -77,17 +83,24 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     public func fetch(then processor: @escaping Location.Processor) {
         lock.lock()
         let id = UUID()
-        _callbacks.append((id, processor, Plan.after(timeout).do { [weak self] in
-            guard let self = self else { return }
-            self.lock.lock()
-            defer { self.lock.unlock() }
-            self._callbacks.removeAll { $0.id == id }
-            self.onError(AnError(errorDescription:
-                LocalizedString.Location.timeout
-            ), run: processor)
-        }))
+        let task = Plan.after(timeout).do(onElapse: onTimeout)
+        task.addTag(id.uuidString)
+        callbacks.append((id, processor, task))
         lock.unlock()
         startUpdatingLocation()
+    }
+    
+    private func onTimeout(_ task: Task) {
+        lock.lock()
+        callbacks.removeAll {
+            guard task.tags.contains($0.id.uuidString)
+                else { return false }
+            onError(AnError(errorDescription:
+                LocalizedString.Location.timeout
+            ), run: $0.process)
+            return true
+        }
+        lock.unlock()
     }
     
     public static let serial = LocationManager()
@@ -109,6 +122,11 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
         preferences.location = location
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, _ in
+            if let name = placemarks?.first?.name {
+                preferences.placemark = name
+            }
+        }
         callback(.current(location))
     }
     

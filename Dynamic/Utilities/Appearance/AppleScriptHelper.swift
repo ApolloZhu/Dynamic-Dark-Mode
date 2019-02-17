@@ -40,7 +40,7 @@ extension AppleScript {
             var errorInfo: NSDictionary? = nil
             let script = NSAppleScript(contentsOf: self.url, error: &errorInfo)
             script?.executeAndReturnError(&errorInfo)
-            showError(errorInfo, title: NSLocalizedString(
+            remindReportingBug(info: errorInfo, title: NSLocalizedString(
                 "AppleScript.execute.error",
                 value: "Failed to Toggle Dark Mode",
                 comment: "something went wrong. But it's okay"
@@ -121,7 +121,7 @@ extension AppleScript {
                 }
             default:
                 log(.fault, "Dynamic Dark Mode - Unhandled OSStatus %{public}d", status)
-                showCriticalErrorMessage("\(status)")
+                remindReportingBug("\(status)")
             }
             process(false)
         }

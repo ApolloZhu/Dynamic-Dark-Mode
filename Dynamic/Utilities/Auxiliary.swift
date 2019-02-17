@@ -21,23 +21,28 @@ struct AnError: LocalizedError {
     let errorDescription: String?
 }
 
-public func showError(_ info: NSDictionary?, title: String? = nil) {
+public func remindReportingBug(info: NSDictionary?, title: String? = nil) {
     guard let error = info else { return }
-    showCriticalErrorMessage(error.reduce("") {
+    remindReportingBug(error.reduce("") {
         "\($0)\($1.key): \($1.value)\n"
     }, title: title)
 }
 
-public func showCriticalErrorMessage(_ text: String, title: String? = nil) {
-    runModal(ofNSAlert: { alert in
-        alert.alertStyle = .critical
-        alert.messageText = title ?? NSLocalizedString(
-            "Bug.general.title",
-            value: "Report Critical Bug To Developer",
-            comment: "Scare the user so they report bugs."
-        )
-        alert.informativeText = text
-    })
+public func remindReportingBug(_ text: String, title: String? = nil) {
+    let title = title ?? NSLocalizedString(
+        "Bug.general.title",
+        value: "Report Bug To Developer",
+        comment: "Scare the user so they report bugs."
+    )
+    log(.fault, "BUG: %{public}s", text)
+    sendNotification(.reportBug, title: title, subtitle: text) {
+        guard $0 != nil else { return }
+        runModal(ofNSAlert: { alert in
+            alert.alertStyle = .critical
+            alert.messageText = title
+            alert.informativeText = text
+        })
+    }
 }
 
 public func runModal(
@@ -56,10 +61,19 @@ public func runModal(
 import os.log
 
 func log(_ type: OSLogType = .default, log: OSLog = .default,
-         _ message: StaticString, _ args: CVarArg...) {
-    os_log(type, log: log, message, args)
+         _ message: StaticString, _ arg: CVarArg? = nil) {
+    if let arg = arg {
+        os_log(type, log: log, message, arg)
+    } else {
+        os_log(type, log: log, message)
+    }
     #if DEBUG
-    let content = String(format: "\(message)", args)
+    let content: String
+    if let arg = arg {
+        content = String(format: "\(message)", arg)
+    } else {
+        content = "\(message)"
+    }
     if type == .fault {
         fatalError(content)
     } else {
@@ -81,6 +95,78 @@ extension CLAuthorizationStatus: CustomStringConvertible {
             return "CLAuthorizationStatus.denied"
         case .authorizedAlways:
             return "CLAuthorizationStatus.authorizedAlways"
+        @unknown default:
+            return "CLAuthorizationStatus.\(self.rawValue)"
         }
     }
+}
+
+// MARK: - Notification
+
+import UserNotifications
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void
+    ) { completionHandler(.alert) }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void) {
+        defer { completionHandler() }
+        let id = response.notification.request.identifier
+        switch NotificationIdentifier(rawValue: id)! {
+        case .useCache:
+            break
+        case .reportBug:
+            NSWorkspace.shared.open(URL(string:
+                "https://github.com/ApolloZhu/Dynamic-Dark-Mode/issues/new"
+            )!)
+        }
+    }
+}
+
+extension AnError {
+    static let notificationNotAuthorized = AnError(errorDescription:
+        LocalizedString.Notification.notAuthorized
+    )
+}
+
+enum NotificationIdentifier: String {
+    case useCache = "Scheduler.location.useCache"
+    case reportBug = "io.github.apollozhu.Dynamic.bug"
+}
+
+func sendNotification(_ identifier: NotificationIdentifier, title: String, subtitle: String,
+                      then handle: ((Error?) -> Void)? = nil) {
+    let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.alert]) { authorized, _ in
+        guard authorized else {
+            handle?(AnError.notificationNotAuthorized);return
+        }
+        center.getNotificationSettings { settings in
+            guard settings.authorizationStatus == .authorized else {
+                handle?(AnError.notificationNotAuthorized);return
+            }
+            let content = UNMutableNotificationContent()
+            content.title = title
+            content.subtitle = subtitle
+            let request = UNNotificationRequest(
+                identifier: identifier.rawValue,
+                content: content,
+                trigger: nil
+            )
+            center.add(request, withCompletionHandler: handle)
+        }
+    }
+}
+
+func removeAllNotifications() {
+    let center = UNUserNotificationCenter.current()
+    center.removeAllPendingNotificationRequests()
+    center.removeAllDeliveredNotifications()
 }

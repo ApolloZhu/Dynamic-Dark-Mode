@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             })
         }
         
-        UNUserNotificationCenter.current().delegate = Scheduler.shared
+        UNUserNotificationCenter.current().delegate = self
         
         NSSetUncaughtExceptionHandler(handler)
 

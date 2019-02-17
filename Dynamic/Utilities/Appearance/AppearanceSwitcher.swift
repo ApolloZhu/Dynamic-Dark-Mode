@@ -40,10 +40,11 @@ extension AppleInterfaceStyle {
                 == nil ? .aqua : .darkAqua
         }
         set {
-            UserDefaults.standard.set(
-                newValue == .aqua ? nil : "Dark",
-                forKey: darkModeUserDefaultsKey
-            )
+            if newValue == .aqua {
+                UserDefaults.standard.removeObject(forKey: darkModeUserDefaultsKey)
+            } else {
+                UserDefaults.standard.set("Dark", forKey: darkModeUserDefaultsKey)
+            }
         }
     }
     

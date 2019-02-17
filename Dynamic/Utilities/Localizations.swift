@@ -70,4 +70,11 @@ enum LocalizedString {
             comment: "Can't fetch user's current location. Using cache instead."
         )
     }
+    enum Notification {
+        static let notAuthorized = NSLocalizedString(
+            "Notification.notAuthorized",
+            value: "You did NOT authorize Dynamic Dark Mode to send notifications.",
+            comment: "User did not authorize this app to send notifications."
+        )
+    }
 }

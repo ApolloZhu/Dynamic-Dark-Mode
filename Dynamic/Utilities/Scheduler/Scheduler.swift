@@ -17,20 +17,21 @@ public final class Scheduler: NSObject {
     private var task: Task?
     
     public func cancel() {
-        task?.cancel()
+        task = nil
     }
     
     @objc public func schedule() {
-        LocationManager.serial.fetch { [unowned self] in
-            switch $0 {
+        func processLocation(_ result: Location) {
+            switch result {
             case .current(let location):
-                self.scheduleAtLocation(location)
+                scheduleAtLocation(location)
             case .cached(let location):
-                self.scheduleAtCachedLocation(location)
+                scheduleAtCachedLocation(location)
             case .failed(let error):
                 alertLocationNotAvailable(dueTo: error)
             }
         }
+        LocationManager.serial.fetch(then: processLocation)
     }
     
     private func scheduleAtLocation(_ location: CLLocation?) {
@@ -47,23 +48,18 @@ public final class Scheduler: NSObject {
             scheduleAtLocation(nil)
             return false
         }
-        if let name = preferences.placemark {
-            notifyUsingPlacemark(named: name)
-        } else {
-            CLGeocoder().reverseGeocodeLocation(location)
-            { [weak self] placemarks, _ in
-                if let name = placemarks?.first?.name {
-                    preferences.placemark = name
-                    self?.notifyUsingPlacemark(named: name)
-                } else {
-                    self?.notifyUsingPlacemark(named: DateFormatter.localizedString(
-                        from: location.timestamp, dateStyle: .medium, timeStyle: .none
-                    ) + String(format:
-                        " @ <%.2f,%.2f>", location.coordinate.latitude, location.coordinate.longitude
-                    ))
-                }
-            }
+        func notifyIsUsingPlacemark(named name: String) {
+            sendNotification(.useCache,
+                             title: LocalizedString.Location.useCache,
+                             subtitle: name)
+            removeAllNotifications()
         }
+        notifyIsUsingPlacemark(named: preferences.placemark ??
+            String(format:"<%.2f,%.2f>",
+                   location.coordinate.latitude,
+                   location.coordinate.longitude
+            )
+        )
         scheduleAtLocation(location)
         return true
     }
@@ -173,43 +169,4 @@ public final class Scheduler: NSObject {
             task.execute()
         }
     }
-}
-
-// MARK: - Notification
-
-extension Scheduler {
-    private func notifyUsingPlacemark(named name: String) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert]) { authorized, _ in
-            guard authorized else { return }
-            center.getNotificationSettings { settings in
-                guard settings.authorizationStatus == .authorized else { return }
-                let content = UNMutableNotificationContent()
-                content.title = LocalizedString.Location.useCache
-                content.subtitle = name
-                let request = UNNotificationRequest(
-                    identifier: "Scheduler.location.useCache",
-                    content: content,
-                    trigger: nil
-                )
-                removeAllNotifications()
-                center.add(request)
-            }
-        }
-    }
-}
-
-extension Scheduler: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler:
-        @escaping (UNNotificationPresentationOptions) -> Void
-    ) { completionHandler(.alert) }
-}
-
-func removeAllNotifications() {
-    let center = UNUserNotificationCenter.current()
-    center.removeAllPendingNotificationRequests()
-    center.removeAllDeliveredNotifications()
 }

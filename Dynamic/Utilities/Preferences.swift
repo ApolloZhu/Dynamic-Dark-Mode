@@ -24,11 +24,10 @@ extension Preferences {
         preferences.opensAtLogin = true
         #endif
         preferences.settingsStyle = .menu
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways, .notDetermined:
-            preferences.scheduleZenithType = .official
-        case .denied, .restricted:
+        if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
+        } else {
+            preferences.scheduleZenithType = .official
         }
         preferences.scheduled = true
     }
@@ -197,7 +196,7 @@ extension Preferences {
         }
     }
 
-    var latitude: CLLocationDegrees? {
+    private var latitude: CLLocationDegrees? {
         get {
             return preferences.value(forKey: #function) as? Double
         }
@@ -207,7 +206,7 @@ extension Preferences {
         }
     }
 
-    var longitude: CLLocationDegrees? {
+    private var longitude: CLLocationDegrees? {
         get {
             return preferences.value(forKey: #function) as? Double
         }
@@ -226,8 +225,8 @@ extension Preferences {
             coordinate = newValue?.coordinate
         }
     }
-
-    var coordinate: CLLocationCoordinate2D? {
+    
+    private var coordinate: CLLocationCoordinate2D? {
         get {
             guard let lat = latitude, let lon = longitude else { return nil }
             return CLLocationCoordinate2D(latitude: lat, longitude: lon)
