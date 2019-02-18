@@ -105,7 +105,6 @@ extension AppleScript {
             case errOSAInvalidID, -1751,
                  errAEEventWouldRequireUserConsent,
                  procNotFound:
-                #warning("Figure out what causes this")
                 if retryOnInternalError {
                     log(.error, "Dynamic Dark Mode - OSStatus %{public}d", status)
                     requestPermission(retryOnInternalError: false, then: process)

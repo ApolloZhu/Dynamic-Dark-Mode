@@ -155,7 +155,7 @@ public final class Scheduler: NSObject {
             )
         }
         NotificationCenter.default.addObserver(
-            self, selector: #selector(schedule),
+            self, selector: #selector(systemClockDidChange),
             name: Notification.Name.NSSystemClockDidChange,
             object: nil
         )
@@ -166,14 +166,34 @@ public final class Scheduler: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
+    /// TaskHub has the ownership
+    private weak var fakeClockChange: Task?
+    /// Usually it takes 5~15 seconds to happen, so 30 seconds
+    /// is a relatively safe but reasonable long waiting time.
+    private let waitForfakeClockChange = Interval(seconds: 30)
+    
+    /// 2 cases here:
+    /// either a real clock change happened
+    /// or Mac just wake up from a long sleep
+    @objc private func systemClockDidChange() {
+        guard fakeClockChange == nil else { return }
+        schedule()
+    }
+    
     @objc private func workspaceDidWake() {
-        if let task = task,
-            !task.restOfLifetime.isPositive,
-             task.countOfExecutions < 1 {
-            task.execute()
-            cancel()
+        fakeClockChange?.cancel()
+        fakeClockChange = Plan.after(waitForfakeClockChange).do { [weak self] in
+            self?.fakeClockChange?.cancel()
+        }
+        if let task = task {
+            guard let expected = task.timeline.estimatedNextExecution else {
+                return remindReportingBug("nil: estimatedNextExecution")
+            }
+            if expected < Date() && task.countOfExecutions < 1 {
+                task.execute()
+            }
         } else if preferences.scheduled {
-            schedule()
+            schedule() // not sure why would I expect this?
         }
     }
 }
