@@ -16,9 +16,11 @@ brew cask install dynamic-dark-mode
 
 ### Direct Download
 
-[Latest Release](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest)
+<details>
+  <summary><a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest">Latest Release</a></summary>
 
-[Earlier Releases](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases) | [Nightly Build](https://rebrand.ly/ddm-nightly) | [Earlier Builds](https://rebrand.ly/ddm-all)
+  [Earlier Releases](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases) - [Nightly Build](https://rebrand.ly/ddm-nightly) - [Earlier Builds](https://rebrand.ly/ddm-all)
+</details>
 
 ## Usage
 
