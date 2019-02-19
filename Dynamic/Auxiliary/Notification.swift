@@ -50,14 +50,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler:
-        @escaping Handler<UNNotificationPresentationOptions>) {
+        @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)
     }
     
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping CompletionHandler) {
+        withCompletionHandler completionHandler: @escaping () -> Void) {
         defer { completionHandler() }
         let id = response.notification.request.identifier
         switch UserNotification.Identifier(rawValue: id)! {
