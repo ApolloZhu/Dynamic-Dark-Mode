@@ -1,6 +1,6 @@
 # Dynamic Dark Mode
 
-[![Dynamic Dark Mode - The smart, automatic Dark Mode toggle for macOS Mojave | Product Hunt Embed](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=145745&theme=light)](https://www.producthunt.com/posts/dynamic-dark-mode?utm_source=badge-featured)
+<a href="https://www.producthunt.com/posts/dynamic-dark-mode?utm_source=badge-featured" target="_blank" id="product-hunt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=145745&theme=light" alt="Dynamic Dark Mode - The smart, automatic Dark Mode toggle for macOS Mojave | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
 
 *Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave.
 
@@ -17,6 +17,8 @@ brew cask install dynamic-dark-mode
 ### Direct Download
 
 [Latest Release](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest)
+
+[Earlier Releases](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases) | [Nightly Build](https://rebrand.ly/ddm-nightly) | [Earlier Builds](https://rebrand.ly/ddm-all)
 
 ## Usage
 
