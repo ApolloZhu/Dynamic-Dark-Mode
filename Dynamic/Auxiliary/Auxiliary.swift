@@ -17,3 +17,12 @@ enum Sandbox {
 
 public typealias Handler<T> = (T) -> Void
 public typealias CompletionHandler = () -> Void
+
+#if swift(>=5)
+#warning("Remove Result type")
+#else
+public enum Result<T, Error> {
+    case success(T)
+    case failure(Error)
+}
+#endif

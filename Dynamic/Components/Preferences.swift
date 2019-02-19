@@ -199,9 +199,12 @@ extension Preferences {
     
     var location: CLLocation? {
         get {
+            #if swift(>=5)
+            #warning("Remove ?? nil")
+            #endif
             return preferences.data(forKey: #function).flatMap { try? NSKeyedUnarchiver
                 .unarchivedObject(ofClass: CLLocation.self, from: $0)
-            }
+            } ?? nil
         }
         set {
             placemark = nil
