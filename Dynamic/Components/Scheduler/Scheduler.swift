@@ -14,10 +14,13 @@ import Schedule
 public final class Scheduler: NSObject {
     public static let shared = Scheduler()
     
-    private weak var task: Task?
+    private var task: Task? {
+        didSet {
+            oldValue?.cancel()
+        }
+    }
     
     public func cancel() {
-        task?.cancel()
         task = nil
     }
     
@@ -43,7 +46,6 @@ public final class Scheduler: NSObject {
             AppleScript.checkPermission(onSuccess: decision.style.enable)
         }
         guard let date = decision.date else { return }
-        cancel()
         task = Plan.at(date).do { [weak self] in self?.schedule() }
     }
     
@@ -166,8 +168,11 @@ public final class Scheduler: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    /// TaskHub has the ownership
-    private weak var fakeClockChange: Task?
+    private var fakeClockChange: Task? {
+        didSet {
+            oldValue?.cancel()
+        }
+    }
     /// Usually it takes 5~15 seconds to happen, so 30 seconds
     /// is a relatively safe but reasonable long waiting time.
     private let waitForfakeClockChange = Interval(seconds: 30)
@@ -181,9 +186,8 @@ public final class Scheduler: NSObject {
     }
     
     @objc private func workspaceDidWake() {
-        fakeClockChange?.cancel()
         fakeClockChange = Plan.after(waitForfakeClockChange).do { [weak self] in
-            self?.fakeClockChange?.cancel()
+            self?.fakeClockChange = nil
         }
         if let task = task {
             guard let expected = task.timeline.estimatedNextExecution else {

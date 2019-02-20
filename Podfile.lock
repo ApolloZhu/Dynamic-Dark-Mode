@@ -8,7 +8,7 @@ PODS:
 DEPENDENCIES:
   - LetsMove
   - MASShortcut
-  - Schedule (from `https://github.com/jianstm/Schedule.git`, branch `2.x`)
+  - Schedule (from `https://github.com/jianstm/Schedule.git`)
   - Solar
   - Sparkle
 
@@ -21,12 +21,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Schedule:
-    :branch: 2.x
     :git: https://github.com/jianstm/Schedule.git
 
 CHECKOUT OPTIONS:
   Schedule:
-    :commit: e34def36d70f7e8f245413386b178f4837ceb950
+    :commit: cacc25bbd281afe8750e6ede3a4fa8f0c1b4f2f9
     :git: https://github.com/jianstm/Schedule.git
 
 SPEC CHECKSUMS:
@@ -36,6 +35,6 @@ SPEC CHECKSUMS:
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Sparkle: 3f75576db8b0265adef36c43249d747f22d0b708
 
-PODFILE CHECKSUM: 2b1212962e756f4d069241e5373d1ced54636e2a
+PODFILE CHECKSUM: b832d3fce8f18ad9bb1325617c97e8aa7251aa08
 
 COCOAPODS: 1.5.3
