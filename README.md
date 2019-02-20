@@ -1,6 +1,6 @@
 # Dynamic Dark Mode
 
-<a href="https://www.producthunt.com/posts/dynamic-dark-mode?utm_source=badge-featured" target="_blank" id="product-hunt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=145745&theme=light" alt="Dynamic Dark Mode - The smart, automatic Dark Mode toggle for macOS Mojave | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
+<a href="https://www.producthunt.com/posts/dynamic-dark-mode?utm_source=badge-featured" target="_blank" id="product-hunt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=145745&theme=light" alt="Dynamic Dark Mode - The smart, automatic Dark Mode toggle for macOS Mojave | Product Hunt Embed" style="height: 50px;" height="50px" /></a>
 
 *Dynamic Dark Mode* is the app you are looking for to power up Dark Mode on macOS Mojave.
 
@@ -8,7 +8,7 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 
 ## Install
 
-### Via [Homebrew Cask](https://brew.sh/)
+### Via [Homebrew Cask](https://brew.sh/) (Recommended)
 
 ```
 brew cask install dynamic-dark-mode
@@ -19,7 +19,12 @@ brew cask install dynamic-dark-mode
 <details>
   <summary><a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest">Latest Release</a></summary>
 
-  [Earlier Releases](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases) - [Nightly Build](https://rebrand.ly/ddm-nightly) - [Earlier Builds](https://rebrand.ly/ddm-all)
+  Additionally, you may download:
+
+  - [Nightly Build](https://rebrand.ly/ddm-nightly)
+  - [Earlier Releases](https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases)
+  - [Earlier Builds](https://rebrand.ly/ddm-all)
+
 </details>
 
 ## Usage
@@ -56,6 +61,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   window.onload = function () {
     document.getElementsByClassName("project-name")[0].innerHTML = "Dynamic Dark Mode";
     document.getElementById("dynamic-dark-mode").style.display="none";
+    pageHeader = document.getElementsByClassName("page-header")[0];
+    pageHeader.insertAdjacentHTML('beforeend', '<a href="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/latest" class="btn">Download</a>');
+    pageHeader.insertAdjacentHTML('beforeend', '<a href="#install" class="btn">Homebrew Cask</a>');
+    productHunt = document.getElementById("product-hunt")
+    pageHeader.append(productHunt)
+    productHunt.setAttribute('style', 'padding: 0;border-width: 0;height: 50px;background-color: transparent;vertical-align: bottom;')
+    productHunt.setAttribute('class', 'btn')
   }
 </script>
 
