@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.1.4] - 2019-02-28
+### Added
+- Nightly builds available at https://rebrand.ly/ddm-nightly
+- On Product Hunt at https://www.producthunt.com/posts/dynamic-dark-mode
+
+### Changed
+- Now using consistent version number style for artifact and release tag
+
+### Fixed
+- Unnecessary scheduling when Mac awakes from sleep
+
 ## [1.1.3] - 2019-02-17
 ### Added
 - Prompt for moving to /Applications folder
