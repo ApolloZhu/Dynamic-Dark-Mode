@@ -6,6 +6,8 @@
 
 Instead of looking for the switch for dark mode in System Preferences, just click the icon in the menu bar. Ever felt your eyes getting hurt because the screen is so bright in the night? Have to worry no more, we Dynamically enable dark mode in dim lights, after sunset, or just anytime. When you wake up in the morning, it'll a be another bright day.
 
+![Settings for Dynamic Dark Mode](https://user-images.githubusercontent.com/10842684/54065701-b240e800-41f2-11e9-8f7a-5d502ab27c4e.png)
+
 ## Install
 
 ### Via [Homebrew Cask](https://brew.sh/) (Recommended)
@@ -28,13 +30,6 @@ brew cask install dynamic-dark-mode
   </ul>
 
 </details>
-
-## Usage
-
-- Click the menu bar icon to toggle Dark Mode
-- Right click the menu bar icon to show settings
-
-![Settings for Dynamic Dark Mode](https://user-images.githubusercontent.com/10842684/45924686-60bad000-bed4-11e8-960c-1264de24f314.png)
 
 ## License
 
