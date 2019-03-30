@@ -61,7 +61,7 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
 }
 
 private func redirectToSystemPreferences() {
-    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")!)
+    openURL("x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")
 }
 
 // MARK: - Delegate Implementation

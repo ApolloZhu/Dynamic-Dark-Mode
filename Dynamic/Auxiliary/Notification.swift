@@ -11,9 +11,29 @@ import Foundation
 import UserNotifications
 
 enum UserNotification {
-    enum Identifier: String {
-        case useCache = "Scheduler.location.useCache"
-        case reportBug = "io.github.apollozhu.Dynamic.bug"
+    enum Identifier: RawRepresentable {
+        case useCache
+        case reportBug
+        case issue(id: Int)
+        
+        init?(rawValue: String) {
+            switch rawValue {
+            case "Scheduler.location.useCache": self = .useCache
+            case "issues.new": self = .reportBug
+            default:
+                guard let last = rawValue.split(separator: ".").last
+                    , let id = Int(last) else { return nil }
+                        self = .issue(id: id)
+            }
+        }
+        
+        var rawValue: String {
+            switch self {
+            case .useCache: return "Scheduler.location.useCache"
+            case .reportBug: return "issues.new"
+            case .issue(let id): return "issues.\(id)"
+            }
+        }
     }
     
     static func send(_ identifier: UserNotification.Identifier,
@@ -64,9 +84,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         case .useCache:
             break
         case .reportBug:
-            NSWorkspace.shared.open(URL(string:
-                "https://github.com/ApolloZhu/Dynamic-Dark-Mode/issues/new"
-            )!)
+            openURL("https://github.com/ApolloZhu/Dynamic-Dark-Mode/issues/new")
+        case .issue(let id):
+            openURL("https://github.com/ApolloZhu/Dynamic-Dark-Mode/issues/\(id)")
         }
     }
 }

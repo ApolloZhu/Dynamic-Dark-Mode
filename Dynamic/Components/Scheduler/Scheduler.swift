@@ -191,7 +191,8 @@ public final class Scheduler: NSObject {
         }
         if let task = task {
             guard let expected = task.timeline.estimatedNextExecution else {
-                return remindReportingBug("nil: estimatedNextExecution")
+                defer { schedule() }
+                return remindReportingBug("nil: estimatedNextExecution", issueID: 59)
             }
             if expected < Date() && task.countOfExecutions < 1 {
                 task.execute()

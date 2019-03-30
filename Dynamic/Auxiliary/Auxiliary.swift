@@ -17,3 +17,7 @@ enum Sandbox {
 
 public typealias Handler<T> = (T) -> Void
 public typealias CompletionHandler = () -> Void
+
+func openURL(_ string: String) {
+    NSWorkspace.shared.open(URL(string: string)!)
+}

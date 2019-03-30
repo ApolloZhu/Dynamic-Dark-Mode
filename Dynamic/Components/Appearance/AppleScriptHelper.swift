@@ -43,7 +43,7 @@ extension AppleScript {
             remindReportingBug(info: errorInfo, title: NSLocalizedString(
                 "AppleScript.execute.error",
                 value: "Failed to Toggle Dark Mode",
-                comment: "something went wrong. But it's okay"
+                comment: "Something went wrong. But it's okay"
             ))
         }
     }
@@ -78,7 +78,7 @@ extension AppleScript {
     }
 
     public static func redirectToSystemPreferences() {
-        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")!)
+        openURL("x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")
     }
 
     public static func requestPermission(
@@ -109,18 +109,15 @@ extension AppleScript {
                     log(.error, "Dynamic Dark Mode - OSStatus %{public}d", status)
                     requestPermission(retryOnInternalError: false, then: process)
                 } else {
-                    runModal(ofNSAlert: { alert in
-                        alert.messageText = NSLocalizedString(
-                            "AppleScript.authorization.failed",
-                            value: "Something Went Wrong",
-                            comment: "Generic error happened"
-                        )
-                        alert.informativeText = "\(status)"
-                    })
+                    remindReportingBug(NSLocalizedString(
+                        "AppleScript.authorization.failed",
+                        value: "Something Went Wrong",
+                        comment: "Generic error happened"
+                    ), title: "OSStatus \(status)", issueID: 18)
                 }
             default:
                 log(.fault, "Dynamic Dark Mode - Unhandled OSStatus %{public}d", status)
-                remindReportingBug("\(status)")
+                remindReportingBug("OSStatus \(status)")
             }
             process(false)
         }
