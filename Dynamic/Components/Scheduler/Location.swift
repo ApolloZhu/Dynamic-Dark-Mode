@@ -20,7 +20,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private var retryCount = 5
     private let timeout = Interval(seconds: 4)
-    typealias Callback = (id: UUID, process: Handler<Location>, onTimeout: Task)
+    typealias Callback = (process: Handler<Location>, onTimeout: Task)
     
     private var lock = NSLock()
     private var callbacks: [Callback] = [] {
@@ -38,17 +38,15 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     public func fetch(then processor: @escaping Handler<Location>) {
         lock.lock()
-        let id = UUID()
         let task = Plan.after(timeout).do(onElapse: onTimeout)
-        task.addTag(id.uuidString)
-        callbacks.append((id, processor, task))
+        callbacks.append((processor, task))
         lock.unlock()
         startUpdatingLocation()
     }
     
     private func onTimeout(_ task: Task) {
         lock.lock()
-        let idx = callbacks.firstIndex { task.tags.contains($0.id.uuidString) }
+        let idx = callbacks.firstIndex { $0.onTimeout == task }
         let callback = callbacks.remove(at: idx!) // should not be nil
         lock.unlock()
         callback.onTimeout.cancel()
