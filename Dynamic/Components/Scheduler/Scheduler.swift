@@ -175,7 +175,7 @@ public final class Scheduler: NSObject {
     }
     /// Usually it takes 5~15 seconds to happen, so 30 seconds
     /// is a relatively safe but reasonable long waiting time.
-    private let waitForfakeClockChange = Interval(seconds: 30)
+    private let waitForfakeClockChange = 30.seconds
     
     /// 2 cases here:
     /// either a real clock change happened
@@ -190,12 +190,12 @@ public final class Scheduler: NSObject {
             self?.fakeClockChange = nil
         }
         if let task = task {
-            guard let expected = task.timeline.estimatedNextExecution else {
+            guard let expected = task.estimatedNextExecutionDate else {
                 defer { schedule() }
                 return remindReportingBug("nil: estimatedNextExecution", issueID: 59)
             }
-            if expected < Date() && task.countOfExecutions < 1 {
-                task.execute()
+            if expected < Date() && task.executionCount < 1 {
+                task.executeNow()
             }
         } else if preferences.scheduled {
             schedule() // not sure why would I expect this?

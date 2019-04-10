@@ -19,7 +19,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     public static let serial = LocationManager()
     
     private var retryCount = 5
-    private let timeout = Interval(seconds: 4)
+    private let timeout = 4.seconds
     typealias Callback = (process: Handler<Location>, onTimeout: Task)
     
     private var lock = NSLock()
@@ -38,7 +38,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     public func fetch(then processor: @escaping Handler<Location>) {
         lock.lock()
-        let task = Plan.after(timeout).do(onElapse: onTimeout)
+        let task = Plan.after(timeout).do(action: onTimeout)
         callbacks.append((processor, task))
         lock.unlock()
         startUpdatingLocation()
