@@ -28,7 +28,12 @@ extension NSAppearance {
              .vibrantDark, .accessibilityHighContrastVibrantDark:
             return true
         default:
+            #if DEBUG
+            fatalError(name.rawValue)
+            #else
+            debugPrint("Dynamic Dark Mode - Unrecognized appearance: \(name.rawValue)")
             return false
+            #endif
         }
     }
 }

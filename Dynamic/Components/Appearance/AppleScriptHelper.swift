@@ -106,7 +106,6 @@ extension AppleScript {
                  errAEEventWouldRequireUserConsent,
                  procNotFound:
                 if retryOnInternalError {
-                    log(.error, "Dynamic Dark Mode - OSStatus %{public}d", status)
                     requestPermission(retryOnInternalError: false, then: process)
                 } else {
                     remindReportingBug(NSLocalizedString(
@@ -116,7 +115,6 @@ extension AppleScript {
                     ), title: "OSStatus \(status)", issueID: 18)
                 }
             default:
-                log(.fault, "Dynamic Dark Mode - Unhandled OSStatus %{public}d", status)
                 remindReportingBug("OSStatus \(status)")
             }
             process(false)
