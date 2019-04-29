@@ -20,25 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         PFMoveToApplicationsFolderIfNecessary()
         #endif
         
-        let handler = NSGetUncaughtExceptionHandler()
-
-        NSSetUncaughtExceptionHandler { exception in
-            runModal(ofNSAlert: { alert in
-                alert.alertStyle = .critical
-                alert.messageText = NSLocalizedString(
-                    "LetsMove",
-                    value: "Please move Dynamic Dark Mode to /Applications folder.",
-                    comment: "Dynamic Dark Mode must be saved in the system wide Applications folder."
-                )
-                alert.informativeText = exception.reason ?? ""
-                    + "(" + exception.name.rawValue + ")"
-            })
-        }
-        
         UNUserNotificationCenter.current().delegate = self
         
-        NSSetUncaughtExceptionHandler(handler)
-
         // Command-Shift-T
         MASShortcutBinder.shared()?.bindShortcut(
             withDefaultsKey: preferences.toggleShortcutKey,

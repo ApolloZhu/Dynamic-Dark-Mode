@@ -19,15 +19,15 @@ public enum AppleInterfaceStyle: String {
 }
 
 extension NSAppearance {
-    @available(OSX 10.14, *)
-    var isDark: Bool! {
+    var isDark: Bool {
         switch name {
-        case .aqua, .accessibilityHighContrastAqua:
+        case .aqua, .accessibilityHighContrastAqua,
+             .vibrantLight, .accessibilityHighContrastVibrantLight:
             return false
-        case .darkAqua, .accessibilityHighContrastDarkAqua:
+        case .darkAqua, .accessibilityHighContrastDarkAqua,
+             .vibrantDark, .accessibilityHighContrastVibrantDark:
             return true
         default:
-            log(.error, "Dynamic - Checking Non-System Appearance")
             return false
         }
     }
@@ -35,24 +35,11 @@ extension NSAppearance {
 
 extension AppleInterfaceStyle {
     static var current: AppleInterfaceStyle {
-        get {
-            return UserDefaults.standard.string(forKey: darkModeUserDefaultsKey)
-                == nil ? .aqua : .darkAqua
-        }
-        set {
-            if newValue == .aqua {
-                UserDefaults.standard.removeObject(forKey: darkModeUserDefaultsKey)
-            } else {
-                UserDefaults.standard.set("Dark", forKey: darkModeUserDefaultsKey)
-            }
-        }
+        return isDark ? .darkAqua : .aqua
     }
-    
+
     static var isDark: Bool {
-        if #available(OSX 10.14, *), NSAppearance.current.isDark == true {
-            return true
-        }
-        return AppleInterfaceStyle.current == .darkAqua
+        return NSAppearance.current.isDark
     }
     
     // MARK: - Toggle Dark Mode
@@ -62,10 +49,11 @@ extension AppleInterfaceStyle {
     }
     
     func enable() {
-        if self == .darkAqua {
-            AppleScript.enableDarkMode.execute()
-        } else {
+        switch self {
+        case .aqua:
             AppleScript.disableDarkMode.execute()
+        case .darkAqua:
+            AppleScript.enableDarkMode.execute()
         }
     }
 }
