@@ -116,9 +116,9 @@ extension Preferences {
     @objc dynamic var brightnessThreshold: Float {
         get {
             if let raw = preferences.value(forKey: #function) as? Double {
-                return Float(raw) / 100
+                return Float(raw / 100)
             } else {
-                setPreferred(to: Double(50))
+                setPreferred(to: 50.0)
                 return 0.5
             }
         }
