@@ -65,7 +65,7 @@
 "F2S-fz-NVQ.title" = "帮助";
 
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "自动深色模式帮助";
+"FKE-Sm-Kum.title" = "“自动深色模式”帮助";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "显示";

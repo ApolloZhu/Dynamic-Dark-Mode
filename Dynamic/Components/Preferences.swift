@@ -93,10 +93,7 @@ extension Preferences {
                 remindReportingBug(NSLocalizedString(
                     "Preferences.opensAtLogin.failed",
                     value: "Failed to update opens at login settings",
-                    comment: """
-                        This is used for both enable and disable opens at login.\
-                        It indicates the operation to update this settings failed.
-                        """
+                    comment: "Indicates either enable or disable opens at login failed."
                 ), issueID: 40)
             }
         ]

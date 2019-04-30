@@ -7,14 +7,23 @@
 /* No comment provided by engineer. */
 "AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。";
 
-/* something went wrong. But it's okay */
+/* Something went wrong. But it's okay */
 "AppleScript.execute.error" = "未能切换外观模式";
 
 /* Scare the user so they report bugs. */
 "Bug.general.title" = "告诉开发者 TA 们又写严重的 Bug 了";
 
+/* Request users to provide more context. */
+"Bug.known.title" = "能告诉我们发生了什么吗？";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "您并未授权“自动深色模式”获取您的位置来定时启用深色模式。";
+
 /* Failed to attain user location for sunset/sunrise calculation. */
 "Location.notAvailable" = "无法获取当前位置";
+
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "未能获取您的当前位置。请检查您的网络连接。";
 
 /* Can't fetch user's current location. Using cache instead. */
 "Location.useCache" = "使用之前的位置定时";
@@ -28,10 +37,13 @@
 /* Action item to toggle in from menu bar */
 "Menu.toggle" = "切换外观模式";
 
-/* AutoAdjustThreshold */
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "您并未允许“自动深色模式”发送通知。\n\n我们不会发送无用的通知，建议您到“系统偏好设置”里开启。";
+
+/* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "自动切换阀值";
 
-/* ScheduleMode */
+/* For touch bar button title */
 "SettingsViewController.scheduleMode" = "定时选项";
 
 /* Astronomical */
