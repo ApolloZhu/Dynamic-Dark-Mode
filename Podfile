@@ -5,7 +5,7 @@ target 'Dynamic Dark Mode' do
 
   # Pods for Dynamic Dark Mode
   pod 'Solar'
-  pod 'Schedule'
+  pod 'Schedule', :git => 'https://github.com/luoxiu/Schedule.git'
   pod 'MASShortcut'
 
   # Masless Only
