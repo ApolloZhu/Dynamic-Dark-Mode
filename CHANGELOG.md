@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.1.5] - 2019-05-02
+### Added
+- Partial translations to Japanese and Korean
+- Click on notification to create a new issue, or navigates the existing one for known bugs
+
+### Changed
+- Updated the program and its dependencies to Swift 5 
+- Updated Chinese, Esperanto, and Russian translations
+- fatalError or debugPrint are used instead of os.log
+
+### Fixed
+- "nil: estimatedNextExecution" should no longer appear (#59)
+
+### Removed
+- No more legacy code for supporting macOS 10.13 (never released)
+
 ## [1.1.4] - 2019-02-28
 ### Added
 - Nightly builds available at https://rebrand.ly/ddm-nightly
