@@ -22,11 +22,11 @@
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
 "32v-z6-q8Z.title" = "Настройки Dynamic Dark Mode";
 
-/* Class = "NSTextFieldCell"; title = "To Open Preferences..."; ObjectID = "87M-Sa-k9k"; */
-"87M-Sa-k9k.title" = "Способ открытия настроек";
-
 /* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
 "92J-gp-8D9.title" = "Разрешить доступ к системным процессам";
+
+/* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
+"apZ-rU-OFQ.title" = "Show Dropdown Menu";
 
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "Печать…";
@@ -58,9 +58,8 @@
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "Закрыть";
 
-/* Class = "NSButtonCell"; title = "Left click on the menu bar icon to show menu, then choose Preferences..."; ObjectID = "EJk-BY-RUI"; */
-"EJk-BY-RUI.title" = "Левый клик на иконке в статус-баре, чтобы показать меню,
-затем выбрать Настройки...";
+/* Class = "NSMenuItem"; title = "Hidden"; ObjectID = "eib-A2-uKg"; */
+"eib-A2-uKg.title" = "Hidden";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Справка";
@@ -73,9 +72,6 @@
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
 "hBx-FP-5Wr.title" = "До:";
-
-/* Class = "NSTextFieldCell"; title = "This is where you can later decide if you want to turn on and off dark mode based on your screen brightness, set a custom schedule of when to turn it on and off, or according to the calculated sunset-sunrise time based your location."; ObjectID = "heB-g6-Sln"; */
-"heB-g6-Sln.title" = "Здесь можно будет выбрать, включать/выключать ночной режим в зависимости от яркости экрана, на основе пользовательского расписания или в соответствии со временем заката-рассвета, исходя из вашего местоположения.";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "Вид";
@@ -134,14 +130,17 @@
 /* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
 "qIS-W8-SiK.title" = "Настройка страницы...";
 
-/* Class = "NSButtonCell"; title = "Right click on the menu bar icon"; ObjectID = "qmW-4e-u5z"; */
-"qmW-4e-u5z.title" = "Нажатие в правом нижнем углу на иконку статус-бара";
-
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
 "R4o-n2-Eq4.title" = "Изменить масштаб";
 
+/* Class = "NSMenuItem"; title = "Toggle Dark Mode"; ObjectID = "RMC-yX-fzH"; */
+"RMC-yX-fzH.title" = "Сменить режим";
+
 /* Class = "NSMenuItem"; title = "Nautical Sunset Sunrise"; ObjectID = "RtR-kN-8f8"; */
 "RtR-kN-8f8.title" = "Навигационного времени заката";
+
+/* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
+"scf-Wn-qXQ.title" = "Menu Bar Item";
 
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
 "T1i-3L-V9g.title" = "Установить";
@@ -151,9 +150,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
 "tF8-qA-5Bo.title" = "Прочее";
-
-/* Class = "NSButtonCell"; title = "Single Click to Toggle, Right Click for Preferences"; ObjectID = "UGa-lO-tpW"; */
-"UGa-lO-tpW.title" = "Одно касание, чтобы сменить режим. Нажатие в правом нижнем углу, чтобы открыть Настройки";
 
 /* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Dynamic Dark Mode";
@@ -170,14 +166,11 @@
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
 "wpr-3q-Mcd.title" = "Справка";
 
-/* Class = "NSButtonCell"; title = "Exit & Configure >>"; ObjectID = "X4y-Vz-jYE"; */
+/* Class = "NSButtonCell"; title = "Check Permission >>"; ObjectID = "X4y-Vz-jYE"; */
 "X4y-Vz-jYE.title" = "Разрешить >>";
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
 "y0s-hF-kCC.title" = "Настроить >>";
-
-/* Class = "NSButtonCell"; title = "Start >>"; ObjectID = "YvB-h5-jjV"; */
-"YvB-h5-jjV.title" = "Начать >>";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "Dynamic Dark Mode необходим доступ к местоположению, чтобы рассчитывать часы заката/рассвета для включения ночного режима в ночное время.";

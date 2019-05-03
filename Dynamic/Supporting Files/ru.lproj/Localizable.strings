@@ -7,14 +7,23 @@
 /* No comment provided by engineer. */
 "AppleScript.authorization.instruction" = "Переход в Системные настройки.";
 
-/* something went wrong. But it's okay */
+/* Something went wrong. But it's okay */
 "AppleScript.execute.error" = "Не удалось сменить оформление";
 
 /* Scare the user so they report bugs. */
 "Bug.general.title" = "Сообщить об ошибке разработчикам";
 
+/* Request users to provide more context. */
+"Bug.known.title" = "Encountered a Known Issue";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to get your location.";
+
 /* Failed to attain user location for sunset/sunrise calculation. */
 "Location.notAvailable" = "Не удалось определить местоположение";
+
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "Timedout. Check your network connection.";
 
 /* Can't fetch user's current location. Using cache instead. */
 "Location.useCache" = "Расписание составлено на основе последней геолокации";
@@ -28,10 +37,16 @@
 /* Action item to toggle in from menu bar */
 "Menu.toggle" = "Сменить режим";
 
-/* AutoAdjustThreshold */
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
+
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+
+/* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Автонастройка порога";
 
-/* ScheduleMode */
+/* For touch bar button title */
 "SettingsViewController.scheduleMode" = "Расписание";
 
 /* Astronomical */
