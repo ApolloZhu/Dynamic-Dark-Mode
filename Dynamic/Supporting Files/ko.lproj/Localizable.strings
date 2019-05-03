@@ -1,0 +1,72 @@
+/* No comment provided by engineer. */
+"AppleScript.authorization.error" = "Dynamic Dark Mode가 Dark Mode를 관리할 권한이 없습니다.";
+
+/* Generic error happened */
+"AppleScript.authorization.failed" = "오류가 발생했습니다.";
+
+/* No comment provided by engineer. */
+"AppleScript.authorization.instruction" = "시스템 환경 설정으로 이동합니다. 새로운 설정이 적용되려면 Dynamic Dark Mode를 재시작해야할 수 있습니다.";
+
+/* Something went wrong. But it's okay */
+"AppleScript.execute.error" = "Dark Mode를 활성화하는데 실패했습니다.";
+
+/* Scare the user so they report bugs. */
+"Bug.general.title" = "개발자에게 치명적 오류를 리포트하세요.";
+
+/* Request users to provide more context. */
+"Bug.known.title" = "Encountered a Known Issue";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to get your location.";
+
+/* Failed to attain user location for sunset/sunrise calculation. */
+"Location.notAvailable" = "위치 정보를 읽어올 수 없었습니다.";
+
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "Timedout. Check your network connection.";
+
+/* Can't fetch user's current location. Using cache instead. */
+"Location.useCache" = "기존에 임시 저장된 위치 정보를 사용합니다.";
+
+/* Drop down menu item to show preferences */
+"Menu.preferences" = "설정…";
+
+/* Use system translation for quit */
+"Menu.quit" = "종료";
+
+/* Action item to toggle in from menu bar */
+"Menu.toggle" = "Dark Mode 활성화";
+
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
+
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+
+/* For touch bar button title */
+"SettingsViewController.autoAdjustThreshold" = "Auto Adjust Threshold";
+
+/* For touch bar button title */
+"SettingsViewController.scheduleMode" = "Schedule Mode";
+
+/* Astronomical */
+"SunsetSunrise.astronomical" = "Astronomical";
+
+/* Civil */
+"SunsetSunrise.civil" = "Civil";
+
+/* CustomRange */
+"SunsetSunrise.customRange" = "Custom";
+
+/* Nautical */
+"SunsetSunrise.nautical" = "Nautical";
+
+/* Official */
+"SunsetSunrise.official" = "Official";
+
+/* No comment provided by engineer. */
+"SystemPreferences.open" = "시스템 환경설정 열기";
+
+/* No comment provided by engineer. */
+"SystemPreferences.skip" = "건너뛰기";
+

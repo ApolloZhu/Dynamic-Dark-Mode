@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "$(PRODUCT_NAME)";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. 모든 권리 보유.";
+

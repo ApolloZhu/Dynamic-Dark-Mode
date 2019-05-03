@@ -1,0 +1,183 @@
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Dynamic Dark Mode";
+
+/* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
+"4da-BG-PBG.title" = "From:";
+
+/* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
+"4J7-dP-txa.title" = "전체 화면 진입";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "4NB-3a-2UR"; */
+"4NB-3a-2UR.title" = "저장";
+
+/* Class = "NSTextFieldCell"; title = "Auto Adjust"; ObjectID = "4Oz-wH-7ZV"; */
+"4Oz-wH-7ZV.title" = "자동 조정";
+
+/* Class = "NSMenuItem"; title = "Quit Dynamic Dark Mode"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Dynamic Dark Mode 종료";
+
+/* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Dynamic Dark Mode에 대하여";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
+"32v-z6-q8Z.title" = "설정";
+
+/* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
+"92J-gp-8D9.title" = "시스템 이벤트 관리 권한 부여";
+
+/* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
+"apZ-rU-OFQ.title" = "Show Dropdown Menu";
+
+/* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
+"aTl-1u-JFS.title" = "인쇄…";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "창";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "메인 메뉴";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "파일";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "환경 설정…";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
+"Buz-5v-iiv.title" = "Dynamic Dark Mode에 오신 것을 환영합니다.";
+
+/* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
+"Dcd-f7-wbP.title" = "사이의 Dark Mode";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "파일";
+
+/* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
+"do3-JG-x5l.title" = "기준:";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "닫기";
+
+/* Class = "NSMenuItem"; title = "Hidden"; ObjectID = "eib-A2-uKg"; */
+"eib-A2-uKg.title" = "Hidden";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "지원";
+
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Dynamic Dark Mode 지원";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "보기";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
+"hBx-FP-5Wr.title" = "To:";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "보기";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "서비스";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "i9M-2z-rxR"; */
+"i9M-2z-rxR.title" = "건너뛰기";
+
+/* Class = "NSButtonCell"; title = "Opens At Login"; ObjectID = "IB3-f2-BQf"; */
+"IB3-f2-BQf.title" = "시스템 로그인과 함께 열기";
+
+/* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
+"Ibh-ok-jMp.title" = "커스텀 범위";
+
+/* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
+"jwe-Zh-ib0.title" = "현재 위치 정보 접근 허용";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "모두 보이기";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "모두 맨 앞으로 가져오기";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to send commands to the built-in \"System Events\" in order to toggle dark mode for you."; ObjectID = "mGd-Ks-iSW"; */
+"mGd-Ks-iSW.title" = "Dynamic Dark Mode는 내장된 \"System Events\"에 Dark Mode 전환 요청을 보내야합니다.";
+
+/* Class = "NSTextFieldCell"; title = "Shortcut"; ObjectID = "MI9-bf-6dt"; */
+"MI9-bf-6dt.title" = "단축키";
+
+/* Class = "NSMenuItem"; title = "Astronomical Sunset Sunrise"; ObjectID = "N5L-wl-yWc"; */
+"N5L-wl-yWc.title" = "천문학적 일출 일몰";
+
+/* Class = "NSButtonCell"; title = "Re-setup"; ObjectID = "nFa-hm-K6y"; */
+"nFa-hm-K6y.title" = "다시 설정";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "서비스";
+
+/* Class = "NSTextFieldCell"; title = "Scheduled"; ObjectID = "O5v-cY-mFV"; */
+"O5v-cY-mFV.title" = "예약됨";
+
+/* Class = "NSMenuItem"; title = "Hide Dynamic Dark Mode"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Dynamic Dark Mode 감추기";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "최소화";
+
+/* Class = "NSButtonCell"; title = "Open Preferences >>"; ObjectID = "pDT-Ae-cZU"; */
+"pDT-Ae-cZU.title" = "환경설정 열기 →";
+
+/* Class = "NSMenuItem"; title = "Official Sunset Sunrise"; ObjectID = "QiA-MM-zn7"; */
+"QiA-MM-zn7.title" = "공식 일출 일몰";
+
+/* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
+"qIS-W8-SiK.title" = "창 설정";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "확대";
+
+/* Class = "NSMenuItem"; title = "Toggle Dark Mode"; ObjectID = "RMC-yX-fzH"; */
+"RMC-yX-fzH.title" = "Dark Mode 활성화";
+
+/* Class = "NSMenuItem"; title = "Nautical Sunset Sunrise"; ObjectID = "RtR-kN-8f8"; */
+"RtR-kN-8f8.title" = "해상 일출 일몰";
+
+/* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
+"scf-Wn-qXQ.title" = "Menu Bar Item";
+
+/* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
+"T1i-3L-V9g.title" = "설정하기";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "윈도우";
+
+/* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
+"tF8-qA-5Bo.title" = "그 외";
+
+/* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Dynamic Dark Mode";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "다른 것들 감추기";
+
+/* Class = "NSMenuItem"; title = "Civil Sunset Sunrise"; ObjectID = "VHN-z1-e7t"; */
+"VHN-z1-e7t.title" = "시민 일출 일몰";
+
+/* Class = "NSButtonCell"; title = "Quit (⌘Q)"; ObjectID = "vzJ-gO-E1h"; */
+"vzJ-gO-E1h.title" = "종료 (⌘Q)";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "지원";
+
+/* Class = "NSButtonCell"; title = "Check Permission >>"; ObjectID = "X4y-Vz-jYE"; */
+"X4y-Vz-jYE.title" = "종료 & 조정 →";
+
+/* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
+"y0s-hF-kCC.title" = "설정하기 →";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
+"ZMe-eD-uJT.title" = "Dynamic Dark Mode는 자동적으로 일출과 일몰 정보를 계산하여 자동으로 Dark Mode를 활성화하고 비활성화합니다. 이때 일출과 일몰 시각을 계산하기 위해 사용자의 현재 위치 정보가 필요합니다.";
+
+/* Class = "NSButtonCell"; title = "Turn On Dark Mode Based On Brightness"; ObjectID = "znm-gt-cHP"; */
+"znm-gt-cHP.title" = "화면 밝기에 따라 Dark Mode 자동으로 켜기";
+
+/* Class = "NSWindow"; title = "Dynamic Dark Mode"; ObjectID = "ZWC-1W-uDl"; */
+"ZWC-1W-uDl.title" = "Dynamic Dark Mode";
+
