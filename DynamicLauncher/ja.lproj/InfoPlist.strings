@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "DynamicLauncher";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.";
+

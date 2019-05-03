@@ -40,6 +40,9 @@
 /* User did not authorize this app to send notifications. */
 "Notification.notAuthorized" = "您并未允许“自动深色模式”发送通知。\n\n我们不会发送无用的通知，建议您到“系统偏好设置”里开启。";
 
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "未能更新“开机自启动”设置";
+
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "自动切换阀值";
 
