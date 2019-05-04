@@ -39,6 +39,7 @@ enum UserNotification {
     static func send(_ identifier: UserNotification.Identifier,
                      title: String, subtitle: String,
                      then handle: Handler<Error?>? = nil) {
+        var identifier = identifier
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert]) { _,_ in
             center.getNotificationSettings { settings in
@@ -48,6 +49,9 @@ enum UserNotification {
                 let content = UNMutableNotificationContent()
                 content.title = title
                 content.subtitle = subtitle
+                if title.contains("-1751") || subtitle.contains("-1751") {
+                    identifier = .issue(id: 18) // annoying and hard to reproduce
+                } // I don't know where that -1751 is from, but I'll catch u
                 let request = UNNotificationRequest(
                     identifier: identifier.rawValue,
                     content: content,

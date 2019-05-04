@@ -539,7 +539,7 @@ DQ
                                     <gridCell row="0Tg-4k-Yhi" column="YiK-CN-yVF" id="Fy8-BX-a0W">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UWF-99-sfw">
                                             <rect key="frame" x="126" y="101" width="381" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Disable When Scheduled Dark Mode On" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yl0-uh-cim">
+                                            <buttonCell key="cell" type="check" title="Disable During Scheduled Dark Mode" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yl0-uh-cim">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
