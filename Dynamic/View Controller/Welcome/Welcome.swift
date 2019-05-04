@@ -16,8 +16,8 @@ class Welcome: NSWindowController {
             welcome = NSStoryboard.main
                 .instantiateController(withIdentifier: "setup")
                 as? Welcome
-            releasePresentors()
-            presentors.append(welcome!.contentViewController!)
+            rewindSetupSteps()
+            setupSteps.append(welcome!.contentViewController!)
         }
         welcome?.window?.level = .floating
         welcome?.showWindow(nil)
@@ -27,6 +27,7 @@ class Welcome: NSWindowController {
     
     public static func close() {
         welcome?.close()
+        rewindSetupSteps()
         welcome = nil
     }
 }
