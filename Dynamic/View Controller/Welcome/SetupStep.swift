@@ -39,7 +39,7 @@ extension LastSetupStep {
         preferences.hasLaunchedBefore = true
         Preferences.setupAsSuggested()
         Preferences.startObserving()
-        AppleInterfaceStyle.coordinator.setup()
+        AppleInterfaceStyle.Coordinator.setup()
         SettingsViewController.show()
     }
 }

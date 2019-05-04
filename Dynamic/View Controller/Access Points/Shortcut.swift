@@ -2,7 +2,7 @@
 //  Shortcut.swift
 //  Dynamic Dark Mode
 //
-//  Created by apollonian on 5/3/19.
+//  Created by Apollo Zhu on 5/3/19.
 //  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ enum Shortcut {
         setDefaultToggleShortcut()
         MASShortcutBinder.shared()?.bindShortcut(
             withDefaultsKey: preferences.toggleShortcutKey,
-            toAction: AppleInterfaceStyle.coordinator.toggleInterfaceStyle
+            toAction: AppleInterfaceStyle.Coordinator.toggleInterfaceStyle
         )
     }
     

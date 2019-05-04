@@ -35,7 +35,7 @@ public final class StatusBarItem {
         if NSApp.currentEvent?.type == .rightMouseUp {
             SettingsViewController.show()
         } else {
-            AppleInterfaceStyle.coordinator.toggleInterfaceStyle()
+            AppleInterfaceStyle.Coordinator.toggleInterfaceStyle()
         }
     }
 
