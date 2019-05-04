@@ -22,10 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         TouchBar.setup()
         Shortcut.startObserving()
-        Preferences.startObserving()
         
         if preferences.hasLaunchedBefore {
-            AppleInterfaceStyle.coordinator.setup()
+            Preferences.setupDefaultsForNewFeatures()
+            Preferences.startObserving()
+            AppleInterfaceStyle.Coordinator.setup()
         } else {
             Welcome.show()
         }
@@ -38,7 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillTerminate(_ notification: Notification) {
         Welcome.close()
+        TouchBar.tearDown()
         Preferences.stopObserving()
-        AppleInterfaceStyle.coordinator.tearDown()
+        AppleInterfaceStyle.Coordinator.tearDown()
     }
 }

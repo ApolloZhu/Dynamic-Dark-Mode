@@ -2,7 +2,7 @@
 //  Connectivity.swift
 //  Dynamic Dark Mode
 //
-//  Created by apollonian on 5/4/19.
+//  Created by Apollo Zhu on 5/4/19.
 //  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
 //
 

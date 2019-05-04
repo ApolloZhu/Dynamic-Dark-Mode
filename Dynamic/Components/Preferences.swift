@@ -18,6 +18,7 @@ extension Preferences {
     public static func setupAsSuggested() {
         preferences.adjustForBrightness = true
         preferences.brightnessThreshold = 0.5
+        preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = true
         preferences.settingsStyle = .menu
         if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
@@ -25,6 +26,16 @@ extension Preferences {
             preferences.scheduleZenithType = .official
         }
         preferences.scheduled = true
+        preferences.showToggleInTouchBar = true
+    }
+    
+    public static func setupDefaultsForNewFeatures() {
+        if preferences.object(forKey: "disableAdjustForBrightnessWhenScheduledDarkModeOn") == nil {
+            preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = preferences.scheduled && preferences.adjustForBrightness
+        }
+        if preferences.object(forKey: "showToggleInTouchBar") == nil {
+            preferences.showToggleInTouchBar = true
+        }
     }
 }
 
@@ -42,9 +53,12 @@ extension Preferences {
         StatusBarItem.only.startObserving()
         func observe<Value>(
             _ keyPath: KeyPath<UserDefaults, Value>,
+            observeInitial: Bool = false,
             changeHandler: @escaping Handler<NSKeyValueObservedChange<Value>>
         ) -> NSKeyValueObservation {
-            return preferences.observe(keyPath, options: [.new])
+            let options: NSKeyValueObservingOptions =
+                observeInitial ? [.initial, .new] : [.new]
+            return preferences.observe(keyPath, options: options)
             { _, change in changeHandler(change) }
         }
         handles = [
@@ -56,7 +70,7 @@ extension Preferences {
                 }
             },
             observe(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) { _ in
-                AppleInterfaceStyle.coordinator.setup()
+                AppleInterfaceStyle.Coordinator.setup()
             },
             observe(\.scheduled) { change in
                 if change.newValue == true {
@@ -80,6 +94,13 @@ extension Preferences {
             observe(\.scheduleEnd) { _ in
                 if preferences.scheduled && preferences.scheduleZenithType == .custom {
                     Scheduler.shared.schedule()
+                }
+            },
+            observe(\.showToggleInTouchBar, observeInitial: true) { change in
+                if change.newValue == true {
+                    TouchBar.show()
+                } else {
+                    TouchBar.hide()
                 }
             },
             observe(\.opensAtLogin) { change in
@@ -176,6 +197,15 @@ extension Preferences {
         get {
             return preferences.value(forKey: #function) as? Date
                 ?? Calendar.current.date(from: DateComponents(hour: 7))!
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+    
+    @objc dynamic var showToggleInTouchBar: Bool {
+        get {
+            return preferences.bool(forKey: #function)
         }
         set {
             setPreferred(to: newValue)

@@ -2,26 +2,38 @@
 //  TouchBar.swift
 //  Dynamic Dark Mode
 //
-//  Created by apollonian on 5/3/19.
+//  Created by Apollo Zhu on 5/3/19.
 //  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa
 
 enum TouchBar {
-    static func setup() {
-        #if Masless
-        #warning("TODO: Add option to disable displaying toggle button in Control Strip")
-        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
-        let identifier = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
-        let item = NSCustomTouchBarItem(identifier: identifier)
-        #warning("TODO: Redesign icon for toggle button")
-        let button = NSButton(image: #imageLiteral(resourceName: "status_bar_icon"),
-                              target: AppleInterfaceStyle.coordinator,
-                              action: #selector(toggleInterfaceStyle))
+    private static let itemID = NSTouchBarItem.Identifier(rawValue: "io.github.apollozhu.Dynamic.switch")
+    
+    private static let item: NSTouchBarItem = {
+        let item = NSCustomTouchBarItem(identifier: itemID)
+        let button = NSButton(image: #imageLiteral(resourceName: "Icon"),
+                              target: AppleInterfaceStyle.Coordinator,
+                              action: #selector(AppleInterfaceStyleCoordinator.toggleInterfaceStyle))
         item.view = button
+        return item
+    }()
+    
+    public static func setup() {
+        // DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         NSTouchBarItem.addSystemTrayItem(item)
-        DFRElementSetControlStripPresenceForIdentifier(identifier, true)
-        #endif
+    }
+    
+    public static func tearDown() {
+        NSTouchBarItem.removeSystemTrayItem(item)
+    }
+    
+    public static func show() {
+        DFRElementSetControlStripPresenceForIdentifier(itemID, true)
+    }
+    
+    public static func hide() {
+        DFRElementSetControlStripPresenceForIdentifier(itemID, false)
     }
 }
