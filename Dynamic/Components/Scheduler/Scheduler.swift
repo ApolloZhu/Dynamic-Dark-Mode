@@ -24,27 +24,26 @@ public final class Scheduler: NSObject {
         task = nil
     }
     
-    @objc public func schedule(enableCurrentStyle: Bool = true) {
+    @objc public func schedule(startBrightnessObserverOnFailure: Bool = false) {
         func processLocation(_ result: Location) {
             switch result {
             case .current(let location):
-                scheduleAtLocation(location, enableCurrentStyle: enableCurrentStyle)
+                scheduleAtLocation(location)
             case .cached(let location):
-                scheduleAtCachedLocation(location, enableCurrentStyle: enableCurrentStyle)
+                scheduleAtCachedLocation(location)
             case .failed(let error):
                 Location.alertNotAvailable(dueTo: error)
+                guard startBrightnessObserverOnFailure else { return }
+                ScreenBrightnessObserver.shared.startObserving()
             }
         }
         LocationManager.serial.fetch(then: processLocation)
     }
     
-    private func scheduleAtLocation(_ location: CLLocation?,
-                                    enableCurrentStyle: Bool) {
+    private func scheduleAtLocation(_ location: CLLocation?) {
         UserNotification.removeAll()
         let decision = mode(atLocation: location?.coordinate)
-        if enableCurrentStyle {
-            decision.style.enable()
-        }
+        decision.style.enable()
         if preferences.adjustForBrightness, // and don't observe brightness at night if disabled:
             decision.style == .aqua || !preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn {
             ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
@@ -54,10 +53,9 @@ public final class Scheduler: NSObject {
     }
     
     @discardableResult
-    private func scheduleAtCachedLocation(_ location: CLLocation,
-                                          enableCurrentStyle: Bool) -> Bool {
+    private func scheduleAtCachedLocation(_ location: CLLocation) -> Bool {
         guard preferences.scheduleZenithType != .custom else {
-            scheduleAtLocation(nil, enableCurrentStyle: enableCurrentStyle)
+            scheduleAtLocation(nil)
             return false
         }
         UserNotification.removeAll()
@@ -67,7 +65,7 @@ public final class Scheduler: NSObject {
                                 String(format:"<%.2f,%.2f>",
                                        location.coordinate.latitude,
                                        location.coordinate.longitude))
-        scheduleAtLocation(location, enableCurrentStyle: enableCurrentStyle)
+        scheduleAtLocation(location)
         return true
     }
     
