@@ -87,7 +87,6 @@ extension Preferences {
                 ) else { return }
                 remindReportingBug(NSLocalizedString(
                     "Preferences.opensAtLogin.failed",
-                    // We have to use a normal literal string here:
                     value: "Failed to update \"opens at login\" settings",
                     comment: "Indicates either enable or disable opens at login failed."
                 ), issueID: 40)

@@ -172,6 +172,9 @@
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
 "y0s-hF-kCC.title" = "开始配置 >>";
 
+/* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
+"yl0-uh-cim.title" = "在定时深色模式期间停用自动切换";
+
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "“自动深色模式”需要访问您的当前位置来计算日出日落时间，以便在合适的时候为您自动切换深色模式。";
 
