@@ -30,6 +30,7 @@
 		5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266354C215F177C008176E9 /* AllowLocationViewController.swift */; };
 		5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */; };
 		52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52688653215B2FA8009A2FE3 /* SlideSegue.swift */; };
+		527B4472227E4252006E8369 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523CF01C227E1E44000E4173 /* DFRFoundation.framework */; };
 		52BC0C7321C00CFC005E8E45 /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */; };
 		52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511220CC53CC0073F0CA /* Preferences.swift */; };
 		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
@@ -177,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527B4472227E4252006E8369 /* DFRFoundation.framework in Frameworks */,
 				8FF90AAC91457FF67E3939FF /* libPods-Dynamic Dark Mode.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,6 +908,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,18 +924,12 @@
 					"\"AppKit\"",
 					"-framework",
 					"\"Carbon\"",
-					"-framework",
-					"\"DFRFoundation\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Debug;
 		};
@@ -948,6 +945,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks";
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -963,18 +961,12 @@
 					"\"AppKit\"",
 					"-framework",
 					"\"Carbon\"",
-					"-framework",
-					"\"DFRFoundation\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Release;
 		};
@@ -1093,6 +1085,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Sparkle\"",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1106,18 +1103,12 @@
 					"\"Solar\"",
 					"-framework",
 					"\"Sparkle\"",
-					"-framework",
-					"\"DFRFoundation\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = "Release Masless";
 		};
@@ -1219,6 +1210,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Sparkle\"",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1232,18 +1228,12 @@
 					"\"Solar\"",
 					"-framework",
 					"\"Sparkle\"",
-					"-framework",
-					"\"DFRFoundation\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = "Debug Masless";
 		};
