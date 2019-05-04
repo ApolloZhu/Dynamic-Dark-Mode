@@ -8,23 +8,23 @@
 
 import Cocoa
 
-var presentors = [NSViewController]()
-
-func releasePresentors() {
-    while case let presentor? = presentors.popLast() {
-        presentor.presentedViewControllers?.forEach {
-            presentor.dismiss($0)
-        }
-    }
-}
-
 protocol SetupStep: AnyObject {
     func showNext()
 }
 
+var setupSteps = [NSViewController]()
+
+func rewindSetupSteps() {
+    while case let viewController? = setupSteps.popLast() {
+        viewController.presentedViewControllers?.forEach {
+            viewController.dismiss($0)
+        }
+    }
+}
+
 extension SetupStep where Self: NSViewController {
     func showNext() {
-        presentors.append(self)
+        setupSteps.append(self)
         DispatchQueue.main.async { [weak self] in
             self?.performSegue(withIdentifier: "next", sender: nil)
         }
@@ -35,14 +35,11 @@ protocol LastSetupStep: SetupStep { }
 
 extension LastSetupStep {
     func showNext() {
-        Preferences.setup()
-        preferences.hasLaunchedBefore = true
         Welcome.close()
-        releasePresentors()
-        startUpdating {
-            DispatchQueue.main.async {
-                SettingsViewController.show()
-            }
-        }
+        preferences.hasLaunchedBefore = true
+        Preferences.setupAsSuggested()
+        Preferences.startObserving()
+        AppleInterfaceStyle.coordinator.setup()
+        SettingsViewController.show()
     }
 }

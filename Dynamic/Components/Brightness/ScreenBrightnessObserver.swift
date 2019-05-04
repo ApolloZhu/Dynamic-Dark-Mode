@@ -20,6 +20,7 @@ final class ScreenBrightnessObserver: NSObject {
     deinit { stopObserving() }
     
     public func startObserving(withInitialUpdate: Bool = true) {
+        stopObserving()
         DistributedNotificationCenter.default().addObserver(
             self,
             selector: #selector(updateForBrightnessChange),
@@ -37,7 +38,7 @@ final class ScreenBrightnessObserver: NSObject {
     }
     
     @objc private func updateForBrightnessChange() {
-        AppleScript.checkPermission(onSuccess: mode.enable)
+        mode.enable()
     }
     
     public func stopObserving() {

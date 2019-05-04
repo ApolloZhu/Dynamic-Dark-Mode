@@ -43,8 +43,12 @@ public final class Scheduler: NSObject {
         UserNotification.removeAll()
         let decision = mode(atLocation: location?.coordinate)
         if enableCurrentStyle {
-            AppleScript.checkPermission(onSuccess: decision.style.enable)
+            decision.style.enable()
         }
+        if preferences.adjustForBrightness, // and don't observe brightness at night if disabled:
+            decision.style == .aqua || !preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn {
+            ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
+        } // no initial update because we are using the schedule
         guard let date = decision.date else { return }
         task = Plan.at(date).do { [weak self] in self?.schedule() }
     }

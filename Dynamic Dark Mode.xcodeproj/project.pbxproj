@@ -14,7 +14,7 @@
 		5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214CD8E215B3BED008A7E83 /* Welcome.swift */; };
 		52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FBB20C8B47100869A9C /* AppDelegate.swift */; };
 		52168FC020C8B47200869A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52168FBF20C8B47200869A9C /* Assets.xcassets */; };
-		52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */; };
+		52168FCF20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FCE20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift */; };
 		52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD020C99CB100869A9C /* AppleScriptHelper.swift */; };
 		52168FD520C9A63B00869A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52168FD720C9A63B00869A9C /* Main.storyboard */; };
 		52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */; };
@@ -38,6 +38,10 @@
 		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
 		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
 		52CC197121C0AD6A0061DE35 /* SetupStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC197021C0AD6A0061DE35 /* SetupStep.swift */; };
+		52D27E57227D2D4F005C21D0 /* AppleInterfaceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E56227D2D4F005C21D0 /* AppleInterfaceStyle.swift */; };
+		52D27E5A227D2E75005C21D0 /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E59227D2E75005C21D0 /* TouchBar.swift */; };
+		52D27E5C227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E5B227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift */; };
+		52D27E5E227D3294005C21D0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E5D227D3294005C21D0 /* Shortcut.swift */; };
 		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
 		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
@@ -77,7 +81,7 @@
 		52168FBF20C8B47200869A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52168FC420C8B47200869A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52168FC520C8B47200869A9C /* Dynamic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dynamic.entitlements; sourceTree = "<group>"; };
-		52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSwitcher.swift; sourceTree = "<group>"; };
+		52168FCE20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleInterfaceStyle+NSAppearance.swift"; sourceTree = "<group>"; };
 		52168FD020C99CB100869A9C /* AppleScriptHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptHelper.swift; sourceTree = "<group>"; };
 		52168FD620C9A63B00869A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52168FD820C9B0DD00869A9C /* NSScreen + Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen + Brightness.swift"; sourceTree = "<group>"; };
@@ -134,6 +138,10 @@
 		52C88EF82160678A003AF0B2 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		52CC197021C0AD6A0061DE35 /* SetupStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStep.swift; sourceTree = "<group>"; };
+		52D27E56227D2D4F005C21D0 /* AppleInterfaceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleInterfaceStyle.swift; sourceTree = "<group>"; };
+		52D27E59227D2E75005C21D0 /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
+		52D27E5B227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppleInterfaceStyle+Coordinator.swift"; sourceTree = "<group>"; };
+		52D27E5D227D3294005C21D0 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		52DC7980215ECB48005EE97E /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
 		52E3B22E227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52E3B22F227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -278,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				52C3511220CC53CC0073F0CA /* Preferences.swift */,
+				52D27E5B227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift */,
 				5265C6C920D0B84900488D39 /* Appearance */,
 				5265C6CA20D0B85B00488D39 /* Brightness */,
 				520EF73621A0567B003326F2 /* Scheduler */,
@@ -292,6 +301,7 @@
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
 				52688649215AF604009A2FE3 /* Welcome */,
 				5268864A215AF802009A2FE3 /* Settings */,
+				52D27E61227D45E6005C21D0 /* Access Points */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -310,7 +320,8 @@
 		5265C6C920D0B84900488D39 /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
-				52168FCE20C8B59300869A9C /* AppearanceSwitcher.swift */,
+				52D27E56227D2D4F005C21D0 /* AppleInterfaceStyle.swift */,
+				52168FCE20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift */,
 				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
 				52C3512620CC5CAE0073F0CA /* toggle.scpt */,
 				52C3512820CC5CD10073F0CA /* on.scpt */,
@@ -345,7 +356,6 @@
 			children = (
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
 				706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */,
-				52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -361,6 +371,16 @@
 				52C3512220CC57C80073F0CA /* DynamicLauncher.entitlements */,
 			);
 			path = DynamicLauncher;
+			sourceTree = "<group>";
+		};
+		52D27E61227D45E6005C21D0 /* Access Points */ = {
+			isa = PBXGroup;
+			children = (
+				52D27E59227D2E75005C21D0 /* TouchBar.swift */,
+				52BC0C7221C00CFC005E8E45 /* StatusBarItem.swift */,
+				52D27E5D227D3294005C21D0 /* Shortcut.swift */,
+			);
+			path = "Access Points";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D27E5A227D2E75005C21D0 /* TouchBar.swift in Sources */,
 				706D395D20E377E40079535E /* Localizations.swift in Sources */,
 				5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */,
 				52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */,
@@ -642,8 +663,11 @@
 				520EF73821A056A3003326F2 /* Location.swift in Sources */,
 				5206B8BB2219B02600D22358 /* Error.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
+				52D27E5C227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift in Sources */,
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
 				52BC0C7321C00CFC005E8E45 /* StatusBarItem.swift in Sources */,
+				52D27E5E227D3294005C21D0 /* Shortcut.swift in Sources */,
+				52D27E57227D2D4F005C21D0 /* AppleInterfaceStyle.swift in Sources */,
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
 				5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */,
@@ -651,7 +675,7 @@
 				5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */,
 				5206B8BD2219B08100D22358 /* Notification.swift in Sources */,
 				52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */,
-				52168FCF20C8B59300869A9C /* AppearanceSwitcher.swift in Sources */,
+				52168FCF20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift in Sources */,
 				52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,14 +15,9 @@ typealias Preferences = UserDefaults
 public let preferences = NSUserDefaultsController.shared.defaults
 
 extension Preferences {
-    public static func setup() {
+    public static func setupAsSuggested() {
         preferences.adjustForBrightness = true
         preferences.brightnessThreshold = 0.5
-        // I personally would want this as login item,
-        // but that might violate the review guidline.
-        #if Masless
-        preferences.opensAtLogin = true
-        #endif
         preferences.settingsStyle = .menu
         if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
@@ -37,37 +32,37 @@ extension Preferences {
     private static var handles: [NSKeyValueObservation] = []
 
     public static func stopObserving() {
+        StatusBarItem.only.stopObserving()
         handles.lazy.forEach { $0.invalidate() }
         handles = []
     }
 
     public static func startObserving() {
         stopObserving()
+        StatusBarItem.only.startObserving()
         func observe<Value>(
             _ keyPath: KeyPath<UserDefaults, Value>,
-            observeInitial: Bool = false,
             changeHandler: @escaping Handler<NSKeyValueObservedChange<Value>>
         ) -> NSKeyValueObservation {
-            let options: NSKeyValueObservingOptions =
-                observeInitial ? [.initial, .new] : [.new]
-            return preferences.observe(keyPath, options: options)
+            return preferences.observe(keyPath, options: [.new])
             { _, change in changeHandler(change) }
-        }
-        if preferences.adjustForBrightness {
-            ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
         }
         handles = [
             observe(\.adjustForBrightness) { change in
-                ScreenBrightnessObserver.shared.stopObserving()
                 if change.newValue == true {
                     ScreenBrightnessObserver.shared.startObserving()
+                } else {
+                    preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = false
                 }
+            },
+            observe(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) { _ in
+                AppleInterfaceStyle.coordinator.setup()
             },
             observe(\.scheduled) { change in
                 if change.newValue == true {
                     Scheduler.shared.schedule()
                 } else {
-                    Scheduler.shared.cancel()
+                    preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = false
                 }
             },
             observe(\.scheduleType) { _ in
@@ -85,26 +80,38 @@ extension Preferences {
                     Scheduler.shared.schedule()
                 }
             },
-            observe(\.opensAtLogin, observeInitial: true) { change in
+            observe(\.opensAtLogin) { change in
                 guard !SMLoginItemSetEnabled(
                     "io.github.apollozhu.Dynamic.Launcher" as CFString,
                     change.newValue ?? true
                 ) else { return }
                 remindReportingBug(NSLocalizedString(
                     "Preferences.opensAtLogin.failed",
-                    value: "Failed to update opens at login settings",
+                    // We have to use a normal literal string here:
+                    value: "Failed to update \"opens at login\" settings",
                     comment: "Indicates either enable or disable opens at login failed."
                 ), issueID: 40)
             }
         ]
     }
+}
 
+extension Preferences {
     func setPreferred(to value: Any?, forKey key: String = #function) {
         (NSUserDefaultsController.shared.values as AnyObject)
             .setValue(value, forKey: "\(key)")
     }
-
+    
     @objc dynamic var adjustForBrightness: Bool {
+        get {
+            return preferences.bool(forKey: #function)
+        }
+        set {
+            setPreferred(to: newValue)
+        }
+    }
+    
+    @objc dynamic var disableAdjustForBrightnessWhenScheduledDarkModeOn: Bool {
         get {
             return preferences.bool(forKey: #function)
         }
