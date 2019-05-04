@@ -37,6 +37,9 @@
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
 "AYu-sK-qS6.title" = "主菜单";
 
+/* Class = "NSTextFieldCell"; title = "Touch Bar"; ObjectID = "B2S-Yj-Ih0"; */
+"B2S-Yj-Ih0.title" = "触控栏";
+
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
 "bib-Uj-vzu.title" = "文件";
 
@@ -45,6 +48,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
 "Buz-5v-iiv.title" = "欢迎使用自动深色模式";
+
+/* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
+"Cgb-Kl-NJf.title" = "在功能栏显示外观模式切换按钮";
 
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "在此期间启用深色模式";
