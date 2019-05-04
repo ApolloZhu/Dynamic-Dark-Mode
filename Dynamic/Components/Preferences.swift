@@ -61,7 +61,9 @@ extension Preferences {
             observe(\.scheduled) { change in
                 if change.newValue == true {
                     Scheduler.shared.schedule()
+                    Connectivity.default.scheduleWhenReconnected()
                 } else {
+                    Connectivity.default.stopObserving()
                     preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = false
                 }
             },

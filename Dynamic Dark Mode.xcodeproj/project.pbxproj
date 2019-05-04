@@ -12,6 +12,7 @@
 		520EF73821A056A3003326F2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EF73721A056A3003326F2 /* Location.swift */; };
 		520EF73A21A08D1B003326F2 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EF73921A08D1B003326F2 /* Solar.swift */; };
 		5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214CD8E215B3BED008A7E83 /* Welcome.swift */; };
+		52161590227DE4E300725F57 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216158F227DE4E300725F57 /* Connectivity.swift */; };
 		52168FBC20C8B47100869A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FBB20C8B47100869A9C /* AppDelegate.swift */; };
 		52168FC020C8B47200869A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52168FBF20C8B47200869A9C /* Assets.xcassets */; };
 		52168FCF20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52168FCE20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift */; };
@@ -76,6 +77,7 @@
 		520EF73721A056A3003326F2 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		520EF73921A08D1B003326F2 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
 		5214CD8E215B3BED008A7E83 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		5216158F227DE4E300725F57 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamic Dark Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52168FBB20C8B47100869A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52168FBF20C8B47200869A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				52DC7980215ECB48005EE97E /* Auxiliary.swift */,
+				5216158F227DE4E300725F57 /* Connectivity.swift */,
 				706D395B20E377E40079535E /* Localizations.swift */,
 				5206B8BA2219B02600D22358 /* Error.swift */,
 				5206B8BC2219B08100D22358 /* Notification.swift */,
@@ -660,6 +663,7 @@
 				520EF73A21A08D1B003326F2 /* Solar.swift in Sources */,
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */,
+				52161590227DE4E300725F57 /* Connectivity.swift in Sources */,
 				520EF73821A056A3003326F2 /* Location.swift in Sources */,
 				5206B8BB2219B02600D22358 /* Error.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,

@@ -23,40 +23,17 @@ public class AppleInterfaceStyleCoordinator: NSObject {
     public func setup() {
         tearDown()
         guard preferences.scheduled else {
+            guard preferences.adjustForBrightness else { return }
             // No need for scheduler, only enable brightness observer
-            return setupAdjustForBrightnessIfNecessary()
+            return ScreenBrightnessObserver.shared.startObserving()
         }
-        Scheduler.shared.getCurrentMode { [unowned self] result in
-            switch result {
-            case .success(let mode):
-                mode.style.enable()
-                if preferences.adjustForBrightness, // and don't observe brightness at night if disabled:
-                    mode.style == .aqua || !preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn {
-                    ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
-                } // no initial update because we are using the schedule
-            case .failure(let error):
-                // Nothing came back from schduler/location service,
-                // let's at least try the brightness observer
-                self.setupAdjustForBrightnessIfNecessary(or: {
-                    // Nothing worked out, let the user know
-                    Location.alertNotAvailable(dueTo: error)
-                })
-            }
-            // We'll start the scheduler and brightness observer
-            Scheduler.shared.schedule(enableCurrentStyle: false)
-        }
-    }
-    
-    private func setupAdjustForBrightnessIfNecessary(or doSomethingElse: () -> Void = { }) {
-        if preferences.adjustForBrightness {
-            ScreenBrightnessObserver.shared.startObserving()
-        } else {
-            doSomethingElse()
-        }
+        Connectivity.default.scheduleWhenReconnected()
+        Scheduler.shared.schedule(startBrightnessObserverOnFailure: true)
     }
     
     public func tearDown() {
         Scheduler.shared.cancel()
+        Connectivity.default.stopObserving()
         ScreenBrightnessObserver.shared.stopObserving()
     }
 }
