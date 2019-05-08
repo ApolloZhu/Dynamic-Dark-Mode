@@ -14,11 +14,11 @@ class SlideSegue: NSStoryboardSegue, NSViewControllerPresentationAnimator {
         let destination = destinationController as! NSViewController
         source.present(destination, animator: self)
     }
-
+    
     private let animationDuration: TimeInterval = 0.75
     private let frameWidth: CGFloat = 480
     private lazy var origin = CGPoint(x: frameWidth, y: 0)
-
+    
     func animatePresentation(of viewController: NSViewController, from fromViewController: NSViewController) {
         let presented = viewController.view
         presented.wantsLayer = true
@@ -35,7 +35,7 @@ class SlideSegue: NSStoryboardSegue, NSViewControllerPresentationAnimator {
             presented.animator().frame.size.width = frameWidth
         }
     }
-
+    
     func animateDismissal(of viewController: NSViewController, from fromViewController: NSViewController) {
         let presented = viewController.view
         let presentor = fromViewController.view

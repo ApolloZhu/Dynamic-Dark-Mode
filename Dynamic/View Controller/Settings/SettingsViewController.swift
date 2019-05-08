@@ -29,11 +29,11 @@ class SettingsViewController: NSViewController {
         NSApp.activate(ignoringOtherApps: true)
         window?.makeKeyAndOrderFront(nil)
     }
-
+    
     @IBAction func close(_ sender: Any) {
         SettingsViewController.window?.close()
     }
-
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         // The following is required to attach touchbar to a view controller.
@@ -42,12 +42,12 @@ class SettingsViewController: NSViewController {
         view.window?.bind(NSBindingName(rawValue: #keyPath(touchBar)), to: self, withKeyPath: #keyPath(touchBar), options: nil)
         NSUserDefaultsController.shared.appliesImmediately = true
     }
-
+    
     override func viewDidDisappear() {
         super.viewDidDisappear()
         UserNotification.removeAll()
     }
-
+    
     @IBAction func reSetup(_ sender: Any) {
         let name = Bundle.main.bundleIdentifier!
         preferences.removePersistentDomain(forName: name)

@@ -22,8 +22,9 @@ enum UserNotification {
             case "issues.new": self = .reportBug
             default:
                 guard let last = rawValue.split(separator: ".").last
-                    , let id = Int(last) else { return nil }
-                        self = .issue(id: id)
+                    , let id = Int(last)
+                    else { return nil }
+                self = .issue(id: id)
             }
         }
         

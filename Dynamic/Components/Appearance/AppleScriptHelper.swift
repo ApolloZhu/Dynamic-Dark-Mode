@@ -58,7 +58,7 @@ extension AppleScript {
             showErrorThenRedirect()
         }
     }
-
+    
     public static func showErrorThenRedirect() {
         runModal(ofNSAlert: { alert in
             alert.alertStyle = .critical
@@ -76,11 +76,11 @@ extension AppleScript {
             redirectToSystemPreferences()
         })
     }
-
+    
     public static func redirectToSystemPreferences() {
         openURL("x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")
     }
-
+    
     public static func requestPermission(
         retryOnInternalError: Bool = true,
         then process: @escaping Handler<Bool>

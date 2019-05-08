@@ -11,7 +11,7 @@ import Cocoa
 public final class StatusBarItem {
     public static let only = StatusBarItem()
     private init() { }
-
+    
     enum Style: Int {
         case menu
         case rightClick
@@ -38,7 +38,7 @@ public final class StatusBarItem {
             AppleInterfaceStyle.Coordinator.toggleInterfaceStyle()
         }
     }
-
+    
     private func buildMenu() -> NSMenu {
         let menu = NSMenu()
         let toggleItem = NSMenuItem(
