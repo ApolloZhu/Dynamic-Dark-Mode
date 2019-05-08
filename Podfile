@@ -7,10 +7,8 @@ target 'Dynamic Dark Mode' do
   pod 'Solar'
   pod 'Schedule', :git => 'https://github.com/luoxiu/Schedule.git'
   pod 'MASShortcut'
-
-  # Masless Only
-  pod 'LetsMove', :configurations => ['Debug Masless', 'Release Masless']
-  pod 'Sparkle', :configurations => ['Debug Masless', 'Release Masless']
+  pod 'LetsMove'
+  # pod 'Sparkle'
 end
 
 target 'DynamicLauncher' do
