@@ -140,8 +140,6 @@
 		52E3B22F227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52E3B230227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E3B231227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		52F44AF120CFEBA300E739F6 /* MAS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MAS.xcconfig; sourceTree = "<group>"; };
-		52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MASless.xcconfig; sourceTree = "<group>"; };
 		53A351B3F4C95911ACEAF9E2 /* Pods-Dynamic Dark Mode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release.xcconfig"; sourceTree = "<group>"; };
 		6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLauncher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		687EF500DBBFEBBE226CDD0E /* Pods-DynamicLauncher.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug masless.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug masless.xcconfig"; sourceTree = "<group>"; };
@@ -213,8 +211,6 @@
 				52C88EF82160678A003AF0B2 /* CHANGELOG.md */,
 				52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */,
 				523718352157469800AEC921 /* LICENSE */,
-				52F44AF120CFEBA300E739F6 /* MAS.xcconfig */,
-				52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */,
 				52168FBA20C8B47100869A9C /* Dynamic */,
 				52C3511920CC57B60073F0CA /* DynamicLauncher */,
 				52168FB920C8B47100869A9C /* Products */,
@@ -383,7 +379,6 @@
 				52168FB520C8B47100869A9C /* Frameworks */,
 				52168FB620C8B47100869A9C /* Resources */,
 				5237AE5220CCC084009CF037 /* Copy Files */,
-				CBA34EC60804ACFAB58E0C7F /* [CP] Embed Pods Frameworks */,
 				589F8C922A5F4E3DC20A2060 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -535,7 +530,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MASShortcut/MASShortcut.bundle",
 				"${PODS_ROOT}/LetsMove/ca.lproj",
 				"${PODS_ROOT}/LetsMove/cs.lproj",
 				"${PODS_ROOT}/LetsMove/da.lproj",
@@ -560,12 +554,12 @@
 				"${PODS_ROOT}/LetsMove/tr.lproj",
 				"${PODS_ROOT}/LetsMove/zh_CN.lproj",
 				"${PODS_ROOT}/LetsMove/zh_TW.lproj",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MASShortcut/MASShortcut.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASShortcut.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ca.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cs.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
@@ -590,34 +584,11 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tr.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_CN.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_TW.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASShortcut.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBA34EC60804ACFAB58E0C7F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8FB4AC62B768B005584C068 /* [CP] Check Pods Manifest.lock */ = {
@@ -769,7 +740,6 @@
 /* Begin XCBuildConfiguration section */
 		52168FC620C8B47200869A9C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -832,7 +802,6 @@
 		};
 		52168FC720C8B47200869A9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F44AF120CFEBA300E739F6 /* MAS.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -892,7 +861,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -921,7 +890,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
+				CODE_SIGN_ENTITLEMENTS = "Dynamic/Supporting Files/Dynamic.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -990,230 +959,6 @@
 			};
 			name = Release;
 		};
-		52F44AEB20CFEAE200E739F6 /* Release Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = Masless;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VERSION = 1.2.0;
-			};
-			name = "Release Masless";
-		};
-		52F44AEC20CFEAE200E739F6 /* Release Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KZ7D8X3PRK;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = "Release Masless";
-		};
-		52F44AED20CFEAE200E739F6 /* Release Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 178D15FF0B9E5588D9E47D57 /* Pods-DynamicLauncher.release masless.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KZ7D8X3PRK;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = DynamicLauncher/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = "Release Masless";
-		};
-		52F44AEE20CFEB5B00E739F6 /* Debug Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F44AF220CFEBBC00E739F6 /* MASless.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG Masless";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSION = 1.2.0;
-			};
-			name = "Debug Masless";
-		};
-		52F44AEF20CFEB5B00E739F6 /* Debug Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41E38B743A34DBC550D39649 /* Pods-Dynamic Dark Mode.debug masless.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "$(MAIN_ENTITLEMENT)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KZ7D8X3PRK;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Dynamic/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Dynamic/Supporting Files/Dynamic-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = "Debug Masless";
-		};
-		52F44AF020CFEB5B00E739F6 /* Debug Masless */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 687EF500DBBFEBBE226CDD0E /* Pods-DynamicLauncher.debug masless.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KZ7D8X3PRK;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = DynamicLauncher/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.apollozhu.Dynamic.Launcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = "Debug Masless";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1221,9 +966,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC620C8B47200869A9C /* Debug */,
-				52F44AEE20CFEB5B00E739F6 /* Debug Masless */,
 				52168FC720C8B47200869A9C /* Release */,
-				52F44AEB20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1232,9 +975,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52168FC920C8B47200869A9C /* Debug */,
-				52F44AEF20CFEB5B00E739F6 /* Debug Masless */,
 				52168FCA20C8B47200869A9C /* Release */,
-				52F44AEC20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1243,9 +984,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52C3512420CC57C80073F0CA /* Debug */,
-				52F44AF020CFEB5B00E739F6 /* Debug Masless */,
 				52C3512520CC57C80073F0CA /* Release */,
-				52F44AED20CFEAE200E739F6 /* Release Masless */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -15,7 +15,7 @@ import LetsMove
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        #if canImport(LetsMove) && !DEBUG
+        #if !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
         #endif
         
