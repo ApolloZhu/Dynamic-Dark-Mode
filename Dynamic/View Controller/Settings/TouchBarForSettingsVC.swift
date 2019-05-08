@@ -15,7 +15,7 @@ extension SettingsViewController: NSTouchBarDelegate {
         touchBar.defaultItemIdentifiers = [.thresholdPopoverItem, .scheduleTypePopoverItem]
         return touchBar
     }
-
+    
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         let defaultsController = NSUserDefaultsController.shared
         switch identifier {
@@ -71,7 +71,7 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
     func numberOfItems(for scrubber: NSScrubber) -> Int {
         return 5
     }
-
+    
     func scrubber(_ scrubber: NSScrubber, viewForItemAt index: Int) -> NSScrubberItemView {
         let view = NSScrubberTextItemView()
         switch index {
@@ -90,7 +90,7 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
         }
         return view
     }
-
+    
     func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
         preferences.scheduleType = selectedIndex
     }

@@ -150,9 +150,12 @@ public final class Scheduler: NSObject {
     
     private override init() {
         super.init()
-        for name in [NSWorkspace.didWakeNotification,
-                     NSWorkspace.screensDidWakeNotification,
-                     NSWorkspace.sessionDidBecomeActiveNotification] {
+        let notifications = [
+            NSWorkspace.didWakeNotification,
+            NSWorkspace.screensDidWakeNotification,
+            NSWorkspace.sessionDidBecomeActiveNotification
+        ]
+        for name in notifications {
             NSWorkspace.shared.notificationCenter.addObserver(
                 self, selector: #selector(workspaceDidWake),
                 name: name, object: nil

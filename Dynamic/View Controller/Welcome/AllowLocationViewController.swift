@@ -10,7 +10,7 @@ import Cocoa
 import CoreLocation
 
 class AllowLocationViewController: NSViewController, LastSetupStep {
-
+    
     @IBOutlet weak var showPreferences: NSButton!
     
     var whenNotAuthorized: Bool {
@@ -21,7 +21,7 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
             return true
         }
     }
-
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         guard whenNotAuthorized else { return }
@@ -38,20 +38,20 @@ class AllowLocationViewController: NSViewController, LastSetupStep {
             }
         }
     }
-
+    
     // MARK: - Navigation
-
+    
     @IBAction func skip(_ sender: Any) {
         showNextOnce()
     }
-
+    
     @IBAction func openPreferences(_ sender: NSButton) {
         guard whenNotAuthorized else { return }
         redirectToSystemPreferences()
     }
-
+    
     private var firstTime = true
-
+    
     func showNextOnce() {
         if firstTime {
             firstTime = false
@@ -94,7 +94,7 @@ extension AllowLocationViewController: CLLocationManagerDelegate {
             }
         })
     }
-
+    
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
         _ = whenNotAuthorized

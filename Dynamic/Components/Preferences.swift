@@ -41,13 +41,13 @@ extension Preferences {
 
 extension Preferences {
     private static var handles: [NSKeyValueObservation] = []
-
+    
     public static func stopObserving() {
         StatusBarItem.only.stopObserving()
         handles.lazy.forEach { $0.invalidate() }
         handles = []
     }
-
+    
     public static func startObserving() {
         stopObserving()
         StatusBarItem.only.startObserving()
@@ -164,7 +164,7 @@ extension Preferences {
             setPreferred(to: newValue)
         }
     }
-
+    
     @objc dynamic var scheduleType: Int {
         get {
             return preferences.integer(forKey: #function)
@@ -173,7 +173,7 @@ extension Preferences {
             setPreferred(to: newValue)
         }
     }
-
+    
     var scheduleZenithType: Zenith {
         get {
             return Zenith(rawValue: scheduleType) ?? .official
@@ -243,7 +243,7 @@ extension Preferences {
             })
         }
     }
-
+    
     var placemark: String? {
         get {
             return preferences.string(forKey: #function)
@@ -252,7 +252,7 @@ extension Preferences {
             setPreferred(to: newValue)
         }
     }
-
+    
     @objc dynamic var rawSettingsStyle: Int {
         get {
             return preferences.integer(forKey: #function)
@@ -261,7 +261,7 @@ extension Preferences {
             setPreferred(to: newValue)
         }
     }
-
+    
     var settingsStyle: StatusBarItem.Style {
         get {
             return StatusBarItem.Style(rawValue: rawSettingsStyle) ?? .menu
@@ -270,7 +270,7 @@ extension Preferences {
             rawSettingsStyle = newValue.rawValue
         }
     }
-
+    
     var toggleShortcutKey: String {
         return "toggleShortcut"
     }

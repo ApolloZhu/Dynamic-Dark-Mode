@@ -35,7 +35,7 @@ extension AppleInterfaceStyle {
     static var current: AppleInterfaceStyle {
         return isDark ? .darkAqua : .aqua
     }
-
+    
     static var isDark: Bool {
         return NSAppearance.current.isDark
     }
