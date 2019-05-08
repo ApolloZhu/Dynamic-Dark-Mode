@@ -37,6 +37,8 @@ public func remindReportingBug(_ text: String, title: String? = nil, issueID: In
             comment: "Scare the user so they report bugs."
         )
     }
+    debugPrint(heading + (issueID.map { " #\($0)" } ?? ""))
+    debugPrint(text)
     UserNotification.send(notification, title: heading, subtitle: text) { error in
         guard error != nil else { return }
         runModal(ofNSAlert: { alert in

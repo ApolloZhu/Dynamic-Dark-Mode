@@ -11,24 +11,27 @@ import Cocoa
 // MARK: - All Apple Scripts
 
 public enum AppleScript: String, CaseIterable {
-    case toggleDarkMode = "toggle"
-    case enableDarkMode = "on"
-    case disableDarkMode = "off"
+    case toggleDarkMode = "not dark mode"
+    case enableDarkMode = "true"
+    case disableDarkMode = "false"
 }
 
 // MARK: - Handy Properties
 
 extension AppleScript {
-    private var name: String {
-        return "\(rawValue).scpt"
-    }
-    
-    private static var folder: URL {
-        return Bundle.main.resourceURL!
-    }
-    
-    private var url: URL {
-        return AppleScript.folder.appendingPathComponent(name)
+    /// https://discussions.apple.com/thread/6820749?answerId=27630325022#27630325022
+    private var source: String {
+        #warning("Dynamic Dark Mode itself loses focus")
+        return """
+        tell application "System Events"
+            set frontmostApplicationName to name of 1st process whose frontmost is true
+            tell appearance preferences to set dark mode to \(rawValue)
+        end tell
+        
+        tell application frontmostApplicationName
+            activate
+        end tell
+        """
     }
 }
 
@@ -38,8 +41,8 @@ extension AppleScript {
     public func execute() {
         AppleScript.checkPermission {
             var errorInfo: NSDictionary? = nil
-            let script = NSAppleScript(contentsOf: self.url, error: &errorInfo)
-            script?.executeAndReturnError(&errorInfo)
+            NSAppleScript(source: self.source)!
+                .executeAndReturnError(&errorInfo)
             remindReportingBug(info: errorInfo, title: NSLocalizedString(
                 "AppleScript.execute.error",
                 value: "Failed to Toggle Dark Mode",

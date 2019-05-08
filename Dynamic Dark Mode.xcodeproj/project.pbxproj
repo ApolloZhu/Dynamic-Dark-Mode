@@ -37,9 +37,6 @@
 		52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3511A20CC57B60073F0CA /* AppDelegate.swift */; };
 		52C3511D20CC57C80073F0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C3511C20CC57C80073F0CA /* Assets.xcassets */; };
 		52C3512020CC57C80073F0CA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C3511E20CC57C80073F0CA /* MainMenu.xib */; };
-		52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512620CC5CAE0073F0CA /* toggle.scpt */; };
-		52C3512920CC5CD10073F0CA /* on.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512820CC5CD10073F0CA /* on.scpt */; };
-		52C3512B20CC5D010073F0CA /* off.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 52C3512A20CC5D010073F0CA /* off.scpt */; };
 		52CC197121C0AD6A0061DE35 /* SetupStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC197021C0AD6A0061DE35 /* SetupStep.swift */; };
 		52D27E57227D2D4F005C21D0 /* AppleInterfaceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E56227D2D4F005C21D0 /* AppleInterfaceStyle.swift */; };
 		52D27E5A227D2E75005C21D0 /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E59227D2E75005C21D0 /* TouchBar.swift */; };
@@ -131,9 +128,6 @@
 		52C3511F20CC57C80073F0CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		52C3512120CC57C80073F0CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52C3512220CC57C80073F0CA /* DynamicLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DynamicLauncher.entitlements; sourceTree = "<group>"; };
-		52C3512620CC5CAE0073F0CA /* toggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = toggle.scpt; sourceTree = "<group>"; };
-		52C3512820CC5CD10073F0CA /* on.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = on.scpt; sourceTree = "<group>"; };
-		52C3512A20CC5D010073F0CA /* off.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = off.scpt; sourceTree = "<group>"; };
 		52C88EF82160678A003AF0B2 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		52CC197021C0AD6A0061DE35 /* SetupStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStep.swift; sourceTree = "<group>"; };
@@ -305,9 +299,6 @@
 				52D27E56227D2D4F005C21D0 /* AppleInterfaceStyle.swift */,
 				52168FCE20C8B59300869A9C /* AppleInterfaceStyle+NSAppearance.swift */,
 				52168FD020C99CB100869A9C /* AppleScriptHelper.swift */,
-				52C3512620CC5CAE0073F0CA /* toggle.scpt */,
-				52C3512820CC5CD10073F0CA /* on.scpt */,
-				52C3512A20CC5D010073F0CA /* off.scpt */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -443,7 +434,7 @@
 								enabled = 0;
 							};
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -492,14 +483,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C3512B20CC5D010073F0CA /* off.scpt in Resources */,
 				5236A8ED21606035009DA3A3 /* InfoPlist.strings in Resources */,
 				524712E32157786A00F48CA0 /* Credits.rtf in Resources */,
-				52C3512920CC5CD10073F0CA /* on.scpt in Resources */,
 				52168FC020C8B47200869A9C /* Assets.xcassets in Resources */,
 				5236A8F321606035009DA3A3 /* Localizable.strings in Resources */,
 				52168FD520C9A63B00869A9C /* Main.storyboard in Resources */,
-				52C3512720CC5CAE0073F0CA /* toggle.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
