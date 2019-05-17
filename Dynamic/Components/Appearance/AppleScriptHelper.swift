@@ -19,9 +19,14 @@ public enum AppleScript: String, CaseIterable {
 // MARK: - Handy Properties
 
 extension AppleScript {
-    /// https://discussions.apple.com/thread/6820749?answerId=27630325022#27630325022
+    /// Switches dark mode and [returns focus back to the original app](
+    ///   https://discussions.apple.com/thread/6820749?answerId=27630325022#27630325022
+    /// )
+    ///
+    /// - Note: It doesn't work if an [LSUIElement is focused](
+    ///   http://hints.macworld.com/article.php?story=20060110152311698
+    /// )
     private var source: String {
-        #warning("Dynamic Dark Mode itself loses focus")
         return """
         tell application "System Events"
             set frontmostApplicationName to name of 1st process whose frontmost is true

@@ -14,16 +14,16 @@
 "Bug.general.title" = "Сообщить об ошибке разработчикам";
 
 /* Request users to provide more context. */
-"Bug.known.title" = "Encountered a Known Issue";
+"Bug.known.title" = "Это известная проблема";
 
 /* User did not authorize this app to use location. */
-"Location.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to get your location.";
+"Location.notAuthorized" = "Предоставьте Dynamic Dark Mode доступ к вашему местоположению.";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
 "Location.notAvailable" = "Не удалось определить местоположение";
 
 /* Took too long to use up retries, most likely off Wi-Fi. */
-"Location.timeout" = "Timedout. Check your network connection.";
+"Location.timeout" = "Проверьте подключение к интернету.";
 
 /* Can't fetch user's current location. Using cache instead. */
 "Location.useCache" = "Расписание составлено на основе последней геолокации";
@@ -38,10 +38,10 @@
 "Menu.toggle" = "Сменить режим";
 
 /* User did not authorize this app to send notifications. */
-"Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
+"Notification.notAuthorized" = "Разрешите Dynamic Dark Mode слать уведомления.";
 
 /* Indicates either enable or disable opens at login failed. */
-"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+"Preferences.opensAtLogin.failed" = "Failed to update \"opens at login\" settings";
 
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Автонастройка порога";

@@ -26,7 +26,7 @@
 "92J-gp-8D9.title" = "Разрешить доступ к системным процессам";
 
 /* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
-"apZ-rU-OFQ.title" = "Show Dropdown Menu";
+"apZ-rU-OFQ.title" = "Открыть меню";
 
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "Печать…";
@@ -37,6 +37,9 @@
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
 "AYu-sK-qS6.title" = "Основное меню";
 
+/* Class = "NSTextFieldCell"; title = "Touch Bar"; ObjectID = "B2S-Yj-Ih0"; */
+"B2S-Yj-Ih0.title" = "Touch Bar";
+
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
 "bib-Uj-vzu.title" = "Файл";
 
@@ -45,6 +48,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
 "Buz-5v-iiv.title" = "Добро пожаловать в Dynamic Dark Mode";
+
+/* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
+"Cgb-Kl-NJf.title" = "Показывать Dark Mode в строке меню";
 
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "Темный режим включен после";
@@ -171,6 +177,9 @@
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
 "y0s-hF-kCC.title" = "Настроить >>";
+
+/* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
+"yl0-uh-cim.title" = "Disable During Scheduled Dark Mode";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "Dynamic Dark Mode необходим доступ к местоположению, чтобы рассчитывать часы заката/рассвета для включения ночного режима в ночное время.";
