@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.3.0] - 2019-05-17
+### Added
+- Let's move to /Applications
+
+### Fixed
+- Crash on launch when not installed to /Applications folder by asking them to move (#16, #49)
+- Switching theme no longer steal focus from focused application (#62)
+
+### Removed
+- The app is no longer restricted within an application sandbox (#63)
+
 ## [1.2.0] - 2019-05-07
 ### Added
 - Disable adjust for brightness when scheduled dark mode on
@@ -17,7 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Updated the program and its dependencies to Swift 5 
 - Updated Chinese, Esperanto, and Russian translations
-- fatalError or debugPrint are used instead of os.log
+- Using fatalError or debugPrint instead of os.log
 
 ### Fixed
 - "nil: estimatedNextExecution" should no longer appear (#59)
