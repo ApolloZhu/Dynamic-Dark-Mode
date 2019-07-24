@@ -8,40 +8,58 @@
 
 import Cocoa
 
-extension Notification.Name {
-    static let brightnessDidChange = Notification.Name(
-        "com.apple.AmbientLightSensorHID.PreferencesChanged"
-    )
-}
-
 final class ScreenBrightnessObserver: NSObject {
+
+    var notificationPort: IONotificationPortRef?
+    let queue = DispatchQueue(label: "ddm.queue")
+    var currentMode: AppleInterfaceStyle = NSScreen.brightness < preferences.brightnessThreshold ? .darkAqua : .aqua
+    var callback: IOServiceInterestCallback = { (ctx, service, messageType, messageArgument) -> Void in
+        if let ctx = ctx {
+            let observer = Unmanaged<ScreenBrightnessObserver>.fromOpaque(ctx).takeUnretainedValue()
+            observer.updateForBrightnessChange()
+        }
+    }
+
     static let shared = ScreenBrightnessObserver()
     private override init() { super.init() }
     deinit { stopObserving() }
-    
+
     public func startObserving(withInitialUpdate: Bool = true) {
         stopObserving()
-        DistributedNotificationCenter.default().addObserver(
-            self,
-            selector: #selector(updateForBrightnessChange),
-            name: .brightnessDidChange,
-            object: nil
-        )
+        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleBacklightDisplay"))
+        if service == IO_OBJECT_NULL {
+            return
+        }
+
+        notificationPort = IONotificationPortCreate(kIOMasterPortDefault)
+        IONotificationPortSetDispatchQueue(notificationPort, queue)
+        var n = io_object_t()
+        let ctx = UnsafeMutableRawPointer(Unmanaged.passRetained(self).toOpaque())
+        IOServiceAddInterestNotification(notificationPort, service, kIOGeneralInterest, callback, ctx, &n)
+        IOObjectRelease(service)
+
         guard withInitialUpdate else { return }
         updateForBrightnessChange()
     }
-    
+
     public var mode: AppleInterfaceStyle {
         let brightness = NSScreen.brightness
         let threshold = preferences.brightnessThreshold
         return brightness < threshold ? .darkAqua : .aqua
     }
-    
+
     @objc private func updateForBrightnessChange() {
-        mode.enable()
+        let value = mode
+        if currentMode != value{
+            currentMode = value
+            currentMode.enable()
+        }
     }
-    
+
     public func stopObserving() {
-        DistributedNotificationCenter.default().removeObserver(self)
+        if nil != notificationPort{
+            IONotificationPortDestroy(notificationPort)
+            notificationPort = nil
+        }
     }
 }
