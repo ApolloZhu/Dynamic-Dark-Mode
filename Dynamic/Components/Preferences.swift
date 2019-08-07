@@ -262,6 +262,32 @@ extension Preferences {
         }
     }
     
+    @objc dynamic var lightDesktopURL: URL? {
+        get {
+            if let string = preferences.string(forKey: #function) {
+                return URL(string: string)
+            } else {
+                return nil
+            }
+        }
+        set {
+            setPreferred(to: newValue?.absoluteString)
+        }
+    }
+    
+    @objc dynamic var darkDesktopURL: URL? {
+        get {
+            if let string = preferences.string(forKey: #function) {
+                return URL(string: string)
+            } else {
+                return nil
+            }
+        }
+        set {
+            setPreferred(to: newValue?.absoluteString)
+        }
+    }
+    
     var settingsStyle: StatusBarItem.Style {
         get {
             return StatusBarItem.Style(rawValue: rawSettingsStyle) ?? .menu
