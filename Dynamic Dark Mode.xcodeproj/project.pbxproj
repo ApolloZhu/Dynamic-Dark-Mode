@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
 		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
+		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
 		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		706D395E20E3796A0079535E /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		706D396320E37A5E0079535E /* Dynamic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamic-Bridging-Header.h"; sourceTree = "<group>"; };
 		706D396620E37A870079535E /* TouchBarPrivateAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateAPI.h; sourceTree = "<group>"; };
+		707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDesktopSettingsViewController.swift; sourceTree = "<group>"; };
 		9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
 		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +273,7 @@
 			children = (
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
+				707CC24422FAC3A0002210ED /* DynamicDesktop */,
 				52688649215AF604009A2FE3 /* Welcome */,
 				5268864A215AF802009A2FE3 /* Settings */,
 				52D27E61227D45E6005C21D0 /* Access Points */,
@@ -350,6 +353,14 @@
 				52D27E5D227D3294005C21D0 /* Shortcut.swift */,
 			);
 			path = "Access Points";
+			sourceTree = "<group>";
+		};
+		707CC24422FAC3A0002210ED /* DynamicDesktop */ = {
+			isa = PBXGroup;
+			children = (
+				707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */,
+			);
+			path = DynamicDesktop;
 			sourceTree = "<group>";
 		};
 		F34DBA40529B714E31832529 /* Pods */ = {
@@ -624,6 +635,7 @@
 				706D395D20E377E40079535E /* Localizations.swift in Sources */,
 				5214CD8F215B3BED008A7E83 /* Welcome.swift in Sources */,
 				52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */,
+				707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */,
 				52CC197121C0AD6A0061DE35 /* SetupStep.swift in Sources */,
 				520EF73A21A08D1B003326F2 /* Solar.swift in Sources */,
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
