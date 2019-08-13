@@ -19,7 +19,6 @@ extension AppleInterfaceStyle {
     
     static func toggle() {
         AppleScript.toggleDarkMode.execute()
-        setDesktop(for: current)
     }
     
     func enable(requestingPermission: Bool = true) {
@@ -34,7 +33,6 @@ extension AppleInterfaceStyle {
         case .darkAqua:
             AppleScript.enableDarkMode.execute()
         }
-        AppleInterfaceStyle.setDesktop(for: AppleInterfaceStyle.current)
     }
     
     static func setDesktop(for style: AppleInterfaceStyle) {

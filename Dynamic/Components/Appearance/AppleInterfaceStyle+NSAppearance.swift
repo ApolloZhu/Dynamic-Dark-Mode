@@ -13,7 +13,6 @@ import Cocoa
 
 extension NSAppearance {
     var isDark: Bool {
-        #warning("This is broken in macOS Catalina Developer Beta 19A526h")
         switch name {
         case .aqua, .accessibilityHighContrastAqua,
              .vibrantLight, .accessibilityHighContrastVibrantLight:
@@ -38,6 +37,6 @@ extension AppleInterfaceStyle {
     }
     
     static var isDark: Bool {
-        return NSAppearance.current.isDark
+        return NSApplication.shared.effectiveAppearance.isDark
     }
 }

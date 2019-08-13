@@ -14,6 +14,9 @@ import LetsMove
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var appearanceObservaver: NSKeyValueObservation!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         #if !DEBUG
         PFMoveToApplicationsFolderIfNecessary()
@@ -22,7 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         TouchBar.setup()
         Shortcut.startObserving()
-        
+        appearanceObservaver = NSApp.observe(\.effectiveAppearance) { _, _ in
+            AppleInterfaceStyle.setDesktop(for: .current)
+        }
         if preferences.hasLaunchedBefore {
             Preferences.setupDefaultsForNewFeatures()
             Preferences.startObserving()
