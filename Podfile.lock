@@ -1,7 +1,7 @@
 PODS:
   - LetsMove (1.24)
-  - MASShortcut (2.3.6)
-  - Schedule (2.0.2)
+  - MASShortcut (2.4.0)
+  - Schedule (2.0.3)
   - Solar (2.1.0)
 
 DEPENDENCIES:
@@ -22,13 +22,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Schedule:
-    :commit: 6d51d83b493d663f885742b2ba768ea65bde14a7
+    :commit: 4bb334fda460ea558437a6d84b3d32c84a433e28
     :git: https://github.com/luoxiu/Schedule.git
 
 SPEC CHECKSUMS:
   LetsMove: fefe56bc7bc7fb7d37049e28a14f297961229fc5
-  MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
-  Schedule: 0c14f2f813af46b209c3105c2c26600b6195f2b8
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+  Schedule: 1d9d3fa36b3522cd2c9ebcf9bbe4c9ef3e58e24a
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
 
 PODFILE CHECKSUM: 877f0c0213cd857229285862a8332fdb136be5d4

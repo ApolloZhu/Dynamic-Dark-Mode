@@ -21,12 +21,7 @@ extension AppleInterfaceStyle {
         AppleScript.toggleDarkMode.execute()
     }
     
-    func enable(requestingPermission: Bool = true) {
-        if requestingPermission {
-            AppleScript.checkPermission {
-                self.enable(requestingPermission: false)
-            }
-        }
+    func enable() {
         switch self {
         case .aqua:
             AppleScript.disableDarkMode.execute()
@@ -35,12 +30,15 @@ extension AppleInterfaceStyle {
         }
     }
     
-    static func setDesktop(for style: AppleInterfaceStyle) {
-        guard let url = style == .aqua ? preferences.lightDesktopURL : preferences.darkDesktopURL else { return }
+    static func updateWallpaper() {
+        guard let url = isDark
+            ? preferences.darkDesktopURL
+            : preferences.lightDesktopURL
+            else { return }
         let workspace = NSWorkspace.shared
         for screen in NSScreen.screens {
-            try? workspace.setDesktopImageURL(url, for: screen, options: [:])
+            try? workspace.setDesktopImageURL(url, for: screen)
         }
     }
-
+    
 }

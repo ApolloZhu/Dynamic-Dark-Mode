@@ -16,6 +16,12 @@ extension AppleInterfaceStyle {
 public class AppleInterfaceStyleCoordinator: NSObject {
     fileprivate override init() { super.init() }
     
+    private var appearanceObservation: NSKeyValueObservation? {
+        didSet {
+            oldValue?.invalidate()
+        }
+    }
+    
     @objc public func toggleInterfaceStyle() {
         AppleInterfaceStyle.toggle()
     }
@@ -29,11 +35,15 @@ public class AppleInterfaceStyleCoordinator: NSObject {
         }
         Connectivity.default.scheduleWhenReconnected()
         Scheduler.shared.schedule(startBrightnessObserverOnFailure: true)
+        appearanceObservation = NSApp.observe(\.effectiveAppearance) { _, _ in
+            AppleInterfaceStyle.updateWallpaper()
+        }
     }
     
     public func tearDown() {
         Scheduler.shared.cancel()
         Connectivity.default.stopObserving()
         ScreenBrightnessObserver.shared.stopObserving()
+        appearanceObservation = nil
     }
 }

@@ -37,6 +37,6 @@ extension AppleInterfaceStyle {
     }
     
     static var isDark: Bool {
-        return NSApplication.shared.effectiveAppearance.isDark
+        return NSApp.effectiveAppearance.isDark
     }
 }
