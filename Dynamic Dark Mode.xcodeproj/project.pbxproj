@@ -273,7 +273,6 @@
 			children = (
 				52168FD720C9A63B00869A9C /* Main.storyboard */,
 				52168FBB20C8B47100869A9C /* AppDelegate.swift */,
-				707CC24422FAC3A0002210ED /* DynamicDesktop */,
 				52688649215AF604009A2FE3 /* Welcome */,
 				5268864A215AF802009A2FE3 /* Settings */,
 				52D27E61227D45E6005C21D0 /* Access Points */,
@@ -328,6 +327,7 @@
 			children = (
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
 				706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */,
+				707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -353,14 +353,6 @@
 				52D27E5D227D3294005C21D0 /* Shortcut.swift */,
 			);
 			path = "Access Points";
-			sourceTree = "<group>";
-		};
-		707CC24422FAC3A0002210ED /* DynamicDesktop */ = {
-			isa = PBXGroup;
-			children = (
-				707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */,
-			);
-			path = DynamicDesktop;
 			sourceTree = "<group>";
 		};
 		F34DBA40529B714E31832529 /* Pods */ = {
@@ -538,64 +530,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources.sh",
-				"${PODS_ROOT}/LetsMove/ca.lproj",
-				"${PODS_ROOT}/LetsMove/cs.lproj",
-				"${PODS_ROOT}/LetsMove/da.lproj",
-				"${PODS_ROOT}/LetsMove/de.lproj",
-				"${PODS_ROOT}/LetsMove/en.lproj",
-				"${PODS_ROOT}/LetsMove/es.lproj",
-				"${PODS_ROOT}/LetsMove/fr.lproj",
-				"${PODS_ROOT}/LetsMove/hu.lproj",
-				"${PODS_ROOT}/LetsMove/it.lproj",
-				"${PODS_ROOT}/LetsMove/ja.lproj",
-				"${PODS_ROOT}/LetsMove/ko.lproj",
-				"${PODS_ROOT}/LetsMove/mk.lproj",
-				"${PODS_ROOT}/LetsMove/nb.lproj",
-				"${PODS_ROOT}/LetsMove/nl.lproj",
-				"${PODS_ROOT}/LetsMove/pl.lproj",
-				"${PODS_ROOT}/LetsMove/pt.lproj",
-				"${PODS_ROOT}/LetsMove/pt_BR.lproj",
-				"${PODS_ROOT}/LetsMove/ru.lproj",
-				"${PODS_ROOT}/LetsMove/sk.lproj",
-				"${PODS_ROOT}/LetsMove/sr.lproj",
-				"${PODS_ROOT}/LetsMove/sv.lproj",
-				"${PODS_ROOT}/LetsMove/tr.lproj",
-				"${PODS_ROOT}/LetsMove/zh_CN.lproj",
-				"${PODS_ROOT}/LetsMove/zh_TW.lproj",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MASShortcut/MASShortcut.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ca.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cs.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/hu.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/it.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ja.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ko.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mk.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nb.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt_BR.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sk.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sv.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_CN.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh_TW.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASShortcut.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

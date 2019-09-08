@@ -12,6 +12,7 @@ class DynamicDesktopSettingsViewController: NSViewController {
     
     @IBOutlet weak var lightDesktopButton: NSButton!
     @IBOutlet weak var darkDesktopButton: NSButton!
+    @IBOutlet weak var clearButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,48 +24,49 @@ class DynamicDesktopSettingsViewController: NSViewController {
         // we only need to handle the cases where there're images set
         if let lightDesktopURL = preferences.lightDesktopURL {
             lightDesktopButton.image = NSImage(byReferencing: lightDesktopURL)
+        } else {
+            lightDesktopButton.image = NSImage(named: NSImage.folderName)
         }
         if let darkDesktopURL = preferences.darkDesktopURL {
             darkDesktopButton.image = NSImage(byReferencing: darkDesktopURL)
+        } else {
+            darkDesktopButton.image = NSImage(named: NSImage.folderName)
         }
+        clearButton.isEnabled = preferences.exists(\.lightDesktopURL)
+            || preferences.exists(\.darkDesktopURL)
+        AppleInterfaceStyle.updateWallpaper()
     }
     
     @IBAction func clearDesktop(_ sender: Any) {
         preferences.lightDesktopURL = nil
         preferences.darkDesktopURL = nil
-        dismiss(nil)
+        updateContents()
     }
     
     @IBAction func setLightDesktop(_ sender: Any) {
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = false
-        openPanel.canCreateDirectories = false
-        openPanel.canChooseFiles = true
-        openPanel.allowedFileTypes = ["jpg", "jpeg", "png", "tiff"]
-        openPanel.begin { [unowned self] response in
-            if response == .OK {
-                preferences.lightDesktopURL = openPanel.url
-                self.updateContents()
-            }
+        selectImage { [unowned self] url in
+            preferences.lightDesktopURL = url
+            self.updateContents()
         }
     }
     
     @IBAction func setDarkDesktop(_ sender: Any) {
+        selectImage { [unowned self] url in
+            preferences.darkDesktopURL = url
+            self.updateContents()
+        }
+    }
+    
+    private func selectImage(then process: @escaping (URL?) -> Void) {
         let openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
         openPanel.allowedFileTypes = ["jpg", "jpeg", "png", "tiff"]
-        openPanel.begin { [unowned self] response in
-            if response == .OK {
-                preferences.darkDesktopURL = openPanel.url
-                self.updateContents()
-            }
+        openPanel.begin { response in
+            guard response == .OK else { return }
+            process(openPanel.url)
         }
     }
-    
-
-    
 }

@@ -30,10 +30,10 @@ extension Preferences {
     }
     
     public static func setupDefaultsForNewFeatures() {
-        if preferences.object(forKey: "disableAdjustForBrightnessWhenScheduledDarkModeOn") == nil {
+        if !preferences.exists(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) {
             preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = preferences.scheduled && preferences.adjustForBrightness
         }
-        if preferences.object(forKey: "showToggleInTouchBar") == nil {
+        if !preferences.exists(\.showToggleInTouchBar) {
             preferences.showToggleInTouchBar = true
         }
     }
@@ -44,7 +44,7 @@ extension Preferences {
     
     public static func stopObserving() {
         StatusBarItem.only.stopObserving()
-        handles.lazy.forEach { $0.invalidate() }
+        handles.forEach { $0.invalidate() }
         handles = []
     }
     
@@ -122,6 +122,17 @@ extension Preferences {
     func setPreferred(to value: Any?, forKey key: String = #function) {
         (NSUserDefaultsController.shared.values as AnyObject)
             .setValue(value, forKey: "\(key)")
+    }
+    
+    func exists<T>(_ keyPath: KeyPath<Preferences, T>) -> Bool {
+        guard let key = keyPath._kvcKeyPathString else {
+            #if DEBUG
+            fatalError("No key path string")
+            #else
+            return false
+            #endif
+        }
+        return object(forKey: key) != nil
     }
     
     @objc dynamic var adjustForBrightness: Bool {
@@ -264,11 +275,7 @@ extension Preferences {
     
     @objc dynamic var lightDesktopURL: URL? {
         get {
-            if let string = preferences.string(forKey: #function) {
-                return URL(string: string)
-            } else {
-                return nil
-            }
+            return preferences.string(forKey: #function).flatMap(URL.init(string:))
         }
         set {
             setPreferred(to: newValue?.absoluteString)
@@ -277,11 +284,7 @@ extension Preferences {
     
     @objc dynamic var darkDesktopURL: URL? {
         get {
-            if let string = preferences.string(forKey: #function) {
-                return URL(string: string)
-            } else {
-                return nil
-            }
+            return preferences.string(forKey: #function).flatMap(URL.init(string:))
         }
         set {
             setPreferred(to: newValue?.absoluteString)
