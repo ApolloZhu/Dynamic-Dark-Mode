@@ -42,7 +42,6 @@ extension AppleScript {
         let frontmostApplication = NSWorkspace.shared.frontmostApplication
         AppleScript.checkPermission {
             var errorInfo: NSDictionary? = nil
-            print(frontmostApplication?.localizedName ?? "Some App")
             NSAppleScript(source: self.source)!
                 .executeAndReturnError(&errorInfo)
             frontmostApplication?.activate(options: [.activateIgnoringOtherApps])
