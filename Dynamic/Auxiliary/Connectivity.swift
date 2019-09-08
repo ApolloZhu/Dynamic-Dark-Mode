@@ -22,9 +22,9 @@ public final class Connectivity {
         monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { path in
             switch path.status {
-            case .satisfied, .requiresConnection:
+            case .satisfied:
                 onSuccess()
-            case .unsatisfied:
+            case .requiresConnection, .unsatisfied:
                 break
             @unknown default:
                 remindReportingBug("\(path.status)")

@@ -29,12 +29,7 @@ extension AppleScript {
     private var source: String {
         return """
         tell application "System Events"
-            set frontmostApplicationName to name of 1st process whose frontmost is true
             tell appearance preferences to set dark mode to \(rawValue)
-        end tell
-        
-        tell application frontmostApplicationName
-            activate
         end tell
         """
     }
@@ -44,10 +39,13 @@ extension AppleScript {
 
 extension AppleScript {
     public func execute() {
+        let frontmostApplication = NSWorkspace.shared.frontmostApplication
         AppleScript.checkPermission {
             var errorInfo: NSDictionary? = nil
+            print(frontmostApplication?.localizedName ?? "Some App")
             NSAppleScript(source: self.source)!
                 .executeAndReturnError(&errorInfo)
+            frontmostApplication?.activate(options: [.activateIgnoringOtherApps])
             remindReportingBug(info: errorInfo, title: NSLocalizedString(
                 "AppleScript.execute.error",
                 value: "Failed to Toggle Dark Mode",
