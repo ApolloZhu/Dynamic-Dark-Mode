@@ -55,17 +55,15 @@ final class ScreenBrightnessObserver: NSObject {
     }
 
     @objc private func updateForBrightnessChange() {
-        let value = suggestedMode
-        if currentMode != value {
-            currentMode = value
-            currentMode.enable()
-        }
+        let newValue = suggestedMode
+        guard currentMode != newValue else { return }
+        currentMode = newValue
+        currentMode.enable()
     }
 
     public func stopObserving() {
-        if nil != notificationPort {
-            IONotificationPortDestroy(notificationPort)
-            notificationPort = nil
-        }
+        guard notificationPort != nil else { return }
+        IONotificationPortDestroy(notificationPort)
+        notificationPort = nil
     }
 }

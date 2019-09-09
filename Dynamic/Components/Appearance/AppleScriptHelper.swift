@@ -19,13 +19,7 @@ public enum AppleScript: String, CaseIterable {
 // MARK: - Handy Properties
 
 extension AppleScript {
-    /// Switches dark mode and [returns focus back to the original app](
-    ///   https://discussions.apple.com/thread/6820749?answerId=27630325022#27630325022
-    /// )
-    ///
-    /// - Note: It doesn't work if an [LSUIElement is focused](
-    ///   http://hints.macworld.com/article.php?story=20060110152311698
-    /// )
+    /// Turns dark mode on/off/to the opposite.
     private var source: String {
         return """
         tell application "System Events"
@@ -40,7 +34,11 @@ extension AppleScript {
 extension AppleScript {
     public func execute() {
         let frontmostApplication = NSWorkspace.shared.frontmostApplication
-        AppleScript.checkPermission {
+        AppleScript.requestPermission { authorized in
+            guard authorized else {
+                return AppleScript.showErrorThenRedirect()
+            }
+            
             var errorInfo: NSDictionary? = nil
             NSAppleScript(source: self.source)!
                 .executeAndReturnError(&errorInfo)
@@ -54,18 +52,11 @@ extension AppleScript {
     }
 }
 
+// MARK: - Permission
+
 extension AppleScript {
-    public static func checkPermission(
-        onSuccess: @escaping CompletionHandler = { }
-    ) {
-        requestPermission { authorized in
-            if authorized { return onSuccess() }
-            showErrorThenRedirect()
-        }
-    }
-    
     public static func showErrorThenRedirect() {
-        runModal(ofNSAlert: { alert in
+        showAlert(withConfiguration: { alert in
             alert.alertStyle = .critical
             alert.messageText = NSLocalizedString(
                 "AppleScript.authorization.error",

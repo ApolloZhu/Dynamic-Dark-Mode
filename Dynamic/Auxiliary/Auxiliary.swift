@@ -8,13 +8,6 @@
 
 import Cocoa
 
-enum Sandbox {
-    public static var isOn: Bool {
-        let env = ProcessInfo.processInfo.environment
-        return env.keys.contains("APP_SANDBOX_CONTAINER_ID")
-    }
-}
-
 public typealias Handler<T> = (T) -> Void
 public typealias CompletionHandler = () -> Void
 

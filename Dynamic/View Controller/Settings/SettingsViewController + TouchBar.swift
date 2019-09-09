@@ -1,5 +1,5 @@
 //
-//  TouchBarForSettingsVC.swift
+//  SettingsViewController + TouchBar.swift
 //  Dynamic Dark Mode
 //
 //  Created by Captain雪ノ下八幡 on 2018/6/27.

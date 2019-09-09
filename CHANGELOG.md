@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - Automatic appearance switch based on screen brightness works on macOS Mojave 10.14.4 and above (#65, #71)
-- Switching apperance steals focus from some application and fails to return it (#70, #62, #18)
+- Switching apperance won't steal focus from some application and not return it (#70, #62, #18)
 
 ## [1.3.0] - 2019-05-17
 ### Added

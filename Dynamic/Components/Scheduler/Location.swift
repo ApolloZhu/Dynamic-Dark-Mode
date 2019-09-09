@@ -109,7 +109,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
 
 extension Location {
     static func alertNotAvailable(dueTo error: Error? = nil) {
-        runModal(ofNSAlert: { alert in
+        showAlert(withConfiguration: { alert in
             alert.alertStyle = .warning
             alert.messageText = error == CLError.denied
                 ? LocalizedString.Location.notAuthorized

@@ -68,7 +68,7 @@ private func redirectToSystemPreferences() {
 
 extension AllowLocationViewController: CLLocationManagerDelegate {
     private func onError(_ error: Error? = nil) {
-        runModal(ofNSAlert: { alert in
+        showAlert(withConfiguration: { alert in
             alert.messageText = error == CLError.denied
                 ? LocalizedString.Location.notAuthorized
                 : LocalizedString.Location.notAvailable

@@ -84,8 +84,8 @@ public final class Scheduler: NSObject {
     
     public typealias Mode = (style: AppleInterfaceStyle, date: Date?)
     
-    public func mode(atLocation coordinate: CLLocationCoordinate2D?) -> Mode {
-        let now = Date()
+    public func mode(atLocation coordinate: CLLocationCoordinate2D?, now: Date? = nil) -> Mode {
+        let now = now ?? Date()
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
         if let coordinate = coordinate
             , CLLocationCoordinate2DIsValid(coordinate)

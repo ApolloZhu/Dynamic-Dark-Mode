@@ -43,7 +43,7 @@
 		52D27E5C227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E5B227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift */; };
 		52D27E5E227D3294005C21D0 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D27E5D227D3294005C21D0 /* Shortcut.swift */; };
 		52DC7981215ECB48005EE97E /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC7980215ECB48005EE97E /* Auxiliary.swift */; };
-		706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */; };
+		706D395920E3766D0079535E /* SettingsViewController + TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* SettingsViewController + TouchBar.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
 		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
@@ -145,7 +145,7 @@
 		6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLauncher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		687EF500DBBFEBBE226CDD0E /* Pods-DynamicLauncher.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug masless.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug masless.xcconfig"; sourceTree = "<group>"; };
 		69C9F656649617FA94C317C2 /* Pods-Dynamic Dark Mode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.debug.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.debug.xcconfig"; sourceTree = "<group>"; };
-		706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarForSettingsVC.swift; sourceTree = "<group>"; };
+		706D395820E3766D0079535E /* SettingsViewController + TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController + TouchBar.swift"; sourceTree = "<group>"; };
 		706D395B20E377E40079535E /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		706D395E20E3796A0079535E /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		706D396320E37A5E0079535E /* Dynamic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dynamic-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				5237AE5020CCC051009CF037 /* SettingsViewController.swift */,
-				706D395820E3766D0079535E /* TouchBarForSettingsVC.swift */,
+				706D395820E3766D0079535E /* SettingsViewController + TouchBar.swift */,
 				707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */,
 			);
 			path = Settings;
@@ -591,7 +591,7 @@
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
 				52C3511320CC53CD0073F0CA /* Preferences.swift in Sources */,
 				5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */,
-				706D395920E3766D0079535E /* TouchBarForSettingsVC.swift in Sources */,
+				706D395920E3766D0079535E /* SettingsViewController + TouchBar.swift in Sources */,
 				5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */,
 				5206B8BD2219B08100D22358 /* Notification.swift in Sources */,
 				52168FD120C99CB100869A9C /* AppleScriptHelper.swift in Sources */,
