@@ -3,12 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [1.3.0] - 2019-05-17
+## [1.4.0] - 2019-09-08
 ### Added
-- Let's move to /Applications
+- Dynamic wallpaper based on current appearance (#72)
 
 ### Fixed
-- Crash on launch when not installed to /Applications folder by asking them to move (#16, #49)
+- Automatic appearance switch based on screen brightness works on macOS Mojave 10.14.4 and above (#65, #71)
+- Switching apperance steals focus from some application and fails to return it (#70, #62, #18)
+
+## [1.3.0] - 2019-05-17
+### Added
+- Let's move to `/Applications`
+
+### Fixed
+- Crash on launch when not installed to `/Applications` folder by asking them to move (#16, #49)
 - Switching theme no longer steal focus from focused application (#62)
 
 ### Removed
@@ -17,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.2.0] - 2019-05-07
 ### Added
 - Disable adjust for brightness when scheduled dark mode on
-- Quick dark mode toggle in touch bar through DFRFoundation
+- Quick dark mode toggle in touch bar through `DFRFoundation`
 - Update schedule when network status changes
 
 ## [1.1.5] - 2019-05-02
@@ -28,7 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Updated the program and its dependencies to Swift 5 
 - Updated Chinese, Esperanto, and Russian translations
-- Using fatalError or debugPrint instead of os.log
+- Using `fatalError` or `debugPrint` instead of `os.log`
 
 ### Fixed
 - "nil: estimatedNextExecution" should no longer appear (#59)
