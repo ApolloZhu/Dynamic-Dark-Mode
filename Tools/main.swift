@@ -46,7 +46,7 @@ URLSession.shared.dataTask(with: URL(string: releasesURL)!) { data, _, _ in
     let decoder = XMLDecoder()
     decoder.dateDecodingStrategy = .iso8601
     let feed = try! decoder.decode(Feed.self, from: data)
-    print(feed.entry.first!.appcastItem(sparkleVersion: 1))
+    print(feed.entry.first!.appcastItem(sparkleVersion: 3))
     /*
     let items = feed.entry.enumerated().reduce("") { (result, item) -> String in
         return result + item.1.appcastItem(sparkleVersion: feed.entry.count - item.0 - 1)
