@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,8 @@
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
 		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
+		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
+		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +62,15 @@
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BAC95E232790D700E56B86 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -154,6 +165,9 @@
 		9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
 		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D838555BDD4861F157AE9DE6 /* Pods-DynamicLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.release.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A51F921772F27004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		ED6A51FB21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -177,6 +191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BAC95D232790D700E56B86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,10 +233,12 @@
 				523718332157467A00AEC921 /* README.md */,
 				523718342157468900AEC921 /* privacy.md */,
 				52C88EF82160678A003AF0B2 /* CHANGELOG.md */,
+				D2BAC95B2326C02900E56B86 /* appcast.xml */,
 				52C88EF9216067A7003AF0B2 /* CODE_OF_CONDUCT.md */,
 				523718352157469800AEC921 /* LICENSE */,
 				52168FBA20C8B47100869A9C /* Dynamic */,
 				52C3511920CC57B60073F0CA /* DynamicLauncher */,
+				D2BAC961232790D700E56B86 /* Tools */,
 				52168FB920C8B47100869A9C /* Products */,
 				52168FDA20C9F87000869A9C /* Frameworks */,
 				F34DBA40529B714E31832529 /* Pods */,
@@ -226,6 +250,7 @@
 			children = (
 				52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */,
 				52C3511820CC57B60073F0CA /* DynamicLauncher.app */,
+				D2BAC960232790D700E56B86 /* Tools */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +380,14 @@
 			path = "Access Points";
 			sourceTree = "<group>";
 		};
+		D2BAC961232790D700E56B86 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D2BAC962232790D700E56B86 /* main.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		F34DBA40529B714E31832529 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +416,7 @@
 				52168FB620C8B47100869A9C /* Resources */,
 				5237AE5220CCC084009CF037 /* Copy Files */,
 				589F8C922A5F4E3DC20A2060 /* [CP] Copy Pods Resources */,
+				93713264CD55F9F7A90BEFF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,13 +445,33 @@
 			productReference = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D2BAC95F232790D700E56B86 /* Tools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2BAC964232790D700E56B86 /* Build configuration list for PBXNativeTarget "Tools" */;
+			buildPhases = (
+				D2BAC95C232790D700E56B86 /* Sources */,
+				D2BAC95D232790D700E56B86 /* Frameworks */,
+				D2BAC95E232790D700E56B86 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tools;
+			packageProductDependencies = (
+				D2BAC9682327932C00E56B86 /* XMLCoder */,
+			);
+			productName = Tools;
+			productReference = D2BAC960232790D700E56B86 /* Tools */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		52168FB020C8B47100869A9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Dynamic Dark Mode";
 				TargetAttributes = {
@@ -447,6 +501,9 @@
 							};
 						};
 					};
+					D2BAC95F232790D700E56B86 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 52168FB320C8B47100869A9C /* Build configuration list for PBXProject "Dynamic Dark Mode" */;
@@ -466,12 +523,16 @@
 				ko,
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
+			packageReferences = (
+				D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */,
+			);
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				52168FB720C8B47100869A9C /* Dynamic Dark Mode */,
 				52C3511720CC57B60073F0CA /* DynamicLauncher */,
+				D2BAC95F232790D700E56B86 /* Tools */,
 			);
 		};
 /* End PBXProject section */
@@ -541,6 +602,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		93713264CD55F9F7A90BEFF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E8FB4AC62B768B005584C068 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,6 +683,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C3511B20CC57B60073F0CA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2BAC95C232790D700E56B86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2BAC963232790D700E56B86 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,7 +833,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSION = 1.4.0;
+				VERSION = 1.3.9;
 			};
 			name = Debug;
 		};
@@ -802,7 +888,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VERSION = 1.4.0;
+				VERSION = 1.3.9;
 			};
 			name = Release;
 		};
@@ -910,6 +996,28 @@
 			};
 			name = Release;
 		};
+		D2BAC965232790D700E56B86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D2BAC966232790D700E56B86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -940,7 +1048,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D2BAC964232790D700E56B86 /* Build configuration list for PBXNativeTarget "Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2BAC965232790D700E56B86 /* Debug */,
+				D2BAC966232790D700E56B86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2BAC9682327932C00E56B86 /* XMLCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			productName = XMLCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52168FB020C8B47100869A9C /* Project object */;
 }

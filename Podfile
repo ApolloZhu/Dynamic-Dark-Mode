@@ -8,7 +8,7 @@ target 'Dynamic Dark Mode' do
   pod 'Schedule', :git => 'https://github.com/luoxiu/Schedule.git'
   pod 'MASShortcut'
   pod 'LetsMove'
-  # pod 'Sparkle'
+  pod 'Sparkle'
 end
 
 target 'DynamicLauncher' do

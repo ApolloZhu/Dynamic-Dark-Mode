@@ -36,6 +36,17 @@
       "idiom" : "universal",
       "filename" : "outline_wb_sunny_black_18pt_3x.png",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "baseline_brightness_2_black_18pt_3x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "3x"
     }
   ],
   "info" : {
