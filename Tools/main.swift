@@ -24,7 +24,7 @@ struct Feed: Codable {
 
 
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "E, dd MMM uuuu HH:mm:ss '+0000'"
+dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
 
 extension Feed.Entry {
     func appcastItem(sparkleVersion: Int) -> String {
