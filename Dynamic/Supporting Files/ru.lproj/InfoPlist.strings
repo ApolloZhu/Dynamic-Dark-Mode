@@ -2,7 +2,7 @@
 "CFBundleName" = "Dynamic Dark Mode";
 
 /* Privacy - AppleEvents Sending Usage Description */
-"NSAppleEventsUsageDescription" = "Так Dynamic Dark Mode управляет темным режимом.";
+"NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
 
 /* Copyright (human-readable) */
 "NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. Все права защищены.";

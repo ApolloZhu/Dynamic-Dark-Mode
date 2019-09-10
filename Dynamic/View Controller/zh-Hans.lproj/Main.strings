@@ -28,6 +28,9 @@
 /* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
 "apZ-rU-OFQ.title" = "显示下拉菜单";
 
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "ArU-ey-Yv0"; */
+"ArU-ey-Yv0.title" = "重置";
+
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "打印…";
 
@@ -52,6 +55,12 @@
 /* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
 "Cgb-Kl-NJf.title" = "在功能栏显示外观模式切换按钮";
 
+/* Class = "NSButtonCell"; title = "Check for Updates"; ObjectID = "D6A-w5-8EN"; */
+"D6A-w5-8EN.title" = "检查更新";
+
+/* Class = "NSButtonCell"; title = "Automatically Check for Updates"; ObjectID = "DbR-nY-gKC"; */
+"DbR-nY-gKC.title" = "自动检查更新";
+
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "在此期间启用深色模式";
 
@@ -60,6 +69,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
 "do3-JG-x5l.title" = "阀值:";
+
+/* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
+"du9-VW-tDe.title" = "深色";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "关闭";
@@ -72,6 +84,12 @@
 
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
 "FKE-Sm-Kum.title" = "“自动深色模式”帮助";
+
+/* Class = "NSTextFieldCell"; title = "Desktop"; ObjectID = "FZe-x2-1Zh"; */
+"FZe-x2-1Zh.title" = "桌面";
+
+/* Class = "NSButtonCell"; title = "Configure Dynamic Wallpapers"; ObjectID = "G30-nf-HWb"; */
+"G30-nf-HWb.title" = "配置动态桌面图片";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "显示";
@@ -93,6 +111,9 @@
 
 /* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
 "Ibh-ok-jMp.title" = "自定义时间段";
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "jnk-LX-UU9"; */
+"jnk-LX-UU9.title" = "完成";
 
 /* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
 "jwe-Zh-ib0.title" = "允许访问当前位置";
@@ -180,6 +201,9 @@
 
 /* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
 "yl0-uh-cim.title" = "在定时深色模式期间停用自动切换";
+
+/* Class = "NSButtonCell"; title = "Light"; ObjectID = "yM1-aa-gcH"; */
+"yM1-aa-gcH.title" = "淡色";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "“自动深色模式”需要访问您的当前位置来计算日出日落时间，以便在合适的时候为您自动切换深色模式。";

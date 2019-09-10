@@ -20,28 +20,31 @@
 "Location.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to get your location.";
 
 /* Failed to attain user location for sunset/sunrise calculation. */
-"Location.notAvailable" = "Can't Fetch Current Location";
+"Location.notAvailable" = "現在地を取得できませんでした";
 
 /* Took too long to use up retries, most likely off Wi-Fi. */
-"Location.timeout" = "Timedout. Check your network connection.";
+"Location.timeout" = "タイムアウトしました。ネットワークの接続を確認してください";
 
 /* Can't fetch user's current location. Using cache instead. */
 "Location.useCache" = "Scheduled Using Previous Location";
 
 /* Drop down menu item to show preferences */
-"Menu.preferences" = "Preferences…";
+"Menu.preferences" = "設定…";
 
 /* Use system translation for quit */
-"Menu.quit" = "Quit";
+"Menu.quit" = "終了";
 
 /* Action item to toggle in from menu bar */
-"Menu.toggle" = "Toggle Dark Mode";
+"Menu.toggle" = "ダークモードを切り替える";
 
 /* User did not authorize this app to send notifications. */
 "Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
 
 /* Indicates either enable or disable opens at login failed. */
-"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+"Preferences.opensAtLogin.failed" = "Failed to update \"opens at login\" settings";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "Cannot observe screen brightness change.";
 
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Auto Adjust Threshold";
@@ -65,8 +68,8 @@
 "SunsetSunrise.official" = "Official";
 
 /* No comment provided by engineer. */
-"SystemPreferences.open" = "Open System Preferences";
+"SystemPreferences.open" = "設定を開く";
 
 /* No comment provided by engineer. */
-"SystemPreferences.skip" = "Skip";
+"SystemPreferences.skip" = "スキップ";
 

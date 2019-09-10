@@ -43,6 +43,9 @@
 /* Indicates either enable or disable opens at login failed. */
 "Preferences.opensAtLogin.failed" = "未能更新“开机自启动”设置";
 
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "无法根据屏幕亮度自动切换深色模式。";
+
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "自动切换阀值";
 

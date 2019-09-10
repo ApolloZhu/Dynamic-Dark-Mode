@@ -152,7 +152,7 @@
                     <window key="window" title="Dynamic Dark Mode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="ZWC-1W-uDl">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="cXd-3X-aO4" id="ry5-2O-lwW"/>
                         </connections>
@@ -593,7 +593,7 @@ DQ
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FoL-K6-ZlT">
                                                     <rect key="frame" x="-2" y="1" width="89" height="16"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Threshold:" id="do3-JG-x5l">
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Threshold:" id="do3-JG-x5l">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -608,7 +608,7 @@ DQ
                                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 </imageView>
                                                 <slider verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="D7P-I3-P50">
-                                                    <rect key="frame" x="117" y="-1" width="236" height="19"/>
+                                                    <rect key="frame" x="117" y="0.0" width="236" height="19"/>
                                                     <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="vxB-or-2n1"/>
                                                     <connections>
                                                         <binding destination="LnA-23-JR4" name="enabled" keyPath="values.adjustForBrightness" id="pvh-rT-z4Q"/>
@@ -743,7 +743,7 @@ DQ
                                             <rect key="frame" x="182" y="135" width="377" height="23"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-vT-a00">
-                                                    <rect key="frame" x="-2" y="4" width="39" height="16"/>
+                                                    <rect key="frame" x="-2" y="3" width="39" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="From:" id="4da-BG-PBG">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -779,7 +779,7 @@ DQ
                                                     </connections>
                                                 </datePicker>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-Le-r1X">
-                                                    <rect key="frame" x="191" y="4" width="39" height="16"/>
+                                                    <rect key="frame" x="191" y="3" width="39" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="To:" id="hBx-FP-5Wr">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

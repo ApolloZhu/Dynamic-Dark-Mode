@@ -1,6 +1,9 @@
 /* Bundle name */
 "CFBundleName" = "Dynamic Dark Mode";
 
+/* Privacy - AppleEvents Sending Usage Description */
+"NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
+
 /* Copyright (human-readable) */
 "NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. 모든 권리 보유.";
 

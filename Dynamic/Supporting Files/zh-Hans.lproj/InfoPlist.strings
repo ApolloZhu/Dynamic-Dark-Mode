@@ -1,11 +1,11 @@
 /* Bundle name */
 "CFBundleName" = "自动深色模式";
 
-/* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "版权所有 © 2018-2019 自动深色模式。保留所有权利。";
-
 /* Privacy - AppleEvents Sending Usage Description */
 "NSAppleEventsUsageDescription" = "“自动深色模式”必须要您的允许才能管理深色模式。";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "版权所有 © 2018-2019 自动深色模式。保留所有权利。";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "“自动深色模式”需要您允许读取当前位置才能计算日出日落时间。";

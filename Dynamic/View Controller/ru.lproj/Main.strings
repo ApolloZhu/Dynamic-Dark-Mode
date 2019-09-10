@@ -1,5 +1,5 @@
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "Dynamic Dark Mode";
+"1Xt-HY-uBw.title" = "Динамическая смена оформления";
 
 /* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
 "4da-BG-PBG.title" = "С:";
@@ -28,6 +28,9 @@
 /* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
 "apZ-rU-OFQ.title" = "Открыть меню";
 
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "ArU-ey-Yv0"; */
+"ArU-ey-Yv0.title" = "Clear";
+
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "Печать…";
 
@@ -50,7 +53,13 @@
 "Buz-5v-iiv.title" = "Добро пожаловать в Dynamic Dark Mode";
 
 /* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
-"Cgb-Kl-NJf.title" = "Показывать Dark Mode в строке меню";
+"Cgb-Kl-NJf.title" = "Показывать переключатель оформления в строке меню";
+
+/* Class = "NSButtonCell"; title = "Check for Updates"; ObjectID = "D6A-w5-8EN"; */
+"D6A-w5-8EN.title" = "Check for Updates";
+
+/* Class = "NSButtonCell"; title = "Automatically Check for Updates"; ObjectID = "DbR-nY-gKC"; */
+"DbR-nY-gKC.title" = "Automatically Check for Updates";
 
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "Темный режим включен после";
@@ -60,6 +69,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
 "do3-JG-x5l.title" = "Порог яркости:";
+
+/* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
+"du9-VW-tDe.title" = "Dark";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "Закрыть";
@@ -72,6 +84,12 @@
 
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
 "FKE-Sm-Kum.title" = "Справка о Dynamic Dark Mode";
+
+/* Class = "NSTextFieldCell"; title = "Desktop"; ObjectID = "FZe-x2-1Zh"; */
+"FZe-x2-1Zh.title" = "Desktop";
+
+/* Class = "NSButtonCell"; title = "Configure Dynamic Wallpapers"; ObjectID = "G30-nf-HWb"; */
+"G30-nf-HWb.title" = "Configure Dynamic Wallpapers";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "Вид";
@@ -93,6 +111,9 @@
 
 /* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
 "Ibh-ok-jMp.title" = "Пользовательское расписание";
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "jnk-LX-UU9"; */
+"jnk-LX-UU9.title" = "Done";
 
 /* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
 "jwe-Zh-ib0.title" = "Разрешить доступ к местоположению";
@@ -146,7 +167,7 @@
 "RtR-kN-8f8.title" = "Навигационного времени заката";
 
 /* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
-"scf-Wn-qXQ.title" = "Menu Bar Item";
+"scf-Wn-qXQ.title" = "Пункт меню";
 
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
 "T1i-3L-V9g.title" = "Установить";
@@ -179,7 +200,10 @@
 "y0s-hF-kCC.title" = "Настроить >>";
 
 /* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
-"yl0-uh-cim.title" = "Disable During Scheduled Dark Mode";
+"yl0-uh-cim.title" = "Отключить во время запланированного темного режима";
+
+/* Class = "NSButtonCell"; title = "Light"; ObjectID = "yM1-aa-gcH"; */
+"yM1-aa-gcH.title" = "Light";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "Dynamic Dark Mode необходим доступ к местоположению, чтобы рассчитывать часы заката/рассвета для включения ночного режима в ночное время.";

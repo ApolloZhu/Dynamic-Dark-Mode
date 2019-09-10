@@ -41,7 +41,10 @@
 "Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
 
 /* Indicates either enable or disable opens at login failed. */
-"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+"Preferences.opensAtLogin.failed" = "Failed to update \"opens at login\" settings";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "Cannot observe screen brightness change.";
 
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Auto Adjust Threshold";
