@@ -3,9 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.4.2] - 2019-09-10
+### Changed
+- Updated Chinese, Japanese, and Russian translations
+
 ## [1.4.1] - 2019-09-10
 ### Added
-- Update through Sparkle (#6)
+- Complete Sparkle integration (#6)
 
 ## [1.4.0] - 2019-09-08
 ### Added
