@@ -18,7 +18,6 @@ extension Preferences {
     public static func setupAsSuggested() {
         preferences.adjustForBrightness = true
         preferences.brightnessThreshold = 0.5
-        preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = true
         preferences.settingsStyle = .menu
         if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
@@ -26,12 +25,14 @@ extension Preferences {
             preferences.scheduleZenithType = .official
         }
         preferences.scheduled = true
-        preferences.showToggleInTouchBar = true
+        setupDefaultsForNewFeatures()
     }
     
     public static func setupDefaultsForNewFeatures() {
         if !preferences.exists(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) {
-            preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = preferences.scheduled && preferences.adjustForBrightness
+            preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn =
+                preferences.AppleInterfaceStyleSwitchesAutomatically ||
+                preferences.scheduled && preferences.adjustForBrightness
         }
         if !preferences.exists(\.showToggleInTouchBar) {
             preferences.showToggleInTouchBar = true
@@ -169,7 +170,7 @@ extension Preferences {
     
     @objc dynamic var scheduled: Bool {
         get {
-            return preferences.bool(forKey: #function)
+            return !AppleInterfaceStyleSwitchesAutomatically && preferences.bool(forKey: #function)
         }
         set {
             setPreferred(to: newValue)
