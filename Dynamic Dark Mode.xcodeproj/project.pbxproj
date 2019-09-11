@@ -472,7 +472,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Dynamic Dark Mode";
 				TargetAttributes = {
 					52168FB720C8B47100869A9C = {
@@ -999,6 +999,7 @@
 		D2BAC965232790D700E56B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;
@@ -1010,6 +1011,7 @@
 		D2BAC966232790D700E56B86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_FAST_MATH = YES;

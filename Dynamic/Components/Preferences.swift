@@ -303,4 +303,8 @@ extension Preferences {
     var toggleShortcutKey: String {
         return "toggleShortcut"
     }
+    
+    @objc dynamic var AppleInterfaceStyleSwitchesAutomatically: Bool {
+        return preferences.bool(forKey: #function)
+    }
 }
