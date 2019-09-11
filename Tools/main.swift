@@ -27,7 +27,7 @@ let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
 
 extension Feed.Entry {
-    func appcastItem(sparkleVersion: Int) -> String {
+    func appcastItem(sparkleVersion: Int = 0) -> String {
         let version = id[id.index(after: id.lastIndex(of: "/")!)...]
         return """
         <item>
@@ -46,7 +46,7 @@ URLSession.shared.dataTask(with: URL(string: releasesURL)!) { data, _, _ in
     let decoder = XMLDecoder()
     decoder.dateDecodingStrategy = .iso8601
     let feed = try! decoder.decode(Feed.self, from: data)
-    print(feed.entry.first!.appcastItem(sparkleVersion: 3))
+    print(feed.entry.first!.appcastItem())
     /*
     let items = feed.entry.enumerated().reduce("") { (result, item) -> String in
         return result + item.1.appcastItem(sparkleVersion: feed.entry.count - item.0 - 1)
