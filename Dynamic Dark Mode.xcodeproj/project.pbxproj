@@ -47,6 +47,7 @@
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
 		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
+		D264A812232A927700210DAC /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264A811232A927700210DAC /* SkyLight.framework */; };
 		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
 		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
 /* End PBXBuildFile section */
@@ -165,6 +166,7 @@
 		9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
 		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D264A811232A927700210DAC /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			files = (
 				527B4472227E4252006E8369 /* DFRFoundation.framework in Frameworks */,
 				36B1BCC10E9080C940A1F0A3 /* libPods-Dynamic Dark Mode.a in Frameworks */,
+				D264A812232A927700210DAC /* SkyLight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +311,7 @@
 		52168FDA20C9F87000869A9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D264A811232A927700210DAC /* SkyLight.framework */,
 				706D395E20E3796A0079535E /* DFRFoundation.framework */,
 				523CF01C227E1E44000E4173 /* DFRFoundation.framework */,
 				CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */,

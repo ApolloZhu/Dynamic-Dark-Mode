@@ -513,16 +513,8 @@ DQ
                                             <gridRow id="u0K-Ef-cX5"/>
                                             <gridRow id="a4E-wA-3Lu"/>
                                             <gridRow id="0Tg-4k-Yhi"/>
-                                            <gridRow id="KVs-Vb-rHX">
-                                                <connections>
-                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="b3w-wh-xvL"/>
-                                                </connections>
-                                            </gridRow>
-                                            <gridRow id="nEN-OW-DCn">
-                                                <connections>
-                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="Cog-9e-mMC"/>
-                                                </connections>
-                                            </gridRow>
+                                            <gridRow id="KVs-Vb-rHX"/>
+                                            <gridRow id="nEN-OW-DCn"/>
                                             <gridRow id="jkp-Dn-iha"/>
                                             <gridRow id="dWV-SH-Bao"/>
                                             <gridRow id="lFJ-F8-thM"/>

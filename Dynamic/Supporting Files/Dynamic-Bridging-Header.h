@@ -3,3 +3,10 @@
 //
 
 #import "TouchBarPrivateAPI.h"
+
+// MARK: - Skylight
+
+BOOL SLSGetAppearanceThemeLegacy();
+void SLSSetAppearanceThemeLegacy(BOOL);
+BOOL SLSGetAppearanceThemeSwitchesAutomatically() API_AVAILABLE(macosx(10.15));
+void SLSSetAppearanceThemeSwitchesAutomatically(BOOL) API_AVAILABLE(macosx(10.15));
