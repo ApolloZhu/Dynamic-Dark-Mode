@@ -28,6 +28,9 @@ public class AppleInterfaceStyleCoordinator: NSObject {
     
     public func setup() {
         tearDown()
+        appearanceObservation = NSApp.observe(\.effectiveAppearance) { _, _ in
+            AppleInterfaceStyle.updateWallpaper()
+        }
         guard preferences.scheduled else {
             guard preferences.adjustForBrightness else { return }
             // No need for scheduler, only enable brightness observer
@@ -35,9 +38,6 @@ public class AppleInterfaceStyleCoordinator: NSObject {
         }
         Connectivity.default.scheduleWhenReconnected()
         Scheduler.shared.schedule(startBrightnessObserverOnFailure: true)
-        appearanceObservation = NSApp.observe(\.effectiveAppearance) { _, _ in
-            AppleInterfaceStyle.updateWallpaper()
-        }
     }
     
     public func tearDown() {
