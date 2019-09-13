@@ -45,13 +45,21 @@ public final class Connectivity {
         isInitialUpdate = true
         monitor.cancel()
         isObserving = false
+        taskCount = 0
     }
-}
-
-extension Connectivity {
+    
+    private var taskCount: UInt64 = 0
     public func scheduleWhenReconnected() {
-        startObserving {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        startObserving { [weak self] in
+            self?.taskCount += 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+                guard let self = self else { return }
+                defer {
+                    if self.taskCount > 0 {
+                        self.taskCount -= 1
+                    }
+                }
+                guard self.taskCount <= 1 else { return }
                 Scheduler.shared.schedule()
             }
         }

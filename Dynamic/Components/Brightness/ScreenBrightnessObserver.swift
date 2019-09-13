@@ -53,9 +53,7 @@ final class ScreenBrightnessObserver: NSObject {
         return brightness < threshold ? .darkAqua : .aqua
     }
     
-    private let delay = 3.seconds
     private var taskCount: UInt64 = 0
-    
     private func setNeedsUpdate() {
         taskCount += 1
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
