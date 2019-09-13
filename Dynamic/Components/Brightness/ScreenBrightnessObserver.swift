@@ -15,7 +15,7 @@ final class ScreenBrightnessObserver: NSObject {
     var callback: IOServiceInterestCallback = { (ctx, service, messageType, messageArgument) in
         guard let ctx = ctx else { return }
         let observer = Unmanaged<ScreenBrightnessObserver>.fromOpaque(ctx).takeUnretainedValue()
-        observer.updateForBrightnessChange()
+        observer.setNeedsUpdate()
     }
 
     static let shared = ScreenBrightnessObserver()
@@ -23,8 +23,9 @@ final class ScreenBrightnessObserver: NSObject {
     deinit { stopObserving() }
 
     public func startObserving(withInitialUpdate: Bool = true) {
+        print(#function)
         stopObserving()
-        defer { if withInitialUpdate { updateForBrightnessChange() } }
+        defer { if withInitialUpdate { setNeedsUpdate() } }
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleBacklightDisplay"))
         guard service != IO_OBJECT_NULL else {
             #if DEBUG
@@ -51,9 +52,27 @@ final class ScreenBrightnessObserver: NSObject {
         let threshold = preferences.brightnessThreshold
         return brightness < threshold ? .darkAqua : .aqua
     }
-
-    @objc private func updateForBrightnessChange() {
+    
+    private let delay = 3.seconds
+    private var taskCount: UInt64 = 0
+    
+    private func setNeedsUpdate() {
+        taskCount += 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            defer {
+                if self.taskCount > 0 {
+                    self.taskCount -= 1
+                }
+            }
+            guard self.taskCount <= 1 else { return }
+            self._updateForBrightnessChange()
+        }
+    }
+    
+    private func _updateForBrightnessChange() {
         let newValue = suggestedMode
+        print(newValue)
         guard AppleInterfaceStyle.current != newValue else { return }
         newValue.enable()
     }

@@ -139,9 +139,6 @@ extension Preferences {
                     if preferences.scheduleZenithType == .system {
                         preferences.scheduleZenithType = .official
                     }
-                    if preferences.adjustForBrightness {
-                        ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
-                    }
                 }
             })
         }
