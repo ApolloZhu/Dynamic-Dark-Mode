@@ -509,14 +509,38 @@ DQ
                                     <gridView xPlacement="fill" yPlacement="fill" rowAlignment="none" rowSpacing="8" columnSpacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-sd-FzV">
                                         <rect key="frame" x="20" y="61" width="485" height="266"/>
                                         <rows>
-                                            <gridRow id="cCL-S5-3we"/>
-                                            <gridRow id="u0K-Ef-cX5"/>
-                                            <gridRow id="a4E-wA-3Lu"/>
-                                            <gridRow id="0Tg-4k-Yhi"/>
+                                            <gridRow id="cCL-S5-3we">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="akL-iZ-fA5"/>
+                                                </connections>
+                                            </gridRow>
+                                            <gridRow id="u0K-Ef-cX5">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="vq6-6s-wNN"/>
+                                                </connections>
+                                            </gridRow>
+                                            <gridRow id="a4E-wA-3Lu">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="i80-0U-gRP"/>
+                                                </connections>
+                                            </gridRow>
+                                            <gridRow id="0Tg-4k-Yhi">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="AC1-kD-ntu"/>
+                                                </connections>
+                                            </gridRow>
                                             <gridRow id="KVs-Vb-rHX"/>
-                                            <gridRow id="nEN-OW-DCn"/>
+                                            <gridRow id="nEN-OW-DCn">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="8BZ-fI-Vzk"/>
+                                                </connections>
+                                            </gridRow>
                                             <gridRow id="jkp-Dn-iha"/>
-                                            <gridRow id="dWV-SH-Bao"/>
+                                            <gridRow id="dWV-SH-Bao">
+                                                <connections>
+                                                    <binding destination="LnA-23-JR4" name="hidden" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="Chm-h5-Y9W"/>
+                                                </connections>
+                                            </gridRow>
                                             <gridRow id="lFJ-F8-thM"/>
                                             <gridRow id="exL-9l-mx9"/>
                                             <gridRow id="fAj-jJ-Qob"/>
@@ -674,6 +698,11 @@ DQ
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                             <connections>
+                                                                <binding destination="LnA-23-JR4" name="enabled" keyPath="values.AppleInterfaceStyleSwitchesAutomatically" id="qXp-RK-vbp">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                    </dictionary>
+                                                                </binding>
                                                                 <binding destination="LnA-23-JR4" name="value" keyPath="values.scheduled" id="6m8-Im-XuO">
                                                                     <dictionary key="options">
                                                                         <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
@@ -694,6 +723,11 @@ DQ
                                                                         <menuItem title="Nautical Sunset Sunrise" id="RtR-kN-8f8"/>
                                                                         <menuItem title="Astronomical Sunset Sunrise" id="N5L-wl-yWc"/>
                                                                         <menuItem title="Custom Range" id="Ibh-ok-jMp"/>
+                                                                        <menuItem title="System" id="bE4-JC-bEZ">
+                                                                            <connections>
+                                                                                <binding destination="2dW-oa-vyd" name="enabled" keyPath="self.hasZenithTypeSystem" id="hdH-d0-WvD"/>
+                                                                            </connections>
+                                                                        </menuItem>
                                                                     </items>
                                                                 </menu>
                                                                 <connections>

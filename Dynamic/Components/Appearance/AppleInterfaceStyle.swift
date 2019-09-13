@@ -22,6 +22,7 @@ extension AppleInterfaceStyle {
     }
     
     func enable() {
+        guard AppleInterfaceStyle.current != self else { return }
         switch self {
         case .aqua:
             AppleScript.disableDarkMode.execute()

@@ -25,6 +25,7 @@ public final class Scheduler: NSObject {
     }
     
     @objc public func schedule(startBrightnessObserverOnFailure: Bool = false) {
+        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
         func processLocation(_ result: Location) {
             switch result {
             case .current(let location):
@@ -44,17 +45,21 @@ public final class Scheduler: NSObject {
         UserNotification.removeAll()
         let decision = mode(atLocation: location?.coordinate)
         decision.style.enable()
-        if preferences.adjustForBrightness, // and don't observe brightness at night if disabled:
+        if preferences.adjustForBrightness,
             decision.style == .aqua || !preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn {
+            // no initial update because we are using the schedule
             ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
-        } // no initial update because we are using the schedule
+        } else  {
+            // don't observe brightness at night if disabled
+            ScreenBrightnessObserver.shared.stopObserving()
+        }
         guard let date = decision.date else { return }
         task = Plan.at(date).do { [weak self] in self?.schedule() }
     }
     
     @discardableResult
     private func scheduleAtCachedLocation(_ location: CLLocation) -> Bool {
-        guard preferences.scheduleZenithType != .custom else {
+        guard preferences.scheduleZenithType.hasSunriseSunsetTime else {
             scheduleAtLocation(nil)
             return false
         }
@@ -71,7 +76,14 @@ public final class Scheduler: NSObject {
     
     // Mark: - Mode
     
-    public func getCurrentMode(then process: @escaping Handler<Result<Mode, Error>>) {
+    public func updateSchedule(then process: @escaping Handler<Result<Void, Error>>) {
+        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+            return process(.failure(AnError(errorDescription: "AppleInterfaceStyleSwitchesAutomatically")))
+        }
+        getCurrentMode { process($0.map { _ in () }) }
+    }
+    
+    private func getCurrentMode(then process: @escaping Handler<Result<Mode, Error>>) {
         LocationManager.serial.fetch { [unowned self] in
             switch $0 {
             case .current(let location), .cached(let location):
@@ -89,7 +101,7 @@ public final class Scheduler: NSObject {
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
         if let coordinate = coordinate
             , CLLocationCoordinate2DIsValid(coordinate)
-            , preferences.scheduleZenithType != .custom {
+            , preferences.scheduleZenithType.hasSunriseSunsetTime {
             let scheduledDate: Date
             let solar = Solar(for: now, coordinate: coordinate)!
             let dates = solar.sunriseSunsetTime
@@ -116,7 +128,7 @@ public final class Scheduler: NSObject {
                 }
             }
         }
-        if preferences.scheduleZenithType != .custom {
+        if preferences.scheduleZenithType.hasSunriseSunsetTime {
             preferences.scheduleZenithType = .custom
         }
         let current = Calendar.current.dateComponents([.hour, .minute], from: now)

@@ -19,7 +19,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     public static let serial = LocationManager()
     
     private var retryCount = 5
-    private let timeout = 4.seconds
+    private let timeout = 10.seconds
     typealias Callback = (process: Handler<Location>, onTimeout: Task)
     
     private var lock = NSLock()
@@ -28,12 +28,14 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     private func callback(_ location: Location) {
         lock.lock()
-        guard !callbacks.isEmpty else { return lock.unlock() }
-        let callback = callbacks.removeFirst()
+        defer { lock.unlock() }
+        guard !callbacks.isEmpty else { return }
+        for callback in callbacks {
+            callback.onTimeout.cancel()
+            callback.process(location)
+        }
+        callbacks = []
         retryCount = 5
-        lock.unlock()
-        callback.onTimeout.cancel()
-        callback.process(location)
     }
     
     public func fetch(then processor: @escaping Handler<Location>) {
@@ -45,11 +47,12 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     private func onTimeout(_ task: Task) {
+        print(#function)
         lock.lock()
         let idx = callbacks.firstIndex { $0.onTimeout == task }
         let callback = callbacks.remove(at: idx!) // should not be nil
-        lock.unlock()
         callback.onTimeout.cancel()
+        lock.unlock()
         onError(AnError(errorDescription:
             LocalizedString.Location.timeout
         ), run: callback.process)

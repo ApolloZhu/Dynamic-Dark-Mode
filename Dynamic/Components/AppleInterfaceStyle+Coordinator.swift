@@ -40,10 +40,12 @@ public class AppleInterfaceStyleCoordinator: NSObject {
         Scheduler.shared.schedule(startBrightnessObserverOnFailure: true)
     }
     
-    public func tearDown() {
+    public func tearDown(stopAppearanceObservation: Bool = true) {
         Scheduler.shared.cancel()
         Connectivity.default.stopObserving()
         ScreenBrightnessObserver.shared.stopObserving()
-        appearanceObservation = nil
+        if stopAppearanceObservation {
+            appearanceObservation = nil
+        }
     }
 }

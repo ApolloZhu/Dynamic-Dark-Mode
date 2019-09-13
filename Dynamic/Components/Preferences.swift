@@ -30,9 +30,7 @@ extension Preferences {
     
     public static func setupDefaultsForNewFeatures() {
         if !preferences.exists(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) {
-            preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn =
-                preferences.AppleInterfaceStyleSwitchesAutomatically ||
-                preferences.scheduled && preferences.adjustForBrightness
+            preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = true
         }
         if !preferences.exists(\.showToggleInTouchBar) {
             preferences.showToggleInTouchBar = true
@@ -58,7 +56,7 @@ extension Preferences {
             changeHandler: @escaping Handler<NSKeyValueObservedChange<Value>>
         ) -> NSKeyValueObservation {
             let options: NSKeyValueObservingOptions =
-                observeInitial ? [.initial, .new] : [.new]
+                observeInitial ? [.initial, .old, .new] : [.old, .new]
             return preferences.observe(keyPath, options: options)
             { _, change in changeHandler(change) }
         }
@@ -66,8 +64,6 @@ extension Preferences {
             observe(\.adjustForBrightness) { change in
                 if change.newValue == true {
                     ScreenBrightnessObserver.shared.startObserving()
-                } else {
-                    preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = false
                 }
             },
             observe(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) { _ in
@@ -75,25 +71,41 @@ extension Preferences {
             },
             observe(\.scheduled) { change in
                 if change.newValue == true {
+                    if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
                     Scheduler.shared.schedule()
                     Connectivity.default.scheduleWhenReconnected()
                 } else {
+                    Scheduler.shared.cancel()
                     Connectivity.default.stopObserving()
-                    preferences.disableAdjustForBrightnessWhenScheduledDarkModeOn = false
                 }
             },
-            observe(\.scheduleType) { _ in
+            observe(\.scheduleType) { change in
+                if #available(OSX 10.15, *) {
+                    if preferences.scheduleZenithType == .system {
+                        if !SLSGetAppearanceThemeSwitchesAutomatically() {
+                            SLSSetAppearanceThemeSwitchesAutomatically(true)
+                        }
+                        preferences.scheduled = true
+                        AppleInterfaceStyle.Coordinator.tearDown(stopAppearanceObservation: false)
+                    } else {
+                        if SLSGetAppearanceThemeSwitchesAutomatically() {
+                            SLSSetAppearanceThemeSwitchesAutomatically(false)
+                        } else if preferences.scheduled, change.oldValue == Zenith.system.rawValue {
+                            return Scheduler.shared.updateSchedule { _ in }
+                        }
+                    }
+                }
                 if preferences.scheduled {
                     Scheduler.shared.schedule()
-                }
+                } // else do nothing
             },
             observe(\.scheduleStart) { _ in
-                if preferences.scheduled && preferences.scheduleZenithType == .custom {
+                if preferences.scheduled && !preferences.scheduleZenithType.hasSunriseSunsetTime {
                     Scheduler.shared.schedule()
                 }
             },
             observe(\.scheduleEnd) { _ in
-                if preferences.scheduled && preferences.scheduleZenithType == .custom {
+                if preferences.scheduled && !preferences.scheduleZenithType.hasSunriseSunsetTime {
                     Scheduler.shared.schedule()
                 }
             },
@@ -116,6 +128,23 @@ extension Preferences {
                 ), issueID: 40)
             }
         ]
+        if #available(OSX 10.15, *) {
+            handles.append(observe(\.AppleInterfaceStyleSwitchesAutomatically) { (change) in
+                if change.newValue == true {
+                    preferences.scheduleZenithType = .system
+                    ScreenBrightnessObserver.shared.stopObserving()
+                    Shortcut.stopObserving()
+                } else {
+                    Shortcut.startObserving()
+                    if preferences.scheduleZenithType == .system {
+                        preferences.scheduleZenithType = .official
+                    }
+                    if preferences.adjustForBrightness {
+                        ScreenBrightnessObserver.shared.startObserving(withInitialUpdate: false)
+                    }
+                }
+            })
+        }
     }
 }
 
@@ -123,6 +152,10 @@ extension Preferences {
     func setPreferred(to value: Any?, forKey key: String = #function) {
         (NSUserDefaultsController.shared.values as AnyObject)
             .setValue(value, forKey: "\(key)")
+    }
+    
+    func exists(_ key: String) -> Bool {
+        return object(forKey: key) != nil
     }
     
     func exists<T>(_ keyPath: KeyPath<Preferences, T>) -> Bool {
@@ -133,7 +166,7 @@ extension Preferences {
             return false
             #endif
         }
-        return object(forKey: key) != nil
+        return exists(key)
     }
     
     @objc dynamic var adjustForBrightness: Bool {
@@ -170,14 +203,14 @@ extension Preferences {
     
     @objc dynamic var scheduled: Bool {
         get {
-            return !AppleInterfaceStyleSwitchesAutomatically && preferences.bool(forKey: #function)
+            return preferences.bool(forKey: #function)
         }
         set {
             setPreferred(to: newValue)
         }
     }
     
-    @objc dynamic var scheduleType: Int {
+    @objc private dynamic var scheduleType: Int {
         get {
             return preferences.integer(forKey: #function)
         }
@@ -301,10 +334,9 @@ extension Preferences {
         }
     }
     
-    var toggleShortcutKey: String {
-        return "toggleShortcut"
-    }
+    static let toggleShortcutKey: String = "toggleShortcut"
     
+    @available(macOS 10.15, *)
     @objc dynamic var AppleInterfaceStyleSwitchesAutomatically: Bool {
         return preferences.bool(forKey: #function)
     }

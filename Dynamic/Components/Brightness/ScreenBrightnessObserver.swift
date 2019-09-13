@@ -12,7 +12,6 @@ final class ScreenBrightnessObserver: NSObject {
 
     var notificationPort: IONotificationPortRef?
     let queue = DispatchQueue(label: "ddm.queue")
-    lazy var currentMode: AppleInterfaceStyle = suggestedMode
     var callback: IOServiceInterestCallback = { (ctx, service, messageType, messageArgument) in
         guard let ctx = ctx else { return }
         let observer = Unmanaged<ScreenBrightnessObserver>.fromOpaque(ctx).takeUnretainedValue()
@@ -26,7 +25,6 @@ final class ScreenBrightnessObserver: NSObject {
     public func startObserving(withInitialUpdate: Bool = true) {
         stopObserving()
         defer { if withInitialUpdate { updateForBrightnessChange() } }
-        currentMode = suggestedMode
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleBacklightDisplay"))
         guard service != IO_OBJECT_NULL else {
             #if DEBUG
@@ -56,9 +54,8 @@ final class ScreenBrightnessObserver: NSObject {
 
     @objc private func updateForBrightnessChange() {
         let newValue = suggestedMode
-        guard currentMode != newValue else { return }
-        currentMode = newValue
-        currentMode.enable()
+        guard AppleInterfaceStyle.current != newValue else { return }
+        newValue.enable()
     }
 
     public func stopObserving() {

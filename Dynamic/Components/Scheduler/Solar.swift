@@ -8,18 +8,31 @@
 
 import Solar
 
-public enum Zenith: Int, CaseIterable {
+public enum Zenith: Int {
     case official
     case civil
     case nautical
     case astronomical
     case custom
+    @available(macOS 10.15, *)
+    case system
+}
+
+extension Zenith {
+    var hasSunriseSunsetTime: Bool {
+        switch self {
+        case .official, .civil, .nautical, .astronomical:
+            return true
+        case .custom, .system:
+            return false
+        }
+    }
 }
 
 extension Solar {
     var sunriseSunsetTime: (sunrise: Date, sunset: Date) {
         switch preferences.scheduleZenithType {
-        case .custom:
+        case .custom, .system:
             fatalError("No custom zenith type in solar")
         case .official:
             return (sunrise!, sunset!)

@@ -22,6 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         TouchBar.setup()
         Shortcut.startObserving()
+        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+            Shortcut.stopObserving()
+        }
         if preferences.hasLaunchedBefore {
             Preferences.setupDefaultsForNewFeatures()
             Preferences.startObserving()

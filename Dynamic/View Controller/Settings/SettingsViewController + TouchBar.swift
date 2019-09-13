@@ -92,7 +92,7 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
     }
     
     func scrubber(_ scrubber: NSScrubber, didSelectItemAt selectedIndex: Int) {
-        preferences.scheduleType = selectedIndex
+        preferences.scheduleZenithType = Zenith(rawValue: selectedIndex) ?? .official
     }
 }
 
