@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.0] - 2019-09-14
+### Added
+- Supports macOS Catalina Apperance Auto (#74)
+
+### Changed
+- Update for brightness and connectivity changes are delayed (#73, #57)
+- Settings panel will adjust to its smallest size possible.
+
+### Fixed
+- Dynamic wallpaper not updating when the "scheduled" option is not enabled
+
 ## [1.4.2] - 2019-09-10
 ### Changed
 - Updated Chinese, Japanese, and Russian translations
