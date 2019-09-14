@@ -7,6 +7,7 @@
 //
 
 import Network
+import Schedule
 
 public final class Connectivity {
     private var monitor: NWPathMonitor!
@@ -45,21 +46,13 @@ public final class Connectivity {
         isInitialUpdate = true
         monitor.cancel()
         isObserving = false
-        taskCount = 0
+        task = nil
     }
     
-    private var taskCount: UInt64 = 0
+    private var task: Task?
     public func scheduleWhenReconnected() {
         startObserving { [weak self] in
-            self?.taskCount += 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-                guard let self = self else { return }
-                defer {
-                    if self.taskCount > 0 {
-                        self.taskCount -= 1
-                    }
-                }
-                guard self.taskCount <= 1 else { return }
+            self?.task = Plan.after(5.seconds).do(queue: .main) {
                 Scheduler.shared.schedule()
             }
         }

@@ -47,7 +47,6 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     private func onTimeout(_ task: Task) {
-        print(#function)
         lock.lock()
         let idx = callbacks.firstIndex { $0.onTimeout == task }
         let callback = callbacks.remove(at: idx!) // should not be nil

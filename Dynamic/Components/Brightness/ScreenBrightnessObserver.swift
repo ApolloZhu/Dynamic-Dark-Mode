@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Schedule
 
 final class ScreenBrightnessObserver: NSObject {
 
@@ -23,7 +24,6 @@ final class ScreenBrightnessObserver: NSObject {
     deinit { stopObserving() }
 
     public func startObserving(withInitialUpdate: Bool = true) {
-        print(#function)
         stopObserving()
         defer { if withInitialUpdate { setNeedsUpdate() } }
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleBacklightDisplay"))
@@ -53,24 +53,13 @@ final class ScreenBrightnessObserver: NSObject {
         return brightness < threshold ? .darkAqua : .aqua
     }
     
-    private var taskCount: UInt64 = 0
+    private var task: Task?
     private func setNeedsUpdate() {
-        taskCount += 1
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            guard let self = self else { return }
-            defer {
-                if self.taskCount > 0 {
-                    self.taskCount -= 1
-                }
-            }
-            guard self.taskCount <= 1 else { return }
-            self._updateForBrightnessChange()
-        }
+        task = Plan.after(0.5.seconds).do(queue: .main, action: _updateForBrightnessChange)
     }
     
     private func _updateForBrightnessChange() {
         let newValue = suggestedMode
-        print(newValue)
         guard AppleInterfaceStyle.current != newValue else { return }
         newValue.enable()
     }
