@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Shortcut.startObserving()
         if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
             Shortcut.stopObserving()
+            preferences.scheduleZenithType = .system
         }
         if preferences.hasLaunchedBefore {
             Preferences.setupDefaultsForNewFeatures()

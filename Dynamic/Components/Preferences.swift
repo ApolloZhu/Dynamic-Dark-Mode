@@ -19,7 +19,9 @@ extension Preferences {
         preferences.adjustForBrightness = true
         preferences.brightnessThreshold = 0.5
         preferences.settingsStyle = .menu
-        if Location.deniedAccess {
+        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+            preferences.scheduleZenithType = .system
+        } else if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
         } else {
             preferences.scheduleZenithType = .official
