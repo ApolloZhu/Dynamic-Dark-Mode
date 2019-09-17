@@ -14,11 +14,7 @@ import Schedule
 public final class Scheduler: NSObject {
     public static let shared = Scheduler()
     
-    private var task: Task? {
-        didSet {
-            oldValue?.cancel()
-        }
-    }
+    private var task: Task?
     
     public func cancel() {
         task = nil
@@ -191,11 +187,8 @@ public final class Scheduler: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    private var fakeClockChange: Task? {
-        didSet {
-            oldValue?.cancel()
-        }
-    }
+    private var fakeClockChange: Task?
+    
     /// Usually it takes 5~15 seconds to happen, so 30 seconds
     /// is a relatively safe but reasonable long waiting time.
     private let waitForfakeClockChange = 30.seconds

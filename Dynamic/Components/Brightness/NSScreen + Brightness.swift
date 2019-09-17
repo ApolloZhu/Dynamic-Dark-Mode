@@ -20,7 +20,7 @@ extension NSScreen {
      https://stackoverflow.com/questions/3239749/programmatically-change-mac-display-brightness
      */
     static var brightness: Float {
-        var iterator: io_iterator_t = 0
+        var iterator: io_iterator_t = IO_OBJECT_NULL
         let gotService = IOServiceGetMatchingServices(
             kIOMasterPortDefault,
             IOServiceMatching("IODisplayConnect"),
@@ -32,7 +32,7 @@ extension NSScreen {
         }
         while true {
             let display: io_object_t = IOIteratorNext(iterator)
-            guard display != 0 else {
+            guard display != IO_OBJECT_NULL else {
                 debugPrint("Dynamic Dark Mode - No Display Found")
                 return -1
             }

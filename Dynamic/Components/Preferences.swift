@@ -64,9 +64,7 @@ extension Preferences {
         }
         handles = [
             observe(\.adjustForBrightness) { change in
-                if change.newValue == true {
-                    ScreenBrightnessObserver.shared.startObserving()
-                }
+                AppleInterfaceStyle.Coordinator.setup()
             },
             observe(\.disableAdjustForBrightnessWhenScheduledDarkModeOn) { _ in
                 AppleInterfaceStyle.Coordinator.setup()

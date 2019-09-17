@@ -11,11 +11,15 @@ import Schedule
 
 final class ScreenBrightnessObserver: NSObject {
 
-    var notificationPort: IONotificationPortRef?
-    let queue = DispatchQueue(label: "ddm.queue")
-    var callback: IOServiceInterestCallback = { (ctx, service, messageType, messageArgument) in
+    private var notificationPort: IONotificationPortRef?
+    private let queue = DispatchQueue(label: "ddm.queue.brightness")
+    private lazy var lastBrightness = NSScreen.brightness
+    private var callback: IOServiceInterestCallback = { (ctx, service, messageType, messageArgument) in
         guard let ctx = ctx else { return }
         let observer = Unmanaged<ScreenBrightnessObserver>.fromOpaque(ctx).takeUnretainedValue()
+        let newBrightness = NSScreen.brightness
+        guard observer.lastBrightness != newBrightness else { return }
+        observer.lastBrightness = newBrightness
         observer.setNeedsUpdate()
     }
 
@@ -39,12 +43,12 @@ final class ScreenBrightnessObserver: NSObject {
             #endif
         }
         defer { IOObjectRelease(service) }
-
         notificationPort = IONotificationPortCreate(kIOMasterPortDefault)
         IONotificationPortSetDispatchQueue(notificationPort, queue)
         var n = io_object_t()
         let ctx = UnsafeMutableRawPointer(Unmanaged.passRetained(self).toOpaque())
         IOServiceAddInterestNotification(notificationPort, service, kIOGeneralInterest, callback, ctx, &n)
+        lastBrightness = NSScreen.brightness
     }
 
     public var suggestedMode: AppleInterfaceStyle {
