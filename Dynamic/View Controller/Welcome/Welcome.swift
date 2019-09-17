@@ -25,6 +25,15 @@ class Welcome: NSWindowController {
         welcome?.window?.makeKeyAndOrderFront(nil)
     }
     
+    public static func skip() {
+        Welcome.close()
+        preferences.hasLaunchedBefore = true
+        Preferences.setupAsSuggested()
+        Preferences.startObserving()
+        AppleInterfaceStyle.Coordinator.setup()
+        SettingsViewController.show()
+    }
+    
     public static func close() {
         welcome?.close()
         rewindSetupSteps()

@@ -35,7 +35,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     public func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        SettingsViewController.show()
+        if preferences.hasLaunchedBefore {
+            SettingsViewController.show()
+        } else {
+            Welcome.show()
+        }
         return false
     }
     

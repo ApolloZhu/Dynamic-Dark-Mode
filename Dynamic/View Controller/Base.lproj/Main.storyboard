@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="671"/>
         </scene>
-        <!--View Controller-->
+        <!--Initial Setup View Controller-->
         <scene sceneID="5Z2-mU-hdE">
             <objects>
-                <viewController id="3ON-3N-g3X" sceneMemberID="viewController">
+                <viewController id="3ON-3N-g3X" customClass="InitialSetupViewController" customModule="Dynamic_Dark_Mode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Q7E-A5-d6Q">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -223,14 +223,26 @@ DQ
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="Icon" id="OqS-u2-MtX"/>
                             </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="toj-k7-FzS">
+                                <rect key="frame" x="20" y="19" width="41" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="Skip" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Bk-9y-xQc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="skip:" target="3ON-3N-g3X" id="Idj-Bd-lJU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="gVm-bv-tjf" firstAttribute="leading" secondItem="Q7E-A5-d6Q" secondAttribute="leading" constant="20" symbolic="YES" id="0EJ-4e-i4S"/>
                             <constraint firstAttribute="trailing" secondItem="gVm-bv-tjf" secondAttribute="trailing" constant="20" symbolic="YES" id="CF2-fR-PF9"/>
+                            <constraint firstAttribute="bottom" secondItem="toj-k7-FzS" secondAttribute="bottom" constant="20" symbolic="YES" id="EcV-Ny-J3A"/>
                             <constraint firstItem="JuZ-21-Wzg" firstAttribute="centerX" secondItem="Q7E-A5-d6Q" secondAttribute="centerX" id="I9q-xZ-CLc"/>
                             <constraint firstItem="YGN-PK-G56" firstAttribute="centerX" secondItem="Q7E-A5-d6Q" secondAttribute="centerX" id="K6u-j0-PGE"/>
                             <constraint firstItem="gVm-bv-tjf" firstAttribute="top" secondItem="Q7E-A5-d6Q" secondAttribute="top" constant="20" symbolic="YES" id="MGn-NK-g1G"/>
                             <constraint firstItem="YGN-PK-G56" firstAttribute="centerY" secondItem="Q7E-A5-d6Q" secondAttribute="centerY" id="bne-JQ-uEi"/>
+                            <constraint firstItem="toj-k7-FzS" firstAttribute="leading" secondItem="Q7E-A5-d6Q" secondAttribute="leading" constant="20" symbolic="YES" id="cIB-iy-Zqg"/>
                             <constraint firstAttribute="bottom" secondItem="JuZ-21-Wzg" secondAttribute="bottom" constant="20" symbolic="YES" id="ciS-o4-jxO"/>
                         </constraints>
                     </view>
@@ -365,13 +377,25 @@ DQ
                                     <action selector="openPreferences:" target="QVP-6o-dbP" id="L3e-mB-aAZ"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aWW-i7-hg6">
+                                <rect key="frame" x="20" y="19" width="41" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="Skip" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sng-PU-cQQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="skip:" target="QVP-6o-dbP" id="wdi-qD-rvW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Se9-Id-fqb" firstAttribute="top" secondItem="IK5-LB-yIa" secondAttribute="top" constant="20" symbolic="YES" id="50o-9W-V5S"/>
                             <constraint firstAttribute="trailing" secondItem="Se9-Id-fqb" secondAttribute="trailing" constant="20" symbolic="YES" id="7Lo-Gc-TYK"/>
                             <constraint firstAttribute="bottom" secondItem="NcA-9Z-xxY" secondAttribute="bottom" constant="20" symbolic="YES" id="D4q-RU-7cG"/>
+                            <constraint firstItem="aWW-i7-hg6" firstAttribute="leading" secondItem="IK5-LB-yIa" secondAttribute="leading" constant="20" symbolic="YES" id="G1t-y8-vei"/>
                             <constraint firstItem="NcA-9Z-xxY" firstAttribute="centerX" secondItem="IK5-LB-yIa" secondAttribute="centerX" id="Gew-vp-lza"/>
                             <constraint firstItem="NcA-9Z-xxY" firstAttribute="top" secondItem="2DF-h9-FPn" secondAttribute="bottom" constant="20" id="Gss-Jh-n7Q"/>
+                            <constraint firstAttribute="bottom" secondItem="aWW-i7-hg6" secondAttribute="bottom" constant="20" symbolic="YES" id="Nrm-Uw-vq6"/>
                             <constraint firstItem="Se9-Id-fqb" firstAttribute="leading" secondItem="IK5-LB-yIa" secondAttribute="leading" constant="20" symbolic="YES" id="dFj-Ps-3vm"/>
                             <constraint firstItem="2DF-h9-FPn" firstAttribute="leading" secondItem="IK5-LB-yIa" secondAttribute="leading" constant="20" symbolic="YES" id="enG-af-Bva"/>
                             <constraint firstAttribute="trailing" secondItem="2DF-h9-FPn" secondAttribute="trailing" constant="20" symbolic="YES" id="swZ-Wb-KfJ"/>

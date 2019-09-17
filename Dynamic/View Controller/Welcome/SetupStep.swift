@@ -35,11 +35,6 @@ protocol LastSetupStep: SetupStep { }
 
 extension LastSetupStep {
     func showNext() {
-        Welcome.close()
-        preferences.hasLaunchedBefore = true
-        Preferences.setupAsSuggested()
-        Preferences.startObserving()
-        AppleInterfaceStyle.Coordinator.setup()
-        SettingsViewController.show()
+        Welcome.skip()
     }
 }

@@ -48,6 +48,7 @@
 		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
 		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
 		D264A812232A927700210DAC /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264A811232A927700210DAC /* SkyLight.framework */; };
+		D29AE33523304B2100A8B4DC /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */; };
 		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
 		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
 /* End PBXBuildFile section */
@@ -167,6 +168,7 @@
 		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D264A811232A927700210DAC /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
+		D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupViewController.swift; sourceTree = "<group>"; };
 		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				5214CD8E215B3BED008A7E83 /* Welcome.swift */,
 				52688653215B2FA8009A2FE3 /* SlideSegue.swift */,
 				52CC197021C0AD6A0061DE35 /* SetupStep.swift */,
+				D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */,
 				5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */,
 				5266354C215F177C008176E9 /* AllowLocationViewController.swift */,
 			);
@@ -662,6 +665,7 @@
 				52168FD920C9B0DD00869A9C /* NSScreen + Brightness.swift in Sources */,
 				5225FDBE20D14B96006E9AF0 /* Scheduler.swift in Sources */,
 				52161590227DE4E300725F57 /* Connectivity.swift in Sources */,
+				D29AE33523304B2100A8B4DC /* InitialSetupViewController.swift in Sources */,
 				520EF73821A056A3003326F2 /* Location.swift in Sources */,
 				5206B8BB2219B02600D22358 /* Error.swift in Sources */,
 				5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */,
