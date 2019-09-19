@@ -46,11 +46,10 @@
 		706D395920E3766D0079535E /* SettingsViewController + TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395820E3766D0079535E /* SettingsViewController + TouchBar.swift */; };
 		706D395D20E377E40079535E /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D395B20E377E40079535E /* Localizations.swift */; };
 		707CC24622FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */; };
-		87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */; };
 		D264A812232A927700210DAC /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264A811232A927700210DAC /* SkyLight.framework */; };
 		D29AE33523304B2100A8B4DC /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */; };
 		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
-		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
+		D2BAC9692327932C00E56B86 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,7 +154,6 @@
 		52E3B230227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E3B231227BC29300D65AC6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		53A351B3F4C95911ACEAF9E2 /* Pods-Dynamic Dark Mode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release.xcconfig"; sourceTree = "<group>"; };
-		6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLauncher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		687EF500DBBFEBBE226CDD0E /* Pods-DynamicLauncher.debug masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug masless.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug masless.xcconfig"; sourceTree = "<group>"; };
 		69C9F656649617FA94C317C2 /* Pods-Dynamic Dark Mode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.debug.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.debug.xcconfig"; sourceTree = "<group>"; };
 		706D395820E3766D0079535E /* SettingsViewController + TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController + TouchBar.swift"; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 		706D396620E37A870079535E /* TouchBarPrivateAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateAPI.h; sourceTree = "<group>"; };
 		707CC24522FAC3EF002210ED /* DynamicDesktopSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDesktopSettingsViewController.swift; sourceTree = "<group>"; };
 		9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
-		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20E0E8023332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D20E0E8123332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -176,7 +173,6 @@
 		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		D838555BDD4861F157AE9DE6 /* Pods-DynamicLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.release.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A51F921772F27004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		ED6A51FB21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED6A51FC21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -199,7 +195,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3CD5A08DDE27B12711519 /* libPods-DynamicLauncher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */,
+				D2BAC9692327932C00E56B86 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +316,6 @@
 				706D395E20E3796A0079535E /* DFRFoundation.framework */,
 				523CF01C227E1E44000E4173 /* DFRFoundation.framework */,
 				CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */,
-				6156D554666DD1DDB736ADB1 /* libPods-DynamicLauncher.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,9 +400,7 @@
 				41E38B743A34DBC550D39649 /* Pods-Dynamic Dark Mode.debug masless.xcconfig */,
 				53A351B3F4C95911ACEAF9E2 /* Pods-Dynamic Dark Mode.release.xcconfig */,
 				9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */,
-				AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */,
 				687EF500DBBFEBBE226CDD0E /* Pods-DynamicLauncher.debug masless.xcconfig */,
-				D838555BDD4861F157AE9DE6 /* Pods-DynamicLauncher.release.xcconfig */,
 				178D15FF0B9E5588D9E47D57 /* Pods-DynamicLauncher.release masless.xcconfig */,
 			);
 			path = Pods;
@@ -442,7 +434,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52C3512320CC57C80073F0CA /* Build configuration list for PBXNativeTarget "DynamicLauncher" */;
 			buildPhases = (
-				0FC8C90E17FF223658DCB814 /* [CP] Check Pods Manifest.lock */,
 				52C3511420CC57B60073F0CA /* Sources */,
 				52C3511520CC57B60073F0CA /* Frameworks */,
 				52C3511620CC57B60073F0CA /* Resources */,
@@ -470,7 +461,7 @@
 			);
 			name = Tools;
 			packageProductDependencies = (
-				D2BAC9682327932C00E56B86 /* XMLCoder */,
+				D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */,
 			);
 			productName = Tools;
 			productReference = D2BAC960232790D700E56B86 /* Tools */;
@@ -536,7 +527,7 @@
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			packageReferences = (
-				D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */,
+				D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
 			projectDirPath = "";
@@ -575,28 +566,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FC8C90E17FF223658DCB814 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DynamicLauncher-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		589F8C922A5F4E3DC20A2060 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -969,7 +938,6 @@
 		};
 		52C3512420CC57C80073F0CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
@@ -992,7 +960,6 @@
 		};
 		52C3512520CC57C80073F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D838555BDD4861F157AE9DE6 /* Pods-DynamicLauncher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DynamicLauncher/DynamicLauncher.entitlements;
@@ -1079,7 +1046,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
+		D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder.git";
 			requirement = {
@@ -1090,9 +1057,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D2BAC9682327932C00E56B86 /* XMLCoder */ = {
+		D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			package = D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */;
 			productName = XMLCoder;
 		};
 /* End XCSwiftPackageProductDependency section */

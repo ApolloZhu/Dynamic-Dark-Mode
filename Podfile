@@ -20,11 +20,3 @@ target 'Dynamic Dark Mode' do
     system("codesign --force -o runtime -s 'Developer ID Application' Pods/Sparkle/Sparkle.framework/Resources/Autoupdate.app/Contents/MacOS/Autoupdate")
   end
 end
-
-target 'DynamicLauncher' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for DynamicLauncher
-
-end

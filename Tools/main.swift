@@ -22,7 +22,6 @@ struct Feed: Codable {
     let entry: [Entry]
 }
 
-
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
 
