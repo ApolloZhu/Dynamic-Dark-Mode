@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.1] - 2019-09-18
+### Added
+- Import Spanish translations from Crowdin
+- Option to skip setup and AppleScript permission check (#75)
+
+### Changed
+- Only reschedules when connection is not expensive and not in low data mode
+
+### Fixed
+- Update for screen brightness should be more reliable 
+- Now detects system auto appearance on launch to set appropriate schedule type
+- Reopening app will open the appropriate screen
+
 ## [1.5.0] - 2019-09-14
 ### Added
 - Supports macOS Catalina Apperance Auto (#74)

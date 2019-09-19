@@ -30,6 +30,8 @@ public final class Connectivity {
             }
             switch path.status {
             case .satisfied:
+                if path.isExpensive { return }
+                if #available(OSX 10.15, *), path.isConstrained { return }
                 onSuccess()
             case .requiresConnection, .unsatisfied:
                 break
