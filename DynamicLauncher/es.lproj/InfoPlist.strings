@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "Lanzador dinámico";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2018-2019 Modo Oscuro Dinámico. Todos los derechos reservados.";
+

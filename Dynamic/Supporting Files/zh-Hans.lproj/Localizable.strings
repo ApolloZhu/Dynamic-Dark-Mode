@@ -4,8 +4,14 @@
 /* Generic error happened */
 "AppleScript.authorization.failed" = "出错了 QAQ";
 
+/* Go to System Preferences */
+"AppleScript.authorization.goToSystemPreferences" = "好";
+
 /* No comment provided by engineer. */
 "AppleScript.authorization.instruction" = "我们将带您到“系统偏好设置”。";
+
+/* User thinks they have given us permission to control System Events */
+"AppleScript.authorization.nope" = "已经授权";
 
 /* Something went wrong. But it's okay */
 "AppleScript.execute.error" = "未能切换外观模式";

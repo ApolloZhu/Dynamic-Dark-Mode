@@ -167,6 +167,10 @@
 		9F77608674EF20F406DEA0E4 /* Pods-Dynamic Dark Mode.release masless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dynamic Dark Mode.release masless.xcconfig"; path = "Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode.release masless.xcconfig"; sourceTree = "<group>"; };
 		AC0EC2A58FD0F8F43B582EAC /* Pods-DynamicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-DynamicLauncher/Pods-DynamicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCD4183FA91D594A9622C59 /* libPods-Dynamic Dark Mode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dynamic Dark Mode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20E0E8023332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D20E0E8123332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D20E0E8223332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D20E0E8323332D0E0058504E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		D264A811232A927700210DAC /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 		D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupViewController.swift; sourceTree = "<group>"; };
 		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 				fr,
 				ja,
 				ko,
+				es,
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			packageReferences = (
@@ -717,6 +722,7 @@
 				ED6A51F921772F27004DEFEA /* fr */,
 				52E3B231227BC29300D65AC6 /* ja */,
 				52B37155227BC73A0005B1B7 /* ko */,
+				D20E0E8323332D0E0058504E /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -732,6 +738,7 @@
 				ED6A51FC21772F28004DEFEA /* fr */,
 				52E3B22F227BC29300D65AC6 /* ja */,
 				52B37153227BC73A0005B1B7 /* ko */,
+				D20E0E8123332D0E0058504E /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -747,6 +754,7 @@
 				ED6A51FD21772F28004DEFEA /* fr */,
 				52E3B22E227BC29300D65AC6 /* ja */,
 				52B37152227BC73A0005B1B7 /* ko */,
+				D20E0E8023332D0E0058504E /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -762,6 +770,7 @@
 				ED6A51FB21772F28004DEFEA /* fr */,
 				52E3B230227BC29300D65AC6 /* ja */,
 				52B37154227BC73A0005B1B7 /* ko */,
+				D20E0E8223332D0E0058504E /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

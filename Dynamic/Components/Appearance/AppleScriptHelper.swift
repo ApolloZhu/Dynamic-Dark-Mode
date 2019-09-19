@@ -89,7 +89,7 @@ extension AppleScript {
                 ignorePermissionChecking = true
                 retry()
             default:
-                fatalError("Unhandled location authorization response")
+                fatalError("Unhandled AppleScript permission check response")
             }
         })
     }

@@ -1,0 +1,81 @@
+/* No comment provided by engineer. */
+"AppleScript.authorization.error" = "No has permitido el Modo Oscuro Dinámico administrar el modo oscuro";
+
+/* Generic error happened */
+"AppleScript.authorization.failed" = "Algo salió mal";
+
+/* Go to System Preferences */
+"AppleScript.authorization.goToSystemPreferences" = "OK";
+
+/* No comment provided by engineer. */
+"AppleScript.authorization.instruction" = "Te llevaremos a Preferencias del Sistema.";
+
+/* User thinks they have given us permission to control System Events */
+"AppleScript.authorization.nope" = "Not true";
+
+/* Something went wrong. But it's okay */
+"AppleScript.execute.error" = "Error al alternar el modo oscuro";
+
+/* Scare the user so they report bugs. */
+"Bug.general.title" = "Reportar error al desarrollador";
+
+/* Request users to provide more context. */
+"Bug.known.title" = "Encontrado un problema conocido";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "No has autorizado el Modo Oscuro Dinámico ubicarte.";
+
+/* Failed to attain user location for sunset/sunrise calculation. */
+"Location.notAvailable" = "No se puede obtener la ubicación actual";
+
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "La conexión de red ha expirado. Por favor, compruebala.";
+
+/* Can't fetch user's current location. Using cache instead. */
+"Location.useCache" = "Programado usando la ubicación anterior";
+
+/* Drop down menu item to show preferences */
+"Menu.preferences" = "Preferencias…";
+
+/* Use system translation for quit */
+"Menu.quit" = "Salir";
+
+/* Action item to toggle in from menu bar */
+"Menu.toggle" = "Conmutar el modo oscuro";
+
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "No has autorizado el Modo Oscuro Dinámico mandar notificaciones.";
+
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "Error al actualizar la configuración de \"abrir al iniciar sesión\"";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "No se puede observar el cambio de brillo de la pantalla.";
+
+/* For touch bar button title */
+"SettingsViewController.autoAdjustThreshold" = "Ajustar umbral automáticamente";
+
+/* For touch bar button title */
+"SettingsViewController.scheduleMode" = "Modo de programación";
+
+/* Astronomical */
+"SunsetSunrise.astronomical" = "Astronómica";
+
+/* Civil */
+"SunsetSunrise.civil" = "Civil";
+
+/* CustomRange */
+"SunsetSunrise.customRange" = "Personalizado";
+
+/* Nautical */
+"SunsetSunrise.nautical" = "Náutica";
+
+/* Official */
+"SunsetSunrise.official" = "Oficial";
+
+/* No comment provided by engineer. */
+"SystemPreferences.open" = "Abrir Preferencias del Sistema";
+
+/* No comment provided by engineer. */
+"SystemPreferences.skip" = "Saltar";
+
