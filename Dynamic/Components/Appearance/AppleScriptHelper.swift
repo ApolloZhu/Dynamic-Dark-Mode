@@ -16,9 +16,24 @@ public enum AppleScript: String, CaseIterable {
     case disableDarkMode = "false"
 }
 
-// MARK: - Handy Properties
+// MARK: - Execution
 
 extension AppleScript {
+    public func execute() {
+        let frontmostApplication = NSWorkspace.shared.frontmostApplication
+        AppleScript.requestPermission { authorized in
+            defer { frontmostApplication?.activate(options: [.activateIgnoringOtherApps]) }
+            
+            if authorized {
+                self.useAppleScriptImplementation()
+            } else {
+                self.useNonAppStoreCompliantImplementation()
+            }
+        }
+    }
+    
+    // MARK: Deprecated API
+    
     /// Turns dark mode on/off/to the opposite.
     private var source: String {
         return """
@@ -27,30 +42,30 @@ extension AppleScript {
         end tell
         """
     }
-}
-
-// MARK: - Execution
-
-extension AppleScript {
-    public func execute() {
-        let frontmostApplication = NSWorkspace.shared.frontmostApplication
-        AppleScript.requestPermission { authorized in
-            guard authorized else {
-                return AppleScript.showErrorThenRedirect(orRetry: self.execute)
-            }
-            // Do the job
-            var errorInfo: NSDictionary? = nil
-            NSAppleScript(source: self.source)!
-                .executeAndReturnError(&errorInfo)
-            frontmostApplication?.activate(options: [.activateIgnoringOtherApps])
-            // Handle errors
-            guard let error = errorInfo else { return }
-            remindReportingBug(info: error, title: NSLocalizedString(
-                "AppleScript.execute.error",
-                value: "Failed to Toggle Dark Mode",
-                comment: "Something went wrong. But it's okay"
-            ))
-            AppleScript.ignorePermissionChecking = false
+    
+    private func useAppleScriptImplementation() {
+        var errorInfo: NSDictionary? = nil
+        NSAppleScript(source: self.source)!
+            .executeAndReturnError(&errorInfo)
+        // Handle errors
+        guard let error = errorInfo else { return }
+        remindReportingBug(info: error, title: NSLocalizedString(
+            "AppleScript.execute.error",
+            value: "Failed to Toggle Dark Mode",
+            comment: "Something went wrong. But it's okay"
+        ))
+    }
+    
+    // MARK: Private API
+    
+    private func useNonAppStoreCompliantImplementation() {
+        switch self {
+        case .toggleDarkMode:
+            SLSSetAppearanceThemeLegacy(!SLSGetAppearanceThemeLegacy())
+        case .enableDarkMode:
+            SLSSetAppearanceThemeLegacy(true)
+        case .disableDarkMode:
+            SLSSetAppearanceThemeLegacy(false)
         }
     }
 }
@@ -58,53 +73,20 @@ extension AppleScript {
 // MARK: - Permission
 
 extension AppleScript {
-    public static func showErrorThenRedirect(orRetry retry: @escaping () -> Void) {
-        showAlert(withConfiguration: { alert in
-            alert.alertStyle = .critical
-            alert.messageText = NSLocalizedString(
-                "AppleScript.authorization.error",
-                value: "You didn't allow Dynamic Dark Mode to manage dark mode",
-                comment: ""
-            )
-            alert.informativeText = NSLocalizedString(
-                "AppleScript.authorization.instruction",
-                value: "We'll take you to System Preferences.",
-                comment: ""
-            )
-            alert.addButton(withTitle: NSLocalizedString(
-                "AppleScript.authorization.goToSystemPreferences",
-                value: "OK",
-                comment: "Go to System Preferences"
-            ))
-            alert.addButton(withTitle: NSLocalizedString(
-                "AppleScript.authorization.nope",
-                value: "Not true",
-                comment: "User thinks they have given us permission to control System Events"
-            ))
-        }, then: { response in
-            switch response {
-            case .alertFirstButtonReturn:
-                redirectToSystemPreferences()
-            case .alertSecondButtonReturn:
-                ignorePermissionChecking = true
-                retry()
-            default:
-                fatalError("Unhandled AppleScript permission check response")
-            }
-        })
-    }
+    public static let notAuthorized = NSLocalizedString(
+        "AppleScript.authorization.error",
+        value: "You didn't allow Dynamic Dark Mode to manage dark mode",
+        comment: ""
+    )
     
     public static func redirectToSystemPreferences() {
         openURL("x-apple.systempreferences:com.apple.preference.security?Privacy_Automation")
     }
     
-    private static var ignorePermissionChecking: Bool = false
-    
     public static func requestPermission(
         retryOnInternalError: Bool = true,
         then process: @escaping Handler<Bool>
     ) {
-        if ignorePermissionChecking { return process(true) }
         DispatchQueue.global().async {
             let systemEvents = "com.apple.systemevents"
             // We need to get it running to send it messages

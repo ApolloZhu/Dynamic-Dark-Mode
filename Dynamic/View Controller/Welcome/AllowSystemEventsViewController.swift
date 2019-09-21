@@ -23,16 +23,19 @@ class AllowSystemEventsViewController: NSViewController, SetupStep {
     }
     
     @IBAction func skip(_ sender: Any) {
-        Welcome.skip()
+        showNext()
     }
     
     @IBOutlet weak var showPreferences: NSButton!
     @IBAction func openPreferences(_ sender: NSButton) {
         AppleScript.requestPermission { [weak self] authorized in
+            guard let self = self else { return }
             if authorized {
-                self?.showNext()
+                self.showNext()
             } else {
-                AppleScript.redirectToSystemPreferences()
+                self.needsPermission(AppleScript.notAuthorized,
+                                     openPreferences: AppleScript.redirectToSystemPreferences,
+                                     skip: self.showNext)
             }
         }
     }

@@ -29,6 +29,34 @@ extension SetupStep where Self: NSViewController {
             self?.performSegue(withIdentifier: "next", sender: nil)
         }
     }
+    
+    func needsPermission(_ message: String,
+                         openPreferences: @escaping () -> Void,
+                         skip: @escaping () -> Void) {
+        showAlert(withConfiguration: { alert in
+            alert.messageText = message
+            alert.addButton(withTitle: NSLocalizedString(
+                "SystemPreferences.open",
+                value: "Open System Preferences",
+                comment: ""
+            ))
+            alert.addButton(withTitle: NSLocalizedString(
+                "SystemPreferences.skip",
+                value: "Skip",
+                comment: "Translate the same as in all other setup process"
+            ))
+            alert.alertStyle = .warning
+        }, then: { response in
+            switch response {
+            case .alertFirstButtonReturn:
+                openPreferences()
+            case .alertSecondButtonReturn:
+                skip()
+            default:
+                fatalError("Unhandled authorization response")
+            }
+        })
+    }
 }
 
 protocol LastSetupStep: SetupStep { }

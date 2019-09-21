@@ -68,31 +68,11 @@ private func redirectToSystemPreferences() {
 
 extension AllowLocationViewController: CLLocationManagerDelegate {
     private func onError(_ error: Error? = nil) {
-        showAlert(withConfiguration: { alert in
-            alert.messageText = error == CLError.denied
-                ? LocalizedString.Location.notAuthorized
-                : LocalizedString.Location.notAvailable
-            alert.addButton(withTitle: NSLocalizedString(
-                "SystemPreferences.open",
-                value: "Open System Preferences",
-                comment: ""
-            ))
-            alert.addButton(withTitle: NSLocalizedString(
-                "SystemPreferences.skip",
-                value: "Skip",
-                comment: ""
-            ))
-            alert.alertStyle = .warning
-        }, then: { [weak self] response in
-            switch response {
-            case .alertFirstButtonReturn:
-                redirectToSystemPreferences()
-            case .alertSecondButtonReturn:
-                self?.showNextOnce()
-            default:
-                fatalError("Unhandled location authorization response")
-            }
-        })
+        needsPermission(error == CLError.denied
+            ? LocalizedString.Location.notAuthorized
+            : LocalizedString.Location.notAvailable,
+                        openPreferences: redirectToSystemPreferences,
+                        skip: showNextOnce)
     }
     
     func locationManager(_ manager: CLLocationManager,
