@@ -11,11 +11,11 @@ import Cocoa
 class AllowSystemEventsViewController: NSViewController, SetupStep {
     override func viewDidAppear() {
         super.viewDidAppear()
-        AppleScript.requestPermission { authorized in
-            DispatchQueue.main.async { [weak self] in
-                if authorized {
-                    self?.showNext()
-                } else {
+        AppleScript.requestPermission { [weak self] authorized in
+            if authorized {
+                self?.showNext()
+            } else {
+                DispatchQueue.main.async { [weak self] in
                     self?.showPreferences.isHidden = false
                 }
             }
