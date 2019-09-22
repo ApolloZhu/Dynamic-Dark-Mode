@@ -145,6 +145,8 @@ extension Preferences {
     }
 }
 
+// MARK: - Helpers
+
 extension Preferences {
     func setPreferred(to value: Any?, forKey key: String = #function) {
         (NSUserDefaultsController.shared.values as AnyObject)
@@ -156,16 +158,28 @@ extension Preferences {
     }
     
     func exists<T>(_ keyPath: KeyPath<Preferences, T>) -> Bool {
-        guard let key = keyPath._kvcKeyPathString else {
+        return exists(keyPathString(for: keyPath))
+    }
+    
+    private func keyPathString<T>(for keyPath: KeyPath<Preferences, T>) -> String {
+        guard let keyPathString = keyPath._kvcKeyPathString else {
             #if DEBUG
             fatalError("No key path string")
             #else
-            return false
+            return ""
             #endif
         }
-        return exists(key)
+        return keyPathString
     }
     
+    func bindingKeyPath<T>(_ keyPath: KeyPath<Preferences, T>) -> String {
+        return "values.\(keyPathString(for: keyPath))"
+    }
+}
+
+// MARK: - Preferences
+
+extension Preferences {
     @objc dynamic var adjustForBrightness: Bool {
         get {
             return preferences.bool(forKey: #function)
@@ -207,7 +221,7 @@ extension Preferences {
         }
     }
     
-    @objc private dynamic var scheduleType: Int {
+    @objc dynamic var scheduleType: Int {
         get {
             return preferences.integer(forKey: #function)
         }
@@ -337,4 +351,17 @@ extension Preferences {
     @objc dynamic var AppleInterfaceStyleSwitchesAutomatically: Bool {
         return preferences.bool(forKey: #function)
     }
+}
+
+extension NSObject {
+    @available(OSX 10.15, *)
+    func bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically(withName name: NSBindingName = .enabled) {
+        bind(name, to: NSUserDefaultsController.shared,
+             withKeyPath: preferences.bindingKeyPath(\.AppleInterfaceStyleSwitchesAutomatically),
+             options: [.valueTransformerName: NSValueTransformerName.negateBooleanTransformerName])
+    }
+}
+
+extension NSBindingName {
+    static let enabled2 = NSBindingName("enabled2")
 }

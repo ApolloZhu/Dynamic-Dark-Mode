@@ -50,6 +50,9 @@ public final class StatusBarItem {
             keyEquivalent: ""
         )
         toggleItem.target = self
+        if #available(OSX 10.15, *) {
+            toggleItem.bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically()
+        }
         menu.addItem(toggleItem)
         menu.addItem(.separator())
         let preferencesItem = NSMenuItem(
