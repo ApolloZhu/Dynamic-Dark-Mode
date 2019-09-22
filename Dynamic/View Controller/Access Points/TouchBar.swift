@@ -14,11 +14,21 @@ enum TouchBar {
     private static let item: NSTouchBarItem = {
         let item = NSCustomTouchBarItem(identifier: itemID)
         let button = NSButton(image: #imageLiteral(resourceName: "Icon"),
-                              target: AppleInterfaceStyle.Coordinator,
-                              action: #selector(AppleInterfaceStyleCoordinator.toggleInterfaceStyle))
+                              target: Action.self,
+                              action: #selector(Action.perform))
         item.view = button
         return item
     }()
+    
+    private class Action {
+        @objc fileprivate static func perform() {
+            if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+                reopen()
+            } else {
+                AppleInterfaceStyle.toggle()
+            }
+        }
+    }
     
     public static func setup() {
         // DFRSystemModalShowsCloseBoxWhenFrontMost(false)

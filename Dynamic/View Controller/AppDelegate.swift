@@ -36,11 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     public func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        if preferences.hasLaunchedBefore {
-            SettingsViewController.show()
-        } else {
-            Welcome.show()
-        }
+        reopen()
         return false
     }
     
@@ -49,5 +45,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         TouchBar.tearDown()
         Preferences.stopObserving()
         AppleInterfaceStyle.Coordinator.tearDown()
+    }
+}
+
+func reopen() {
+    if preferences.hasLaunchedBefore {
+        SettingsViewController.show()
+    } else {
+        Welcome.show()
     }
 }
