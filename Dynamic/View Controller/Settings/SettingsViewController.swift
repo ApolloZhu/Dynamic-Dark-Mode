@@ -13,12 +13,7 @@ extension NSStoryboard {
 }
 
 class SettingsViewController: NSViewController {
-    @objc dynamic var hasZenithTypeSystem: Bool {
-        if #available(OSX 10.15, *) {
-            return true
-        }
-        return false
-    }
+    @objc dynamic private let hasZenithTypeSystem = Zenith.hasZenithTypeSystem
     
     private static weak var window: NSWindow? = nil
     @objc public static func show() {

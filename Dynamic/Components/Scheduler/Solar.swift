@@ -19,6 +19,13 @@ public enum Zenith: Int {
 }
 
 extension Zenith {
+    static let hasZenithTypeSystem: Bool = {
+        if #available(OSX 10.15, *) {
+            return true
+        }
+        return false
+    }()
+    
     var hasSunriseSunsetTime: Bool {
         switch self {
         case .official, .civil, .nautical, .astronomical:

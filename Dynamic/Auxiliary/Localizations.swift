@@ -47,6 +47,11 @@ enum LocalizedString {
             value: "Custom",
             comment: "CustomRange"
         )
+        static let system = NSLocalizedString(
+            "SunsetSunrise.system",
+            value: "System",
+            comment: "Translate the same as System on preferences screen"
+        )
     }
     enum Location {
         static let notAuthorized = NSLocalizedString(

@@ -65,7 +65,9 @@ extension SettingsViewController: NSTouchBarDelegate {
             scrubber.mode = .fixed
             scrubber.floatsSelectionViews = true
             scrubber.selectionOverlayStyle = .outlineOverlay
-            scrubber.scrubberLayout = NSScrubberProportionalLayout(numberOfVisibleItems: 5)
+            scrubber.scrubberLayout = NSScrubberProportionalLayout(
+                numberOfVisibleItems: numberOfItems(for: scrubber)
+            )
             scrubber.backgroundColor = .scrubberTexturedBackground
             scrubber.bind(.selectedIndex, to: defaultsController,
                           withKeyPath: preferences.bindingKeyPath(\.scheduleType), options: nil)
@@ -80,7 +82,7 @@ extension SettingsViewController: NSTouchBarDelegate {
 
 extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
     func numberOfItems(for scrubber: NSScrubber) -> Int {
-        return 5
+        return Zenith.hasZenithTypeSystem ? 6 : 5
     }
     
     func scrubber(_ scrubber: NSScrubber, viewForItemAt index: Int) -> NSScrubberItemView {
@@ -96,6 +98,9 @@ extension SettingsViewController: NSScrubberDataSource, NSScrubberDelegate {
             view.title = LocalizedString.SunsetSunrise.astronomical
         case 4:
             view.title = LocalizedString.SunsetSunrise.customRange
+        case 5:
+            guard Zenith.hasZenithTypeSystem else { fallthrough }
+            view.title = LocalizedString.SunsetSunrise.system
         default:
             fatalError("Unexpected index number")
         }
