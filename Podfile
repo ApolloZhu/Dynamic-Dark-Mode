@@ -7,7 +7,7 @@ target 'Dynamic Dark Mode' do
   use_modular_headers!
   inhibit_all_warnings!
   # Pods for Dynamic Dark Mode
-  pod 'Solar'
+  pod 'Solar', :git => 'https://github.com/paulw11/Solar.git'
   pod 'Schedule', :git => 'https://github.com/luoxiu/Schedule.git'
   pod 'MASShortcut'
   pod 'LetsMove'
