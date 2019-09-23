@@ -811,7 +811,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSION = 1.5.1;
+				VERSION = 1.5.2;
 			};
 			name = Debug;
 		};
@@ -866,7 +866,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VERSION = 1.5.1;
+				VERSION = 1.5.2;
 			};
 			name = Release;
 		};

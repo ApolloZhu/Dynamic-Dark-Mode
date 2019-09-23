@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.2] - 2019-09-23
+### Changed
+- Switches dark mode with SkyLight when missing AppleScript permission
+- Behavior of buttons to adapt to system schedule
+- Updated French translation
+
+### Fixed
+- Wrong sunset/sunrise date when UTC time is in next day
+- Version number now works with Sparkle
+
 ## [1.5.1] - 2019-09-18
 ### Added
 - Import Spanish translations from Crowdin
