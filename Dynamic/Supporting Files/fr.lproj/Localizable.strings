@@ -4,20 +4,26 @@
 /* Generic error happened */
 "AppleScript.authorization.failed" = "Quelque chose c'est mal passé";
 
-/* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Nous allons vous ouvrir les Préférences système.";
-
-/* something went wrong. But it's okay */
+/* Something went wrong. But it's okay */
 "AppleScript.execute.error" = "Echec du passage en Mode sombre";
 
 /* Scare the user so they report bugs. */
 "Bug.general.title" = "Envoyer un rapport de bug critique au développeur";
 
+/* Request users to provide more context. */
+"Bug.known.title" = "A rencontré un problème connu";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "Vous n'avez PAS autorisé Dynamic Dark Mode à obtenir votre localisation.";
+
 /* Failed to attain user location for sunset/sunrise calculation. */
 "Location.notAvailable" = "Impossible de récupérer la position géographique actuelle";
 
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "Erreur. Vérifiez votre connexion internet.";
+
 /* Can't fetch user's current location. Using cache instead. */
-"Location.useCache" = "Planifié en fonction de la position géographique précédente";
+"Location.useCache" = "Planifié en utilisant la position géographique précédente";
 
 /* Drop down menu item to show preferences */
 "Menu.preferences" = "Préférences…";
@@ -28,10 +34,19 @@
 /* Action item to toggle in from menu bar */
 "Menu.toggle" = "Basculer en Mode sombre";
 
-/* AutoAdjustThreshold */
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "Vous n'avez PAS autorisé Dynamic Dark Mode à envoyer des notifications.";
+
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "Impossible de mettre à jour les paramètres \"Ouvrir au démarrage\"";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "Impossible d'observer le changement de luminosité de l'écran.";
+
+/* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Ajustement automatique du seuil";
 
-/* ScheduleMode */
+/* For touch bar button title */
 "SettingsViewController.scheduleMode" = "Mode planifié";
 
 /* Astronomical */
@@ -49,8 +64,12 @@
 /* Official */
 "SunsetSunrise.official" = "Officiel";
 
+/* Translate the same as System on preferences screen */
+"SunsetSunrise.system" = "Système";
+
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Ouvrir les Préférences système";
 
-/* No comment provided by engineer. */
+/* Translate the same as in all other setup process */
 "SystemPreferences.skip" = "Passer";
+
