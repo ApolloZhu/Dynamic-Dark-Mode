@@ -26,7 +26,7 @@ let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
 
 extension Feed.Entry {
-    func appcastItem(sparkleVersion: Int = 0) -> String {
+    func appcastItem() -> String {
         let version = id[id.index(after: id.lastIndex(of: "/")!)...]
         return """
         <item>
@@ -34,7 +34,7 @@ extension Feed.Entry {
         <pubDate>\(dateFormatter.string(from: updated))</pubDate>
         <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
         <description><![CDATA[\(content)]]></description>
-        <enclosure url="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/download/\(version)/Dynamic_Dark_Mode-\(version).zip" sparkle:version="\(sparkleVersion)" sparkle:shortVersionString="\(version)" type="application/octet-stream"/>
+        <enclosure url="https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases/download/\(version)/Dynamic_Dark_Mode-\(version).zip" sparkle:version="\(version)" type="application/octet-stream"/>
         </item>
         """
     }
