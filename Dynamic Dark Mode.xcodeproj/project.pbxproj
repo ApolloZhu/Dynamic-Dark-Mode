@@ -49,7 +49,7 @@
 		D264A812232A927700210DAC /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264A811232A927700210DAC /* SkyLight.framework */; };
 		D29AE33523304B2100A8B4DC /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */; };
 		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
-		D2BAC9692327932C00E56B86 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */; };
+		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -198,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BAC9692327932C00E56B86 /* BuildFile in Frameworks */,
+				D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +453,7 @@
 			);
 			name = Tools;
 			packageProductDependencies = (
-				D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */,
+				D2BAC9682327932C00E56B86 /* XMLCoder */,
 			);
 			productName = Tools;
 			productReference = D2BAC960232790D700E56B86 /* Tools */;
@@ -519,7 +519,7 @@
 			);
 			mainGroup = 52168FAF20C8B47100869A9C;
 			packageReferences = (
-				D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */,
+				D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */,
 			);
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
 			projectDirPath = "";
@@ -1038,7 +1038,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */ = {
+		D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder.git";
 			requirement = {
@@ -1049,9 +1049,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D2BAC9682327932C00E56B86 /* SwiftPackageProductDependency */ = {
+		D2BAC9682327932C00E56B86 /* XMLCoder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D2BAC9672327932C00E56B86 /* RemoteSwiftPackageReference */;
+			package = D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */;
 			productName = XMLCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
