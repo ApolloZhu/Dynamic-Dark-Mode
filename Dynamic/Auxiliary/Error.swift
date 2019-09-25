@@ -12,12 +12,6 @@ struct AnError: LocalizedError {
     let errorDescription: String?
 }
 
-public func remindReportingBug(info: NSDictionary, title: String? = nil) {
-    remindReportingBug(info.reduce("") {
-        "\($0)\($1.key): \($1.value)\n"
-    }, title: title)
-}
-
 public func remindReportingBug(_ text: String, title: String? = nil, issueID: Int? = nil) {
     let heading: String
     let notification: UserNotification.Identifier

@@ -48,12 +48,9 @@ extension AppleScript {
         NSAppleScript(source: self.source)!
             .executeAndReturnError(&errorInfo)
         // Handle errors
-        guard let error = errorInfo else { return }
-        remindReportingBug(info: error, title: NSLocalizedString(
-            "AppleScript.execute.error",
-            value: "Failed to Toggle Dark Mode",
-            comment: "Something went wrong. But it's okay"
-        ))
+        if errorInfo != nil {
+            useNonAppStoreCompliantImplementation()
+        }
     }
     
     // MARK: Private API
@@ -109,13 +106,7 @@ extension AppleScript {
                  procNotFound:
                 if retryOnInternalError {
                     requestPermission(retryOnInternalError: false, then: process)
-                } else {
-                    remindReportingBug(NSLocalizedString(
-                        "AppleScript.authorization.failed",
-                        value: "Something Went Wrong",
-                        comment: "Generic error happened"
-                    ), title: "OSStatus \(status)", issueID: 18)
-                }
+                } // else ignore
             default:
                 remindReportingBug("OSStatus \(status)")
             }
