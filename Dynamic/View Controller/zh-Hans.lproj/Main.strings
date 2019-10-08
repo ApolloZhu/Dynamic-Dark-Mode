@@ -71,7 +71,7 @@
 "dMs-cI-mzQ.title" = "文件";
 
 /* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
-"do3-JG-x5l.title" = "阀值:";
+"do3-JG-x5l.title" = "阈值:";
 
 /* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
 "du9-VW-tDe.title" = "深色";
