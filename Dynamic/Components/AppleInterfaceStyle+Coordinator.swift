@@ -22,8 +22,12 @@ public class AppleInterfaceStyleCoordinator: NSObject {
         }
     }
     
-    @objc public func toggleInterfaceStyle() {
-        AppleInterfaceStyle.toggle()
+    @objc public func toggleOrShowInterface() {
+        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+            reopen()
+        } else {
+            AppleInterfaceStyle.toggle()
+        }
     }
     
     public func setup() {
