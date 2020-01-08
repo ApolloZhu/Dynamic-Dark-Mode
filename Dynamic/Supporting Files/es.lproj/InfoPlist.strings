@@ -5,7 +5,7 @@
 "NSAppleEventsUsageDescription" = "Esto es como el Modo Oscuro Dinámico te administra el modo oscuro.";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018-2019 Modo Oscuro Dinámico. Todos los derechos reservados.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2020 Modo Oscuro Dinámico. Todos los derechos reservados.";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Esto es como el Modo Oscuro Dinámico calcula el tiempo del amanecer/atardecer.";

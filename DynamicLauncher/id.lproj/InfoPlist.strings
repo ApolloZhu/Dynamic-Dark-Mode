@@ -2,5 +2,5 @@
 "CFBundleName" = "$(PRODUCT_NAME)";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Hak cipta © 2018-2019 Dynamic Dark Mode. Seluruh Hak Cipta.";
+"NSHumanReadableCopyright" = "Hak cipta © 2018-2020 Dynamic Dark Mode. Seluruh Hak Cipta.";
 

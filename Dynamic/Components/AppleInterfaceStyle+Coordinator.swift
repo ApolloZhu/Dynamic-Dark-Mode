@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 5/3/19.
-//  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ public class AppleInterfaceStyleCoordinator: NSObject {
     }
     
     @objc public func toggleOrShowInterface() {
-        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+        if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
             reopen()
         } else {
             AppleInterfaceStyle.toggle()

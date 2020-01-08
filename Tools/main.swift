@@ -3,7 +3,7 @@
 //  Tools
 //
 //  Created by Apollo Zhu on 9/10/19.
-//  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Foundation

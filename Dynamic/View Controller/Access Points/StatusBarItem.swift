@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 12/11/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa
@@ -50,7 +50,7 @@ public final class StatusBarItem {
             keyEquivalent: ""
         )
         toggleItem.target = self
-        if #available(OSX 10.15, *) {
+        if #available(macOS 10.15, *) {
             toggleItem.bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically()
         }
         menu.addItem(toggleItem)

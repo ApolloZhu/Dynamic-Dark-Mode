@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by CaptainYukinoshitaHachiman on 8/7/19.
-//  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa

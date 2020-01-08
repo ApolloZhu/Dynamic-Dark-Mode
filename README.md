@@ -35,7 +35,7 @@ brew cask install dynamic-dark-mode
 
 ```
 Dynamic Dark Mode - the smart, automatic Dark Mode toggle for macOS
-Copyright (C) 2018-2019 Zhiyu Zhu (@ApolloZhu)
+Copyright (C) 2018-2020 Zhiyu Zhu (@ApolloZhu)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

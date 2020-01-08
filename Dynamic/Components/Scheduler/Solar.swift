@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 11/17/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Solar
@@ -20,7 +20,7 @@ public enum Zenith: Int {
 
 extension Zenith {
     static let hasZenithTypeSystem: Bool = {
-        if #available(OSX 10.15, *) {
+        if #available(macOS 10.15, *) {
             return true
         }
         return false

@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Captain雪ノ下八幡 on 2018/6/27.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa
@@ -29,7 +29,7 @@ extension SettingsViewController: NSTouchBarDelegate {
             popoverItem.collapsedRepresentationLabel = LocalizedString.SettingsViewController.autoAdjustThreshold
             popoverItem.view?.bind(.enabled, to: defaultsController,
                                    withKeyPath: preferences.bindingKeyPath(\.adjustForBrightness), options: nil)
-            if #available(OSX 10.15, *) {
+            if #available(macOS 10.15, *) {
                 popoverItem.view?.bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically(withName: .enabled2)
             }
             return popoverItem
@@ -42,7 +42,7 @@ extension SettingsViewController: NSTouchBarDelegate {
                                    withKeyPath: preferences.bindingKeyPath(\.brightnessThreshold), options: nil)
             sliderItem.slider.bind(.enabled, to: defaultsController,
                                    withKeyPath: preferences.bindingKeyPath(\.adjustForBrightness), options: nil)
-            if #available(OSX 10.15, *) {
+            if #available(macOS 10.15, *) {
                 sliderItem.slider.bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically(withName: .enabled2)
             }
             return sliderItem

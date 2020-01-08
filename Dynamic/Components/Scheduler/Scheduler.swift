@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 6/13/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import CoreLocation
@@ -21,7 +21,7 @@ public final class Scheduler: NSObject {
     }
     
     @objc public func schedule(startBrightnessObserverOnFailure: Bool = false) {
-        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
+        if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
         func processLocation(_ result: Location) {
             switch result {
             case .current(let location):
@@ -77,7 +77,7 @@ public final class Scheduler: NSObject {
     // Mark: - Mode
     
     public func updateSchedule(then process: @escaping Handler<Result<Void, Error>>) {
-        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+        if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
             return process(.failure(AnError(errorDescription: "AppleInterfaceStyleSwitchesAutomatically")))
         }
         getCurrentMode { [weak self] in process($0.map {

@@ -3,7 +3,7 @@
 //  DynamicLauncher
 //
 //  Created by Apollo Zhu on 6/9/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa

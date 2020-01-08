@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 6/6/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import AppKit
@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         TouchBar.setup()
         Shortcut.startObserving()
-        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+        if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
             Shortcut.stopObserving()
             preferences.scheduleZenithType = .system
         }

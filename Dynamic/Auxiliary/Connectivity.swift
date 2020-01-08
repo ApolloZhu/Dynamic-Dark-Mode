@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 5/4/19.
-//  Copyright © 2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Network
@@ -31,7 +31,7 @@ public final class Connectivity {
             switch path.status {
             case .satisfied:
                 if path.isExpensive { return }
-                if #available(OSX 10.15, *), path.isConstrained { return }
+                if #available(macOS 10.15, *), path.isConstrained { return }
                 onSuccess()
             case .requiresConnection, .unsatisfied:
                 break

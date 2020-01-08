@@ -5,7 +5,7 @@
 "NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018-2019 Dynamic Dark Mode. 모든 권리 보유.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2020 Dynamic Dark Mode. 모든 권리 보유.";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Dynamic Dark Mode가 일출과 일몰 시간을 자동으로 계산하기 위해 사용자의 위치 정보 권한을 필요로 합니다.";

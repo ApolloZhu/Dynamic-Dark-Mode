@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 6/9/18.
-//  Copyright © 2018-2019 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
 //
 
 import Cocoa
@@ -19,7 +19,7 @@ extension Preferences {
         preferences.adjustForBrightness = true
         preferences.brightnessThreshold = 0.5
         preferences.settingsStyle = .menu
-        if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
+        if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically {
             preferences.scheduleZenithType = .system
         } else if Location.deniedAccess {
             preferences.scheduleZenithType = .custom
@@ -71,7 +71,7 @@ extension Preferences {
             },
             observe(\.scheduled) { change in
                 if change.newValue == true {
-                    if #available(OSX 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
+                    if #available(macOS 10.15, *), preferences.AppleInterfaceStyleSwitchesAutomatically { return }
                     Scheduler.shared.schedule()
                     Connectivity.default.scheduleWhenReconnected()
                 } else {
@@ -80,7 +80,7 @@ extension Preferences {
                 }
             },
             observe(\.scheduleType) { change in
-                if #available(OSX 10.15, *) {
+                if #available(macOS 10.15, *) {
                     if preferences.scheduleZenithType == .system {
                         if !SLSGetAppearanceThemeSwitchesAutomatically() {
                             SLSSetAppearanceThemeSwitchesAutomatically(true)
@@ -128,7 +128,7 @@ extension Preferences {
                 ), issueID: 40)
             }
         ]
-        if #available(OSX 10.15, *) {
+        if #available(macOS 10.15, *) {
             handles.append(observe(\.AppleInterfaceStyleSwitchesAutomatically) { (change) in
                 if change.newValue == true {
                     preferences.scheduleZenithType = .system
@@ -354,7 +354,7 @@ extension Preferences {
 }
 
 extension NSObject {
-    @available(OSX 10.15, *)
+    @available(macOS 10.15, *)
     func bindEnabledToNotAppleInterfaceStyleSwitchesAutomatically(withName name: NSBindingName = .enabled) {
         bind(name, to: NSUserDefaultsController.shared,
              withKeyPath: preferences.bindingKeyPath(\.AppleInterfaceStyleSwitchesAutomatically),
