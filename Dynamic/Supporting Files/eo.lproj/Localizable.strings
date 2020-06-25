@@ -1,15 +1,6 @@
 /* No comment provided by engineer. */
 "AppleScript.authorization.error" = "Vi ne permisis Aŭtomatikan Malluman Modon administri la malluman modon.";
 
-/* Generic error happened */
-"AppleScript.authorization.failed" = "Io Estas Malrajta";
-
-/* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "Ni alportos vin al Sistemaj Preferoj.";
-
-/* Something went wrong. But it's okay */
-"AppleScript.execute.error" = "Malsukcesis baskuligi la malluman modon.";
-
 /* Scare the user so they report bugs. */
 "Bug.general.title" = "Raportu Gravan Eraron al la Ellaboranto";
 
@@ -41,7 +32,10 @@
 "Notification.notAuthorized" = "You did NOT authorize Dynamic Dark Mode to send notifications.";
 
 /* Indicates either enable or disable opens at login failed. */
-"Preferences.opensAtLogin.failed" = "Failed to update opens at login settings";
+"Preferences.opensAtLogin.failed" = "Failed to update \"opens at login\" settings";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "Cannot observe screen brightness change.";
 
 /* For touch bar button title */
 "SettingsViewController.autoAdjustThreshold" = "Ĝustigi la Sojlon Aŭtomatike";
@@ -64,9 +58,12 @@
 /* Official */
 "SunsetSunrise.official" = "Ofica";
 
+/* Translate the same as System on preferences screen */
+"SunsetSunrise.system" = "Sistemo";
+
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "Iru al Sistemaj Preferoj";
 
-/* No comment provided by engineer. */
+/* Translate the same as in all other setup process */
 "SystemPreferences.skip" = "Preterpasu";
 

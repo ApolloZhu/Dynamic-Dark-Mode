@@ -2,7 +2,7 @@
 "1Xt-HY-uBw.title" = "Aŭtomatika Malluma Modo";
 
 /* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
-"4da-BG-PBG.title" = "From:";
+"4da-BG-PBG.title" = "El:";
 
 /* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
 "4J7-dP-txa.title" = "Enter Full Screen";
@@ -14,10 +14,13 @@
 "4Oz-wH-7ZV.title" = "Auto Adjust";
 
 /* Class = "NSMenuItem"; title = "Quit Dynamic Dark Mode"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit Dynamic Dark Mode";
+"4sb-4s-VLi.title" = "Forlasu Aŭtomatikan Malluman Modon";
 
 /* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About Dynamic Dark Mode";
+"5kV-Vb-QxS.title" = "Pri Aŭtomatika Malluma Modo";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "7Bk-9y-xQc"; */
+"7Bk-9y-xQc.title" = "Preterpasu";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
 "32v-z6-q8Z.title" = "Dynamic Dark Mode Preferences";
@@ -28,50 +31,74 @@
 /* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
 "apZ-rU-OFQ.title" = "Show Dropdown Menu";
 
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "ArU-ey-Yv0"; */
+"ArU-ey-Yv0.title" = "Clear";
+
 /* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
 "aTl-1u-JFS.title" = "Print…";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
-"aUF-d1-5bR.title" = "Window";
+"aUF-d1-5bR.title" = "Fenestro";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
-"AYu-sK-qS6.title" = "Main Menu";
+"AYu-sK-qS6.title" = "Ĉefa Menuo";
+
+/* Class = "NSTextFieldCell"; title = "Touch Bar"; ObjectID = "B2S-Yj-Ih0"; */
+"B2S-Yj-Ih0.title" = "Touch Bar";
+
+/* Class = "NSMenuItem"; title = "System"; ObjectID = "bE4-JC-bEZ"; */
+"bE4-JC-bEZ.title" = "Sistemo";
 
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
-"bib-Uj-vzu.title" = "File";
+"bib-Uj-vzu.title" = "Dosiero";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Preferoj…";
 
 /* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
-"Buz-5v-iiv.title" = "Welcome to Dynamic Dark Mode";
+"Buz-5v-iiv.title" = "Benvenon al Aŭtomatika Malluma Modo";
+
+/* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
+"Cgb-Kl-NJf.title" = "Show Dark Mode Toggle In System Tray";
+
+/* Class = "NSButtonCell"; title = "Check for Updates"; ObjectID = "D6A-w5-8EN"; */
+"D6A-w5-8EN.title" = "Serĉu por Ĝisdatigoj";
 
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "Dark Mode On Between";
 
 /* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
-"dMs-cI-mzQ.title" = "File";
+"dMs-cI-mzQ.title" = "Dosiero";
 
 /* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
 "do3-JG-x5l.title" = "Threshold:";
 
+/* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
+"du9-VW-tDe.title" = "Malluma";
+
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
-"DVo-aG-piG.title" = "Close";
+"DVo-aG-piG.title" = "Fermu";
 
 /* Class = "NSMenuItem"; title = "Hidden"; ObjectID = "eib-A2-uKg"; */
 "eib-A2-uKg.title" = "Hidden";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
-"F2S-fz-NVQ.title" = "Help";
+"F2S-fz-NVQ.title" = "Helpo";
 
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
 "FKE-Sm-Kum.title" = "Dynamic Dark Mode Help";
+
+/* Class = "NSTextFieldCell"; title = "Desktop"; ObjectID = "FZe-x2-1Zh"; */
+"FZe-x2-1Zh.title" = "Desktop";
+
+/* Class = "NSButtonCell"; title = "Configure Dynamic Wallpapers"; ObjectID = "G30-nf-HWb"; */
+"G30-nf-HWb.title" = "Configure Dynamic Wallpapers";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
 "H8h-7b-M4v.title" = "View";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
-"hBx-FP-5Wr.title" = "To:";
+"hBx-FP-5Wr.title" = "Al:";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "View";
@@ -87,6 +114,9 @@
 
 /* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
 "Ibh-ok-jMp.title" = "Custom Range";
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "jnk-LX-UU9"; */
+"jnk-LX-UU9.title" = "Done";
 
 /* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
 "jwe-Zh-ib0.title" = "Allow Access Current Location";
@@ -142,14 +172,17 @@
 /* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
 "scf-Wn-qXQ.title" = "Menu Bar Item";
 
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "Sng-PU-cQQ"; */
+"Sng-PU-cQQ.title" = "Preterpasu";
+
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
 "T1i-3L-V9g.title" = "Setup";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
-"Td7-aD-5lo.title" = "Window";
+"Td7-aD-5lo.title" = "Fenestro";
 
 /* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
-"tF8-qA-5Bo.title" = "Other";
+"tF8-qA-5Bo.title" = "Alia";
 
 /* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Aŭtomatika Malluma Modo";
@@ -161,16 +194,22 @@
 "VHN-z1-e7t.title" = "Civil Sunset Sunrise";
 
 /* Class = "NSButtonCell"; title = "Quit (⌘Q)"; ObjectID = "vzJ-gO-E1h"; */
-"vzJ-gO-E1h.title" = "Quit (⌘Q)";
+"vzJ-gO-E1h.title" = "Forlasu (⌘Q)";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
-"wpr-3q-Mcd.title" = "Help";
+"wpr-3q-Mcd.title" = "Helpo";
 
 /* Class = "NSButtonCell"; title = "Check Permission >>"; ObjectID = "X4y-Vz-jYE"; */
 "X4y-Vz-jYE.title" = "Exit & Configure >>";
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
 "y0s-hF-kCC.title" = "Setup >>";
+
+/* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
+"yl0-uh-cim.title" = "Disable During Scheduled Dark Mode";
+
+/* Class = "NSButtonCell"; title = "Light"; ObjectID = "yM1-aa-gcH"; */
+"yM1-aa-gcH.title" = "Luma";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night.";

@@ -1,17 +1,8 @@
 /* No comment provided by engineer. */
 "AppleScript.authorization.error" = "You didn't allow Dynamic Dark Mode to manage dark mode";
 
-/* Generic error happened */
-"AppleScript.authorization.failed" = "Something Went Wrong";
-
-/* No comment provided by engineer. */
-"AppleScript.authorization.instruction" = "We'll take you to System Preferences.";
-
-/* Something went wrong. But it's okay */
-"AppleScript.execute.error" = "Failed to Toggle Dark Mode";
-
 /* Scare the user so they report bugs. */
-"Bug.general.title" = "Report Bug To Developer";
+"Bug.general.title" = "バグを報告する";
 
 /* Request users to provide more context. */
 "Bug.known.title" = "Encountered a Known Issue";
@@ -59,17 +50,20 @@
 "SunsetSunrise.civil" = "Civil";
 
 /* CustomRange */
-"SunsetSunrise.customRange" = "Custom";
+"SunsetSunrise.customRange" = "カスタム";
 
 /* Nautical */
 "SunsetSunrise.nautical" = "Nautical";
 
 /* Official */
-"SunsetSunrise.official" = "Official";
+"SunsetSunrise.official" = "公式";
+
+/* Translate the same as System on preferences screen */
+"SunsetSunrise.system" = "システム";
 
 /* No comment provided by engineer. */
 "SystemPreferences.open" = "設定を開く";
 
-/* No comment provided by engineer. */
+/* Translate the same as in all other setup process */
 "SystemPreferences.skip" = "スキップ";
 

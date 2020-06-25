@@ -19,8 +19,11 @@
 /* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
 "5kV-Vb-QxS.title" = "Dynamic Dark Modeについて";
 
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "7Bk-9y-xQc"; */
+"7Bk-9y-xQc.title" = "スキップ";
+
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
-"32v-z6-q8Z.title" = "Dynamic Dark Mode Preferences";
+"32v-z6-q8Z.title" = "Dynamic Dark Mode 設定";
 
 /* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
 "92J-gp-8D9.title" = "Allow Controlling System Events";
@@ -43,6 +46,9 @@
 /* Class = "NSTextFieldCell"; title = "Touch Bar"; ObjectID = "B2S-Yj-Ih0"; */
 "B2S-Yj-Ih0.title" = "Touch Bar";
 
+/* Class = "NSMenuItem"; title = "System"; ObjectID = "bE4-JC-bEZ"; */
+"bE4-JC-bEZ.title" = "システム";
+
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
 "bib-Uj-vzu.title" = "ファイル";
 
@@ -58,9 +64,6 @@
 /* Class = "NSButtonCell"; title = "Check for Updates"; ObjectID = "D6A-w5-8EN"; */
 "D6A-w5-8EN.title" = "Check for Updates";
 
-/* Class = "NSButtonCell"; title = "Automatically Check for Updates"; ObjectID = "DbR-nY-gKC"; */
-"DbR-nY-gKC.title" = "Automatically Check for Updates";
-
 /* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
 "Dcd-f7-wbP.title" = "Dark Mode On Between";
 
@@ -71,7 +74,7 @@
 "do3-JG-x5l.title" = "Threshold:";
 
 /* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
-"du9-VW-tDe.title" = "Dark";
+"du9-VW-tDe.title" = "ダーク";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "閉じる";
@@ -83,10 +86,10 @@
 "F2S-fz-NVQ.title" = "ヘルプ";
 
 /* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Dynamic Dark Mode Help";
+"FKE-Sm-Kum.title" = "Dynamic Dark Mode ヘルプ";
 
 /* Class = "NSTextFieldCell"; title = "Desktop"; ObjectID = "FZe-x2-1Zh"; */
-"FZe-x2-1Zh.title" = "Desktop";
+"FZe-x2-1Zh.title" = "デスクトップ";
 
 /* Class = "NSButtonCell"; title = "Configure Dynamic Wallpapers"; ObjectID = "G30-nf-HWb"; */
 "G30-nf-HWb.title" = "Configure Dynamic Wallpapers";
@@ -113,7 +116,7 @@
 "Ibh-ok-jMp.title" = "Custom Range";
 
 /* Class = "NSButtonCell"; title = "Done"; ObjectID = "jnk-LX-UU9"; */
-"jnk-LX-UU9.title" = "Done";
+"jnk-LX-UU9.title" = "完了";
 
 /* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
 "jwe-Zh-ib0.title" = "位置情報のへのアクセスを許可";
@@ -149,7 +152,7 @@
 "OY7-WF-poV.title" = "最小化";
 
 /* Class = "NSButtonCell"; title = "Open Preferences >>"; ObjectID = "pDT-Ae-cZU"; */
-"pDT-Ae-cZU.title" = "Open Preferences >>";
+"pDT-Ae-cZU.title" = "設定を開く >>";
 
 /* Class = "NSMenuItem"; title = "Official Sunset Sunrise"; ObjectID = "QiA-MM-zn7"; */
 "QiA-MM-zn7.title" = "日の出・日の入り時";
@@ -168,6 +171,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
 "scf-Wn-qXQ.title" = "Menu Bar Item";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "Sng-PU-cQQ"; */
+"Sng-PU-cQQ.title" = "スキップ";
 
 /* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
 "T1i-3L-V9g.title" = "設定";
@@ -197,13 +203,13 @@
 "X4y-Vz-jYE.title" = "Check Permission >>";
 
 /* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
-"y0s-hF-kCC.title" = "Setup >>";
+"y0s-hF-kCC.title" = "設定 >>";
 
 /* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
 "yl0-uh-cim.title" = "Disable During Scheduled Dark Mode";
 
 /* Class = "NSButtonCell"; title = "Light"; ObjectID = "yM1-aa-gcH"; */
-"yM1-aa-gcH.title" = "Light";
+"yM1-aa-gcH.title" = "ライト";
 
 /* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
 "ZMe-eD-uJT.title" = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night.";
