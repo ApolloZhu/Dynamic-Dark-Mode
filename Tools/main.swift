@@ -23,6 +23,8 @@ struct Feed: Codable {
 }
 
 let dateFormatter = DateFormatter()
+dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
 dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
 
 extension Feed.Entry {
@@ -47,8 +49,10 @@ URLSession.shared.dataTask(with: URL(string: releasesURL)!) { data, _, _ in
     let feed = try! decoder.decode(Feed.self, from: data)
     print(feed.entry.first!.appcastItem())
     /*
+    // I don't know how to do the checksum, so commented out...
+     
     let items = feed.entry.enumerated().reduce("") { (result, item) -> String in
-        return result + item.1.appcastItem(sparkleVersion: feed.entry.count - item.0 - 1)
+        return result + item.1.appcastItem() + "\n" // sparkleVersion: feed.entry.count - item.0 - 1
     }
     let string = """
     <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
