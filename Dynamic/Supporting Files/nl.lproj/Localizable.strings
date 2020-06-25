@@ -1,0 +1,69 @@
+/* No comment provided by engineer. */
+"AppleScript.authorization.error" = "Je hebt geen toestemming gegeven om Dynamische Donkere Modus de donkere modus te laten beheren";
+
+/* Scare the user so they report bugs. */
+"Bug.general.title" = "Meld deze bug aan de ontwikkelaar";
+
+/* Request users to provide more context. */
+"Bug.known.title" = "Je bent tegen een bekend probleem aangelopen";
+
+/* User did not authorize this app to use location. */
+"Location.notAuthorized" = "Je hebt GEEN toestemming gegeven om Dynamische Donkere Modus je locatie te laten opvragen";
+
+/* Failed to attain user location for sunset/sunrise calculation. */
+"Location.notAvailable" = "Kan huidige locatie niet opvragen";
+
+/* Took too long to use up retries, most likely off Wi-Fi. */
+"Location.timeout" = "Verzoek verlopen. Controleer je internetverbinding.";
+
+/* Can't fetch user's current location. Using cache instead. */
+"Location.useCache" = "Ingepland op basis van vorige locatie";
+
+/* Drop down menu item to show preferences */
+"Menu.preferences" = "Voorkeuren…";
+
+/* Use system translation for quit */
+"Menu.quit" = "Sluit af";
+
+/* Action item to toggle in from menu bar */
+"Menu.toggle" = "Schakel donkere modus in/uit";
+
+/* User did not authorize this app to send notifications. */
+"Notification.notAuthorized" = "Je hebt GEEN toestemming gegeven om Dynamische Donkere Modus meldingen te laten sturen";
+
+/* Indicates either enable or disable opens at login failed. */
+"Preferences.opensAtLogin.failed" = "Kan de automatisch opstarten-instellingen niet aanpassen";
+
+/* Notification text for bug report */
+"ScreenBrightnessObserver.startObserving.failed" = "Kan de schermhelderheidsaanpassing niet opvragen";
+
+/* For touch bar button title */
+"SettingsViewController.autoAdjustThreshold" = "Drempelw. automatisch aanpassen";
+
+/* For touch bar button title */
+"SettingsViewController.scheduleMode" = "Planning";
+
+/* Astronomical */
+"SunsetSunrise.astronomical" = "Astronomisch";
+
+/* Civil */
+"SunsetSunrise.civil" = "Normaal";
+
+/* CustomRange */
+"SunsetSunrise.customRange" = "Aangepast";
+
+/* Nautical */
+"SunsetSunrise.nautical" = "Nautisch";
+
+/* Official */
+"SunsetSunrise.official" = "Officieel";
+
+/* Translate the same as System on preferences screen */
+"SunsetSunrise.system" = "Systeem";
+
+/* No comment provided by engineer. */
+"SystemPreferences.open" = "Open systeemvoorkeuren";
+
+/* Translate the same as in all other setup process */
+"SystemPreferences.skip" = "Sla over";
+

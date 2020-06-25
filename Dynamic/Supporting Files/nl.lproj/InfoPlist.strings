@@ -1,0 +1,9 @@
+/* Bundle name */
+"CFBundleName" = "Dynamische Donkere Modus";
+
+/* Privacy - AppleEvents Sending Usage Description */
+"NSAppleEventsUsageDescription" = "Zó beheert dynamische Donkere Modus de donkere modus voor je.";
+
+/* Privacy - Location Usage Description */
+"NSLocationUsageDescription" = "Zó berekent Dynamische Donkere Modus de zonsopgang en -ondergang.";
+

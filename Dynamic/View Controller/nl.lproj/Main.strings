@@ -1,0 +1,222 @@
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Dynamische Donkere Modus";
+
+/* Class = "NSTextFieldCell"; title = "From:"; ObjectID = "4da-BG-PBG"; */
+"4da-BG-PBG.title" = "Van:";
+
+/* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
+"4J7-dP-txa.title" = "Beeldvullend";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "4NB-3a-2UR"; */
+"4NB-3a-2UR.title" = "Sla op";
+
+/* Class = "NSTextFieldCell"; title = "Auto Adjust"; ObjectID = "4Oz-wH-7ZV"; */
+"4Oz-wH-7ZV.title" = "Pas automatisch aan";
+
+/* Class = "NSMenuItem"; title = "Quit Dynamic Dark Mode"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Sluit Dynamische Donkere Modus af";
+
+/* Class = "NSMenuItem"; title = "About Dynamic Dark Mode"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Over Dynamische Donkere Modus";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "7Bk-9y-xQc"; */
+"7Bk-9y-xQc.title" = "Sla over";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode Preferences"; ObjectID = "32v-z6-q8Z"; */
+"32v-z6-q8Z.title" = "Dynamische Donkere Modus-voorkeuren";
+
+/* Class = "NSTextFieldCell"; title = "Allow Controlling System Events"; ObjectID = "92J-gp-8D9"; */
+"92J-gp-8D9.title" = "Sta beheren van systeemgebeurtenissen toe";
+
+/* Class = "NSMenuItem"; title = "Show Dropdown Menu"; ObjectID = "apZ-rU-OFQ"; */
+"apZ-rU-OFQ.title" = "Toon uitrolmenu";
+
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "ArU-ey-Yv0"; */
+"ArU-ey-Yv0.title" = "Wis";
+
+/* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
+"aTl-1u-JFS.title" = "Druk af…";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Venster";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Hoofdmenu";
+
+/* Class = "NSTextFieldCell"; title = "Touch Bar"; ObjectID = "B2S-Yj-Ih0"; */
+"B2S-Yj-Ih0.title" = "Touch Bar";
+
+/* Class = "NSMenuItem"; title = "System"; ObjectID = "bE4-JC-bEZ"; */
+"bE4-JC-bEZ.title" = "Systeem";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "Bestand";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Voorkeuren…";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Dynamic Dark Mode"; ObjectID = "Buz-5v-iiv"; */
+"Buz-5v-iiv.title" = "Welkom bij Dynamische Donkere Modus";
+
+/* Class = "NSButtonCell"; title = "Show Dark Mode Toggle In System Tray"; ObjectID = "Cgb-Kl-NJf"; */
+"Cgb-Kl-NJf.title" = "Toon aan-/uitschakelaar in systeemvak";
+
+/* Class = "NSButtonCell"; title = "Check for Updates"; ObjectID = "D6A-w5-8EN"; */
+"D6A-w5-8EN.title" = "Controleer op updates";
+
+/* Class = "NSButtonCell"; title = "Dark Mode On Between"; ObjectID = "Dcd-f7-wbP"; */
+"Dcd-f7-wbP.title" = "Pas donker thema toe tussen";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "Bestand";
+
+/* Class = "NSTextFieldCell"; title = "Threshold:"; ObjectID = "do3-JG-x5l"; */
+"do3-JG-x5l.title" = "Drempelwaarde:";
+
+/* Class = "NSButtonCell"; title = "Dark"; ObjectID = "du9-VW-tDe"; */
+"du9-VW-tDe.title" = "Donker";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "Sluit";
+
+/* Class = "NSMenuItem"; title = "Hidden"; ObjectID = "eib-A2-uKg"; */
+"eib-A2-uKg.title" = "Verborgen";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Hulp";
+
+/* Class = "NSMenuItem"; title = "Dynamic Dark Mode Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Dynamische Donkere Modus - Hulp";
+
+/* Class = "NSTextFieldCell"; title = "Desktop"; ObjectID = "FZe-x2-1Zh"; */
+"FZe-x2-1Zh.title" = "Bureaublad";
+
+/* Class = "NSButtonCell"; title = "Configure Dynamic Wallpapers"; ObjectID = "G30-nf-HWb"; */
+"G30-nf-HWb.title" = "Stel dynamische achtergronden in";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "Weergave";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "hBx-FP-5Wr"; */
+"hBx-FP-5Wr.title" = "Tot:";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "Weergave";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Diensten";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "i9M-2z-rxR"; */
+"i9M-2z-rxR.title" = "Sla over";
+
+/* Class = "NSButtonCell"; title = "Opens At Login"; ObjectID = "IB3-f2-BQf"; */
+"IB3-f2-BQf.title" = "Start automatisch op";
+
+/* Class = "NSMenuItem"; title = "Custom Range"; ObjectID = "Ibh-ok-jMp"; */
+"Ibh-ok-jMp.title" = "Aangepast bereik";
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "jnk-LX-UU9"; */
+"jnk-LX-UU9.title" = "Klaar";
+
+/* Class = "NSTextFieldCell"; title = "Allow Access Current Location"; ObjectID = "jwe-Zh-ib0"; */
+"jwe-Zh-ib0.title" = "Sta huidige locatie opvragen toe";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Toon alles";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Haal alles naar voorgrond";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to send commands to the built-in \"System Events\" in order to toggle dark mode for you."; ObjectID = "mGd-Ks-iSW"; */
+"mGd-Ks-iSW.title" = "Dynamische Donkere Modus moet opdrachten versturen naar de ingebouwde app 'Systeemgebeurtenissen' om de donkere modus aan en uit te zetten.";
+
+/* Class = "NSTextFieldCell"; title = "Shortcut"; ObjectID = "MI9-bf-6dt"; */
+"MI9-bf-6dt.title" = "Sneltoets";
+
+/* Class = "NSMenuItem"; title = "Astronomical Sunset Sunrise"; ObjectID = "N5L-wl-yWc"; */
+"N5L-wl-yWc.title" = "Astronomische zonsopkomst/-ondergang";
+
+/* Class = "NSButtonCell"; title = "Re-setup"; ObjectID = "nFa-hm-K6y"; */
+"nFa-hm-K6y.title" = "Stel opnieuw in";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Diensten";
+
+/* Class = "NSTextFieldCell"; title = "Scheduled"; ObjectID = "O5v-cY-mFV"; */
+"O5v-cY-mFV.title" = "Ingepland";
+
+/* Class = "NSMenuItem"; title = "Hide Dynamic Dark Mode"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Verberg Dynamische Donkere Modus";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimaliseer";
+
+/* Class = "NSButtonCell"; title = "Open Preferences >>"; ObjectID = "pDT-Ae-cZU"; */
+"pDT-Ae-cZU.title" = "Open voorkeuren >>";
+
+/* Class = "NSMenuItem"; title = "Official Sunset Sunrise"; ObjectID = "QiA-MM-zn7"; */
+"QiA-MM-zn7.title" = "Officiële zonsopkomst/-ondergang";
+
+/* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
+"qIS-W8-SiK.title" = "Pagina-indeling…";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "Toggle Dark Mode"; ObjectID = "RMC-yX-fzH"; */
+"RMC-yX-fzH.title" = "Schakel donkere modus in/uit";
+
+/* Class = "NSMenuItem"; title = "Nautical Sunset Sunrise"; ObjectID = "RtR-kN-8f8"; */
+"RtR-kN-8f8.title" = "Nautische zonsopkomst/-ondergang";
+
+/* Class = "NSTextFieldCell"; title = "Menu Bar Item"; ObjectID = "scf-Wn-qXQ"; */
+"scf-Wn-qXQ.title" = "Menubalkitem";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "Sng-PU-cQQ"; */
+"Sng-PU-cQQ.title" = "Sla over";
+
+/* Class = "NSWindow"; title = "Setup"; ObjectID = "T1i-3L-V9g"; */
+"T1i-3L-V9g.title" = "Stel in";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Venster";
+
+/* Class = "NSTextFieldCell"; title = "Other"; ObjectID = "tF8-qA-5Bo"; */
+"tF8-qA-5Bo.title" = "Overig";
+
+/* Class = "NSMenu"; title = "Dynamic Dark Mode"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Dynamische Donkere Modus";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Verberg anderen";
+
+/* Class = "NSMenuItem"; title = "Civil Sunset Sunrise"; ObjectID = "VHN-z1-e7t"; */
+"VHN-z1-e7t.title" = "Normale zonsopkomst/-ondergang";
+
+/* Class = "NSButtonCell"; title = "Quit (⌘Q)"; ObjectID = "vzJ-gO-E1h"; */
+"vzJ-gO-E1h.title" = "Sluit af (⌘Q)";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Hulp";
+
+/* Class = "NSButtonCell"; title = "Check Permission >>"; ObjectID = "X4y-Vz-jYE"; */
+"X4y-Vz-jYE.title" = "Controleer toegangsrecht >>";
+
+/* Class = "NSButtonCell"; title = "Setup >>"; ObjectID = "y0s-hF-kCC"; */
+"y0s-hF-kCC.title" = "Stel in >>";
+
+/* Class = "NSButtonCell"; title = "Disable During Scheduled Dark Mode"; ObjectID = "yl0-uh-cim"; */
+"yl0-uh-cim.title" = "Schakel uit tijdens ingeplande donkere modus";
+
+/* Class = "NSButtonCell"; title = "Light"; ObjectID = "yM1-aa-gcH"; */
+"yM1-aa-gcH.title" = "Licht";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic Dark Mode needs to know your current location in order to calculate sunset/sunrise time, thereby turning on dark mode at night."; ObjectID = "ZMe-eD-uJT"; */
+"ZMe-eD-uJT.title" = "Dynamische Donkere Modus moet je locatie opvragen om de juiste zonsopkomst- en zonsondergangtijden te berekenen.";
+
+/* Class = "NSButtonCell"; title = "Turn On Dark Mode Based On Brightness"; ObjectID = "znm-gt-cHP"; */
+"znm-gt-cHP.title" = "Schakel donkere modus in op basis van helderheid";
+
+/* Class = "NSWindow"; title = "Dynamic Dark Mode"; ObjectID = "ZWC-1W-uDl"; */
+"ZWC-1W-uDl.title" = "Dynamische Donkere Modus";
+
