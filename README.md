@@ -35,7 +35,7 @@ brew cask install dynamic-dark-mode
 
 ```
 Dynamic Dark Mode - the smart, automatic Dark Mode toggle for macOS
-Copyright (C) 2018-2020 Zhiyu Zhu (@ApolloZhu)
+Copyright (C) 2018-2021 Zhiyu Zhu (@ApolloZhu)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -51,7 +51,29 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
-<details>
+## Alternatives
+
+This is not quite what you are looking for? Here are some other options you can try:
+
+|                                                              | Daylight Schedule | Custom Schedule | Ambient Light | Shortcut Key | Menu Bar | CLI  | Per App | Night Shift | Wallpaper | Localized |
+| ------------------------------------------------------------ | ----------------------- | --------------- | ------------- | ------------ | -------- | ---- | ------- | ----------- | --------- | --------- |
+| [macOS Dark Mode, Auto](https://support.apple.com/en-us/HT208976) | ✅                       |                 |               |              |          |      |         |             |           | ✅         |
+| Dynamic Dark Mode                                            | ✅                       | ✅               | ✅*            | ✅            | ✅        |      |         |             |           | ✅ |
+| [NightOwl](https://nightowl.kramser.xyz/)                    | ✅                       | ✅               |               | ✅            | ✅        |      | ✅       |             |           |           |
+| [DarkModeBuddy](https://gumroad.com/l/darkmodebuddy)         |                         |                 | ✅             |              |          |      |         |             |           |           |
+| [Nocturnal](https://github.com/HarshilShah/Nocturnal)        |                         |                 |               |              | ✅        |      |         |             |           |           |
+| [dark-mode](https://github.com/sindresorhus/dark-mode)       |                         |                 |               |              |          | ✅    |         |             |           |           |
+| [Gray](https://github.com/zenangst/Gray)                     |                         |                 |               |              |          |      | ✅       |             |           |           |
+| [One Switch](https://fireball.studio/oneswitch/)             |                         |                 |               |              | ✅        |      |         | ✅           |           |           |
+| [f.lux](https://justgetflux.com/)                            | ✅                       | ✅               |               |              |          |      |         | ✅           |           | ✅         |
+| [Shifty](https://shifty.natethompson.io)                     | ✅                       | ✅               |               |              |          |      |         | ✅           |           | ✅         |
+| [Irvu‪e‬](https://apps.apple.com/app/id1039633667)             |                         |                 |               |              |          |      |         |             | ✅         |           |
+
+> \* Dynamic Dark Mode requires "Automatically adjust brightness" option enabled in System Preferences.
+
+---
+
+<details display="none">
 <summary></summary>
 
 <script type="text/javascript">
