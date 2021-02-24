@@ -13,8 +13,15 @@ Instead of looking for the switch for dark mode in System Preferences, just clic
 ### Via [Homebrew Cask](https://brew.sh/) (Recommended)
 
 ```
+brew install --cask dynamic-dark-mode
+```
+
+<details><summary>Didn't work? Try this if you have an earlier version of Homebrew</summary>
+
+```
 brew cask install dynamic-dark-mode
 ```
+</details>
 
 ### Direct Download
 
