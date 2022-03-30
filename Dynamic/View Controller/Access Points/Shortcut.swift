@@ -28,8 +28,8 @@ enum Shortcut {
         let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: [.command, .shift],
                                      timestamp: 0, windowNumber: 0, context: nil,
                                      characters: "T", charactersIgnoringModifiers: "t",
-                                     isARepeat: false, keyCode: UInt16(kVK_ANSI_T))
-        let shortcut = MASShortcut(event: event)!
+                                     isARepeat: false, keyCode: UInt16(kVK_ANSI_T))!
+        let shortcut = MASShortcut(event: event)
         let shortcuts = [Preferences.toggleShortcutKey: shortcut]
         MASShortcutBinder.shared()?.registerDefaultShortcuts(shortcuts)
         let data = try! NSKeyedArchiver.archivedData(withRootObject: shortcut, requiringSecureCoding: true)

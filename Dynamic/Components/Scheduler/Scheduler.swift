@@ -112,19 +112,18 @@ public final class Scheduler: NSObject {
     
     private func dynamicCurrentMode(fromToday now: Date, andTomorrow tomorrow: Date,
                                     at coordinate: CLLocationCoordinate2D) -> Mode {
-        let currentTimeZone = TimeZone.current
         let scheduledDate: Date
-        let solar = Solar(for: now, coordinate: coordinate, timezone: currentTimeZone)!
+        let solar = Solar(for: now, coordinate: coordinate)!
         let dates = solar.sunriseSunsetTime
         if now < dates.sunrise {
             scheduledDate = dates.sunrise
             let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: now)!
-            let pastSolar = Solar(for: yesterday, coordinate: coordinate, timezone: currentTimeZone)!
+            let pastSolar = Solar(for: yesterday, coordinate: coordinate)!
             preferences.scheduleStart = pastSolar.sunriseSunsetTime.sunset
             preferences.scheduleEnd = scheduledDate
             return (.darkAqua, scheduledDate)
         } else {
-            let futureSolar = Solar(for: tomorrow, coordinate: coordinate, timezone: currentTimeZone)!
+            let futureSolar = Solar(for: tomorrow, coordinate: coordinate)!
             let futureDates = futureSolar.sunriseSunsetTime
             if now < dates.sunset {
                 scheduledDate = dates.sunset

@@ -1,44 +1,16 @@
 PODS:
-  - LetsMove (1.24)
-  - MASShortcut (2.4.0)
-  - Schedule (2.1.0)
-  - Solar (2.1.0)
-  - Sparkle (1.23.0)
+  - LetsMove (1.25)
 
 DEPENDENCIES:
   - LetsMove
-  - MASShortcut
-  - Schedule (from `https://github.com/luoxiu/Schedule.git`)
-  - Solar (from `https://github.com/paulw11/Solar.git`)
-  - Sparkle
 
 SPEC REPOS:
   trunk:
     - LetsMove
-    - MASShortcut
-    - Sparkle
-
-EXTERNAL SOURCES:
-  Schedule:
-    :git: https://github.com/luoxiu/Schedule.git
-  Solar:
-    :git: https://github.com/paulw11/Solar.git
-
-CHECKOUT OPTIONS:
-  Schedule:
-    :commit: 1744af9459dc6cbacf1800308154268998a2f5ff
-    :git: https://github.com/luoxiu/Schedule.git
-  Solar:
-    :commit: 64a0c76fd833376a2f1483fcdff554d0db54b8c6
-    :git: https://github.com/paulw11/Solar.git
 
 SPEC CHECKSUMS:
-  LetsMove: fefe56bc7bc7fb7d37049e28a14f297961229fc5
-  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
-  Schedule: 00e6d7bbdbdb000fd1f51a7d10e9f88a8c451fda
-  Solar: 80d32d7bf71b8bf7f2383d994cb4207b97b63418
-  Sparkle: 55b1a87ba69d56913375a281546b7c82dec95bb0
+  LetsMove: 7b9fe44737707d984fbd3f47af46609a9a07b461
 
-PODFILE CHECKSUM: df2bcc3a75b2c24cc695e84f5bb2834411740509
+PODFILE CHECKSUM: abcffd5de7a4807e38f06fa9c8565646e5806f40
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.11.3

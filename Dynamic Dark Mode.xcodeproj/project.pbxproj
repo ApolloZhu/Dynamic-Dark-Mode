@@ -50,6 +50,10 @@
 		D29AE33523304B2100A8B4DC /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29AE33423304B2100A8B4DC /* InitialSetupViewController.swift */; };
 		D2BAC963232790D700E56B86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BAC962232790D700E56B86 /* main.swift */; };
 		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
+		DBAA090027F3EFAA00F957E6 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA08FF27F3EFAA00F957E6 /* MASShortcut */; };
+		DBAA090227F3EFAA00F957E6 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090127F3EFAA00F957E6 /* Schedule */; };
+		DBAA090427F3EFAA00F957E6 /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090327F3EFAA00F957E6 /* Solar */; };
+		DBAA090627F4139200F957E6 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090527F4139200F957E6 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +189,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBAA090627F4139200F957E6 /* Sparkle in Frameworks */,
+				DBAA090427F3EFAA00F957E6 /* Solar in Frameworks */,
+				DBAA090027F3EFAA00F957E6 /* MASShortcut in Frameworks */,
+				DBAA090227F3EFAA00F957E6 /* Schedule in Frameworks */,
 				527B4472227E4252006E8369 /* DFRFoundation.framework in Frameworks */,
 				D264A812232A927700210DAC /* SkyLight.framework in Frameworks */,
 				56EFE92CA8C3C34A08FA3BA4 /* libPods-Dynamic Dark Mode.a in Frameworks */,
@@ -414,7 +422,6 @@
 				52168FB520C8B47100869A9C /* Frameworks */,
 				52168FB620C8B47100869A9C /* Resources */,
 				5237AE5220CCC084009CF037 /* Copy Files */,
-				64FD5072D8D2974CEC6FFDFF /* [CP] Embed Pods Frameworks */,
 				6375C8ACCAD8D2A44BB606FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -422,6 +429,12 @@
 			dependencies = (
 			);
 			name = "Dynamic Dark Mode";
+			packageProductDependencies = (
+				DBAA08FF27F3EFAA00F957E6 /* MASShortcut */,
+				DBAA090127F3EFAA00F957E6 /* Schedule */,
+				DBAA090327F3EFAA00F957E6 /* Solar */,
+				DBAA090527F4139200F957E6 /* Sparkle */,
+			);
 			productName = Dynamic;
 			productReference = 52168FB820C8B47100869A9C /* Dynamic Dark Mode.app */;
 			productType = "com.apple.product-type.application";
@@ -525,6 +538,10 @@
 			mainGroup = 52168FAF20C8B47100869A9C;
 			packageReferences = (
 				D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */,
+				DBAA08F527F3EDAB00F957E6 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				DBAA08F827F3EDE800F957E6 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+				DBAA08F927F3EE1B00F957E6 /* XCRemoteSwiftPackageReference "Schedule" */,
+				DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */,
 			);
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
 			projectDirPath = "";
@@ -600,23 +617,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		64FD5072D8D2974CEC6FFDFF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dynamic Dark Mode/Pods-Dynamic Dark Mode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1057,6 +1057,38 @@
 				minimumVersion = 0.8.0;
 			};
 		};
+		DBAA08F527F3EDAB00F957E6 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		DBAA08F827F3EDE800F957E6 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shpakovski/MASShortcut";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DBAA08F927F3EE1B00F957E6 /* XCRemoteSwiftPackageReference "Schedule" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luoxiu/Schedule";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ceeK/Solar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1064,6 +1096,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D2BAC9672327932C00E56B86 /* XCRemoteSwiftPackageReference "XMLCoder" */;
 			productName = XMLCoder;
+		};
+		DBAA08FF27F3EFAA00F957E6 /* MASShortcut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBAA08F827F3EDE800F957E6 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
+		};
+		DBAA090127F3EFAA00F957E6 /* Schedule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBAA08F927F3EE1B00F957E6 /* XCRemoteSwiftPackageReference "Schedule" */;
+			productName = Schedule;
+		};
+		DBAA090327F3EFAA00F957E6 /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */;
+			productName = Solar;
+		};
+		DBAA090527F4139200F957E6 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBAA08F527F3EDAB00F957E6 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

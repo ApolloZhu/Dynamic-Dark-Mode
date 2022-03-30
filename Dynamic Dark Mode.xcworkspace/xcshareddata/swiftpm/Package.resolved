@@ -1,16 +1,50 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "XMLCoder",
-        "repositoryURL": "https://github.com/MaxDesiatov/XMLCoder.git",
-        "state": {
-          "branch": null,
-          "revision": "f68964b14c34f73f2a6fa56f30d8a355e21afc25",
-          "version": "0.8.0"
-        }
+  "pins" : [
+    {
+      "identity" : "masshortcut",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shpakovski/MASShortcut",
+      "state" : {
+        "branch" : "master",
+        "revision" : "57ccb018863b328a22298a275593a1d87ab4db24"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "schedule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/luoxiu/Schedule",
+      "state" : {
+        "revision" : "e388fcab1d870f32c0359a414fda81b8e81b98c9",
+        "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "solar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ceeK/Solar",
+      "state" : {
+        "revision" : "c2b96f2d5fb7f835b91cefac5e83101f54643901",
+        "version" : "3.0.1"
+      }
+    },
+    {
+      "identity" : "sparkle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparkle-project/Sparkle",
+      "state" : {
+        "revision" : "286edd1fa22505a9e54d170e9fd07d775ea233f2",
+        "version" : "2.1.0"
+      }
+    },
+    {
+      "identity" : "xmlcoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaxDesiatov/XMLCoder.git",
+      "state" : {
+        "revision" : "f30119af03996939cc4f54e0bf0dda9f88a84da5",
+        "version" : "0.13.1"
+      }
+    }
+  ],
+  "version" : 2
 }
