@@ -6,7 +6,7 @@
 //  Copyright © 2018-2022 Dynamic Dark Mode. All rights reserved.
 //
 
-import Solar
+import CoreLocation
 
 public enum Zenith: Int {
     case official
@@ -36,19 +36,42 @@ extension Zenith {
     }
 }
 
-extension Solar {
+struct Solar {
+    let date: Date
+    let coordinate: CLLocationCoordinate2D
+    
+    init?(for date: Date, coordinate: CLLocationCoordinate2D) {
+        guard CLLocationCoordinate2DIsValid(coordinate) else {
+            return nil
+        }
+        self.date = date
+        self.coordinate = coordinate
+    }
+    
     var sunriseSunsetTime: (sunrise: Date, sunset: Date) {
         switch preferences.scheduleZenithType {
         case .custom, .system:
             fatalError("No custom zenith type in solar")
         case .official:
-            return (sunrise!, sunset!)
+            return NTSolar.sunRiseAndSet(forDate: date,
+                                         ofKind: .official,
+                                         atLocation: coordinate,
+                                         inTimeZone: .current)!
         case .civil:
-            return (civilSunrise!, civilSunset!)
+            return NTSolar.sunRiseAndSet(forDate: date,
+                                         ofKind: .civil,
+                                         atLocation: coordinate,
+                                         inTimeZone: .current)!
         case .nautical:
-            return (nauticalSunrise!, nauticalSunset!)
+            return NTSolar.sunRiseAndSet(forDate: date,
+                                         ofKind: .nautical,
+                                         atLocation: coordinate,
+                                         inTimeZone: .current)!
         case .astronomical:
-            return (astronomicalSunrise!, astronomicalSunset!)
+            return NTSolar.sunRiseAndSet(forDate: date,
+                                         ofKind: .astronomical,
+                                         atLocation: coordinate,
+                                         inTimeZone: .current)!
         }
     }
 }

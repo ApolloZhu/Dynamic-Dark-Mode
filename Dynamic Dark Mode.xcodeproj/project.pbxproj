@@ -52,8 +52,8 @@
 		D2BAC9692327932C00E56B86 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = D2BAC9682327932C00E56B86 /* XMLCoder */; };
 		DBAA090027F3EFAA00F957E6 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA08FF27F3EFAA00F957E6 /* MASShortcut */; };
 		DBAA090227F3EFAA00F957E6 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090127F3EFAA00F957E6 /* Schedule */; };
-		DBAA090427F3EFAA00F957E6 /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090327F3EFAA00F957E6 /* Solar */; };
 		DBAA090627F4139200F957E6 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090527F4139200F957E6 /* Sparkle */; };
+		DBAA090D27F42F6900F957E6 /* NTSolar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA090C27F42F6900F957E6 /* NTSolar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -177,6 +177,7 @@
 		D2BAC95B2326C02900E56B86 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DBAA090C27F42F6900F957E6 /* NTSolar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTSolar.swift; sourceTree = "<group>"; };
 		ED6A51F921772F27004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		ED6A51FB21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED6A51FC21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAA090627F4139200F957E6 /* Sparkle in Frameworks */,
-				DBAA090427F3EFAA00F957E6 /* Solar in Frameworks */,
 				DBAA090027F3EFAA00F957E6 /* MASShortcut in Frameworks */,
 				DBAA090227F3EFAA00F957E6 /* Schedule in Frameworks */,
 				527B4472227E4252006E8369 /* DFRFoundation.framework in Frameworks */,
@@ -289,6 +289,7 @@
 				5236A8EB21606035009DA3A3 /* InfoPlist.strings */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
 				524712E22157786A00F48CA0 /* Credits.rtf */,
+				DBAA090C27F42F6900F957E6 /* NTSolar.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -432,7 +433,6 @@
 			packageProductDependencies = (
 				DBAA08FF27F3EFAA00F957E6 /* MASShortcut */,
 				DBAA090127F3EFAA00F957E6 /* Schedule */,
-				DBAA090327F3EFAA00F957E6 /* Solar */,
 				DBAA090527F4139200F957E6 /* Sparkle */,
 			);
 			productName = Dynamic;
@@ -541,7 +541,6 @@
 				DBAA08F527F3EDAB00F957E6 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				DBAA08F827F3EDE800F957E6 /* XCRemoteSwiftPackageReference "MASShortcut" */,
 				DBAA08F927F3EE1B00F957E6 /* XCRemoteSwiftPackageReference "Schedule" */,
-				DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */,
 			);
 			productRefGroup = 52168FB920C8B47100869A9C /* Products */;
 			projectDirPath = "";
@@ -643,6 +642,7 @@
 				52D27E5C227D2FBB005C21D0 /* AppleInterfaceStyle+Coordinator.swift in Sources */,
 				5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */,
 				52BC0C7321C00CFC005E8E45 /* StatusBarItem.swift in Sources */,
+				DBAA090D27F42F6900F957E6 /* NTSolar.swift in Sources */,
 				52D27E5E227D3294005C21D0 /* Shortcut.swift in Sources */,
 				52D27E57227D2D4F005C21D0 /* AppleInterfaceStyle.swift in Sources */,
 				52688654215B2FA8009A2FE3 /* SlideSegue.swift in Sources */,
@@ -1081,14 +1081,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ceeK/Solar";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1106,11 +1098,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DBAA08F927F3EE1B00F957E6 /* XCRemoteSwiftPackageReference "Schedule" */;
 			productName = Schedule;
-		};
-		DBAA090327F3EFAA00F957E6 /* Solar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DBAA08FA27F3EEC300F957E6 /* XCRemoteSwiftPackageReference "Solar" */;
-			productName = Solar;
 		};
 		DBAA090527F4139200F957E6 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;

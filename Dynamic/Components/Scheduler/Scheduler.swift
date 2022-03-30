@@ -8,7 +8,6 @@
 
 import CoreLocation
 import UserNotifications
-import Solar
 import Schedule
 
 public final class Scheduler: NSObject {
