@@ -25,7 +25,6 @@
 		5236A8F321606035009DA3A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5236A8F121606035009DA3A3 /* Localizable.strings */; };
 		5237AE5120CCC051009CF037 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237AE5020CCC051009CF037 /* SettingsViewController.swift */; };
 		5237AE5320CCC09F009CF037 /* DynamicLauncher.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 52C3511820CC57B60073F0CA /* DynamicLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		524712E32157786A00F48CA0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524712E22157786A00F48CA0 /* Credits.rtf */; };
 		5262878920CB38D6009BA4EF /* ScreenBrightnessObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */; };
 		5266354D215F177D008176E9 /* AllowLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266354C215F177C008176E9 /* AllowLocationViewController.swift */; };
 		5268864F215AFC73009A2FE3 /* AllowSystemEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268864D215AFC73009A2FE3 /* AllowSystemEventsViewController.swift */; };
@@ -54,6 +53,7 @@
 		DBAA090227F3EFAA00F957E6 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090127F3EFAA00F957E6 /* Schedule */; };
 		DBAA090627F4139200F957E6 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = DBAA090527F4139200F957E6 /* Sparkle */; };
 		DBAA090D27F42F6900F957E6 /* NTSolar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA090C27F42F6900F957E6 /* NTSolar.swift */; };
+		DBAA090F27F4350B00F957E6 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DBAA090E27F4350B00F957E6 /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,7 +104,6 @@
 		523718352157469800AEC921 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5237AE5020CCC051009CF037 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		523CF01C227E1E44000E4173 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
-		524712E22157786A00F48CA0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		525324F921603D7300904D76 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		525324FA21603D7300904D76 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		5262878820CB38D6009BA4EF /* ScreenBrightnessObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessObserver.swift; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		D2BAC960232790D700E56B86 /* Tools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tools; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAC962232790D700E56B86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DBAA090C27F42F6900F957E6 /* NTSolar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTSolar.swift; sourceTree = "<group>"; };
+		DBAA090E27F4350B00F957E6 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		ED6A51F921772F27004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		ED6A51FB21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED6A51FC21772F28004DEFEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 				5236A8F121606035009DA3A3 /* Localizable.strings */,
 				5236A8EB21606035009DA3A3 /* InfoPlist.strings */,
 				52168FC520C8B47200869A9C /* Dynamic.entitlements */,
-				524712E22157786A00F48CA0 /* Credits.rtf */,
+				DBAA090E27F4350B00F957E6 /* Credits.html */,
 				DBAA090C27F42F6900F957E6 /* NTSolar.swift */,
 			);
 			path = "Supporting Files";
@@ -559,7 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5236A8ED21606035009DA3A3 /* InfoPlist.strings in Resources */,
-				524712E32157786A00F48CA0 /* Credits.rtf in Resources */,
+				DBAA090F27F4350B00F957E6 /* Credits.html in Resources */,
 				52168FC020C8B47200869A9C /* Assets.xcassets in Resources */,
 				5236A8F321606035009DA3A3 /* Localizable.strings in Resources */,
 				52168FD520C9A63B00869A9C /* Main.storyboard in Resources */,
