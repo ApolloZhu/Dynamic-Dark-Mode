@@ -20,12 +20,16 @@ public final class StatusBarItem {
     
     private var statusBarItem: NSStatusItem?
     
+    private var statusBarItemImage: NSImage {
+        AppleInterfaceStyle.isDark ? #imageLiteral(resourceName: "dark") : #imageLiteral(resourceName: "light")
+    }
+    
     private func createStatusBarItemIfNecessary() {
         guard statusBarItem == nil else { return }
         statusBarItem = NSStatusBar.system.statusItem(
             withLength: NSStatusItem.squareLength
         )
-        statusBarItem?.button?.image = #imageLiteral(resourceName: "status_bar_icon")
+        statusBarItem?.button?.image = statusBarItemImage
         statusBarItem?.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
         statusBarItem?.button?.action = #selector(handleEvent)
         statusBarItem?.button?.target = self
@@ -79,9 +83,15 @@ public final class StatusBarItem {
         return menu
     }
     
+    private var appearanceObservation: NSKeyValueObservation?
     private var settingsStyleObservation: NSKeyValueObservation?
     
     public func startObserving() {
+        appearanceObservation = NSApp.observe(\.effectiveAppearance) {
+            [weak self] _, _ in
+            guard let self = self else { return }
+            self.statusBarItem?.button?.image = self.statusBarItemImage
+        }
         settingsStyleObservation = preferences.observe(
             \.rawSettingsStyle, options: [.initial, .new]
         ) { [weak self] _, change in
@@ -102,6 +112,7 @@ public final class StatusBarItem {
     }
     
     public func stopObserving() {
+        appearanceObservation?.invalidate()
         settingsStyleObservation?.invalidate()
     }
 }
