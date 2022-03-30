@@ -2,5 +2,5 @@
 "CFBundleName" = "$(PRODUCT_NAME)";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "版权所有 © 2018-2020 自动深色模式。保留所有权利。";
+"NSHumanReadableCopyright" = "版权所有 © 2018-2022 自动深色模式。保留所有权利。";
 

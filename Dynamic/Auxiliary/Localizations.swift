@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Captain雪ノ下八幡 on 2018/6/18.
-//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2022 Dynamic Dark Mode. All rights reserved.
 //
 
 import Foundation

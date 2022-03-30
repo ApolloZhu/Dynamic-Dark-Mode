@@ -5,7 +5,7 @@
 "NSAppleEventsUsageDescription" = "This is how Dynamic Dark Mode manage the dark mode for you.";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018-2020 Dynamic Dark Mode. Все права защищены.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2022 Dynamic Dark Mode. Все права защищены.";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Так Dynamic Dark Mode рассчитывает время рассвета/заката.";

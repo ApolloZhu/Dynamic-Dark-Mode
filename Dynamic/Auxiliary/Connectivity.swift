@@ -3,7 +3,7 @@
 //  Dynamic Dark Mode
 //
 //  Created by Apollo Zhu on 5/4/19.
-//  Copyright © 2018-2020 Dynamic Dark Mode. All rights reserved.
+//  Copyright © 2018-2022 Dynamic Dark Mode. All rights reserved.
 //
 
 import Network

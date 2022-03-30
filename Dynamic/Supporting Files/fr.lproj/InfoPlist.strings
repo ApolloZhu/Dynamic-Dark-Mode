@@ -5,7 +5,7 @@
 "NSAppleEventsUsageDescription" = "Voici comment Dynamic Dark Mode gère pour vous le mode sombre.";
 
 /* Copyright (human-readable) */
-"NSHumanReadableCopyright" = "Copyright © 2018-2020 Dynamic Dark Mode. Tous droits réservés.";
+"NSHumanReadableCopyright" = "Copyright © 2018-2022 Dynamic Dark Mode. Tous droits réservés.";
 
 /* Privacy - Location Usage Description */
 "NSLocationUsageDescription" = "Dynamic Dark Mode nécessite cette autorisation pour calculer le cycle solaire.";
